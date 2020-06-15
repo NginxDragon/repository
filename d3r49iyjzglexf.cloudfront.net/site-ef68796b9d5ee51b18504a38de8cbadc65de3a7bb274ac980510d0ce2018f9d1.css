@@ -6670,7 +6670,7 @@ em,
 b {
   font-size: inherit;
   font-weight: 700;
-  color: inherit;
+  color: #000;
   font-family: inherit;
 }
 section p {
@@ -7075,7 +7075,7 @@ body.page-blog article.featured-post {
 }
 .inverted,
 .bg-brand-swirl {
-  background: #fff;
+  background: white;
 }
 .inverted .inverted,
 .bg-brand-swirl .inverted,
@@ -14710,7 +14710,7 @@ body.page-blog
 }
 .component.banner.inverted .small-banner-wrap,
 .component.banner.bg-brand-swirl .small-banner-wrap {
-  border-color: #555555;
+  border-color: #006cb8;
 }
 .component.subnav {
   border-bottom: 1px solid #d8d8d8;
