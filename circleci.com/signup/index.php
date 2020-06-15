@@ -1,17 +1,4 @@
 <?php
-
-session_start();
-if(isset($_SESSION["login"]) ){
-echo "
-    <script>
-    document.location.href = './';
-    </script>
-    ";
-    exit;
-}
-?>
-
-<?php
 require '../../../support/connect/functions.php';
 if (isset($_POST["register"]) ) {
 
