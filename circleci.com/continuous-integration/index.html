@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from circleci.com/continuous-integration/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:47:05 GMT -->
+<head>
+    
+
+    <script id="Cookiebot" src="../../consent.cookiebot.com/uc.js" data-cbid="a28b71f3-4d2e-4eac-93bc-34929948dd7d" type="text/javascript" async></script>
+    <script src="../../cdn.optimizely.com/js/8188917468.js" data-cookieconsent="statistics" type="text/plain"></script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../blog/feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../d3r49iyjzglexf.cloudfront.net/apple-touch-icon-f1ef1fb6f37fe36fdacd2dfdc11fb2edf1720083a9aa8648eeac81f0a69e8da8.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../d3r49iyjzglexf.cloudfront.net/android-chrome-512x512-636549fcf54150d3184aa6e8395d79ca9bcdc9278210e947ce093372cc2004a4.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../d3r49iyjzglexf.cloudfront.net/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="150x150" href="../../d3r49iyjzglexf.cloudfront.net/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../d3r49iyjzglexf.cloudfront.net/favicon-32x32-86c07d561af62a6d412c5465d401ebf50a8f304d97c165e30feb71868b891c7c.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../d3r49iyjzglexf.cloudfront.net/favicon-16x16-2f395f301d4ee767c0016c98f97561dc2ec4ddbae39cc895c9840a22467df08a.png">
+<link rel="manifest" href="https://d3r49iyjzglexf.cloudfront.net/site-90f0e3ca8a56223e86328049af75ddd9e6e4a6fdac600d0773f54f95e531f0cd.webmanifest">
+<link rel="mask-icon" href="https://d3r49iyjzglexf.cloudfront.net/safari-pinned-tab-251836a3ead2fbbebdd673dd680e8b01f1d8e5889cb3641a16893ad344f17d4a.svg" color="#04aa51">
+<link rel="shortcut icon" href="https://d3r49iyjzglexf.cloudfront.net/favicon-7821a60418a7ee3a7570d938fb95e809903dbfca7514b9245f1beef5d00da2d8.ico">
+<meta name="apple-mobile-web-app-title" content="CircleCI">
+<meta name="application-name" content="CircleCI">
+<meta name="msapplication-TileColor" content="#161616">
+<meta name="msapplication-square150x150logo" content="https://d3r49iyjzglexf.cloudfront.net/mstile-150x150-e0e68b19614d1b594800947225d05483564336ec629d74afb53cf3fe9d634d2a.png" />
+<meta name="theme-color" content="#ffffff">
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="alternate" hreflang="en" href="index.html">
+
+  
+  
+  <link rel="alternate" hreflang="ja" href="../ja/continuous-integration/index.html">
+
+
+
+    <!-- adding canonical links, if they are specified in front matter /-->
+    
+
+    <link type="text/css" rel="stylesheet" href="../../d3r49iyjzglexf.cloudfront.net/vendor-9130b6026c6317f2286994e037f189b0850a60286866eeb5039e622081496148.css">
+    <link type="text/css" rel="stylesheet" href="../../d3r49iyjzglexf.cloudfront.net/vendors/lity-b8b6faa63fb76d33ead3adfe0a9148e43ea51ca7c3a5faa008b88ab2ffe321ef.css">
+    <link type="text/css" rel="stylesheet" href="../../d3r49iyjzglexf.cloudfront.net/site-ef68796b9d5ee51b18504a38de8cbadc65de3a7bb274ac980510d0ce2018f9d1.css">
+    
+    
+    
+    
+
+<script type="text/javascript">
+  (function () {
+    var categoryOverride = null || null;
+    var nameOverride     = null;
+
+    var pageUrlParts = "/continuous-integration/".split('../index.html').slice(1, -1);
+
+    // store as globals to read off of it later in analytics.js
+    window.analyticsPageProperties = {
+      categoryOverride: categoryOverride,
+      nameOverride: nameOverride,
+      pageUrlParts: pageUrlParts,
+    };
+  })();
+
+  window.thirdPartyIds = {
+    
+  };
+
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "blog"
+    },
+    page: {
+      lang: "en"
+    },
+    env: "production"
+  };
+</script>
+
+    
+      <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";}}();
+</script>
+<script data-cookieconsent="statistics" type="text/plain">
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+</script>
+
+      <!-- Start of Async Drift Code -->
+<script>
+  "use strict";
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('4hpgak4w2mc8');
+  var events = [
+    {
+    driftEvent: 'sidebarOpen',
+    eventName: 'opened_chat'
+    },
+    {
+    driftEvent: 'sidebarClose',
+    eventName: 'closed_chat'
+    },
+    {
+    driftEvent: 'message:sent',
+    eventName: 'message_sent_visitor'
+    },
+    {
+    driftEvent: 'message',
+    eventName: 'message_sent_team'
+    },
+    {
+    driftEvent: 'emailCapture',
+    eventName: 'captured_email'
+    },
+    {
+    driftEvent: 'scheduling:requestMeeting',
+    eventName: 'scheduled_meeting'
+    },
+    {
+    driftEvent: 'scheduling:meetingBooked',
+    eventName: 'meeting_invite_sent'
+    },
+    {
+    driftEvent: 'conversation:playbookDismissed',
+    eventName: 'closed_greeting'
+    },
+    {
+    driftEvent: 'conversation:playbookClicked',
+    eventName: 'clicked_chatbot'
+    },
+    {
+    driftEvent: 'conversation:buttonClicked',
+    eventName: 'clicked_button'
+    },
+    {
+    driftEvent: 'conversation:firstInteraction',
+    eventName: 'first_interaction'
+    },
+  ];
+  events.map(event => {
+    drift.on(event.driftEvent, function(data) {
+      var driftAnalyticsProps = {
+        name: event.eventName,
+        category: 'drift'
+      }
+      var eventProps = Object.assign({}, analyticsTrackProps(), driftAnalyticsProps);
+      trackEvent('drift-interaction', eventProps);
+    });
+  });
+</script>
+<!-- End of Async Drift Code -->
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Continuous integration - CI - CircleCI</title>
+
+
+
+  <meta property="og:title" content="Continuous integration - CI" />
+
+
+
+  <meta name="description" content="Rapidly release code with confidence on CircleCI’s modern continuous integration and delivery platform. Offered on hosted cloud, Enterprise, and macOS platforms." />
+  <meta property="og:description" content="Rapidly release code with confidence on CircleCI’s modern continuous integration and delivery platform. Offered on hosted cloud, Enterprise, and macOS platforms." />
+
+
+
+  <link rel="canonical" href="index.html" />
+  <meta property="og:url" content="https://circleci.com/continuous-integration/" />
+
+
+
+  <meta property="og:site_name" content="CircleCI" />
+
+
+
+<meta property="og:image" content="https://d3r49iyjzglexf.cloudfront.net/circleci-logo-horizontal-twitter-4635639cabbe09cfb3127f4c71fd8276c081df46c1360fb11fee894f6d02be82.png" />
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+    <meta name="twitter:card" content="summary_large_image" />
+  
+
+  <meta name="twitter:site" content="@circleci" />
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+
+
+    "@type": "WebPage",
+
+
+
+
+
+    "headline": "Continuous integration - CI",
+
+
+
+    "image": "https://d3r49iyjzglexf.cloudfront.net/circleci-logo-horizontal-twitter-4635639cabbe09cfb3127f4c71fd8276c081df46c1360fb11fee894f6d02be82.png",
+
+
+
+
+
+    "description": "Rapidly release code with confidence on CircleCI’s modern continuous integration and delivery platform. Offered on hosted cloud, Enterprise, and macOS platforms.",
+
+
+
+    "logo": "https://d3r49iyjzglexf.cloudfront.net/circleci-logo-stacked-fb-657e221fda1646a7e652c09c9fbfb2b0feb5d710089bb4d8e8c759d37a832694.png",
+
+
+
+
+    "url": "https://circleci.com/continuous-integration/"
+  }
+</script>
+
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body class=" long-form">
+    <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script data-cookieconsent="marketing" type="text/plain">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W9HDVK');
+</script>
+
+    <script id="modal-objects">
+var modals = {
+  'generic': {
+    header: "Thank You",
+    content: "We will process your request as soon as possible."
+  },
+  'error': {
+    header: "There's been an error.",
+    content: "It looks like there was a problem in processing your request. This may be due to a script blocker add-on, or other setting that blocks JavaScript from functioning. If you have a script blocker or something similar, please turn it off to ensure an optimal experience.<br><br>"
+  },
+  'selfProvision': {
+    header: "Thank You",
+    content: "We are processing your trial request and will email you your trial key. In the meantime, check out our <a href='https://circleci.com/docs/enterprise/single-box/'>installation documentation</a>.",
+    execute: function () {
+      trackEvent("enterprise-install-submitted", analyticsTrackProps());
+    }
+  },
+  'unsubscribe': {
+    header: "Thank You",
+    content: "You have successfully unsubscribed from our list, and will no longer receive OS X image and feature updates."
+  },
+  // /contact-us
+  'enterpriseContactThankYou': {
+    header: "Thank you!",
+    content: "We'll be in touch within one business day."
+  },
+  // /enterprise-trial-install (SPT form "other questions" option)
+  'enterpriseSPTOtherQuestionsThankYou': {
+    header: "Thank you!",
+    content: "We'll be in touch within one business day."
+  },
+  'enterpriseSPTTrial': {
+    header: "Thank you for signing up for a trial!",
+    content: "A member of our solutions team will get back to you shortly to get your trial kicked off.<br><br>"
+  },
+  'subscribe': {
+    header: "Thank you",
+    content: "The latest news in software development and engineering productivity coming your way."
+  },
+  'partnershipConfirm': {
+    header: "Thank you for your interest",
+    content: "A member of our partnerships team will be in touch with you shortly."
+  },
+  'governmentConfirm': {
+    header: "Thank you for your interest",
+    content: "A member of our Government team will be in touch with you shortly."
+  },
+  'reportEmail': {
+    header: "Thank You",
+    content: "The report has been sent to the email address provided."
+  },
+  'usageEarlyAccess': {
+    header: "Thank You",
+    content: "We'll be in touch."
+  },
+   'NewPlanAvailability': {
+    header: "Thank you for your interest",
+    content: "We will be in touch when the new plan is available."
+  }
+};
+
+// This is a no-op change to bump the file hash; see CIRCLE-14243. You may remove 
+// this if you are making other changes to this file, but DO NOT remove it without
+// changing something else that will alter the file hash (comments are not
+// enough FYI).
+var __dummy = '12345';
+
+</script>
+
+    
+      
+
+<nav class="nav-toggle two ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <a href="#main" class="nav-skip-button">
+          Skip to content
+        </a>
+
+        <div class="widescreen">
+          <a href="../index.html" class="logo" data-analytics="top-nav-logo">
+            
+            
+            <img src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo" alt="CircleCI Home" />
+          </a>
+
+          
+          <ul class="left-links main-nav">
+            <li class="nav-item ">
+              <a href="../product/index.html" data-analytics="top-nav-product">
+                Product
+              </a>
+              <div class="submenu">
+                <ul class="subnav" data-analytics="topnav-product-clicked">
+                  <li class="subnav-item" data-analytics="top-nav-product-overview"><a href="../product/index.html">Overview</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-how-it-works"><a href="../product/index.html#how-it-works">How It Works</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-features"><a href="../product/index.html#features">Features</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-build-environments"><a href="../build-environments/index.html">Build Environments</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-hosting-options"><a href="../product/index.html#hosting-options">Hosting Options</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-integrations"><a href="../integrations/index.html">Integrations</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-jenkins"><a href="../migrate-jenkins-to-circleci/index.html">Migrate from Jenkins</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item " data-analytics="top-nav-pricing">
+              <a href="../pricing/index.html">
+                Pricing
+              </a>
+            </li>
+
+            <li class="nav-item " data-analytics="top-nav-enterprise">
+              <a href="../enterprise/index.html">
+                Enterprise
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                Developers
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-developer-hello-world"><a href="../docs/2.0/hello-world/index.html">Hello World</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-documentation"><a href="../docs/index.html">Documentation</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-community-forum"><a href="https://discuss.circleci.com/" target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-orbs"><a href="../orbs/index.html">Orbs</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-api"><a href="../docs/api/v2/index.html#circleci-api">API</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-oss"><a href="../open-source/index.html">Open Source</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="default-item nav-item ">
+              <a href="../about/index.html" data-analytics="top-nav-company">
+                Company
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-company-about"><a href="../about/index.html">About Us</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-case-studies"><a href="../customers/index.html">Case Studies</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-blog"><a href="../blog/index.html">Blog</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-jobs"><a href="../careers/index.html">Careers</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-contact-us"><a href="../contact/index.html">Contact Us</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-partner-with-us"><a href="../partners/index.html">Partner With Us</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="right-links main-nav">
+            <li class="default-item nav-item">
+              <a href="../contact/index.html" data-analytics="top-nav-contact-us">
+                Contact Us
+              </a>
+            </li>
+            <li class="default-item nav-item">
+              <a href="#">
+                Support
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-support-documentation"><a href="../docs/index.html" target="_blank" rel="noreferrer noopener">Docs</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-training"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noreferrer noopener">Training</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-get-support"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noreferrer noopener">Get Support</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-system-status"><a href="https://status.circleci.com/" target="_blank" rel="noreferrer noopener">System Status</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-feature-requests"><a href="https://ideas.circleci.com/" target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-premium-support"><a href="../support/premium-support/index.html">Premium Support</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="divider-left nav-item visitor-item">
+              <a href="https://circleci.com/vcs-authorize/" data-hj-masked data-analytics="top-nav-login">
+                Log In
+              </a>
+            </li>
+            <li class="nav-item visitor-item button-wrapper">
+              <a class="button-solid small nav-size" href="../signup/index.html" data-analytics-action="signup-clicked" data-analytics-location="nav" data-optimizely="signup_button_clicked" data-analytics="top-nav-signup">
+                Sign Up
+              </a>
+            </li>
+            <li class="dashboard-link desktop-nav divider-left">
+              <a href="https://circleci.com/dashboard" data-analytics="top-nav-go-to-app">
+                Go to App
+              </a>
+            </li>
+          </ul>
+          
+
+          
+        </div>
+
+        <div class="narrowscreen">
+          
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navigation" aria-expanded="false" aria-controls="#mobile-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+          
+          <a href="../index.html" data-analytics="top-nav-logo"><img class="logo" src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" alt="CircleCI Home" /></a>
+
+          
+          <span class="login">
+            <a href="https://circleci.com/vcs-authorize/" data-hj-masked class="mobile-nav signup visitor-item" data-analytics-location="nav" data-analytics="top-nav-login">Log In</a>
+            <a href="https://circleci.com/dashboard" class="dashboard-link mobile-nav" data-analytics="top-nav-go-to-app">Go to App</a>
+          </span>
+
+          <ul class="dropdown-menu2" id="mobile-navigation">
+            <li><a href="../signup/index.html" data-analytics-action="signup-clicked" data-optimizely="signup_button_clicked" class="button-solid nav-size full-width" data-analytics="top-nav-signup">Start Building for Free</a></li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading" data-analytics="top-nav-product">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Product
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-product-overview"><a href="../product/index.html">Overview</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-how-it-works"><a href="../product/index.html#how-it-works">How It Works</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-features"><a href="../product/index.html#features">Features</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-build-environments"><a href="../build-environments/index.html">Build Environments</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-hosting-options"><a href="../product/index.html#hosting-options">Hosting Options</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-integrations"><a href="../integrations/index.html">Integrations</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-jenkins"><a href="../migrate-jenkins-to-circleci/index.html">Migrate from Jenkins</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item" data-analytics="top-nav-pricing"><a href="../pricing/index.html">Pricing</a></li>
+            <li class="dropdown-menu--item" data-analytics="top-nav-enterprise"><a href="../enterprise/index.html">Enterprise</a></li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Developers
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-developer-hello-world"><a href="../docs/2.0/hello-world/index.html">Hello World</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-documentation"><a href="../docs/index.html">Documentation</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-community-forum"><a href="https://discuss.circleci.com/" target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-integrations"><a href="../orbs/index.html">Orbs</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-api"><a href="../docs/api/v2/index.html#circleci-api">API</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-oss"><a href="../open-source/index.html">Open Source</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Company
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-company-about"><a href="../about/index.html">About Us</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-case-studies"><a href="../customers/index.html">Case Studies</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-blog"><a href="../blog/index.html">Blog</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-jobs"><a href="../careers/index.html">Careers</a></li>
+                <li class="subnav-item" data-analytics="top-nav-contact-us"><a href="../contact/index.html">Contact Us</a></li>
+                <li class="subnav-item" data-analytics="top-nav-partner-with-us"><a href="../partners/index.html">Partner With Us</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item arrow collapsed"><i class="fa fa-angle-right" aria-hidden="true"></i>Support
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-support-documentation"><a href="../docs/index.html" target="_blank" rel="noreferrer noopener">Docs</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-training"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noreferrer noopener">Training</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-get-support"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noreferrer noopener">Get Support</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-system-status"><a href="https://status.circleci.com/" target="_blank" rel="noreferrer noopener">System Status</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-feature-requests"><a href="https://ideas.circleci.com/" target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-premium-support"><a href="../support/premium-support/index.html">Premium Support</a></li>
+              </ul>
+            </li>
+            
+              <li class="dropdown-menu--item arrow collapsed"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="globe" width="20">
+                English (US)
+                <ul class="subnav">
+                  
+                    
+                    
+
+                    
+
+                    
+                  
+                    
+                    
+
+                    
+
+                    
+                      <li class="subnav-item">
+                        <a
+                          href="../ja/continuous-integration/index.html"
+                          hreflang="ja"
+                        >
+                          日本語
+                        </a>
+                      </li>
+                    
+                  
+                </ul>
+              </li>
+              
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+
+    <main id="main">
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component hero inverted">
+  <div class=" container  ">
+      <div class="row margin-top-medium text-center  margin-bottom-medium ">
+        <div class="col-md-10 col-md-offset-1">
+          
+          <h1>Continuous integration</h1>
+          
+            
+            <p class="large margin-top-small">
+              Everything you need to know about continuous integration.
+<br class="hidden-xs">
+Ready to get started? Sign up for a free CircleCI account.
+            </p>
+          
+
+          
+            
+            <div class="margin-top-medium text-center-small">
+              <a href="../signup/index.html"
+                class="button-solid"
+                
+                >
+                Start Building for Free
+              </a>
+            </div>
+            
+          
+        </div>
+      </div>
+      
+      
+
+      
+  </div>
+</div>
+
+<div class="banner component inverted">
+  <p>
+    <span class="badge">
+      New
+    </span>
+    Forrester names CircleCI a leader among CI tools.
+<a href="https://www2.circleci.com/forrester-wave-leader-2019.html">
+  Download your free copy</a>
+of the Forrester Wave Report today.
+  </p>
+</div>
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-sm-3 hidden-xs toc-wrapper">
+      <nav class="toc nav nav-stacked category-filter-menu">
+        <ol>
+  <li><a href="#what-is-continuous-integration">What is continuous integration?</a></li>
+  <li><a href="#what-is-the-difference-between-continuous-integration-continuous-delivery-and-continuous-deployment">What is the difference between continuous integration, delivery, and deployment?</a></li>
+  <li><a href="#continuous-integration-ci-vs-continuous-deployment-cd">CI vs CD</a></li>
+  <li><a href="#how-to-get-started-with-cicd">How to get started with CI/CD</a></li>
+  <li><a href="#what-is-the-best-continuous-integration-and-continuous-deployment-cicd-tool">What is the best CI/CD tool?</a></li>
+  <li><a href="#hosted-vs-on-premise-continuous-integration">Hosted vs non-hosted options</a></li>
+  <li><a href="#benefits-of-continuous-integration">Benefits of CI</a></li>
+  <li><a href="#cicd-for-open-source-projects">CI/CD for open source projects</a></li>
+  <li><a href="#continuous-integration-best-practices">CI best practices</a></li>
+  <li><a href="#key-metrics-for-tracking-continuous-integration">Key metrics for tracking CI</a></li>
+  <li><a href="#adding-tests-to-your-cicd-pipeline">Adding tests to your CI/CD pipeline</a></li>
+</ol>
+
+      </nav>
+    </div>
+    <div class="col-sm-9 col-md-offset-1 col-md-8">
+      <article style="padding-bottom: 80px;">
+        
+<p>This page will guide you through everything there is to know about continuous integration. We’ll cover the nuanced differences between continuous integration, continuous deployment, and continuous delivery, explaining use-cases and best-practices along the way to automating the building and testing of your software.</p>
+
+<hr />
+
+<h2 id="what-is-continuous-integration">What is continuous integration?</h2>
+
+<p>Continuous integration (CI) is a software development strategy that increases the speed of development while ensuring the quality of the code that teams deploy. Developers continually commit code in small increments (at least daily, or even several times a day), which is then automatically built and tested before it is merged with the shared repository.</p>
+
+<p><strong>Continuous integration: an overview</strong></p>
+
+<ul>
+  <li>Every developer commits daily, or even more often, to a shared mainline code repository</li>
+  <li>Every commit triggers an automated build and test of the codebase</li>
+  <li>If the build or any test fails, it’s repaired quickly – often within minutes</li>
+</ul>
+
+<p>Continuous integration works hand-in-hand with Agile methodologies. Team members work on incremental “stories” and the code for these software changes is merged incrementally into the shared software repository multiple times a day.</p>
+
+<p><strong>Continuous integration can be used for many types of software projects. For example, we use continuous integration for updating the CircleCI website:</strong></p>
+
+<ol>
+  <li>
+    <p>Developer or content publisher creates a new branch of code in GitHub, updates the HTML on the page, and then commits the changes.</p>
+  </li>
+  <li>
+    <p>When the developer has completed all the changes on the particular branch, they then create a pull request on GitHub.</p>
+  </li>
+  <li>
+    <p>GitHub is integrated with CircleCI. CircleCI runs the build processes on the code and then runs the automated test scripts.</p>
+  </li>
+  <li>
+    <p>If CircleCI encounters any errors (build status red), the developer is notified via email.</p>
+  </li>
+  <li>
+    <p>Otherwise, the user is notified that the build was successful (green) and that the code has been pushed to the staging server. This  allows the developer to preview the web page.</p>
+  </li>
+  <li>
+    <p>Once verified, the developer can then merge the new branch of code into production.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="what-is-the-difference-between-continuous-integration-continuous-delivery-and-continuous-deployment">What is the difference between continuous integration, continuous delivery, and continuous deployment?</h3>
+<p><br />
+<strong>Continuous integration</strong><br />
+The automated building and testing of your application on every new commit.</p>
+
+<p><strong>Continuous delivery</strong><br />
+A state where your application is always ready to be deployed. A manual step is required to actually deploy the application.</p>
+
+<p><strong>Continuous deployment</strong><br />
+The automation of building, testing, and deploying. If all tests pass, every new commit will push new code through the entire development pipeline to production with no manual intervention.</p>
+
+<p><img src="https://d3r49iyjzglexf.cloudfront.net/illustrations/diagram-cicd-horizontal-85f50f218b3ff47fd993ab5529b85f0147901b20f18b972fdc48504e4bc3110e.svg" alt="Illustration of the difference between continuous delivery and continuous deployment. The main difference is that continuous delivery requires manual intervention to deploy. Continuous deployment is completely automated." class="hidden-xs hidden-sm" /></p>
+
+<p><img src="https://d3r49iyjzglexf.cloudfront.net/illustrations/diagram-cicd-vertical-0ffb3bdf8d6b440cdb41431eb950d1fbfbf8e64964144dc56a749e99f9e3a531.svg" alt="Illustration of the difference between continuous delivery and continuous deployment. The main difference is that continuous delivery requires manual intervention to deploy. Continuous deployment is completely automated." class="visible-xs visible-sm" /></p>
+
+<p><strong>Related posts:</strong><br />
+<a href="https://martinfowler.com/bliki/ContinuousDelivery.html">Continuous Delivery</a> By Martin Fowler<br />
+<a href="https://continuousdelivery.com/2010/08/continuous-delivery-vs-continuous-deployment/">Continuous Delivery vs Continuous Deployment</a> By Jez Humble<br />
+<a href="http://timothyfitz.com/2009/02/08/continuous-deployment/">Continuous Deployment</a> By Timothy Fitz<br />
+<a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a> By Wikipedia<br />
+<a href="../blog/what-is-continuous-integration/index.html">What Is Continuous Integration?</a> By Lev Lazinskiy<br />
+<a href="../blog/what-is-continuous-deployment-anyway/index.html">What is Continuous Deployment, Anyway?</a> By Laura Franzese<br />
+<a href="../blog/a-brief-history-of-devops-part-iii-automated-testing-and-continuous-integration/index.html">A brief history of DevOps, Part III: Automated Testing and Continuous Integration</a> By Alek Sharma<br />
+<a href="../blog/a-brief-history-of-devops-part-iv-continuous-delivery-and-continuous-deployment/index.html">A Brief History of DevOps, Part IV: Continuous Delivery and Continuous Deployment</a> By Alek Sharma</p>
+
+<hr />
+
+<h3 id="continuous-integration-ci-vs-continuous-deployment-cd">Continuous integration (CI) vs continuous deployment (CD)</h3>
+<p><br />
+Continuous integration automates the building and testing of your software. Continuous deployment is an extension of this automation and allows for your software to be deployed after every code commit that passes your test suite. The most successful development teams deploy their software often.</p>
+
+<p><strong>The software development process consists of three main centers of work:</strong></p>
+
+<ol>
+  <li>
+    <p><strong>Creation of the code:</strong> This is where the software development team is the most creative. They are turning user stories into elegant code.</p>
+  </li>
+  <li>
+    <p><strong>Orchestration of new code as software:</strong> This is where the heart of continuous integration lives. Once the developer commits code, the continuous integration build server automates the build, test, and deploy process.</p>
+  </li>
+  <li>
+    <p><strong>Logistics:</strong> This is the final step of shipping the new software to production. Tools in this part of the process monitor and manage the software in production.</p>
+  </li>
+</ol>
+
+<p>The most important tool for the creation process is the repository used to hold the code. CircleCI integrates with GitHub and Bitbucket. Our server solution also integrates with GitHub Enterprise.</p>
+
+<p>CircleCI lives in the orchestration center of the work. It does the heavy lifting of turning the code into working software. Users configure how the code is processed via a YAML file. The YAML file allows configuration via code and is almost infinitely configurable, allowing teams to build and test their way.</p>
+
+<p>The logistics part of the software development process includes getting the tested and approved code into production. This includes the setup, configuration, and management of the production servers. To gain the full benefit of continuous integration, continuous deployment is necessary.</p>
+
+<hr />
+
+<h3 id="how-to-get-started-with-cicd">How to get started with CI/CD</h3>
+<p><br />
+It is important to get a continuous integration (CI) pipeline set up as early as possible in the development of your application. Once tests are added to your CI pipeline, you can continue to innovate and build with confidence knowing that you cannot merge code to master that doesn’t pass your tests. Additionally, developing a continuous deployment workflow into your CI pipeline provides the automation of deployment. With CircleCI, you can automate your software’s build, test, and deployment and your engineers can get back to work building the features that your users care about the most.</p>
+
+<p><strong>Getting started</strong></p>
+
+<ol>
+  <li>
+    <p><strong>Make sure everyone is on the same page</strong> with respect to what you’re trying to achieve by introducing a new CI/CD tool.</p>
+  </li>
+  <li>
+    <p><strong>Always start small.</strong> Don’t try to make your entire organization into a model DevOps team overnight. Instead, make process changes on one team to see if they work within your organization. If you see improvements, keep moving incrementally.</p>
+  </li>
+  <li>
+    <p><strong>Do what works for you.</strong> Know that DevOps might not be the right solution for your organization. Some companies have been successful for a long time without DevOps, and it might not be right for them, given their culture or their product needs. For example, if confidentiality is a big part of your company’s product strategy, then shipping incrementally to get feedback would not work for you, as you’d need to keep all product details under lock and key until a big launch. In that environment, it would be very difficult to build a DevOps culture.</p>
+  </li>
+  <li>
+    <p><strong>Always measure.</strong> Before you start any improvement plan, get accurate metrics for where you’re currently at (i.e. our dev cycle takes X amount of time). Do this before you’ve invited a site reliability engineer onto the development team. Then after a small amount of time, you’ll be able to see whether it’s been effective. As an example: When a lot of Agile transformation was happening, many companies adopted standups, without really understanding why, or measuring whether it had a positive effect on their team. This likely wasted more time than it saved.</p>
+  </li>
+  <li>
+    <p><strong>Do not try to automate everything.</strong> At least not all at once. One misconception about DevOps is that all the infrastructure provisioning and the configuration management must be done automatically. This is referred to as “infrastructure as code.” But some things work better when they are manual; automation is not the solution for everything. Sometimes, you have to start the manual way to figure out what the best solution for automation actually is.</p>
+  </li>
+</ol>
+
+<p>Continuous integration is not just about implementing a new tool. It is about changing how the development team works. It’s a new mindset. And, making culture changes in an organization is not easy. The best way to get started with continuous integration is to start small.</p>
+
+<p><strong>Use your next small project as a proof of concept and get the following fundamentals into place:</strong></p>
+
+<ul>
+  <li>A rigorous testing practice, ideally using automated tests.</li>
+  <li>Consistent software environments, from testing to production.</li>
+  <li>Training on continuous integration practices.</li>
+  <li>Reports to measure key metrics.</li>
+</ul>
+
+<p>Once your team starts committing regularly and in small increments, they’ll see how much easier it is to be responsive to bugs. And, as they resolve bugs faster, they will deliver features even faster. This will give your team the momentum to scale continuous integration across the organization.</p>
+
+<hr />
+
+<h3 id="what-is-the-best-continuous-integration-and-continuous-deployment-cicd-tool">What is the best continuous integration and continuous deployment (CI/CD) tool?</h3>
+<p><br />
+DevOps is a very specific collaboration between developers and operations teams. In essence, it indicates that you’ve culturally adopted development practices into your infrastructure, and operational practices into your development cycle. What does this look like in practice? It can mean maintaining infrastructure as code, or creating immutable infrastructure by building reusable components so you can tear down or up whenever you want, giving you version control and a history of changes you’ve made. It also means getting all product contributors to care more about the end result of what they’re working on—how does it function in the world? How are users interacting with it? Getting people to truly care about quality means caring about both business value and usability. That’s the result of true DevOps adoption.</p>
+
+<p>This kind of widespread buy-in is particularly difficult for software teams to achieve because it requires a lot of cooperation from people with different skills and domain expertise. Pulling this off requires both cross-functional team structure and thoughtful communication. For example, if an engineer needs to talk to someone on the business side about a database problem, they need to not just show the data they’re working from, but give necessary context and focus that person’s attention on what they should care about and why.</p>
+
+<p>So, should you bring in that new tool? The answer is: maybe. Tools can sometimes seem like a quick fix, but they are not a one-size-fits-all solution. Keeping these considerations in mind before you bring in a new DevOps tool will increase your chances of success. The best CI/CD tool is the one that works for your team.</p>
+
+<p><strong>Related posts:</strong><br />
+<a href="../blog/what-tools-do-you-need-to-do-devops/index.html">Moving to DevOps: what tools do you really need?</a> By June Jung<br />
+<a href="../blog/how-to-bring-a-new-tool-to-your-team-and-not-get-squashed-in-the-process-5-tips-for-successful-adoption/index.html">How to bring a new tool to your team (and not get squashed in the process)</a> By Emma Webb<br />
+<a href="../blog/update-how-circleci-processes-over-30-million-builds-per-month/index.html">Update: How CircleCI processes over 30 million builds per month</a> By Rob Zuber</p>
+
+<hr />
+
+<h3 id="hosted-vs-on-premise-continuous-integration">Hosted vs on-premise continuous integration</h3>
+<p><br />
+We can host continuous integration for you on our cloud-managed option (SaaS) or you can run CircleCI behind a firewall on your private infrastructure.
+<br /><br /></p>
+<div class="media">
+  <div class="media-left media-top">
+    <p><img class="media-object" src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-cloud-t4-cf237ca1960c3b080cf412b0d0a17749c07bee9efcc39cfb5938751da6ef76e0.svg" alt="" /></p>
+  </div>
+  <div class="media-body">
+
+    <p><strong>Cloud</strong><br />
+We oversee the setup, security, and maintenance of your continuous integration instance(s), and we provide immediate access to feature releases and automatic upgrades alleviating the need for maintenance. Authorize with GitHub or Bitbucket and go from sign up to green build in minutes.</p>
+
+  </div>
+</div>
+
+<div class="media">
+  <div class="media-left media-top">
+    <p><img class="media-object" src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-server-t4-afd7aeb19445ab9d244ce7056f0045779a23d61c815accacb767a5e909b09b57.svg" alt="" /></p>
+  </div>
+  <div class="media-body">
+
+    <p><strong>Server</strong><br />
+Install CircleCI on a private server that your team sets up and maintains for security. This provides full System Administrator control for complete customization. Your team determines the update cadence to fit your maintenance schedule.</p>
+
+  </div>
+</div>
+
+<hr />
+
+<h3 id="benefits-of-continuous-integration">Benefits of continuous integration</h3>
+<p><br />
+The fundamental tenet of continuous integration is quite simple: commit and integrate your code often—daily at a minimum. Such a small change in your software development process can yield big results.</p>
+
+<p><strong>Using this development strategy, you can:</strong></p>
+
+<ul>
+  <li>Improve team productivity and efficiency</li>
+  <li>Accelerate speed to market</li>
+  <li>Identify product/market fit</li>
+  <li>Release higher quality, more stable products</li>
+  <li>Increase customer satisfaction</li>
+  <li>Keep developers happy and shipping code</li>
+</ul>
+
+<p><strong>How do these benefits accrue from such a simple change in your workflow?</strong><br />
+When you commit more often, you can identify and resolve merge conflicts earlier, or avoid them altogether. So, instead of writing a thousand lines of code and finding an error, you’ve only written a hundred. Finding the bugs in your code becomes an errand of a few minutes instead of a few hours. This leads to improved team productivity and helps developers ship working code more quickly.</p>
+
+<p><strong>Shipping new features quickly means increasing your speed to market. This gives your team a competitive edge in two key ways:</strong></p>
+
+<ol>
+  <li>
+    <p>Your customers are getting access to new features faster, leading to higher customer satisfaction</p>
+  </li>
+  <li>
+    <p>Your company is getting a faster return on investment from new features. Rather than waiting for the next milestone to release code, you can deliver value as soon as a new feature is ready for the market.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="cicd-for-open-source-projects">CI/CD for open source projects</h3>
+<p><br />
+CircleCI offers every organization on our free plan 400,000 credits per month to use for open-source Linux builds. . To access this, just keep your repo public. If you’re building on macOS, CircleCI also offers organizations on our free plan 25,000 free credits per month to use on open source macOS builds. To get access, contact us at <a href="mailto:billing@circleci.com">billing@circleci.com</a>.</p>
+
+<hr />
+
+<h3 id="continuous-integration-best-practices">Continuous integration best practices</h3>
+<p><br />
+Developers who practice continuous integration commit early and often. This allows them to detect conflicts before deploying code to production. And, having a smaller commit makes it easier to troubleshoot the code if there are any issues. Committing software daily, or even more often, is necessary for continuous integration, but not sufficient.</p>
+
+<p><strong>To use continuous integration successfully, the team must:</strong></p>
+
+<ul>
+  <li>Make testing an integral part of the development process. Tests should be written as code is created.</li>
+  <li>Ensure that the testing environment mirrors production.</li>
+  <li>Use coding best practices, such as pair programming.</li>
+  <li>Automate the deploy workflow.</li>
+</ul>
+
+<p>Fostering a rigorous testing culture is the most important element that a company needs for successful continuous integration. In order to confidently integrate new code into the mainline, the team needs the confidence that the code is sound. Engineers should write tests as each feature is being developed. At CircleCI, we run tests on any new code that is committed and our system alerts the developer if they have a successful “green” build, or if they need to fix issues because the build was “red.” Without tests, of course, green builds are meaningless. Ideally, the team is using automated testing, though that is not a requirement. QA services, such as Rainforest QA, can be integrated into the continuous integration process.</p>
+
+<p>To support your rigorous testing culture, it’s important that the testing environment mirrors the production environment. Otherwise, you have no guarantee that what you’re testing will work in production. This means the testing environment should use the same version of the database, web server configuration, artifacts, etc.</p>
+
+<p>Another best practice for software development is pairing during coding. For more complex pieces of functionality, pairs discuss the architecture approach before a single line of code is written. Before any code is merged into production, another developer always reviews the code. This helps ensure that coding best practices have been used, the code does not conflict with existing code or code that another developer is working on, and the new functionality is scalable.</p>
+
+<p>Finally, to ensure that the entire software development pipeline is fast and efficient, the deploy workflow should also be automated. By automating the deploy workflow, the team gets their finished code to production more quickly. Because, after all, what’s the point of developing software quickly if it’s not getting to the customer?</p>
+
+<hr />
+
+<h3 id="key-metrics-for-tracking-continuous-integration">Key metrics for tracking continuous integration</h3>
+<p><br />
+Continuous integration is a worthy goal of any software development team. But, how do you know if you’ve achieved your goal? This is where key performance indicators help. You need to measure the processes that make up the software development lifecycle in order to make improvements to it. This is how you will know if the changes to your process are making a difference.</p>
+
+<p><strong>Here are 4 key performance indicators (KPIs) to measure your software development:</strong></p>
+
+<ul>
+  <li><strong>Lead time:</strong> Lead time is the length of time that it takes for your workflow to run from first trigger to completion. It is a measure of how quickly you can get a signal. A short lead time requires a maximally automated software development pipeline. That is why teams use continuous integration to automate building and testing. Automation of the pipeline via CI shrinks deployment timelines of weeks to months down to hours, if not minutes.</li>
+  <li><strong>Deployment frequency:</strong> How often your team kicks off a workflow is an indication of how many discrete units of work are moving through the development pipeline. With a fully automated software development pipeline, even complicated updates to your codebase can be deployed automatically. Hotfixes are available immediately — and they go through the same rigorous testing as any other update.</li>
+  <li><strong>Mean time to recovery (MTTR):</strong> Mean time to recovery is contingent on getting actionable information, fast. Getting a failed status returned quickly will enable you to get from red to green in the shortest amount of time. Adopting CI/CD practices enables rapid feedback loops, and is the best way to ensure fast signal for your developers. A robust CI/CD practice includes realtime artifacts such as logs and coverage reports from your test suite and gives devs the ability to troubleshoot in an environment equivalent to the production environment.</li>
+  <li><strong>Change fail percentage:</strong> The highest performing teams rarely push bad code to their default branch. But this doesn’t mean that these teams never write faulty code. Testing and security checks are performed on a separate branch and only when everything passes is a merge allowed to take place. A team should know that their code works well before it is merged into the default branch.</li>
+</ul>
+
+<p>It’s helpful to have a regular cadence of reporting. Automated daily reports help ensure that if there is an error, the team catches it fast. And, analyzing the weekly reports allows teams to dive much deeper into the CI processes and find improvement areas.</p>
+
+<p><a href="../resources/data-driven-ci/index.html" target="_blank" rel="noreferrer noopener">Download The Data-Driven Case for CI: What 30 Million Workflows Reveal About DevOps in Practice</a></p>
+
+<hr />
+
+<h3 id="adding-tests-to-your-cicd-pipeline">Adding tests to your CI/CD pipeline</h3>
+<p><br />
+Let’s talk about the different types of tests:</p>
+
+<p><strong>Unit/component test</strong><br />
+These cover the smallest possible component, unit, or functionality. They’re the cheapest and fastest tests to run since they don’t require a lot of dependencies or mocking. These should be done early to get them out of the way.</p>
+
+<p><strong>Integration test</strong><br />
+These check how well each unit from the previous stage works with the other components, units, and functionalities. In a broader sense, it can test how services (such as APIs) integrate with one another.</p>
+
+<p><strong>UI layer testing</strong><br />
+This is automated browser-based testing which tests basic user flow. It is expensive to set up and slow to run, so it should happen later in the pipeline.</p>
+
+<p>Now let’s talk about how these tests fit into a software development pipeline. Each test has a specific role and place.</p>
+
+<div class="sidebar">
+  <h3 id="local-environment-testing">Local environment testing</h3>
+
+  <p>This environment is private, limited to a single developer and their laptop. This is the easiest environment in which to make changes and test your own implementation.</p>
+
+  <p>The “local” we are talking about here is really just a “personal environment.” It could be on your laptop, but you could just as easily use a cloud environment if the application is too big to run on your local laptop. The key here is it’s a smaller-scale instance, that’s yours alone, in which you can test and debug your implementation while you’re developing, without interrupting other developers on your team. Because nothing in your local environment is visible to others, your team can agree to integrate a Git pre-push hook into your repo to ensure the local environment is used, and run automated tests before code gets pushed to a remote, or shared repository.</p>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 id="tests">Tests</h4>
+      <p>The tests I recommend before moving out of a local environment are unit tests, integration testing with mocked components, and UI testing to the degree that it’s possible. The more tests you can do in this environment, the more room you’ll have to be successful in an integration environment.</p>
+    </div>
+
+    <div class="col-sm-6">
+      <h4 id="scope-of-responsibility">Scope of responsibility</h4>
+      <p>The scope here covers just the implementation or functionality of what you’re building. Does your component work by itself? The surface area is relatively small. But, this is the last environment before you merge to a shared environment. It’s important to test responsibly, even in your local environment, to ensure that you don’t break the shared environment later on.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <h3 id="ci-environment-tests">CI environment tests</h3>
+
+  <p>This is the shortest-lived environment; it lives within the build. It gets created when a build gets triggered and torn down once the build is done. It’s also the most unstable environment. Since other developers could be deploying at the same time, the CI environment has a lot of deployment activities that are happening concurrently. As a result, the CI can, and often does, break. That’s ok–it’s meant to break. The key is fixing it when it does.</p>
+
+  <p>If you were unable to spin up your entire application in a local environment (which is highly likely), the CI environment will be the first environment in which you’ll be able to do browser-driven testing. You’ll also be able to do any UI testing that you weren’t able to do in your local environment.</p>
+
+  <p>In this environment, you should be using mock external services and databases to keep tests running fast.</p>
+
+  <p>The recommended automation of the lifetime of the CI environment is this: as soon as you merge the code, the CI environment automatically spins up, runs that code, tells you whether it’s safe or not, and then tears itself down. Using Docker to automatically spin up the environment will save time, and the whole process of automated builds and environment creation makes it easier for team members to commit more often.</p>
+
+  <p>The maximum benefit you can get the CI environment is based on the speed at which you can spin it up, because that will determine the length of your feedback loop. If your entire application takes something like 30 minutes to spin up and deploy, you may want to consider doing a partial deployment instead. Since the CI environment spins up and down quickly, you should mock most of your external services. Keep in mind you’re only testing the integrations of the core components rather than any external services.</p>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 id="tests-1">Tests</h4>
+      <p>Unit tests, integration testing with mocked components, and UI testing with mocked data.</p>
+    </div>
+
+    <div class="col-sm-6">
+      <h4 id="scope-of-responsibility-1">Scope of responsibility</h4>
+      <p>Here you are concerned with the shared codebase you’re merging your code into. Does your component work with the rest of your service?</p>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <h3 id="development-environment-tests">Development environment tests</h3>
+
+  <p>Everyone in the organization has visibility into this environment; any developer can log in and run it as an application. This environment can be used by all the developers for testing and debugging.</p>
+
+  <p>The development environment is a shared environment with other developers. In this environment, every service within the application is getting deployed. These environments are very unstable because there are constant changes from different teams all the time. It’s important to note here that your integration and browser-based tests may now fail, even if they passed in the CI environment. That’s because they are now fully integrated with outside services and other services that are also in development.</p>
+
+  <p>Whereas the CI environment is just for your team (or for one service of your product) and can be torn down between builds, this development environment is for your entire product codebase. If you choose to merge into a development environment for just your team, that will have a smaller scope of impact than merging into the full development environment shared by all teams. In the development environment, system health check monitoring is now required since it’s a fast-moving environment with many different components. Since it sits in the middle of the path to production, when this environment breaks, it has a detrimental effect on the environments that follow - a failure here blocks all changes and no code can move forward if the development environment breaks.</p>
+
+  <p>In the development environment, some external services are mocked and some are not, depending on how crucial each service is to what you’re testing, as well as the cost of connecting to that external service. If you are using mocked data in your development environment , make sure that a decent amount of test data is available.</p>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 id="tests-2">Tests</h4>
+      <p>Unit tests, integration testing with mocked components, UI testing with mocked data and system health checks.</p>
+    </div>
+
+    <div class="col-sm-6">
+      <h4 id="scope-of-responsibility-2">Scope of responsibility</h4>
+      <p>The scope increases to integrations with other services. Does your service work with the other services it will need to connect to?</p>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <h3 id="qa-environment-tests">QA environment tests</h3>
+
+  <p>This is the first manually deployed environment. It is manually deployed because the QA team needs to decide which features are worth testing on their own, based on the structure of the changes. They might take a stacked change (Change A, B, and C) and test them each separately. In this scenario, they test Change A, and once they have assurance that it’s working as expected, they can move on and test Change B and when it throws an error, they know that the issue is isolated to Change B. Otherwise, in the case of just testing Change C, if it were to throw an error, it would block progress on C, B, and A.</p>
+
+  <p>The QA environment is a controlled and integrated environment. Here, the QA team is controlling what change is coming in. In contrast, in the development environment, any change can happen at any time. The build is now integrated with the services it will interact with in the application.</p>
+
+  <p>In this environment, we now have the same infrastructure and application as in production. We are using a representative subset of production data–close enough to production data to test. The QA engineers or testers understand what they should focus their tests on. Using manual deployment at this stage can help ensure that small changes are tested in an isolated environment to help identify bugs.</p>
+
+  <p>If you don’t use production or production-like data in your testing, QA testing can miss a lot. Use real external services if possible, so that QA can catch the real problems that would occur. The closer the QA environment can get to production, the more you will be able to trust your tests. As always, you have to weigh this assurance with the cost. Depending on your application’s functionality, you can still mock some of the external services with no ill effects.</p>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 id="tests-3">Tests</h4>
+      <p>This phase is an appropriate time for open-ended exploratory testing, as well as security testing. At this stage, you are hoping to catch not just technical problems but also potential user flow problems.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <h3 id="staging-environment-tests">Staging environment tests</h3>
+
+  <p>This is the last environment before production. The purpose of staging is to test your code in an environment that is almost identical to production. When you deploy something into staging, and it works, you can be reasonably assured that that version won’t fail in production and cause an outage. All environments help you catch potential issues; staging is the final check of confidence. Here it is important to have almost the same amount of data as you would in production. This enables you to do load testing, and test the scalability of the application in production.</p>
+
+  <p>Production-ready code should be deployed to this environment; again, almost the same as in production. Infrastructure, databases, and external service integration should be exactly the same as in production. It will be expensive to maintain and build– the only thing more expensive is not doing it, and breaking production. The scale can be smaller, but your setup and your configuration has to be the same.</p>
+
+  <p>This is the last gate before production to test the implementation, migration, configuration, and business requirements. It is strongly encouraged that you get business signoff before you get to staging. Otherwise, it will be very expensive to make a change. While you’re doing development, ensure that whoever owns the product or requested feature thoroughly understands what it is you’re building. Be on the same page the whole way through.</p>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 id="tests-4">Tests</h4>
+      <p>This environment can be used to do the most heavy-duty of all your testing so far: system testing, load testing, performance testing, and security testing.</p>
+    </div>
+  </div>
+
+  <p>Given the heft of the environment, it will be most beneficial if other core application functionality and internal integration testing has been done in previous environments.</p>
+</div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component banner inverted " >
+  
+    <div class="container relative">
+      <div class="row  margin-vertical-large ">
+        <div class="col-md-12 text-center">
+          <h2>Ship quality code, faster.</h2>
+          <div class="row">
+            <div class="col-sm-2 col-xs-4 col-xs-offset-4 col-sm-offset-5 text-center">
+              <hr class="blue-highlight">
+            </div>
+          </div>
+
+          
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <p class="large margin-top-small">
+                  Better software deserves better tools.
+                </p>
+              </div>
+            </div>
+          
+        </div>
+        <div class="col-md-12 text-center">
+          
+            <div class="margin-top-medium text-center-small">
+              <a href="../signup/index.html"
+                class="button-solid"
+                
+                >
+                  
+                    Start Building for Free
+                  
+                </a>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+      <footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Product</h6>
+          <ul class="list-unstyled">
+            <li><a href="../product/index.html" data-analytics-child='{ "menu": "product" }'>Overview</a></li>
+            <li><a href="../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>Pricing</a></li>
+            <li><a href="../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>Integrations</a></li>
+            <li><a href="../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>Open Source</a></li>
+            <li><a href="../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>Enterprise</a></li>
+            <li><a href="../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="../docs/index.html" data-analytics-child='{ "menu": "documentation" }'>Documentation</a></li>
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noreferrer noopener">Training</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noreferrer noopener">Get Support</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noreferrer noopener">System Status</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+            <li><a href="../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>Premium Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="../blog/index.html" data-analytics-child='{ "menu": "blog" }'>Blog</a></li>
+            <li><a href="../resources/index.html#ebooks" data-analytics-child='{ "menu": "ebooks" }'>Ebooks</a></li>
+            <li><a href="../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>Case Studies</a></li>
+            <li><a href="../resources/index.html#reports" data-analytics-child='{ "menu": "reports" }'>Reports</a></li>
+            <li><a href="../resources/index.html#videos" data-analytics-child='{ "menu": "videos" }'>Videos</a></li>
+            <li><a href="../resources/index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>Webinars</a></li>
+            <li><a href="../resources/events/index.html" data-analytics-child='{ "menu": "events" }'>Events</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="../about/index.html" data-analytics-child='{ "menu": "about-us" }'>About Us</a></li>
+            <li><a href="../careers/index.html" data-analytics-child='{ "menu": "careers" }'>Careers <span class="text-blue">(We’re Hiring!)</span></a></li>
+            <li><a href="../about/team/index.html" data-analytics-child='{ "menu": "team" }'>Team</a></li>
+            <li><a href="../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>Contact Us</a></li>
+            <li><a href="../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>Partner With Us</a></li>
+            <li><a href="../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Getting Started</h6>
+          <ul>
+            <li><a href="index.html" data-analytics-child='{ "menu": "what-is-ci" }'>What is CI?</a></li>
+            <li><a href="../docs/2.0/index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>How to Get Started on CircleCI</a></li>
+            <li><a href="../migrate-jenkins-to-circleci/index.html" data-analytics-child='{ "menu": "migrate-jenkins-to-circleci" }'>Migrate from Jenkins to CircleCI</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <a href="../index.html">
+          <img src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo-small margin-top-small" alt="CircleCI" />
+        </a>
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../blog/feed.xml" data-analytics="property menu=blog-feed" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" data-analytics="property menu=facebook" target="_blank" rel="noreferrer noopener" class="social-btn-facebook" title="Facebook">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" data-analytics="property menu=twitter" target="_blank" rel="noreferrer noopener" class="social-btn-twitter" title="Twitter">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" data-analytics="property menu=github" target="_blank" rel="noreferrer noopener" class="social-btn-github" title="GitHub">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" data-analytics="property menu=linkedin" target="_blank" rel="noreferrer noopener" class="social-btn-linkedin" title="LinkedIn">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="dark no-margin">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>Terms of Service</a></li>
+              <li><a href="../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>Privacy Policy</a></li>
+              <li><a href="../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie Policy</a></li>
+              <li><a href="../security/index.html" data-analytics-child='{ "menu": "security" }'>Security</a></li>
+              
+
+
+
+
+
+<li class="language-select">
+  <div class="dropup show">
+    <a class="dropdown-toggle-button" role="button" id="languageSelectDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+      <img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="Globe Icon" width="20" />
+      English (US)
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <div class="dropdown-menu"  aria-labelledby="languageSelectDropdown">
+      
+        
+        
+
+        
+        
+
+        
+          <a href="#" class="dropdown-item active">
+            English (US)
+          </a>
+        
+      
+        
+        
+
+        
+        
+
+        
+          <a href="../ja/continuous-integration/index.html"
+            class="dropdown-item"
+            hreflang="ja"
+            data-analytics-child='{ "menu": "japan" }'>
+            日本語
+          </a>
+        
+      
+    </div>
+  </div>
+</li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>© 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+    <div id="enterprise-form-thanks-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+        <p>You should receive an automated response notifying you that we received your info.
+          Someone from our Enterprise team will be reaching out to you shortly.</p>
+        <!--
+        <p>
+          For more information on the CircleCI Enterprise implementation, please visit our
+          documentation:
+          <a href="#">Getting started with CircleCI Enterpirse implementation</a>
+        </p>
+        -->
+        <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div id="modal-bg"></div>
+<div id="general-modal">
+  <div class="close"><img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-closemodal-e5465eb844ab16c421cfedfc19b69bbebfc2990b205a5a8e325d38f7a7cd78d2.svg" alt="close" /></div>
+  <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+  <br>
+  <p>You should receive an automated response notifying you that we received your info. Someone from our Enterprise team will be reaching out to you shortly.</p><br>
+  <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+</div>
+
+    <script data-cookieconsent="statistics" type="text/plain">
+  var _rollbarConfig = {
+    accessToken: '8a5b4f362a9944b09353878fbbf882f5',
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+     payload: { environment: "production" }
+  };
+ 
+  // Rollbar Snippet
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  // End Rollbar Snippet
+</script>
+
+    <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/vendor-a49dd70d950d55b6911baf7935064f4796e1638c4a3b6b348e6386167af435e1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/site-dca4c9937ce1eead459ba348f0282b29d812388970e9826d83e8321231c2b508.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/utils-f707b22267f4077c535e92f9ff89b6f592d17c8328cb78b34be05fe2b0f9306c.js" crossorigin="anonymous"></script>
+
+    
+    
+    
+      <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/long-form-b5536b5ed9664b64c28ac7f02d319797351bc983fcc718ea35280a2b728760b9.js" crossorigin="anonymous"></script>
+    
+    <script src="../../d3r49iyjzglexf.cloudfront.net/components/analytics-fa42612618fd7886484c95384d65c979f009952deb1ceda01cb0ac97d235897e.js" crossorigin="anonymous" data-cookieconsent="marketing" type="text/plain"></script>
+    <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/components/nav-d2238d7c5bbc619e382ae1b2ed585b8a9ae2e1a52d6887a6c3b410541adc39f3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/components/customFormFields-996f687ca7bbdb0097b9b408cf479355b17162b1c817dda84b36f9149e91fb47.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../d3r49iyjzglexf.cloudfront.net/ab-testing-2e8aef55d96bc43fed9de1bb15e029660c9dfd25df20eaa423698c77afd3e97e.js" crossorigin="anonymous"></script>
+  </body>
+
+<!-- Mirrored from circleci.com/continuous-integration/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:47:07 GMT -->
+</html>

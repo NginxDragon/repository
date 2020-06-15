@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from circleci.com/case-studies/greyfinch/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:10:25 GMT -->
+<head>
+    
+
+    <script id="Cookiebot" src="../../../consent.cookiebot.com/uc.js" data-cbid="a28b71f3-4d2e-4eac-93bc-34929948dd7d" type="text/javascript" async></script>
+    <script src="../../../cdn.optimizely.com/js/8188917468.js" data-cookieconsent="statistics" type="text/plain"></script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../../blog/feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../d3r49iyjzglexf.cloudfront.net/apple-touch-icon-f1ef1fb6f37fe36fdacd2dfdc11fb2edf1720083a9aa8648eeac81f0a69e8da8.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../../d3r49iyjzglexf.cloudfront.net/android-chrome-512x512-636549fcf54150d3184aa6e8395d79ca9bcdc9278210e947ce093372cc2004a4.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../d3r49iyjzglexf.cloudfront.net/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="150x150" href="../../../d3r49iyjzglexf.cloudfront.net/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../d3r49iyjzglexf.cloudfront.net/favicon-32x32-86c07d561af62a6d412c5465d401ebf50a8f304d97c165e30feb71868b891c7c.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../d3r49iyjzglexf.cloudfront.net/favicon-16x16-2f395f301d4ee767c0016c98f97561dc2ec4ddbae39cc895c9840a22467df08a.png">
+<link rel="manifest" href="https://d3r49iyjzglexf.cloudfront.net/site-90f0e3ca8a56223e86328049af75ddd9e6e4a6fdac600d0773f54f95e531f0cd.webmanifest">
+<link rel="mask-icon" href="https://d3r49iyjzglexf.cloudfront.net/safari-pinned-tab-251836a3ead2fbbebdd673dd680e8b01f1d8e5889cb3641a16893ad344f17d4a.svg" color="#04aa51">
+<link rel="shortcut icon" href="https://d3r49iyjzglexf.cloudfront.net/favicon-7821a60418a7ee3a7570d938fb95e809903dbfca7514b9245f1beef5d00da2d8.ico">
+<meta name="apple-mobile-web-app-title" content="CircleCI">
+<meta name="application-name" content="CircleCI">
+<meta name="msapplication-TileColor" content="#161616">
+<meta name="msapplication-square150x150logo" content="https://d3r49iyjzglexf.cloudfront.net/mstile-150x150-e0e68b19614d1b594800947225d05483564336ec629d74afb53cf3fe9d634d2a.png" />
+<meta name="theme-color" content="#ffffff">
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="alternate" hreflang="en" href="index.html">
+
+
+
+    <!-- adding canonical links, if they are specified in front matter /-->
+    
+
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/vendor-9130b6026c6317f2286994e037f189b0850a60286866eeb5039e622081496148.css">
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/vendors/lity-b8b6faa63fb76d33ead3adfe0a9148e43ea51ca7c3a5faa008b88ab2ffe321ef.css">
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/site-ef68796b9d5ee51b18504a38de8cbadc65de3a7bb274ac980510d0ce2018f9d1.css">
+    
+    
+    
+    
+
+<script type="text/javascript">
+  (function () {
+    var categoryOverride = null || null;
+    var nameOverride     = null;
+
+    var pageUrlParts = "/case-studies/greyfinch/".split('../../index.html').slice(1, -1);
+
+    // store as globals to read off of it later in analytics.js
+    window.analyticsPageProperties = {
+      categoryOverride: categoryOverride,
+      nameOverride: nameOverride,
+      pageUrlParts: pageUrlParts,
+    };
+  })();
+
+  window.thirdPartyIds = {
+    
+  };
+
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "blog"
+    },
+    page: {
+      lang: "en"
+    },
+    env: "production"
+  };
+</script>
+
+    
+      <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";}}();
+</script>
+<script data-cookieconsent="statistics" type="text/plain">
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+</script>
+
+      <!-- Start of Async Drift Code -->
+<script>
+  "use strict";
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('4hpgak4w2mc8');
+  var events = [
+    {
+    driftEvent: 'sidebarOpen',
+    eventName: 'opened_chat'
+    },
+    {
+    driftEvent: 'sidebarClose',
+    eventName: 'closed_chat'
+    },
+    {
+    driftEvent: 'message:sent',
+    eventName: 'message_sent_visitor'
+    },
+    {
+    driftEvent: 'message',
+    eventName: 'message_sent_team'
+    },
+    {
+    driftEvent: 'emailCapture',
+    eventName: 'captured_email'
+    },
+    {
+    driftEvent: 'scheduling:requestMeeting',
+    eventName: 'scheduled_meeting'
+    },
+    {
+    driftEvent: 'scheduling:meetingBooked',
+    eventName: 'meeting_invite_sent'
+    },
+    {
+    driftEvent: 'conversation:playbookDismissed',
+    eventName: 'closed_greeting'
+    },
+    {
+    driftEvent: 'conversation:playbookClicked',
+    eventName: 'clicked_chatbot'
+    },
+    {
+    driftEvent: 'conversation:buttonClicked',
+    eventName: 'clicked_button'
+    },
+    {
+    driftEvent: 'conversation:firstInteraction',
+    eventName: 'first_interaction'
+    },
+  ];
+  events.map(event => {
+    drift.on(event.driftEvent, function(data) {
+      var driftAnalyticsProps = {
+        name: event.eventName,
+        category: 'drift'
+      }
+      var eventProps = Object.assign({}, analyticsTrackProps(), driftAnalyticsProps);
+      trackEvent('drift-interaction', eventProps);
+    });
+  });
+</script>
+<!-- End of Async Drift Code -->
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>Managing urgent dental care during COVID-19 - CircleCI</title>
+
+
+
+  <meta property="og:title" content="Managing urgent dental care during COVID-19" />
+
+
+
+  <meta name="description" content="Learn how the Urgent Hub development team used CircleCI to go from idea to delivery in less than six days." />
+  <meta property="og:description" content="Learn how the Urgent Hub development team used CircleCI to go from idea to delivery in less than six days." />
+
+
+
+  <link rel="canonical" href="index.html" />
+  <meta property="og:url" content="https://circleci.com/case-studies/greyfinch/" />
+
+
+
+  <meta property="og:site_name" content="CircleCI" />
+
+
+
+<meta property="og:image" content="https://d3r49iyjzglexf.cloudfront.net/circleci-logo-horizontal-twitter-4635639cabbe09cfb3127f4c71fd8276c081df46c1360fb11fee894f6d02be82.png" />
+  
+  
+
+
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2020-06-11T18:31:39-07:00" />
+
+
+
+
+
+
+  
+    <meta name="twitter:card" content="summary_large_image" />
+  
+
+  <meta name="twitter:site" content="@circleci" />
+
+  
+    <meta name="twitter:creator" content="@Darío Cravero" />
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+
+
+    "@type": "BlogPosting",
+
+
+
+
+
+    "headline": "Managing urgent dental care during COVID-19",
+
+
+
+    "image": "https://d3r49iyjzglexf.cloudfront.net/circleci-logo-horizontal-twitter-4635639cabbe09cfb3127f4c71fd8276c081df46c1360fb11fee894f6d02be82.png",
+
+
+
+    "datePublished": "2020-06-11T18:31:39-07:00",
+
+
+
+    "description": "Learn how the Urgent Hub development team used CircleCI to go from idea to delivery in less than six days.",
+
+
+
+    "logo": "https://d3r49iyjzglexf.cloudfront.net/circleci-logo-stacked-fb-657e221fda1646a7e652c09c9fbfb2b0feb5d710089bb4d8e8c759d37a832694.png",
+
+
+
+
+    "url": "https://circleci.com/case-studies/greyfinch/"
+  }
+</script>
+
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body class=" ">
+    <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script data-cookieconsent="marketing" type="text/plain">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W9HDVK');
+</script>
+
+    <script id="modal-objects">
+var modals = {
+  'generic': {
+    header: "Thank You",
+    content: "We will process your request as soon as possible."
+  },
+  'error': {
+    header: "There's been an error.",
+    content: "It looks like there was a problem in processing your request. This may be due to a script blocker add-on, or other setting that blocks JavaScript from functioning. If you have a script blocker or something similar, please turn it off to ensure an optimal experience.<br><br>"
+  },
+  'selfProvision': {
+    header: "Thank You",
+    content: "We are processing your trial request and will email you your trial key. In the meantime, check out our <a href='https://circleci.com/docs/enterprise/single-box/'>installation documentation</a>.",
+    execute: function () {
+      trackEvent("enterprise-install-submitted", analyticsTrackProps());
+    }
+  },
+  'unsubscribe': {
+    header: "Thank You",
+    content: "You have successfully unsubscribed from our list, and will no longer receive OS X image and feature updates."
+  },
+  // /contact-us
+  'enterpriseContactThankYou': {
+    header: "Thank you!",
+    content: "We'll be in touch within one business day."
+  },
+  // /enterprise-trial-install (SPT form "other questions" option)
+  'enterpriseSPTOtherQuestionsThankYou': {
+    header: "Thank you!",
+    content: "We'll be in touch within one business day."
+  },
+  'enterpriseSPTTrial': {
+    header: "Thank you for signing up for a trial!",
+    content: "A member of our solutions team will get back to you shortly to get your trial kicked off.<br><br>"
+  },
+  'subscribe': {
+    header: "Thank you",
+    content: "The latest news in software development and engineering productivity coming your way."
+  },
+  'partnershipConfirm': {
+    header: "Thank you for your interest",
+    content: "A member of our partnerships team will be in touch with you shortly."
+  },
+  'governmentConfirm': {
+    header: "Thank you for your interest",
+    content: "A member of our Government team will be in touch with you shortly."
+  },
+  'reportEmail': {
+    header: "Thank You",
+    content: "The report has been sent to the email address provided."
+  },
+  'usageEarlyAccess': {
+    header: "Thank You",
+    content: "We'll be in touch."
+  },
+   'NewPlanAvailability': {
+    header: "Thank you for your interest",
+    content: "We will be in touch when the new plan is available."
+  }
+};
+
+// This is a no-op change to bump the file hash; see CIRCLE-14243. You may remove 
+// this if you are making other changes to this file, but DO NOT remove it without
+// changing something else that will alter the file hash (comments are not
+// enough FYI).
+var __dummy = '12345';
+
+</script>
+
+    
+      
+
+<nav class="nav-toggle two ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <a href="#main" class="nav-skip-button">
+          Skip to content
+        </a>
+
+        <div class="widescreen">
+          <a href="../../index.html" class="logo" data-analytics="top-nav-logo">
+            
+            
+            <img src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo" alt="CircleCI Home" />
+          </a>
+
+          
+          <ul class="left-links main-nav">
+            <li class="nav-item ">
+              <a href="../../product/index.html" data-analytics="top-nav-product">
+                Product
+              </a>
+              <div class="submenu">
+                <ul class="subnav" data-analytics="topnav-product-clicked">
+                  <li class="subnav-item" data-analytics="top-nav-product-overview"><a href="../../product/index.html">Overview</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-how-it-works"><a href="../../product/index.html#how-it-works">How It Works</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-features"><a href="../../product/index.html#features">Features</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-build-environments"><a href="../../build-environments/index.html">Build Environments</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-hosting-options"><a href="../../product/index.html#hosting-options">Hosting Options</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-integrations"><a href="../../integrations/index.html">Integrations</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-jenkins"><a href="../../migrate-jenkins-to-circleci/index.html">Migrate from Jenkins</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item " data-analytics="top-nav-pricing">
+              <a href="../../pricing/index.html">
+                Pricing
+              </a>
+            </li>
+
+            <li class="nav-item " data-analytics="top-nav-enterprise">
+              <a href="../../enterprise/index.html">
+                Enterprise
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                Developers
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-developer-hello-world"><a href="../../docs/2.0/hello-world/index.html">Hello World</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-documentation"><a href="../../docs/index.html">Documentation</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-community-forum"><a href="https://discuss.circleci.com/" target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-orbs"><a href="../../orbs/index.html">Orbs</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-api"><a href="../../docs/api/v2/index.html#circleci-api">API</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-oss"><a href="../../open-source/index.html">Open Source</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="default-item nav-item ">
+              <a href="../../about/index.html" data-analytics="top-nav-company">
+                Company
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-company-about"><a href="../../about/index.html">About Us</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-case-studies"><a href="../../customers/index.html">Case Studies</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-blog"><a href="../../blog/index.html">Blog</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-jobs"><a href="../../careers/index.html">Careers</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-contact-us"><a href="../../contact/index.html">Contact Us</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-partner-with-us"><a href="../../partners/index.html">Partner With Us</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="right-links main-nav">
+            <li class="default-item nav-item">
+              <a href="../../contact/index.html" data-analytics="top-nav-contact-us">
+                Contact Us
+              </a>
+            </li>
+            <li class="default-item nav-item">
+              <a href="#">
+                Support
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-support-documentation"><a href="../../docs/index.html" target="_blank" rel="noreferrer noopener">Docs</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-training"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noreferrer noopener">Training</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-get-support"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noreferrer noopener">Get Support</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-system-status"><a href="https://status.circleci.com/" target="_blank" rel="noreferrer noopener">System Status</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-feature-requests"><a href="https://ideas.circleci.com/" target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-premium-support"><a href="../../support/premium-support/index.html">Premium Support</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="divider-left nav-item visitor-item">
+              <a href="https://circleci.com/vcs-authorize/" data-hj-masked data-analytics="top-nav-login">
+                Log In
+              </a>
+            </li>
+            <li class="nav-item visitor-item button-wrapper">
+              <a class="button-solid small nav-size" href="../../signup/index.html" data-analytics-action="signup-clicked" data-analytics-location="nav" data-optimizely="signup_button_clicked" data-analytics="top-nav-signup">
+                Sign Up
+              </a>
+            </li>
+            <li class="dashboard-link desktop-nav divider-left">
+              <a href="https://circleci.com/dashboard" data-analytics="top-nav-go-to-app">
+                Go to App
+              </a>
+            </li>
+          </ul>
+          
+
+          
+        </div>
+
+        <div class="narrowscreen">
+          
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navigation" aria-expanded="false" aria-controls="#mobile-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+          
+          <a href="../../index.html" data-analytics="top-nav-logo"><img class="logo" src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" alt="CircleCI Home" /></a>
+
+          
+          <span class="login">
+            <a href="https://circleci.com/vcs-authorize/" data-hj-masked class="mobile-nav signup visitor-item" data-analytics-location="nav" data-analytics="top-nav-login">Log In</a>
+            <a href="https://circleci.com/dashboard" class="dashboard-link mobile-nav" data-analytics="top-nav-go-to-app">Go to App</a>
+          </span>
+
+          <ul class="dropdown-menu2" id="mobile-navigation">
+            <li><a href="../../signup/index.html" data-analytics-action="signup-clicked" data-optimizely="signup_button_clicked" class="button-solid nav-size full-width" data-analytics="top-nav-signup">Start Building for Free</a></li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading" data-analytics="top-nav-product">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Product
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-product-overview"><a href="../../product/index.html">Overview</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-how-it-works"><a href="../../product/index.html#how-it-works">How It Works</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-features"><a href="../../product/index.html#features">Features</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-build-environments"><a href="../../build-environments/index.html">Build Environments</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-hosting-options"><a href="../../product/index.html#hosting-options">Hosting Options</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-integrations"><a href="../../integrations/index.html">Integrations</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-jenkins"><a href="../../migrate-jenkins-to-circleci/index.html">Migrate from Jenkins</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item" data-analytics="top-nav-pricing"><a href="../../pricing/index.html">Pricing</a></li>
+            <li class="dropdown-menu--item" data-analytics="top-nav-enterprise"><a href="../../enterprise/index.html">Enterprise</a></li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Developers
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-developer-hello-world"><a href="../../docs/2.0/hello-world/index.html">Hello World</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-documentation"><a href="../../docs/index.html">Documentation</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-community-forum"><a href="https://discuss.circleci.com/" target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-integrations"><a href="../../orbs/index.html">Orbs</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-api"><a href="../../docs/api/v2/index.html#circleci-api">API</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-oss"><a href="../../open-source/index.html">Open Source</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Company
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-company-about"><a href="../../about/index.html">About Us</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-case-studies"><a href="../../customers/index.html">Case Studies</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-blog"><a href="../../blog/index.html">Blog</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-jobs"><a href="../../careers/index.html">Careers</a></li>
+                <li class="subnav-item" data-analytics="top-nav-contact-us"><a href="../../contact/index.html">Contact Us</a></li>
+                <li class="subnav-item" data-analytics="top-nav-partner-with-us"><a href="../../partners/index.html">Partner With Us</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item arrow collapsed"><i class="fa fa-angle-right" aria-hidden="true"></i>Support
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-support-documentation"><a href="../../docs/index.html" target="_blank" rel="noreferrer noopener">Docs</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-training"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noreferrer noopener">Training</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-get-support"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noreferrer noopener">Get Support</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-system-status"><a href="https://status.circleci.com/" target="_blank" rel="noreferrer noopener">System Status</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-feature-requests"><a href="https://ideas.circleci.com/" target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-premium-support"><a href="../../support/premium-support/index.html">Premium Support</a></li>
+              </ul>
+            </li>
+            
+              <li class="dropdown-menu--item arrow collapsed"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="globe" width="20">
+                English (US)
+                <ul class="subnav">
+                  
+                    
+                    
+
+                    
+
+                    
+                  
+                    
+                    
+
+                    
+
+                    
+                      <li class="subnav-item">
+                        <a
+                          href="../../ja/case-studies/greyfinch/index.html"
+                          hreflang="ja"
+                        >
+                          日本語
+                        </a>
+                      </li>
+                    
+                  
+                </ul>
+              </li>
+              
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+
+    <main id="main">
+      
+      <section class="hero bg-black-light-gradient">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <div class="hero-logo-set">
+          <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-white-94d7669a78acb763db258e81a3c3b034ef1eb9bca7577f5a4e43927a1eb6ce98.svg" alt="CircleCI" />
+          <i class="fa fa-plus spacer text-white" aria-hidden="true"></i>
+          <span class="sr-only">+</span>
+          <img
+            src="../../../d3r49iyjzglexf.cloudfront.net/logos-external/greyfinch-hero-b4b2390fbdced6af9e2bf0bc7417fd712f501ae384b026178ad057106e15d9c2.png"
+            class=" small "
+            alt=""
+          />
+        </div>
+        <div class="row">
+          <div class="col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">
+            <hr class="blue-highlight">
+          </div>
+        </div>
+        <h1> Managing urgent dental care during COVID-19 </h1>
+        <p class="large">Greyfinch delivers Urgent Hub in six days using CircleCI</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h3>The Challenge</h3>
+<p>Timing was of the essence for engineer Darío Cravero and designer Tom Parandyk, as they hit the drawing board to identify the best way to help Greyfinch’s customers respond to the COVID-19 outbreak. “It was just Tom and I working closely with the product owners. After some brainstorming, we realized we had a model in place from a previous project that we could use as the base for Urgent Hub, and within one day we knew what we needed to do,” said Darío. 
+<br /><br />
+Simplicity and automation would be critical to the success of this project, so the team needed a tech stack that got them further without getting in the way. As a distributed team, being able to build and make changes asynchronously was important, as well.
+<br /><br />
+“There is generally a lot of burden on developers when it comes to connecting applications to one another and making sure things flow; it takes time.” said Darío. “We needed a way to see all the moving pieces in order to communicate and make changes as quickly as possible.”
+<br /><br /></p>
+<h3>The Solution</h3>
+<p>With the clock ticking, the key for this team was to iterate and automate quickly.
+<br /><br />
+“We used a basic model where we manually released to a production branch and synced the production branch with master,” said Tom. “This was a simple, but useful flow to release the changes. Whatever CircleCI picked up went into production – we didn’t need to think or question if something happened. With CircleCI, it was clear when something had either failed or succeeded, consistently.”
+<br /><br />
+As the project ramped up and the team continued building, it was important to stay nimble. While CircleCI provided a simple way to deploy the app, Views Tools was another key component that kept effective communication and decision-making moving.
+<br /><br />
+“When we deploy multiple times to the same branch, the deployment tends to fail. CircleCI’s clean UI provided the ability to see when something failed. It allowed me to make a quick fix release, forget about it, and move on to my next task,” said Tom. “While Views Tools helped me see and test my ideas in a dev environment, CircleCI provided valuable clarity around the release flow.”
+<br /><br />
+“We managed to achieve a high level of automation with Views Tools and CircleCI, which helped us make the product-building process as smooth as possible.” said Darío.
+<br /><br /></p>
+<h3>The Results</h3>
+<p>The COVID-19 <a href="https://greyfinch.com/urgent-hub/" target="_blank" rel="noreferrer noopener">Urgent Hub</a> went from idea to fruition in less than six days, and booked more than 70 dental appointments on the first day it went live. The hub is currently serving patients in Arkansas and Colorado, with plans to expand across the U.S.
+<br /><br />
+“For us, it’s a big success to redevelop a platform and make it work for a completely unique purpose,” said Dario. “Next up for the Urgent Hub project is to expand into eyecare and introduce the ability to book virtual visits. CircleCI will be foundational for this task,” said Darío.</p>
+<h3>Why CircleCI</h3>
+<p>The <a href="https://greyfinch.com/" target="_blank" rel="noreferrer noopener">Greyfinch</a> practice management software company quickly needed to build a solution for dental offices to schedule urgent appointments amid the COVID-19 outbreak. The distributed tech team they hired for the task needed a simple CI/CD solution that could help them build both efficiently and asynchronously. 
+<br /><br />
+“I’ve used Jenkins but we prefer CircleCI because it doesn’t get in the way. It has a simple UI and setting it up in our project was super fast,” said engineer, Darío Cravero. “Automation made this process as smooth as possible. CircleCI facilitated the communication that needed to happen.”</p>
+
+<hr class="hr-light" />
+
+<div class="component quotes-slider zebra">
+  <div class=" container-fluid ">
+    <div class="row margin-vertical-medium">
+      <div class="col-md-12">
+        <div class="quotes-slider-container">
+          
+            <div class="quote">
+              
+
+
+  
+  
+    
+    
+      
+    
+  
+    
+    
+      
+      
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="quote-container">
+  <div class="col-md-10 col-md-offset-1 text-center">
+    
+      <div class="quote-image-mask quote-image-mask-portrait">
+        <img src="../../../d3r49iyjzglexf.cloudfront.net/people/dario-cravero-ba4a4088e035c8d86d3da7222bbb057975044c6698f9057f5a53ce6078fc94a9.jpg" alt="Darío Cravero Portrait" />
+      </div>
+    
+  </div>
+
+  <div class="margin-top-small col-md-10 col-md-offset-1 text-center">
+    <blockquote>“I’ve used Jenkins, but we prefer CircleCI because it doesn’t get in the way. It has a simple UI and setting it up in our project was super fast.”</blockquote>
+  </div>
+
+  <div class="col-md-10 col-md-offset-1">
+    <p class="large margin-top-small text-center">
+      
+        <strong>Darío Cravero</strong>
+        
+          <br />
+          
+            
+  Software Engineer
+
+          
+        
+      
+    </p>
+  </div>
+</div>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="hr-light" />
+
+
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        
+        
+        
+          <h4>Languages</h4>
+          <p>ReactJS<br>NodeJS</p>
+        
+        
+          <h4>Stack</h4>
+          <p>CircleCI<br>AWS<br>Views Tools<br>Amplitude<br>Postgres<br>Hasura<br>Docker</p>
+        
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component banner inverted " >
+  
+    <div class="container relative">
+      <div class="row  margin-vertical-large ">
+        <div class="col-md-12 text-center">
+          <h2>Ship quality code, faster.</h2>
+          <div class="row">
+            <div class="col-sm-2 col-xs-4 col-xs-offset-4 col-sm-offset-5 text-center">
+              <hr class="blue-highlight">
+            </div>
+          </div>
+
+          
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <p class="large margin-top-small">
+                  Better software deserves better tools.
+                </p>
+              </div>
+            </div>
+          
+        </div>
+        <div class="col-md-12 text-center">
+          
+            <div class="margin-top-medium text-center-small">
+              <a href="../../signup/index.html"
+                class="button-solid"
+                
+                >
+                  
+                    Start Building for Free
+                  
+                </a>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+      <footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Product</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../product/index.html" data-analytics-child='{ "menu": "product" }'>Overview</a></li>
+            <li><a href="../../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>Pricing</a></li>
+            <li><a href="../../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>Integrations</a></li>
+            <li><a href="../../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>Open Source</a></li>
+            <li><a href="../../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>Enterprise</a></li>
+            <li><a href="../../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../docs/index.html" data-analytics-child='{ "menu": "documentation" }'>Documentation</a></li>
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noreferrer noopener">Training</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noreferrer noopener">Get Support</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noreferrer noopener">System Status</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+            <li><a href="../../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>Premium Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../blog/index.html" data-analytics-child='{ "menu": "blog" }'>Blog</a></li>
+            <li><a href="../../resources/index.html#ebooks" data-analytics-child='{ "menu": "ebooks" }'>Ebooks</a></li>
+            <li><a href="../../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>Case Studies</a></li>
+            <li><a href="../../resources/index.html#reports" data-analytics-child='{ "menu": "reports" }'>Reports</a></li>
+            <li><a href="../../resources/index.html#videos" data-analytics-child='{ "menu": "videos" }'>Videos</a></li>
+            <li><a href="../../resources/index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>Webinars</a></li>
+            <li><a href="../../resources/events/index.html" data-analytics-child='{ "menu": "events" }'>Events</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../about/index.html" data-analytics-child='{ "menu": "about-us" }'>About Us</a></li>
+            <li><a href="../../careers/index.html" data-analytics-child='{ "menu": "careers" }'>Careers <span class="text-blue">(We’re Hiring!)</span></a></li>
+            <li><a href="../../about/team/index.html" data-analytics-child='{ "menu": "team" }'>Team</a></li>
+            <li><a href="../../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>Contact Us</a></li>
+            <li><a href="../../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>Partner With Us</a></li>
+            <li><a href="../../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Getting Started</h6>
+          <ul>
+            <li><a href="../../continuous-integration/index.html" data-analytics-child='{ "menu": "what-is-ci" }'>What is CI?</a></li>
+            <li><a href="../../docs/2.0/index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>How to Get Started on CircleCI</a></li>
+            <li><a href="../../migrate-jenkins-to-circleci/index.html" data-analytics-child='{ "menu": "migrate-jenkins-to-circleci" }'>Migrate from Jenkins to CircleCI</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <a href="../../index.html">
+          <img src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo-small margin-top-small" alt="CircleCI" />
+        </a>
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../../blog/feed.xml" data-analytics="property menu=blog-feed" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" data-analytics="property menu=facebook" target="_blank" rel="noreferrer noopener" class="social-btn-facebook" title="Facebook">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" data-analytics="property menu=twitter" target="_blank" rel="noreferrer noopener" class="social-btn-twitter" title="Twitter">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" data-analytics="property menu=github" target="_blank" rel="noreferrer noopener" class="social-btn-github" title="GitHub">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" data-analytics="property menu=linkedin" target="_blank" rel="noreferrer noopener" class="social-btn-linkedin" title="LinkedIn">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="dark no-margin">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>Terms of Service</a></li>
+              <li><a href="../../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>Privacy Policy</a></li>
+              <li><a href="../../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie Policy</a></li>
+              <li><a href="../../security/index.html" data-analytics-child='{ "menu": "security" }'>Security</a></li>
+              
+
+
+
+
+
+<li class="language-select">
+  <div class="dropup show">
+    <a class="dropdown-toggle-button" role="button" id="languageSelectDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+      <img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="Globe Icon" width="20" />
+      English (US)
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <div class="dropdown-menu"  aria-labelledby="languageSelectDropdown">
+      
+        
+        
+
+        
+        
+
+        
+          <a href="#" class="dropdown-item active">
+            English (US)
+          </a>
+        
+      
+        
+        
+
+        
+        
+
+        
+          <a href="../../ja/case-studies/greyfinch/index.html"
+            class="dropdown-item"
+            hreflang="ja"
+            data-analytics-child='{ "menu": "japan" }'>
+            日本語
+          </a>
+        
+      
+    </div>
+  </div>
+</li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>© 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+    <div id="enterprise-form-thanks-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+        <p>You should receive an automated response notifying you that we received your info.
+          Someone from our Enterprise team will be reaching out to you shortly.</p>
+        <!--
+        <p>
+          For more information on the CircleCI Enterprise implementation, please visit our
+          documentation:
+          <a href="#">Getting started with CircleCI Enterpirse implementation</a>
+        </p>
+        -->
+        <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div id="modal-bg"></div>
+<div id="general-modal">
+  <div class="close"><img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-closemodal-e5465eb844ab16c421cfedfc19b69bbebfc2990b205a5a8e325d38f7a7cd78d2.svg" alt="close" /></div>
+  <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+  <br>
+  <p>You should receive an automated response notifying you that we received your info. Someone from our Enterprise team will be reaching out to you shortly.</p><br>
+  <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+</div>
+
+    <script data-cookieconsent="statistics" type="text/plain">
+  var _rollbarConfig = {
+    accessToken: '8a5b4f362a9944b09353878fbbf882f5',
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+     payload: { environment: "production" }
+  };
+ 
+  // Rollbar Snippet
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  // End Rollbar Snippet
+</script>
+
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/vendor-a49dd70d950d55b6911baf7935064f4796e1638c4a3b6b348e6386167af435e1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/site-dca4c9937ce1eead459ba348f0282b29d812388970e9826d83e8321231c2b508.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/utils-f707b22267f4077c535e92f9ff89b6f592d17c8328cb78b34be05fe2b0f9306c.js" crossorigin="anonymous"></script>
+
+    
+    
+    
+    <script src="../../../d3r49iyjzglexf.cloudfront.net/components/analytics-fa42612618fd7886484c95384d65c979f009952deb1ceda01cb0ac97d235897e.js" crossorigin="anonymous" data-cookieconsent="marketing" type="text/plain"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/components/nav-d2238d7c5bbc619e382ae1b2ed585b8a9ae2e1a52d6887a6c3b410541adc39f3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/components/customFormFields-996f687ca7bbdb0097b9b408cf479355b17162b1c817dda84b36f9149e91fb47.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ab-testing-2e8aef55d96bc43fed9de1bb15e029660c9dfd25df20eaa423698c77afd3e97e.js" crossorigin="anonymous"></script>
+  </body>
+
+<!-- Mirrored from circleci.com/case-studies/greyfinch/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:10:26 GMT -->
+</html>

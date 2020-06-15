@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="">
+
+<!-- Mirrored from circleci.com/docs/ja/2.0/env-vars/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:33:41 GMT -->
+<head>
+	<script src="../../../../../cdn.optimizely.com/js/8188917468.js"></script>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="description" content="CircleCI 2.0 で利用可能な環境変数一覧">
+	
+	<link rel="canonical" href="index.html">
+
+	<link href="https://d3r49iyjzglexf.cloudfront.net/favicon-066b37ff00f0f968b903c13ae88b5573b62665aea8fbe91bb61c55dfa9446523.ico" rel="icon" type="image/png" />
+  <link rel="stylesheet" href="../../../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../../../assets/css/site.css" />
+	<link rel="stylesheet" href="../../../assets/css/spacing.css" />
+	<link rel="stylesheet" href="../../../assets/css/buttons.css" />
+	<link rel="stylesheet" href="../../../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../../../assets/css/syntax.css" />
+	<link rel="stylesheet" href="../../../assets/css/jquery.navgoco.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<!-- End  -->
+	<link rel="stylesheet" href="../../../assets/css/main.css" />
+	<link rel='stylesheet' href="../../../assets/css/mobile.css" media="screen and (max-width: 800px)" />
+	<link rel="stylesheet" href="../../../assets/css/footer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../../cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+	<link rel="stylesheet" href="../../../assets/css/asciidoc.css">
+	<!--link rel="stylesheet" href="/docs/assets/css/asciidoc-pygments.css"-->
+	<!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script-->
+	<title>環境変数の使い方 - CircleCI</title>
+	<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+
+  var pageCategory = "docs";
+  // slice off the slashes on either end
+  var pageName     = "/ja/2.0/env-vars/".slice(1, -1) || "default";
+
+  var properties = {
+    "title"      : "環境変数の使い方",
+    "short-title": "環境変数の使い方",
+    "categories" : ["configuring-jobs"],
+    "description": "CircleCI 2.0 で利用可能な環境変数一覧",
+    "collection": "cci2_ja"
+  };
+
+  analytics.page(pageCategory, pageName, properties);
+  }}();
+</script>
+
+
+	<!-- Instant Search CDN links /-->
+	<link rel="stylesheet" type="text/css" href="../../../../../cdn.jsdelivr.net/npm/instantsearch.js%402.10.2/dist/instantsearch.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2"></script>
+	<link rel="stylesheet" type="text/css" href="../../../../../cdn.jsdelivr.net/npm/instantsearch.js%402.10.2/dist/instantsearch-theme-algolia.min.css">
+	<script src="../../../../../cdn.jsdelivr.net/npm/js-cookie%402.2.0/src/js.cookie.min.js"></script>
+</head>
+
+<body class="">
+
+	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9HDVK');</script>
+
+
+
+<!-- instant hit template container /-->
+<div style="display:none;">
+	<div id="hits-template">
+		<h2>Search Results for "<span id="search-term-display"></span>"</h2>
+		<div id="instant-hits"></div>
+	</div>
+</div>
+<div class="outer">
+	<nav class="nav-toggle two">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="#main" class="nav-skip-button">
+          Skip to content
+        </a>
+
+        <div class="widescreen">
+          <a href="../../../../ja/index.html" class="logo"><img src="../../../assets/img/logos/logo-wordmark.svg" class="logo" alt="CircleCI Home"></a>
+
+
+          <ul class="left-links main-nav">
+            <li class="nav-item">
+<a href="../../../../ja/product/index.html">Product</a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../../../ja/product/index.html">Overview</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/product/index.html#how-it-works">How It Works</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/product/index.html#features">Features</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/build-environments/index.html">Build Environments</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/product/index.html#hosting-options">Hosting Options</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/integrations/index.html">Integrations</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="../../../../ja/pricing/index.html">Pricing</a></li>
+            <li class="nav-item"><a href="../../../../ja/enterprise/index.html">Enterprise</a></li>
+            <li class="nav-item">
+              <a href="#">
+                Developers
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../hello-world/index.html">Hello World</a></li>
+                  <li class="subnav-item"><a href="../../index.html">Documentation</a></li>
+                  <li class="subnav-item"><a href="https://discuss.circleci.com/" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+                  <li class="subnav-item"><a href="../../../../orbs/index.html">Orbs</a></li>
+                  <li class="subnav-item"><a href="../../../api/v2/index.html#circleci-api">API</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/open-source/index.html">Open Source</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="default-item nav-item">
+<a href="../../../../ja/about/index.html">Company</a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../../../ja/about/index.html">About Us</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/customers/index.html">Case Studies</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/blog/index.html">Blog</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/careers/index.html">Careers</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/contact/index.html">Contact Us</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/partners/index.html">Partner With Us</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="right-links main-nav">
+            <li class="default-item nav-item">
+              <a href="../../../../ja/contact/index.html" data-analytics="top-nav-contact-us">
+                Contact Us
+              </a>
+            </li>
+            <li class="default-item nav-item">
+              <a href="#">
+                Support
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noopener noreferrer">Training</a></li>
+                  <li class="subnav-item"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noopener noreferrer">Get Support</a></li>
+                  <li class="subnav-item"><a href="https://status.circleci.com/" target="_blank" rel="noopener noreferrer">System Status</a></li>
+                  <li class="subnav-item"><a href="https://ideas.circleci.com/" target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+                  <li class="subnav-item"><a href="../../../../ja/support/premium-support/index.html">Premium Support</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="divider-left nav-item visitor-item"><a href="../../../../ja/vcs-authorize/index.html" data-hj-masked>Log In</a></li>
+            <li class="nav-item visitor-item"><a class="btn-primary small" href="../../../../ja/signup/index.html" data-analytics-action="signup-clicked" data-analytics-location="nav" data-optimizely="signup_button_clicked">Sign Up</a></li>
+            <li class="dashboard-link desktop-nav divider-left"><a href="https://circleci.com/dashboard">Go to app</a></li>
+          </ul>
+
+        </div>
+
+        <div class="narrowscreen">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navigation" aria-expanded="false" aria-controls="#mobile-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <a href="../../../../index.html"><img class="logo" src="../../../assets/img/logos/logo-wordmark.svg" alt="CircleCI Home"></a>
+
+
+          <span class="login">
+            <a href="../../../../ja/vcs-authorize/index.html" data-hj-masked class="mobile-nav signup visitor-item" data-analytics-location="nav">Log In</a>
+            <a href="https://circleci.com/dashboard" class="dashboard-link mobile-nav">Go to app</a>
+          </span>
+
+          <ul class="dropdown-menu2" id="mobile-navigation">
+            <li><a href="../../../../ja/signup/index.html" data-analytics-action="signup-clicked" data-optimizely="signup_button_clicked" class="btn-primary">Sign Up for Free</a></li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Product
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../../../ja/product/index.html">Overview</a></li>
+                <li class="subnav-item"><a href="../../../../ja/product/index.html#how-it-works">How It Works</a></li>
+                <li class="subnav-item"><a href="../../../../ja/product/index.html#features">Features</a></li>
+                <li class="subnav-item"><a href="../../../../ja/build-environments/index.html">Build Environments</a></li>
+                <li class="subnav-item"><a href="../../../../ja/product/index.html#hosting-options">Hosting Options</a></li>
+                <li class="subnav-item"><a href="../../../../ja/integrations/index.html">Integrations</a></li>
+              </ul>
+            </li>
+            <li class="border-bottom"><a href="../../../../ja/pricing/index.html">Pricing</a></li>
+            <li class="border-bottom"><a href="../../../../ja/enterprise/index.html">Enterprise</a></li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Developers
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../hello-world/index.html">Getting Started</a></li>
+                <li class="subnav-item"><a href="../../index.html">Documentation</a></li>
+                <li class="subnav-item"><a href="https://discuss.circleci.com/" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+                <li class="subnav-item"><a href="../../../../orbs/index.html">Orbs</a></li>
+                <li class="subnav-item"><a href="../../../api/v2/index.html#circleci-api">API</a></li>
+                <li class="subnav-item"><a href="../../../../ja/open-source/index.html">Open Source</a></li>
+              </ul>
+            </li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Company
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../../../ja/about/index.html">About Us</a></li>
+                <li class="subnav-item"><a href="../../../../ja/customers/index.html">Case Studies</a></li>
+                <li class="subnav-item"><a href="../../../../ja/blog/index.html">Blog</a></li>
+                <li class="subnav-item"><a href="../../../../ja/careers/index.html">Careers</a></li>
+                <li class="subnav-item"><a href="../../../../ja/contact/index.html">Contact Us</a></li>
+                <li class="subnav-item"><a href="../../../../ja/partners/index.html">Partner With Us</a></li>
+              </ul>
+            </li>
+            <li class="arrow collapsed border-bottom">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              Support
+              <ul class="subnav">
+                <li class="subnav-item"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noopener noreferrer">Training</a></li>
+                <li class="subnav-item"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noopener noreferrer">Get Support</a></li>
+                <li class="subnav-item"><a href="https://status.circleci.com/" target="_blank" rel="noopener noreferrer">System Status</a></li>
+                <li class="subnav-item"><a href="https://ideas.circleci.com/" target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+                <li class="subnav-item"><a href="../../../../ja/support/premium-support/index.html">Premium Support</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+	<div class="main-searchbar">
+  <form>
+    <div id="search-box">
+      <!-- SearchBox widget will appear here -->
+    </div>
+  </form>
+</div>
+	<!-- MOBILE SUBNAV /-->
+<div class="sidebar-mobile-wrapper">
+  <!-- DISPLAY ITEM /-->
+  <div class="current-item">
+    
+    
+    
+      <div class="mobile-sidebar-item " data-id="welcome">
+        
+          <img class="icon" src="../../../assets/docs/welcome-f7457826e96dddba0bfad601a1ed3736a5d867782abc501dd6a0eb69a1da7443.svg" integrity="sha256-90V4Jult3boL+tYBoe03NqXYZ3gqvFAd1qDraaHadEM=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>ようこそ</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="getting-started">
+        
+          <img class="icon" src="../../../assets/docs/start-26069d6eae162cde390e2333e1817966e90ab1cb2f2688620384328a98160057.svg" integrity="sha256-Jgadbq4WLN45DiMz4YF5ZukKscsvJohiA4QyipgWAFc=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>はじめよう</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="configuration">
+        
+          <img class="icon" src="../../../assets/docs/config-16429d8b407e1b8b926594a981f06fb62cae6415313a94bf0c174d3227e38548.svg" integrity="sha256-FkKdi0B+G4uSZZSpgfBvtiyuZBUxOpS/DBdNMifjhUg=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>設定</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="projects">
+        
+          <img class="icon" src="../../../assets/docs/project-c4d267d466adbd1ad6eb3b0da8954c433a075ff2a773cc93eb4f789b20da6444.svg" integrity="sha256-xNJn1GatvRrW6zsNqJVMQzoHX/Knc8yT6094myDaZEQ=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>プロジェクト</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="jobs">
+        
+          <img class="icon" src="../../../assets/docs/builds-6c2268e22c2dc3588ebbd7f471e8545a8d22cc79c03737df0ee02c3074bf0e60.svg" integrity="sha256-bCJo4iwtw1iOu9f0cehUWo0izHnANzffDuAsMHS/DmA=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>ジョブ</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="deployment">
+        
+          <img class="icon" src="../../../assets/docs/deploy-49456c50980896bf09bb80c1eb4e1ee9234fc0bc7193d8c17154a905424aeb0b.svg" integrity="sha256-SUVsUJgIlr8Ju4DB604e6SNPwLxxk9jBcVSpBUJK6ws=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>デプロイメント</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="reference">
+        
+          <img class="icon" src="../../../assets/docs/reference-caddd7b03de64e941b60cfba247b91f4d2e040f234876ed242c7764878c60412.svg" integrity="sha256-yt3XsD3mTpQbYM+6JHuR9NLgQPI0h27SQsd2SHjGBBI=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>リファレンス</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="server-administration">
+        
+          <img class="icon" src="../../../assets/docs/admin-7d94f9ffd9f2c7ca50406002a5d607f40fd5da0e6164d533b26424e6ff962606.svg" integrity="sha256-fZT5/9nyx8pQQGACpdYH9A/V2g5hZNUzsmQk5v+WJgY=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>アドミニストレーション</strong></span>
+
+        <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+  </div>
+
+  <!-- DROPDOWN /-->
+  <div class="sidebar-mobile-dropdown">
+    <nav class="mobile-sidebar hidden">
+      
+
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="welcome">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/welcome-f7457826e96dddba0bfad601a1ed3736a5d867782abc501dd6a0eb69a1da7443.svg" integrity="sha256-90V4Jult3boL+tYBoe03NqXYZ3gqvFAd1qDraaHadEM=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">ようこそ</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../index.html#section=welcome" data-proofer-ignore>イントロダクション</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../about-circleci/index.html#section=welcome" data-proofer-ignore>CI/CD概要</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../demo-apps/index.html#section=welcome" data-proofer-ignore>サポートされている言語</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="getting-started">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/start-26069d6eae162cde390e2333e1817966e90ab1cb2f2688620384328a98160057.svg" integrity="sha256-Jgadbq4WLN45DiMz4YF5ZukKscsvJohiA4QyipgWAFc=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">はじめよう</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../getting-started/index.html#section=getting-started" data-proofer-ignore>イントロダクション</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../first-steps/index.html#section=getting-started" data-proofer-ignore>CircleCIを始める</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../hello-world/index.html#section=getting-started" data-proofer-ignore>Hello World</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../faq/index.html#section=getting-started" data-proofer-ignore>FAQ</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../concepts/index.html#section=getting-started" data-proofer-ignore>コンセプト</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../project-build/index.html#section=getting-started" data-proofer-ignore>プロジェクトとビルド</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../jobs-steps/index.html#section=getting-started" data-proofer-ignore>Orbs, ジョブ、ステップ、ワークフロー</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-jenkins/index.html#section=getting-started" data-proofer-ignore>Jenkinsとの違い</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../security/index.html#section=getting-started" data-proofer-ignore>セキュリティ</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../migration-intro/index.html#section=getting-started" data-proofer-ignore>マイグレーション</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migration/index.html#section=getting-started" data-proofer-ignore>2.0への移行のヒント</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-1-2/index.html#section=getting-started" data-proofer-ignore>Linuxプロジェクトの移行</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ios-migrating-from-1-2/index.html#section=getting-started" data-proofer-ignore>iOSプロジェクトの移行</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../config-translation/index.html#section=getting-started" data-proofer-ignore>config-translatorを使う</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="configuration">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/config-16429d8b407e1b8b926594a981f06fb62cae6415313a94bf0c174d3227e38548.svg" integrity="sha256-FkKdi0B+G4uSZZSpgfBvtiyuZBUxOpS/DBdNMifjhUg=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">設定</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../config-intro/index.html#section=configuration" data-proofer-ignore>イントロダクション</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=configuration" data-proofer-ignore>設定リファレンス</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../writing-yaml/index.html#section=configuration" data-proofer-ignore>YAMLを書く</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../local-cli/index.html#section=configuration" data-proofer-ignore>CircleCI CLIを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../examples/index.html#section=configuration" data-proofer-ignore>ローカルでコンフィグのテスト</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../orb-intro/index.html#section=configuration" data-proofer-ignore>Orbs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../using-orbs/index.html#section=configuration" data-proofer-ignore>Orbsを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../reusing-config/index.html#section=configuration" data-proofer-ignore>コンフィグの再利用</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orbs-faq/index.html#section=configuration" data-proofer-ignore>Orbs FAQ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../creating-orbs/index.html#section=configuration" data-proofer-ignore>Orbsを作る</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../examples-intro/index.html#section=configuration" data-proofer-ignore>サンプル</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../sample-config/index.html#section=configuration" data-proofer-ignore>config.ymlの設定</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../tutorials/index.html#section=configuration" data-proofer-ignore>チュートリアル</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../postgres-config/index.html#section=configuration" data-proofer-ignore>データベースの設定例</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../example-configs/index.html#section=configuration" data-proofer-ignore>パブリックなサンプルリポジトリ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../testing-ios/index.html#section=configuration" data-proofer-ignore>iOSアプリをテストする</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../executor-intro/index.html#section=configuration" data-proofer-ignore>Executorとイメージ</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../executor-types/index.html#section=configuration" data-proofer-ignore>Executorを選ぶ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../circleci-images/index.html#section=configuration" data-proofer-ignore>CircleCI Dockerイメージ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../custom-images/index.html#section=configuration" data-proofer-ignore>カスタムイメージを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../private-images/index.html#section=configuration" data-proofer-ignore>プライベートイメージを使う</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../adv-config/index.html#section=configuration" data-proofer-ignore>高度な設定</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../using-shell-scripts/index.html#section=configuration" data-proofer-ignore>シェルスクリプトを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../browser-testing/index.html#section=configuration" data-proofer-ignore>ブラウザテストのセットアップ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../databases/index.html#section=configuration" data-proofer-ignore>データベースを設定する</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../building-docker-images/index.html#section=configuration" data-proofer-ignore>Dockerコマンドを実行</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../docker-compose/index.html#section=configuration" data-proofer-ignore>Docker Composeを使う</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="projects">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/project-c4d267d466adbd1ad6eb3b0da8954c433a075ff2a773cc93eb4f789b20da6444.svg" integrity="sha256-xNJn1GatvRrW6zsNqJVMQzoHX/Knc8yT6094myDaZEQ=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">プロジェクト</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../settings/index.html#section=projects" data-proofer-ignore>セッティング</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../gh-bb-integration/index.html#section=projects" data-proofer-ignore>GitHubとBitbucket</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../enable-checks/index.html#section=projects" data-proofer-ignore>GitHub Checksを有効化する</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../oss/index.html#section=projects" data-proofer-ignore>オープンソースプロジェクトをビルド</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../notifications/index.html#section=projects" data-proofer-ignore>通知を使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../managing-api-tokens/index.html#section=projects" data-proofer-ignore>APIトークンの管理</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="index.html#section=projects" data-proofer-ignore>環境変数を使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../contexts/index.html#section=projects" data-proofer-ignore>Contextsを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../build-processing/index.html#section=projects" data-proofer-ignore>Build Processingの有効化</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ios-codesigning/index.html#section=projects" data-proofer-ignore>iOSコードサインの設定</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../optimizations/index.html#section=projects" data-proofer-ignore>最適化</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../caching/index.html#section=projects" data-proofer-ignore>依存関係のキャッシュ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../parallelism-faster-jobs/index.html#section=projects" data-proofer-ignore>テストの並列実行</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../docker-layer-caching/index.html#section=projects" data-proofer-ignore>Docker Layer Cachingを使う</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="jobs">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/builds-6c2268e22c2dc3588ebbd7f471e8545a8d22cc79c03737df0ee02c3074bf0e60.svg" integrity="sha256-bCJo4iwtw1iOu9f0cehUWo0izHnANzffDuAsMHS/DmA=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">ジョブ</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../status/index.html#section=jobs" data-proofer-ignore>ステータス</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../containers/index.html#section=jobs" data-proofer-ignore>コンテナを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../status-badges/index.html#section=jobs" data-proofer-ignore>ステータスバッジを追加する</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../artifacts/index.html#section=jobs" data-proofer-ignore>ビルドアーティファクトの保存</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ssh-access-jobs/index.html#section=jobs" data-proofer-ignore>SSHデバッグ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../java-oom/index.html#section=jobs" data-proofer-ignore>Javaのメモリエラーのデバッグ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../collect-test-data/index.html#section=jobs" data-proofer-ignore>テストメタデータの収集</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../insights/index.html#section=jobs" data-proofer-ignore>Insightsを使う</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../triggers/index.html#section=jobs" data-proofer-ignore>トリガー</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../skip-build/index.html#section=jobs" data-proofer-ignore>ビルドのスキップとキャンセル</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../api-job-trigger/index.html#section=jobs" data-proofer-ignore>APIを使ってジョブをトリガーする</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../workflows/index.html#section=jobs" data-proofer-ignore>ワークフローでジョブをスケジュールする</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="deployment">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/deploy-49456c50980896bf09bb80c1eb4e1ee9234fc0bc7193d8c17154a905424aeb0b.svg" integrity="sha256-SUVsUJgIlr8Ju4DB604e6SNPwLxxk9jBcVSpBUJK6ws=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">デプロイメント</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../deployment-integrations/index.html#section=deployment" data-proofer-ignore>デプロイメントの設定</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ecs-ecr/index.html#section=deployment" data-proofer-ignore>AWS ECR/ECSにデプロイする</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../yarn/index.html#section=deployment" data-proofer-ignore>YarnをCircleCIで使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../build-publish-snap-packages/index.html#section=deployment" data-proofer-ignore>Snapのパッケージを公開する</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../artifactory/index.html#section=deployment" data-proofer-ignore>Artifactoryを使う</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../packagecloud/index.html#section=deployment" data-proofer-ignore>Packagecloudに公開する</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="reference">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/reference-caddd7b03de64e941b60cfba247b91f4d2e040f234876ed242c7764878c60412.svg" integrity="sha256-yt3XsD3mTpQbYM+6JHuR9NLgQPI0h27SQsd2SHjGBBI=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">リファレンス</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=reference" data-proofer-ignore>設定リファレンス</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../../api/index.html#section=reference" data-proofer-ignore>APIリファレンス</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../circleci-images/index.html#section=reference" data-proofer-ignore>CircleCI公式イメージ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../glossary/index.html#section=reference" data-proofer-ignore>用語集</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../help-and-support/index.html#section=reference" data-proofer-ignore>ヘルプとサポート</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="server-administration">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../../assets/docs/admin-7d94f9ffd9f2c7ca50406002a5d607f40fd5da0e6164d533b26424e6ff962606.svg" integrity="sha256-fZT5/9nyx8pQQGACpdYH9A/V2g5hZNUzsmQk5v+WJgY=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">アドミニストレーション</span>
+              
+
+              
+                <img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../overview/index.html#section=server-administration" data-proofer-ignore>概要</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../single-box/index.html#section=server-administration" data-proofer-ignore>トライアル</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../admin-faq/index.html#section=server-administration" data-proofer-ignore>FAQ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../upgrading/index.html#section=server-administration" data-proofer-ignore>アップグレード</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../security/index.html#section=server-administration" data-proofer-ignore>セキュリティ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../certificates/index.html#section=server-administration" data-proofer-ignore>証明書</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../proxy/index.html#section=server-administration" data-proofer-ignore>プロキシー</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../aws/index.html#section=server-administration" data-proofer-ignore>インストーレーション</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../authentication/index.html#section=server-administration" data-proofer-ignore>認証</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../monitoring/index.html#section=server-administration" data-proofer-ignore>モニタリング</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../jvm-heap-size-configuration/index.html#section=server-administration" data-proofer-ignore>JVMヒープサイズの調整</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../nomad/index.html#section=server-administration" data-proofer-ignore>Nomad</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../backup/index.html#section=server-administration" data-proofer-ignore>バックアップ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../troubleshooting/index.html#section=server-administration" data-proofer-ignore>トラブルシューティング</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../gpu/index.html#section=server-administration" data-proofer-ignore>GPUビルダー</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../vm-service/index.html#section=server-administration" data-proofer-ignore>VMサービスの設定</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../open-source/index.html#section=server-administration" data-proofer-ignore>Acknowledgments</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+    </nav>
+  </div>
+</div>
+
+  <div class="hits-target"></div>
+	<div class="main-body">
+		<!-- FULL SCREEN /-->
+<div class="sidebar-wrapper">
+		<nav class="sidebar fixed">
+				
+				
+				
+
+    <div class="sidebar-item-group">
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="welcome">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/welcome-f7457826e96dddba0bfad601a1ed3736a5d867782abc501dd6a0eb69a1da7443.svg" integrity="sha256-90V4Jult3boL+tYBoe03NqXYZ3gqvFAd1qDraaHadEM=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">ようこそ</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../index.html#section=welcome" data-proofer-ignore>イントロダクション</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../about-circleci/index.html#section=welcome" data-proofer-ignore>CI/CD概要</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../demo-apps/index.html#section=welcome" data-proofer-ignore>サポートされている言語</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="getting-started">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/start-26069d6eae162cde390e2333e1817966e90ab1cb2f2688620384328a98160057.svg" integrity="sha256-Jgadbq4WLN45DiMz4YF5ZukKscsvJohiA4QyipgWAFc=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">はじめよう</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../getting-started/index.html#section=getting-started" data-proofer-ignore>イントロダクション</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../first-steps/index.html#section=getting-started" data-proofer-ignore>CircleCIを始める</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../hello-world/index.html#section=getting-started" data-proofer-ignore>Hello World</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../faq/index.html#section=getting-started" data-proofer-ignore>FAQ</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../concepts/index.html#section=getting-started" data-proofer-ignore>コンセプト</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../project-build/index.html#section=getting-started" data-proofer-ignore>プロジェクトとビルド</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../jobs-steps/index.html#section=getting-started" data-proofer-ignore>Orbs, ジョブ、ステップ、ワークフロー</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-jenkins/index.html#section=getting-started" data-proofer-ignore>Jenkinsとの違い</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../security/index.html#section=getting-started" data-proofer-ignore>セキュリティ</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../migration-intro/index.html#section=getting-started" data-proofer-ignore>マイグレーション</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../migration/index.html#section=getting-started" data-proofer-ignore>2.0への移行のヒント</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-1-2/index.html#section=getting-started" data-proofer-ignore>Linuxプロジェクトの移行</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../ios-migrating-from-1-2/index.html#section=getting-started" data-proofer-ignore>iOSプロジェクトの移行</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../config-translation/index.html#section=getting-started" data-proofer-ignore>config-translatorを使う</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="configuration">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/config-16429d8b407e1b8b926594a981f06fb62cae6415313a94bf0c174d3227e38548.svg" integrity="sha256-FkKdi0B+G4uSZZSpgfBvtiyuZBUxOpS/DBdNMifjhUg=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">設定</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../config-intro/index.html#section=configuration" data-proofer-ignore>イントロダクション</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=configuration" data-proofer-ignore>設定リファレンス</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../writing-yaml/index.html#section=configuration" data-proofer-ignore>YAMLを書く</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../local-cli/index.html#section=configuration" data-proofer-ignore>CircleCI CLIを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../examples/index.html#section=configuration" data-proofer-ignore>ローカルでコンフィグのテスト</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../orb-intro/index.html#section=configuration" data-proofer-ignore>Orbs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../using-orbs/index.html#section=configuration" data-proofer-ignore>Orbsを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../reusing-config/index.html#section=configuration" data-proofer-ignore>コンフィグの再利用</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orbs-faq/index.html#section=configuration" data-proofer-ignore>Orbs FAQ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../creating-orbs/index.html#section=configuration" data-proofer-ignore>Orbsを作る</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../examples-intro/index.html#section=configuration" data-proofer-ignore>サンプル</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../sample-config/index.html#section=configuration" data-proofer-ignore>config.ymlの設定</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../tutorials/index.html#section=configuration" data-proofer-ignore>チュートリアル</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../postgres-config/index.html#section=configuration" data-proofer-ignore>データベースの設定例</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../example-configs/index.html#section=configuration" data-proofer-ignore>パブリックなサンプルリポジトリ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../testing-ios/index.html#section=configuration" data-proofer-ignore>iOSアプリをテストする</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../executor-intro/index.html#section=configuration" data-proofer-ignore>Executorとイメージ</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../executor-types/index.html#section=configuration" data-proofer-ignore>Executorを選ぶ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../circleci-images/index.html#section=configuration" data-proofer-ignore>CircleCI Dockerイメージ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../custom-images/index.html#section=configuration" data-proofer-ignore>カスタムイメージを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../private-images/index.html#section=configuration" data-proofer-ignore>プライベートイメージを使う</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../adv-config/index.html#section=configuration" data-proofer-ignore>高度な設定</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../using-shell-scripts/index.html#section=configuration" data-proofer-ignore>シェルスクリプトを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../browser-testing/index.html#section=configuration" data-proofer-ignore>ブラウザテストのセットアップ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../databases/index.html#section=configuration" data-proofer-ignore>データベースを設定する</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../building-docker-images/index.html#section=configuration" data-proofer-ignore>Dockerコマンドを実行</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../docker-compose/index.html#section=configuration" data-proofer-ignore>Docker Composeを使う</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="projects">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/project-c4d267d466adbd1ad6eb3b0da8954c433a075ff2a773cc93eb4f789b20da6444.svg" integrity="sha256-xNJn1GatvRrW6zsNqJVMQzoHX/Knc8yT6094myDaZEQ=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">プロジェクト</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../settings/index.html#section=projects" data-proofer-ignore>セッティング</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../gh-bb-integration/index.html#section=projects" data-proofer-ignore>GitHubとBitbucket</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../enable-checks/index.html#section=projects" data-proofer-ignore>GitHub Checksを有効化する</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../oss/index.html#section=projects" data-proofer-ignore>オープンソースプロジェクトをビルド</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../notifications/index.html#section=projects" data-proofer-ignore>通知を使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../managing-api-tokens/index.html#section=projects" data-proofer-ignore>APIトークンの管理</a></li>
+														
+              
+														<li class="subnav-item"><a class=" active " href="index.html#section=projects" data-proofer-ignore>環境変数を使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../contexts/index.html#section=projects" data-proofer-ignore>Contextsを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../build-processing/index.html#section=projects" data-proofer-ignore>Build Processingの有効化</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../ios-codesigning/index.html#section=projects" data-proofer-ignore>iOSコードサインの設定</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../optimizations/index.html#section=projects" data-proofer-ignore>最適化</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../caching/index.html#section=projects" data-proofer-ignore>依存関係のキャッシュ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../parallelism-faster-jobs/index.html#section=projects" data-proofer-ignore>テストの並列実行</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../docker-layer-caching/index.html#section=projects" data-proofer-ignore>Docker Layer Cachingを使う</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="jobs">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/builds-6c2268e22c2dc3588ebbd7f471e8545a8d22cc79c03737df0ee02c3074bf0e60.svg" integrity="sha256-bCJo4iwtw1iOu9f0cehUWo0izHnANzffDuAsMHS/DmA=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">ジョブ</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../status/index.html#section=jobs" data-proofer-ignore>ステータス</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../containers/index.html#section=jobs" data-proofer-ignore>コンテナを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../status-badges/index.html#section=jobs" data-proofer-ignore>ステータスバッジを追加する</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../artifacts/index.html#section=jobs" data-proofer-ignore>ビルドアーティファクトの保存</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../ssh-access-jobs/index.html#section=jobs" data-proofer-ignore>SSHデバッグ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../java-oom/index.html#section=jobs" data-proofer-ignore>Javaのメモリエラーのデバッグ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../collect-test-data/index.html#section=jobs" data-proofer-ignore>テストメタデータの収集</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../insights/index.html#section=jobs" data-proofer-ignore>Insightsを使う</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../triggers/index.html#section=jobs" data-proofer-ignore>トリガー</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../skip-build/index.html#section=jobs" data-proofer-ignore>ビルドのスキップとキャンセル</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../api-job-trigger/index.html#section=jobs" data-proofer-ignore>APIを使ってジョブをトリガーする</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../workflows/index.html#section=jobs" data-proofer-ignore>ワークフローでジョブをスケジュールする</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="deployment">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/deploy-49456c50980896bf09bb80c1eb4e1ee9234fc0bc7193d8c17154a905424aeb0b.svg" integrity="sha256-SUVsUJgIlr8Ju4DB604e6SNPwLxxk9jBcVSpBUJK6ws=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">デプロイメント</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../deployment-integrations/index.html#section=deployment" data-proofer-ignore>デプロイメントの設定</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../ecs-ecr/index.html#section=deployment" data-proofer-ignore>AWS ECR/ECSにデプロイする</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../yarn/index.html#section=deployment" data-proofer-ignore>YarnをCircleCIで使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../build-publish-snap-packages/index.html#section=deployment" data-proofer-ignore>Snapのパッケージを公開する</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../artifactory/index.html#section=deployment" data-proofer-ignore>Artifactoryを使う</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../packagecloud/index.html#section=deployment" data-proofer-ignore>Packagecloudに公開する</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="reference">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/reference-caddd7b03de64e941b60cfba247b91f4d2e040f234876ed242c7764878c60412.svg" integrity="sha256-yt3XsD3mTpQbYM+6JHuR9NLgQPI0h27SQsd2SHjGBBI=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">リファレンス</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=reference" data-proofer-ignore>設定リファレンス</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../../api/index.html#section=reference" data-proofer-ignore>APIリファレンス</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../circleci-images/index.html#section=reference" data-proofer-ignore>CircleCI公式イメージ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../glossary/index.html#section=reference" data-proofer-ignore>用語集</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../help-and-support/index.html#section=reference" data-proofer-ignore>ヘルプとサポート</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="server-administration">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../../assets/docs/admin-7d94f9ffd9f2c7ca50406002a5d607f40fd5da0e6164d533b26424e6ff962606.svg" integrity="sha256-fZT5/9nyx8pQQGACpdYH9A/V2g5hZNUzsmQk5v+WJgY=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">アドミニストレーション</span>
+												
+
+												
+												<img class="arrow" src="../../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../overview/index.html#section=server-administration" data-proofer-ignore>概要</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../single-box/index.html#section=server-administration" data-proofer-ignore>トライアル</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../admin-faq/index.html#section=server-administration" data-proofer-ignore>FAQ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../upgrading/index.html#section=server-administration" data-proofer-ignore>アップグレード</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../security/index.html#section=server-administration" data-proofer-ignore>セキュリティ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../certificates/index.html#section=server-administration" data-proofer-ignore>証明書</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../proxy/index.html#section=server-administration" data-proofer-ignore>プロキシー</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../aws/index.html#section=server-administration" data-proofer-ignore>インストーレーション</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../authentication/index.html#section=server-administration" data-proofer-ignore>認証</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../monitoring/index.html#section=server-administration" data-proofer-ignore>モニタリング</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../jvm-heap-size-configuration/index.html#section=server-administration" data-proofer-ignore>JVMヒープサイズの調整</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../nomad/index.html#section=server-administration" data-proofer-ignore>Nomad</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../backup/index.html#section=server-administration" data-proofer-ignore>バックアップ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../troubleshooting/index.html#section=server-administration" data-proofer-ignore>トラブルシューティング</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../gpu/index.html#section=server-administration" data-proofer-ignore>GPUビルダー</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../vm-service/index.html#section=server-administration" data-proofer-ignore>VMサービスの設定</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../open-source/index.html#section=server-administration" data-proofer-ignore>Acknowledgments</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+    </div>
+    <div class="lang-picker">
+      <select id="sidebarLangSelect">
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+		</nav>
+
+  <script>
+    // Add the current language to the window for auto setting the dropdown to current language.
+    window.currentLang = "ja"
+  </script>
+</div>
+
+		<div class="article-container docs" id="main">
+			
+			
+			
+			<article>
+				<h1 id="環境変数の使い方">環境変数の使い方</h1>
+        
+				<p>このページでは CircleCI で利用可能な環境変数の使い方について、下記の内容に沿って解説しています。</p>
+
+<ul id="markdown-toc">
+  <li><a href="#%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B" id="markdown-toc-シェルコマンドで環境変数を設定する">シェルコマンドで環境変数を設定する</a></li>
+  <li><a href="#%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B" id="markdown-toc-ステップ内で環境変数を設定する">ステップ内で環境変数を設定する</a></li>
+  <li><a href="#%E3%82%B8%E3%83%A7%E3%83%96%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B" id="markdown-toc-ジョブ内で環境変数を設定する">ジョブ内で環境変数を設定する</a></li>
+  <li><a href="#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B" id="markdown-toc-コンテナ内で環境変数を設定する">コンテナ内で環境変数を設定する</a></li>
+  <li><a href="#context%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B" id="markdown-toc-context内で環境変数を設定する">Context内で環境変数を設定する</a></li>
+  <li><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B" id="markdown-toc-プロジェクト内で環境変数を設定する">プロジェクト内で環境変数を設定する</a></li>
+  <li><a href="#api-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95" id="markdown-toc-api-を使って環境変数をインジェクトする方法">API を使って環境変数をインジェクトする方法</a></li>
+  <li><a href="#%E5%AE%9A%E7%BE%A9%E6%B8%88%E3%81%BF%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0" id="markdown-toc-定義済み環境変数">定義済み環境変数</a></li>
+</ul>
+
+<h2 class="no_toc" id="はじめに">はじめに</h2>
+
+<p>プロジェクトへのプライベート環境変数の追加は、CircleCI 上のプロジェクトごとの設定ページにある、<strong>Environment Variables</strong> で行えます。 環境変数にセットした実際の値は、ここでいったん設定すると、CircleCI 上では参照も編集もできません。 環境変数の値を変えたいときは、現在の環境変数を削除してから改めて別の値で作成し直してください。 環境変数は個別に追加したり、あるいは他のプロジェクトで定義している変数をインポートして追加できます。 また、プライベート環境変数は公開プロジェクトでも隠しておくことが可能です。これに関連する設定については<a href="../oss/index.html">オープンソースプロジェクトのビルド方法</a>をご覧ください。</p>
+
+<h3 class="no_toc" id="環境変数使用時のオプション">環境変数使用時のオプション</h3>
+
+<p>CircleCI は Bash を使っているため、環境変数には POSIX 命名規則が適用されます。 大文字・小文字のアルファベット、数字、アンダースコアが使用でき、 環境変数の頭文字はアルファベットとします。</p>
+
+<p>CircleCI にセキュアに格納されるシークレットキー・プライベートキーは、設定ファイル内の <code class="highlighter-rouge">run</code> キーや <code class="highlighter-rouge">environment</code> キー、あるいは Workflow の <code class="highlighter-rouge">context</code> キーから変数として参照されることがあります。 環境変数は次の優先順位で使用されます。</p>
+
+<ol>
+  <li>
+<code class="highlighter-rouge">run</code> ステップ内で指定している<a href="#%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">シェルコマンド</a>で宣言されたもの (例：<code class="highlighter-rouge">FOO=bar make install</code>)。</li>
+  <li>
+<a href="#%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B"><code class="highlighter-rouge">run</code> ステップ内</a> で <code class="highlighter-rouge">environment</code> キーを使って宣言されたもの。</li>
+  <li>
+<a href="#%E3%82%B8%E3%83%A7%E3%83%96%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">jobs</a> 内において <code class="highlighter-rouge">environment</code> キーで定義したもの。</li>
+  <li>
+<a href="#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">コンテナ</a>において <code class="highlighter-rouge">environment</code> キーで定義したもの。</li>
+  <li>コンテキスト環境変数 (コンテキストを利用している場合)。詳細は<a href="../contexts/index.html">Contexts</a>を参照。</li>
+  <li>プロジェクト設定ページで設定した<a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">プロジェクトレベル環境変数</a>。</li>
+  <li>
+<a href="#%E5%AE%9A%E7%BE%A9%E6%B8%88%E3%81%BF%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0">CircleCI の定義済み環境変数</a>で解説している特殊な環境変数。</li>
+</ol>
+
+<p><code class="highlighter-rouge">FOO=bar make install</code> のような形で <code class="highlighter-rouge">run step</code> 内のシェルコマンドで宣言された環境変数は、<code class="highlighter-rouge">environment</code> キーや <code class="highlighter-rouge">contexts</code> キーで宣言された環境変数を上書きします。 コンテキストページで追加された環境変数はプロジェクト設定ページで追加されたものより優先して使われます。 一番最後に参照されるのは CircleCI の特殊な定義済み環境変数です。</p>
+
+<p><strong>注：</strong>
+<code class="highlighter-rouge">.circleci/config.yml</code> ファイルでは隠したい環境変数を宣言しないようにしてください。そのプロジェクトにアクセスできるエンジニア全員が <code class="highlighter-rouge">config.yml</code> ファイルの全文を見ることができます。 隠したい環境変数は CircleCI の<a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E5%86%85%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">プロジェクト</a>設定や<a href="../contexts/index.html">Contexts</a>設定で登録するようにしてください。 詳しくは「セキュリティ」ページの<a href="../security/index.html#%E6%9A%97%E5%8F%B7%E5%8C%96">暗号化</a>で解説しています。</p>
+
+<p>設定ファイルでスクリプトを実行した場合も、隠し環境変数が明らかになってしまう可能性があります。 スクリプトのセキュアな活用方法については、<a href="../using-shell-scripts/index.html#%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9">シェルスクリプトの使い方</a>ページでご確認ください。</p>
+
+<p><a name="using-bash_env-to-set-environment-variables"></a></p>
+<h3 class="no_toc" id="bash_env-で環境変数を定義する">
+<code class="highlighter-rouge">BASH_ENV</code> で環境変数を定義する</h3>
+
+<p>CircleCI は環境変数をセットする際のインターポレーションに対応していません。 定義されたものはそのまま文字列リテラルとして扱われます。 これは <code class="highlighter-rouge">working_directory</code> を定義するときや、<code class="highlighter-rouge">PATH</code> を書き換えるとき、複数の <code class="highlighter-rouge">run</code> ステップで変数を共有するときに犯しがちなミスです。</p>
+
+<p>下記の例では <code class="highlighter-rouge">$ORGNAME</code> と <code class="highlighter-rouge">$REPONAME</code> はその変数値に置き換えられません。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">working_directory</span><span class="pi">:</span> <span class="s">/go/src/github.com/$ORGNAME/$REPONAME</span>
+</code></pre></div></div>
+
+<p>解決手段としては、下記のように <code class="highlighter-rouge">run</code> ステップ内で <code class="highlighter-rouge">BASH_ENV</code> などに環境変数をエクスポートする方法があります。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">steps</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">環境変数の設定</span>
+      <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">echo "export PATH=$GOPATH/bin:$PATH" &gt;&gt; $BASH_ENV</span>
+        <span class="s">echo "export GIT_SHA1=$CIRCLE_SHA1" &gt;&gt; $BASH_ENV</span>
+</code></pre></div></div>
+
+<p>CircleCI は <code class="highlighter-rouge">bash</code> コマンドを用いて、ステップごとにその都度 <code class="highlighter-rouge">BASH_ENV</code> の内容を読み込みます。 これはつまり、<code class="highlighter-rouge">BASH_ENV</code> の読み込みと実行が自動的に行われ、インターポレーションを可能にし、<code class="highlighter-rouge">run</code> ステップ間で環境変数を共有できるということです。</p>
+
+<p><strong>注：</strong>
+<code class="highlighter-rouge">BASH_ENV</code> を使ったこの方法は <code class="highlighter-rouge">bash</code> 上でしか機能しません。 <code class="highlighter-rouge">sh</code> など他のシェルでは動作しないことに注意してください。 この制約は Docker イメージの OS 選択に影響を与える場合があります。 例えば <a href="https://alpinelinux.org/" target="_blank" rel="noopener noreferrer">Alpine Linux</a> は <code class="highlighter-rouge">bash</code> が標準で含まれていないため、先に <code class="highlighter-rouge">bash</code> をインストールしてからでないと <code class="highlighter-rouge">BASH_ENV</code> を使った解決方法を実践できません。</p>
+
+<h2 id="シェルコマンドで環境変数を設定する">シェルコマンドで環境変数を設定する</h2>
+
+<p>CircleCI は環境変数設定時のインターポレーションに対応していません。</p>
+
+<p>ただし、<a href="#bash_env-%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B"><code class="highlighter-rouge">BASH_ENV</code> を使う</a>ことで現在のシェルに対して変数をセットすることはできます。 この方法は、<code class="highlighter-rouge">PATH</code> の書き換えや他の変数から環境変数の値を参照するときなどに便利です。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">smaant/lein-flyway:2.7.1-4.0.3</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">実行時の PATH 書き換えおよび環境変数定義</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">echo 'export PATH=/path/to/foo/bin:$PATH' &gt;&gt; $BASH_ENV</span>
+            <span class="s">echo 'export VERY_IMPORTANT=$(cat important_value)' &gt;&gt; $BASH_ENV</span>
+            <span class="s">source $BASH_ENV</span>
+</code></pre></div></div>
+
+<p><strong>注：</strong>
+シェルによっては <code class="highlighter-rouge">~/.tcshrc</code> や <code class="highlighter-rouge">~/.zshrc</code> のような初期化ファイルに新しく変数を追加する必要があります。 詳しくはシェルの環境変数設定に関する解説書などを参考にしてください。</p>
+
+<h2 id="ステップ内で環境変数を設定する">ステップ内で環境変数を設定する</h2>
+
+<p>ステップ内で環境変数を設定するには <a href="../configuration-reference/index.html#run"><code class="highlighter-rouge">environment</code> キー</a>を使います。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">smaant/lein-flyway:2.7.1-4.0.3</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">checkout</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">統合の実行</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">sql/docker-entrypoint.sh sql</span>
+          <span class="c1"># シェルコマンド用の環境変数</span>
+          <span class="na">environment</span><span class="pi">:</span>
+            <span class="na">DATABASE_URL</span><span class="pi">:</span> <span class="s">postgres://conductor:@localhost:5432/conductor_test</span>
+</code></pre></div></div>
+
+<p><strong>注：</strong>
+<code class="highlighter-rouge">run</code> ステップでは毎回新たなシェルが実行されるため、ステップ間で環境変数を共有することはできません。 2 つ以上のステップから同じ環境変数を参照する場合は、<a href="#bash_env-%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E5%AE%9A%E7%BE%A9%E3%81%99%E3%82%8B"><code class="highlighter-rouge">BASH_ENV</code></a> を使って変数値をエクスポートするようにしてください。</p>
+
+<h2 id="ジョブ内で環境変数を設定する">ジョブ内で環境変数を設定する</h2>
+
+<p>ジョブの中で環境変数を設定するには <a href="../configuration-reference/index.html#job_name"><code class="highlighter-rouge">environment</code> キー</a>を使います。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">buildpack-deps:trusty</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">FOO</span><span class="pi">:</span> <span class="s">bar</span>
+</code></pre></div></div>
+
+<p><a name="setting-an-environment-variable-in-a-container"></a></p>
+<h2 id="コンテナ内で環境変数を設定する">コンテナ内で環境変数を設定する</h2>
+
+<p>コンテナの中で環境変数を設定するには <a href="../configuration-reference/index.html#docker"><code class="highlighter-rouge">environment</code> キー</a>を使います。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">smaant/lein-flyway:2.7.1-4.0.3</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">circleci/postgres:9.6-jessie</span>
+      <span class="c1"># プライマリコンテナで実行される全コマンドで有効な環境変数</span>
+        <span class="na">environment</span><span class="pi">:</span>
+          <span class="na">POSTGRES_USER</span><span class="pi">:</span> <span class="s">conductor</span>
+          <span class="na">POSTGRES_DB</span><span class="pi">:</span> <span class="s">conductor_test</span>
+</code></pre></div></div>
+
+<p>下記は (1 行目に指定されている) プライマリコンテナイメージ用の環境変数と、セカンダリもしくはサービスコンテナイメージ用の環境変数とを分ける例です。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">circleci/python:3.6.2-jessie</span>
+       <span class="c1"># プライマリコンテナで実行されるコマンド用の環境変数</span>
+        <span class="na">environment</span><span class="pi">:</span>
+          <span class="na">FLASK_CONFIG</span><span class="pi">:</span> <span class="s">testing</span>
+          <span class="na">TEST_DATABASE_URL</span><span class="pi">:</span> <span class="s">postgresql://ubuntu@localhost/circle_test?sslmode=disable</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">circleci/postgres:9.6</span>
+</code></pre></div></div>
+
+<h2 id="context内で環境変数を設定する">Context内で環境変数を設定する</h2>
+
+<p>Contextを作成することで複数のプロジェクト間で環境変数の共有が可能になります。 Contextで環境変数を設定する方法は<a href="../contexts/index.html">Contextのドキュメント</a>をご覧ください。</p>
+
+<p><a name="setting-an-environment-variable-in-a-project"></a></p>
+<h2 id="プロジェクト内で環境変数を設定する">プロジェクト内で環境変数を設定する</h2>
+
+<ol>
+  <li>
+    <p>CircleCI 管理画面で、プロジェクト名の横にある歯車アイコンをクリックし、<strong>PROJECT SETTINGS</strong> にアクセスします。</p>
+  </li>
+  <li>
+    <p><strong>BUILD SETTINGS</strong> セクションの <strong>Environment Variables</strong> をクリックします。</p>
+  </li>
+  <li>
+    <p><strong>Import Variables</strong> ボタンをクリックすると他のプロジェクトで定義している変数をインポートできます。 また、<strong>Add Variable</strong> ボタンをクリックすると変数を手動で新規追加できます。 (<strong>注：</strong> <strong>Import Variables</strong> ボタンは、プライベートクラウドやデータセンターにインストールした CircleCI では現在利用できません。)</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">.circleci/config.yml</code> に新しい環境変数を追加します。 詳しくは <a href="../deployment-integrations/index.html#heroku">Heroku のデプロイ手順</a>を参照してください。</p>
+  </li>
+</ol>
+
+<p>環境変数を作ると CircleCI の設定ページ上では変数値が伏せ字になり、書き換えることはできません。環境変数の値を変更するには、いったん削除してから改めて作成してください。</p>
+
+<h3 class="no_toc" id="複数行の環境変数のエンコード方法">複数行の環境変数のエンコード方法</h3>
+
+<p>改行で区切る必要がある複数行の環境変数を定義するには、まずその文字列を <code class="highlighter-rouge">Base64</code> エンコードします。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"foobar"</span> | <span class="nb">base64
+</span><span class="nv">Zm9vYmFyCg</span><span class="o">==</span>
+</code></pre></div></div>
+
+<p>それから、エンコードした文字列を環境変数に格納します。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$MYVAR</span>
+<span class="nv">Zm9vYmFyCg</span><span class="o">==</span>
+</code></pre></div></div>
+
+<p>変数を利用するコマンドで値をデコードします。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$MYVAR</span> | <span class="nb">base64</span> <span class="nt">--decode</span> | docker login <span class="nt">-u</span> my_docker_user <span class="nt">--password-stdin</span>
+Login Succeeded
+</code></pre></div></div>
+
+<p><strong>注：</strong>
+このように <code class="highlighter-rouge">docker</code> と同じ手順で全てのコマンドラインプログラムがログイン認証をパスできるわけではありません。</p>
+
+<p><a name="injecting-environment-variables-with-the-api"></a></p>
+<h2 id="api-を使って環境変数をインジェクトする方法">API を使って環境変数をインジェクトする方法</h2>
+
+<p>ビルドパラメータは環境変数からなります。そのため、そのパラメータ名は下記の条件を満たしている必要があります。</p>
+
+<ul>
+  <li>変数名に使えるのは ASCII 文字列、数字、アンダースコアのみです</li>
+  <li>数字から始まる変数は使えません</li>
+  <li>少なくとも 1 文字以上の変数でなければなりません</li>
+</ul>
+
+<p>環境変数における通常の制約の他に、変数値自体に注意すべきところはありません。単純な文字列として扱われるところも変わりありません。 ビルドパラメータが読み込まれる順序は保証 <strong>されない</strong> ため、ビルドパラメータの 1 つを別のビルドパラメータに渡すようなインターポレーションは避けてください。 順不同の独立した環境変数リストとしてビルドパラメータを設定するのがおすすめです。</p>
+
+<p>例えば下記のパラメータを処理したとします。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "build_parameters": {
+    "foo": "bar",
+    "baz": 5,
+    "qux": {"quux": 1},
+    "list": ["a", "list", "of", "strings"]
+  }
+}
+</code></pre></div></div>
+
+<p>ビルド時には下記のような環境変数となります。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export foo="bar"
+export baz="5"
+export qux="{\"quux\": 1}"
+export list="[\"a\", \"list\", \"of\", \"strings\"]"
+</code></pre></div></div>
+
+<p>ビルドパラメータは各ジョブのコンテナ内で環境変数としてエクスポートされ、<code class="highlighter-rouge">config.yml</code> のスクリプトやプログラム、コマンドで使われることになります。 インジェクトされた環境変数はジョブ内のステップの実行内容を変えるのに使われることもあります。 ここで念頭に置いておかなければいけないのは、インジェクトされた環境変数は <code class="highlighter-rouge">config.yml</code> で定義されたものでも、プロジェクトの設定で定義されたものでも、上書きできないことです。</p>
+
+<p>連続的に異なるターゲット OS で機能テストを行うのに、<code class="highlighter-rouge">build_parameters</code> キーに環境変数をインジェクトしたくなるかもしれません。 例えば、複数の異なるホストに対して機能テストが必要なステージング環境へのデプロイを実行するような場合です。 下記の例のように、<code class="highlighter-rouge">bash</code> と <code class="highlighter-rouge">curl</code> を組み合わせ (開発言語にあらかじめ用意されている HTTP ライブラリを使ってもかまいません)、<code class="highlighter-rouge">Content-type: application/json</code> として JSON フォーマットでデータ送信する形で <code class="highlighter-rouge">build_parameters</code> を含ませることが可能です。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "build_parameters": {
+  "param1": "value1",
+  "param2": 500
+  }
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">curl</code> の場合は下記のようにします。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl \
+  --header "Content-Type: application/json" \
+  --data '{"build_parameters": {"param1": "value1", "param2": 500}}' \
+  --request POST \
+  https://circleci.com/api/v1.1/project/github/circleci/mongofinil/tree/master?circle-token=$CIRCLE_TOKEN
+</code></pre></div></div>
+
+<p>ここで使われている <code class="highlighter-rouge">$CIRCLE_TOKEN</code> は <a href="../managing-api-tokens/index.html#%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB-api-%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E4%BD%9C%E6%88%90">パーソナル API トークン</a>です。</p>
+
+<p>ビルド時には下記のような環境変数となります。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export param1="value1"
+export param2="500"
+</code></pre></div></div>
+
+<p>API の呼び出しは POST リクエストで実行します。詳細は API リファレンスの <a href="../../../api/v1-reference/index.html#new-build">new build</a> セクションを参照してください。 パラメータなしで POST リクエストした場合は名前付きブランチが新規で実行されます。</p>
+
+<p><a name="built-in-environment-variables"></a></p>
+<h2 id="定義済み環境変数">定義済み環境変数</h2>
+
+<p>下記の環境変数はビルドごとにエクスポートされ、より複雑なテストやデプロイの実行に使用されます。</p>
+
+<p><strong>注：</strong>
+他の環境変数を定義するのに定義済み環境変数を使うことはできません。 この場合は、<code class="highlighter-rouge">run</code> ステップを利用し、<code class="highlighter-rouge">BASH_ENV</code> を用いて別の新しい環境変数をエクスポートする必要があります。 詳しくは<a href="#%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%A7%E7%92%B0%E5%A2%83%E5%A4%89%E6%95%B0%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">シェルコマンドで環境変数を設定する</a>をご覧ください。</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>型</th>
+      <th>値</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">CI</code></td>
+      <td>Boolean</td>
+      <td>
+<code class="highlighter-rouge">true</code> (現在のビルド環境が CI であることを表します。常に true となります。)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CI_PULL_REQUEST</code></td>
+      <td>String</td>
+      <td>使用不可。<code class="highlighter-rouge">CIRCLE_PULL_REQUEST</code> を使用してください。 CircleCI 1.0 との後方互換性のために残しています。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CI_PULL_REQUESTS</code></td>
+      <td>List</td>
+      <td>使用不可。<code class="highlighter-rouge">CIRCLE_PULL_REQUESTS</code> を使用してください。 CircleCI 1.0 との後方互換性のために残しています。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_BRANCH</code></td>
+      <td>String</td>
+      <td>現在ビルドしている Git のブランチ名。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_BUILD_NUM</code></td>
+      <td>Integer</td>
+      <td>CircleCI におけるビルドの回数。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_BUILD_URL</code></td>
+      <td>String</td>
+      <td>現在のビルドへの URL。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_COMPARE_URL</code></td>
+      <td>String</td>
+      <td>ビルドにおけるコミット間の違いを比較するための GitHub または Bitbucket の URL。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_INTERNAL_TASK_DATA</code></td>
+      <td>String</td>
+      <td>テスト時のデータが格納されたディレクトリ。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_JOB</code></td>
+      <td>String</td>
+      <td>現在のジョブの名称。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_NODE_INDEX</code></td>
+      <td>Integer</td>
+      <td>ビルドインスタンスの固有インデックス。 この値は 0 から (<code class="highlighter-rouge">CIRCLECI_NODE_TOTAL</code> - 1) の間の値をとります。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_NODE_TOTAL</code></td>
+      <td>Integer</td>
+      <td>ビルドインスタンスの合計数。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PR_NUMBER</code></td>
+      <td>Integer</td>
+      <td>GitHub または Bitbucket におけるプルリクエストの回数。 フォークしたプルリクエストのみで使用可能です。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PR_REPONAME</code></td>
+      <td>String</td>
+      <td>プルリクエストが作成された GitHub または Bitbucket リポジトリの名前。 フォークしたプルリクエストのみで使用可能です。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PR_USERNAME</code></td>
+      <td>String</td>
+      <td>プルリクエストを作成したユーザーの GitHub または Bitbucket ユーザー名。 フォークしたプルリクエストのみで使用可能です。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PREVIOUS_BUILD_NUM</code></td>
+      <td>Integer</td>
+      <td>現在のブランチにおける前回までのビルド回数。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PROJECT_REPONAME</code></td>
+      <td>String</td>
+      <td>現在のプロジェクトのリポジトリ名。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PROJECT_USERNAME</code></td>
+      <td>String</td>
+      <td>現在のプロジェクトの GitHub または Bitbucket ユーザー名。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PULL_REQUEST</code></td>
+      <td>String</td>
+      <td>プルリクエストにひもづく URL。 ひも付けられたプルリクエストが複数ある時は、そのうちの 1 つがランダムで選ばれます。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_PULL_REQUESTS</code></td>
+      <td>List</td>
+      <td>現在のビルドのプルリクエストにひもづけられたカンマ区切りの URL リスト。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_REPOSITORY_URL</code></td>
+      <td>String</td>
+      <td>GitHub または Bitbucket の リポジトリ URL。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_SHA1</code></td>
+      <td>String</td>
+      <td>現在のビルドの最後のコミットに関する SHA1 ハッシュ。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_TAG</code></td>
+      <td>String</td>
+      <td>現在のビルドがタグ付けされている場合の git タグの名前。 詳しくは <a href="../workflows/index.html#git-%E3%82%BF%E3%82%B0%E3%81%AB%E5%AF%BE%E5%BF%9C%E5%8F%AF%E8%83%BD%E3%81%AA-workflows-%E3%82%92%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B">Git タグを使ったジョブの実行</a>を参照してください。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_USERNAME</code></td>
+      <td>String</td>
+      <td>ビルドをスタートさせたユーザーの GitHub または Bitbucket ユーザー名。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_WORKFLOW_ID</code></td>
+      <td>String</td>
+      <td>現在のジョブにおける Workflow インスタンスのユニーク ID。 この ID は Workflow インスタンス内のすべてのジョブで同一となります。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLE_WORKING_DIRECTORY</code></td>
+      <td>String</td>
+      <td>現在のジョブの<code class="highlighter-rouge">working_directory</code> キーの値。</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CIRCLECI</code></td>
+      <td>Boolean</td>
+      <td>
+<code class="highlighter-rouge">true</code> (現在のビルド環境が CircleCI であることを表します。常に true となります。)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">HOME</code></td>
+      <td>String</td>
+      <td>ホームディレクトリ</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="no_toc" id="関連情報">関連情報</h2>
+
+<p><a href="../contexts/index.html">Contexts</a></p>
+
+				
+					<footer>
+	<br>
+<hr>
+<h3>Help make this document better</h3>
+<p>This guide, as well as the rest of our docs, are open-source and available on <a href="https://github.com/circleci/circleci-docs" target="_blank" rel="noopener noreferrer">GitHub</a>. We welcome your contributions.
+</p>
+<ul>
+	<li>
+<a href="https://github.com/circleci/circleci-docs/blob/master/jekyll/_cci2_ja/env-vars.md" target="_blank" rel="noopener noreferrer">Suggest an edit to this page</a> (please read the <a href="https://github.com/circleci/circleci-docs/blob/master/docs/CONTRIBUTING.md#contributing-to-circleci-docs" target="_blank" rel="noopener noreferrer">contributing guide</a> first).</li>
+	<li>
+        To report a problem in the documentation, or to submit feedback and comments, please
+        <a href="https://github.com/circleci/circleci-docs/issues/new/choose" target="_blank" rel="noopener noreferrer">open an issue on GitHub.</a>
+    </li>
+</ul>
+<hr>
+
+	<div class="license-notice">
+	<a rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="../../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png"></a><br><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">CircleCI Documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="../../../index.html" property="cc:attributionName" rel="cc:attributionURL">CircleCI</a> is licensed under a <a rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+</div>
+
+</footer>
+
+				
+			</article>
+		</div>
+<!-- .article-container -->
+	</div>
+<!-- .main-body -->
+	<footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Product</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../../product/index.html" data-analytics-child='{ "menu": "product" }'>Overview</a></li>
+            <li><a href="../../../../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>Pricing</a></li>
+            <li><a href="../../../../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>Integrations</a></li>
+            <li><a href="../../../../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>Open Source</a></li>
+            <li><a href="../../../../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>Enterprise</a></li>
+            <li><a href="../../../../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noopener noreferrer">Training</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noopener noreferrer">Get Support</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noopener noreferrer">System Status</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+            <li><a href="../../../../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>Premium Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../../blog/index.html" data-analytics-child='{ "menu": "blog" }'>Blog</a></li>
+            <li><a href="../../../../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>Case Studies</a></li>
+            <li><a href="../../../../resources/index.html#white-papers" data-analytics-child='{ "menu": "white-papers" }'>White Papers</a></li>
+            <li><a href="../../../../resources/events/index.html" data-analytics-child='{ "menu": "events" }'>Events</a></li>
+            <li><a href="../../../../resources/index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>Webinars</a></li>
+            <li><a href="../../../../resources/index.html#videos" data-analytics-child='{ "menu": "videos" }'>Videos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../../about/index.html" data-analytics-child='{ "menu": "about-us" }'>About Us</a></li>
+            <li><a href="../../../../careers/index.html" data-analytics-child='{ "menu": "careers" }'>Careers <span class="text-blue">(We're hiring!)</span></a></li>
+            <li><a href="../../../../about/team/index.html" data-analytics-child='{ "menu": "team" }'>Team</a></li>
+            <li><a href="../../../../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>Contact Us</a></li>
+            <li><a href="../../../../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>Partner With Us</a></li>
+            <li><a href="../../../../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Getting Started</h6>
+          <ul>
+            <li><a href="../../../../continuous-integration/index.html" data-analytics-child='{ "menu": "what-is-ci" }'>What is CI?</a></li>
+            <li><a href="../../../2.0/index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>How to get started on CircleCI</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <img src="../../../assets/img/logos/logo-wordmark.svg" class="logo-small margin-top-small" alt="circleci">
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="text-center-small-float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../../../../blog/feed.xml" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" target="_blank" class="social-btn-facebook" title="Facebook" rel="noopener noreferrer">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" target="_blank" class="social-btn-twitter" title="Twitter" rel="noopener noreferrer">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" target="_blank" class="social-btn-github" title="GitHub" rel="noopener noreferrer">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" target="_blank" class="social-btn-linkedin" title="LinkedIn" rel="noopener noreferrer">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../../../../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>Terms of Service</a></li>
+              <li><a href="../../../../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>Privacy Policy</a></li>
+              <li><a href="../../../../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie Policy</a></li>
+              <li><a href="../../../../security/index.html" data-analytics-child='{ "menu": "security" }'>Security</a></li>
+              <li class="language-select">
+                <div id="dropUp" class="dropup show">
+                  <a class="dropdown-toggle" role="button" id="footerLangSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../../../assets/img/docs/ic-globe.svg" alt="globe" width="20"><span id="footerLangCurrentSelect"> English (US)</span><i class="fa fa-angle-up"></i></a>
+                  <div id="footerLangOptions" class="dropdown-menu hidden" aria-labelledby="footerLangSelect">
+                    <a class="dropdown-item active" href="../../../../index.html">English (US)</a>
+                    <a class="dropdown-item" href="https://circleci.jp/" data-analytics-child='{ "menu": "japan" }' target="_blank" rel="noopener noreferrer">日本語</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>Copyright © 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+	<script type="text/javascript">
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "documentation"
+    },
+    page: {
+      lang: "ja"
+    }
+  }
+</script>
+
+	<script src="../../../assets/vendor.min-46c6ef6945f9a0cdfc67de4e703b0455bdce1dd542a20929856bc7780cec5eea.js" type="text/javascript" integrity="sha256-RsbvaUX5oM38Z95OcDsEVb3OHdVCogkphWvHeAzsXuo=" crossorigin="anonymous"></script>
+  <script>
+   var _rollbarConfig = {
+     accessToken: 'a22956bf457a40e5a9ae6fd842d97392',
+     captureUncaught: true,
+     captureUnhandledRejections: true,
+     payload: { environment: "production" }
+   };
+   // Rollbar Snippet
+   !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+   // End Rollbar Snippet
+  </script>
+	<script src="../../../assets/app.bundle-39c4c8373f23380ce468959b35450ba78495190930364bdd1fb5cc8266c1c25c.js" type="text/javascript" integrity="sha256-OcTINz8jOAzkaJWbNUULp4SVGQkwNkvdH7XMgmbBwlw=" crossorigin="anonymous"></script>
+	<script src="../../../assets/site.min-5dca5826d2887861d12454f756244af66e3929e7662ff356e2104f89ad1df744.js" type="text/javascript" integrity="sha256-XcpYJtKIeGHRJFT3ViRK9m45KedmL/NW4hBPia0d90Q=" crossorigin="anonymous"></script>
+	<script src="../../../assets/jquery.cookie.min-3253943aafe4028f7cb10dc6c158ce36221a7cda383b2edd26ab0b0fbf1a3d0c.js" type="text/javascript" integrity="sha256-MlOUOq/kAo98sQ3GwVjONiIafNo4Oy7dJqsLD78aPQw=" crossorigin="anonymous"></script>
+	<script src="../../../assets/main-bb96e0cbdf3fdb37536858886e31ada7c5b8fa23791db0263287c65816a3ca53.js" type="text/javascript" integrity="sha256-u5bgy98/2zdTaFiIbjGtp8W4+iN5HbAmMofGWBajylM=" crossorigin="anonymous"></script>
+	<script src="../../../assets/nav-3f9f94d0fb345df7fb7e1e6c742cb13febe8ade5de6e915e3ef6a9c1101794f8.js" type="text/javascript" integrity="sha256-P5+U0Ps0Xff7fh5sdCyxP+voreXebpFePvapwRAXlPg=" crossorigin="anonymous"></script>
+	<script src="../../../assets/shared/analytics-recursive-tracking-4d73c7a12ba7386ca1f5e9166378dcb9ccfd0733111c1e78c0d7b66874bab7c5.js" type="text/javascript" integrity="sha256-TXPHoSunOGyh9ekWY3jcucz9BzMRHB54wNe2aHS6t8U=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../../../../cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+</div><!-- .outter -->
+</body>
+
+<!-- Mirrored from circleci.com/docs/ja/2.0/env-vars/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:33:41 GMT -->
+</html>

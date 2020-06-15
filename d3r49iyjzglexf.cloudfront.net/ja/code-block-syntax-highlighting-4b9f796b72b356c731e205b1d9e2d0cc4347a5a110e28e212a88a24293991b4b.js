@@ -1,0 +1,1 @@
+hljs.initHighlightingOnLoad();var __dummy="12345";

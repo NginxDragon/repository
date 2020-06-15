@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="">
+
+<!-- Mirrored from circleci.com/docs/enterprise/config/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:19:55 GMT -->
+<head>
+	<script src="../../../../cdn.optimizely.com/js/8188917468.js"></script>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="description" content="Configuring the CircleCI Enterprise installation.">
+	
+	<link rel="canonical" href="index.html">
+
+	<link href="https://d3r49iyjzglexf.cloudfront.net/favicon-066b37ff00f0f968b903c13ae88b5573b62665aea8fbe91bb61c55dfa9446523.ico" rel="icon" type="image/png" />
+  <link rel="stylesheet" href="../../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+	<link rel="stylesheet" href="../../assets/css/spacing.css" />
+	<link rel="stylesheet" href="../../assets/css/buttons.css" />
+	<link rel="stylesheet" href="../../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../../assets/css/syntax.css" />
+	<link rel="stylesheet" href="../../assets/css/jquery.navgoco.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<!-- End  -->
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel='stylesheet' href="../../assets/css/mobile.css" media="screen and (max-width: 800px)" />
+	<link rel="stylesheet" href="../../assets/css/footer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+	<link rel="stylesheet" href="../../assets/css/asciidoc.css">
+	<!--link rel="stylesheet" href="/docs/assets/css/asciidoc-pygments.css"-->
+	<!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script-->
+	<title>LXC-based Builder Configuration - CircleCI</title>
+	<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+
+  var pageCategory = "docs";
+  // slice off the slashes on either end
+  var pageName     = "/enterprise/config/".slice(1, -1) || "default";
+
+  var properties = {
+    "title"      : "LXC-based Builder Configuration",
+    "short-title": null,
+    "categories" : ["advanced-config"],
+    "description": "Configuring the CircleCI Enterprise installation.",
+    "collection": "ccie"
+  };
+
+  analytics.page(pageCategory, pageName, properties);
+  }}();
+</script>
+
+
+	<!-- Instant Search CDN links /-->
+	<link rel="stylesheet" type="text/css" href="../../../../cdn.jsdelivr.net/npm/instantsearch.js%402.10.2/dist/instantsearch.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2"></script>
+	<link rel="stylesheet" type="text/css" href="../../../../cdn.jsdelivr.net/npm/instantsearch.js%402.10.2/dist/instantsearch-theme-algolia.min.css">
+	<script src="../../../../cdn.jsdelivr.net/npm/js-cookie%402.2.0/src/js.cookie.min.js"></script>
+</head>
+
+<body class="">
+
+	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9HDVK');</script>
+
+
+
+<!-- instant hit template container /-->
+<div style="display:none;">
+	<div id="hits-template">
+		<h2>Search Results for "<span id="search-term-display"></span>"</h2>
+		<div id="instant-hits"></div>
+	</div>
+</div>
+<div class="outer">
+	<nav class="nav-toggle two">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="#main" class="nav-skip-button">
+          Skip to content
+        </a>
+
+        <div class="widescreen">
+          <a href="../../../index.html" class="logo"><img src="../../assets/img/logos/logo-wordmark.svg" class="logo" alt="CircleCI Home"></a>
+
+
+          <ul class="left-links main-nav">
+            <li class="nav-item">
+<a href="../../../product/index.html">Product</a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../../product/index.html">Overview</a></li>
+                  <li class="subnav-item"><a href="../../../product/index.html#how-it-works">How It Works</a></li>
+                  <li class="subnav-item"><a href="../../../product/index.html#features">Features</a></li>
+                  <li class="subnav-item"><a href="../../../build-environments/index.html">Build Environments</a></li>
+                  <li class="subnav-item"><a href="../../../product/index.html#hosting-options">Hosting Options</a></li>
+                  <li class="subnav-item"><a href="../../../integrations/index.html">Integrations</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="../../../pricing/index.html">Pricing</a></li>
+            <li class="nav-item"><a href="../../../enterprise/index.html">Enterprise</a></li>
+            <li class="nav-item">
+              <a href="#">
+                Developers
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../2.0/hello-world/index.html">Hello World</a></li>
+                  <li class="subnav-item"><a href="../../index.html">Documentation</a></li>
+                  <li class="subnav-item"><a href="https://discuss.circleci.com/" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+                  <li class="subnav-item"><a href="../../../orbs/index.html">Orbs</a></li>
+                  <li class="subnav-item"><a href="../../api/v2/index.html#circleci-api">API</a></li>
+                  <li class="subnav-item"><a href="../../../open-source/index.html">Open Source</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="default-item nav-item">
+<a href="../../../about/index.html">Company</a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../../about/index.html">About Us</a></li>
+                  <li class="subnav-item"><a href="../../../customers/index.html">Case Studies</a></li>
+                  <li class="subnav-item"><a href="../../../blog/index.html">Blog</a></li>
+                  <li class="subnav-item"><a href="../../../careers/index.html">Careers</a></li>
+                  <li class="subnav-item"><a href="../../../contact/index.html">Contact Us</a></li>
+                  <li class="subnav-item"><a href="../../../partners/index.html">Partner With Us</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="right-links main-nav">
+            <li class="default-item nav-item">
+              <a href="../../../contact/index.html" data-analytics="top-nav-contact-us">
+                Contact Us
+              </a>
+            </li>
+            <li class="default-item nav-item">
+              <a href="#">
+                Support
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noopener noreferrer">Training</a></li>
+                  <li class="subnav-item"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noopener noreferrer">Get Support</a></li>
+                  <li class="subnav-item"><a href="https://status.circleci.com/" target="_blank" rel="noopener noreferrer">System Status</a></li>
+                  <li class="subnav-item"><a href="https://ideas.circleci.com/" target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+                  <li class="subnav-item"><a href="../../../support/premium-support/index.html">Premium Support</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="divider-left nav-item visitor-item"><a href="https://circleci.com/vcs-authorize/" data-hj-masked>Log In</a></li>
+            <li class="nav-item visitor-item"><a class="btn-primary small" href="../../../signup/index.html" data-analytics-action="signup-clicked" data-analytics-location="nav" data-optimizely="signup_button_clicked">Sign Up</a></li>
+            <li class="dashboard-link desktop-nav divider-left"><a href="https://circleci.com/dashboard">Go to app</a></li>
+          </ul>
+
+        </div>
+
+        <div class="narrowscreen">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navigation" aria-expanded="false" aria-controls="#mobile-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <a href="../../../index.html"><img class="logo" src="../../assets/img/logos/logo-wordmark.svg" alt="CircleCI Home"></a>
+
+
+          <span class="login">
+            <a href="https://circleci.com/vcs-authorize/" data-hj-masked class="mobile-nav signup visitor-item" data-analytics-location="nav">Log In</a>
+            <a href="https://circleci.com/dashboard" class="dashboard-link mobile-nav">Go to app</a>
+          </span>
+
+          <ul class="dropdown-menu2" id="mobile-navigation">
+            <li><a href="../../../signup/index.html" data-analytics-action="signup-clicked" data-optimizely="signup_button_clicked" class="btn-primary">Sign Up for Free</a></li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Product
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../../product/index.html">Overview</a></li>
+                <li class="subnav-item"><a href="../../../product/index.html#how-it-works">How It Works</a></li>
+                <li class="subnav-item"><a href="../../../product/index.html#features">Features</a></li>
+                <li class="subnav-item"><a href="../../../build-environments/index.html">Build Environments</a></li>
+                <li class="subnav-item"><a href="../../../product/index.html#hosting-options">Hosting Options</a></li>
+                <li class="subnav-item"><a href="../../../integrations/index.html">Integrations</a></li>
+              </ul>
+            </li>
+            <li class="border-bottom"><a href="../../../pricing/index.html">Pricing</a></li>
+            <li class="border-bottom"><a href="../../../enterprise/index.html">Enterprise</a></li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Developers
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../2.0/hello-world/index.html">Getting Started</a></li>
+                <li class="subnav-item"><a href="../../index.html">Documentation</a></li>
+                <li class="subnav-item"><a href="https://discuss.circleci.com/" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+                <li class="subnav-item"><a href="../../../orbs/index.html">Orbs</a></li>
+                <li class="subnav-item"><a href="../../api/v2/index.html#circleci-api">API</a></li>
+                <li class="subnav-item"><a href="../../../open-source/index.html">Open Source</a></li>
+              </ul>
+            </li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Company
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../../about/index.html">About Us</a></li>
+                <li class="subnav-item"><a href="../../../customers/index.html">Case Studies</a></li>
+                <li class="subnav-item"><a href="../../../blog/index.html">Blog</a></li>
+                <li class="subnav-item"><a href="../../../careers/index.html">Careers</a></li>
+                <li class="subnav-item"><a href="../../../contact/index.html">Contact Us</a></li>
+                <li class="subnav-item"><a href="../../../partners/index.html">Partner With Us</a></li>
+              </ul>
+            </li>
+            <li class="arrow collapsed border-bottom">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              Support
+              <ul class="subnav">
+                <li class="subnav-item"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noopener noreferrer">Training</a></li>
+                <li class="subnav-item"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noopener noreferrer">Get Support</a></li>
+                <li class="subnav-item"><a href="https://status.circleci.com/" target="_blank" rel="noopener noreferrer">System Status</a></li>
+                <li class="subnav-item"><a href="https://ideas.circleci.com/" target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+                <li class="subnav-item"><a href="../../../support/premium-support/index.html">Premium Support</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+	<div class="main-searchbar">
+  <form>
+    <div id="search-box">
+      <!-- SearchBox widget will appear here -->
+    </div>
+  </form>
+</div>
+	<!-- MOBILE SUBNAV /-->
+<div class="sidebar-mobile-wrapper">
+  <!-- DISPLAY ITEM /-->
+  <div class="current-item">
+    
+    
+    
+  </div>
+
+  <!-- DROPDOWN /-->
+  <div class="sidebar-mobile-dropdown">
+    <nav class="mobile-sidebar hidden">
+      
+
+      
+    </nav>
+  </div>
+</div>
+
+  <div class="hits-target"></div>
+	<div class="main-body">
+		<!-- FULL SCREEN /-->
+<div class="sidebar-wrapper">
+		<nav class="sidebar fixed">
+				
+				
+				
+
+    <div class="sidebar-item-group">
+						
+    </div>
+    <div class="lang-picker">
+      <select id="sidebarLangSelect">
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+		</nav>
+
+  <script>
+    // Add the current language to the window for auto setting the dropdown to current language.
+    window.currentLang = ""
+  </script>
+</div>
+
+		<div class="article-container docs" id="main">
+			<div class="alert alert-info" role="alert">
+We’re sunsetting CircleCI 1.0: August 31, 2018 is the final day for 1.0 builds. Refer to <a href="../../2.0/overview/index.html">CircleCI 2.0 documentation for administrators</a> to get started with installing or upgrading your installation to 2.0.
+</div>
+
+			
+			
+			<article>
+				<h1 id="lxc-based-builder-configuration">LXC-based Builder Configuration</h1>
+        
+				<p>CircleCI Enterprise builder behavior can be customized with a number parameters specified via environment variables. These variables can be specified by customizing the startup script (or <code class="highlighter-rouge">*.tf</code> file if using Terraform) for builders to the following instead of the default:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl https://s3.amazonaws.com/circleci-enterprise/init-builder-0.2.sh | \
+    SERVICES_PRIVATE_IP=&lt;private ip address of services box&gt; \
+    CIRCLE_SECRET_PASSPHRASE=&lt;passphrase entered on system console (services box port 8800) settings&gt; \
+    CIRCLE_CONFIG_OPTION_1=&lt;value&gt; \
+    CIRCLE_CONFIG_OPTION_2=&lt;value&gt; \
+    bash
+</code></pre></div></div>
+
+<h3 id="adjusting-build-container-power">Adjusting Build Container Power</h3>
+
+<p>You can, optionally, adjust the CPU and memory used by your build containers using the following build configuration variables. Our default containers have 2 CPUs and 4G of memory:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">CIRCLE_CONTAINER_MEMORY_LIMIT</code> - the amount of memory allocated to each container set with a value of <code class="highlighter-rouge">xG</code> where <code class="highlighter-rouge">x</code> is an integer number of gigabytes of memory.
+Default value is <code class="highlighter-rouge">4G</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">CIRCLE_CONTAINER_CPUS</code> - the number of CPUs allocated to each container.
+Default value is <code class="highlighter-rouge">2</code>.
+<em>Note:</em> if <code class="highlighter-rouge">CIRCLE_CONTAINER_CPUS</code> is <code class="highlighter-rouge">0</code> there will be no limit on cpu resources per container.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">CIRCLE_NUM_CONTAINERS</code> - the number of containers to run on each build box.
+Default value is ([TOTAL_CORES] - 2)/<code class="highlighter-rouge">CIRCLE_CONTAINER_CPUS</code>
+<em>Note:</em> <strong>You must leave 2 cores and at least 4G of memory free to run the Circle process in the container.</strong></p>
+  </li>
+</ul>
+
+<p>In order to set them up, please follow the following steps:</p>
+
+<ol>
+  <li>
+    <p>Add them to the user data field of the Launch Configuration associated with your auto-scaling group in amazon.</p>
+  </li>
+  <li>
+    <p>Terminate all instances in the auto-scaling group. If you are worried about downtime, you can launch new instances first before terminating the old instances.</p>
+  </li>
+</ol>
+
+<p>For more information on how many containers your builder instance can support, please checkout the amazon instance type specifications for your chosen instance type: <a href="https://aws.amazon.com/ec2/instance-types/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/ec2/instance-types/</a>. By default, our terraform and cloudformation scripts spin up <code class="highlighter-rouge">r3.2xlarge</code> builder instances.</p>
+
+<h3 id="selecting-a-build-container-image">Selecting a build container image</h3>
+
+<p>You can control the container image used to run builds with the <code class="highlighter-rouge">CIRCLE_CONTAINER_IMAGE_URI</code> environment variable. The URI may either be a standard http(s) resource, or it may use the <code class="highlighter-rouge">s3://</code> protocol (e.g. <code class="highlighter-rouge">s3://bucket-name/key</code>) in which case AWS IAM instance profile authentication may be used. For CircleCI-managed containers, you may also use the abbreviated, region-independent <code class="highlighter-rouge">CIRCLE_CONTAINER_IMAGE_ID</code> variable to fix your builder machines to a specific container version.</p>
+
+<h4 id="using-the-trusty-image">Using the Trusty image</h4>
+
+<p>CircleCI builders can use the same Trusty (Ubuntu 14.04) build container image available on circleci.com by specifying <code class="highlighter-rouge">CIRCLE_CONTAINER_IMAGE_ID=circleci-trusty-container_0.0.575</code>. This image includes the languages and packages specified <a href="https://circle-artifacts.com/gh/circleci/image-builder/575/artifacts/0/tmp/circle-artifacts.RbPnATN/versions.json" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<h4 id="using-a-custom-image">Using a custom image</h4>
+
+<p>If you’re running into serious performance issues configuring your dependencies via the <code class="highlighter-rouge">circle.yml</code>, CircleCI enterprise has functionality that allows you to generate your own custom image and use it to run all your builds. This can often lead to much faster startup times, since the new container will come pre-configured with all your dependencies, and is frequently much smaller than our default container. Some things to consider before deciding if this is the right approach for you:</p>
+
+<p><em>Once you move to a custom image container, you will be responsible for all future updates to your own container.</em></p>
+
+<p>You can build a customized image with Docker using the <a href="https://github.com/circleci/image-builder" target="_blank" rel="noopener noreferrer">container image builder</a>.</p>
+
+<p><em>If you are interested, please reach out to us by opening a ticket at <a href="https://support.circleci.com/hc/en-us/" target="_blank" rel="noopener noreferrer">https://support.circleci.com/hc/en-us/</a> as well.  We’d love to hear your feedback and give guidance on how best to configure your build environment</em></p>
+
+<h3 id="running-upstream-docker">Running Upstream Docker</h3>
+
+<p>If you wish to use the upstream version of Docker rather than the patched version provided by CircleCI you will need to run an privileged LXC container. You can do this by editing the launch configuration in AWS and setting <code class="highlighter-rouge">CIRCLE_CONTAINER_TYPE=privileged-lxc</code>.</p>
+
+<p>You can now either bake the version of Docker that you want into your custom image, or install it via <code class="highlighter-rouge">circle.yml</code> by adding the code below:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machine:
+  post:
+    - sudo curl -L -o /usr/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-1.9.1
+    - sudo container=yes docker daemon: { background: true }
+</code></pre></div></div>
+
+<h3 id="sharing-docker-socket">Sharing Docker Socket</h3>
+
+<p>In CircleCI Enterprise, it’s possible to bind-mount a Docker socket from the underlying host into the build containers so that they can all share a single long-running daemon for improved performance. It should be equivalent to the cache performance you see on Jenkins.</p>
+
+<p><strong>NOTE</strong>: The primary drawback here is security-related. Giving builds access to the Docker daemon on the host is basically equivalent to giving them root access to the machine. The same is true on Jenkins, but CircleCI’s default nested Docker approach, while it has performance issues, does provide a layer of security.</p>
+
+<p>To setup a long-running Docker daemon on a builder machine, you can start it with userdata like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+curl <span class="nt">-sSL</span> https://get.docker.com | bash
+<span class="nb">sudo chmod </span>777 /var/run/docker.sock
+curl https://s3.amazonaws.com/circleci-enterprise/init-builder-0.2.sh | <span class="se">\</span>
+    <span class="nv">SERVICES_PRIVATE_IP</span><span class="o">=</span>X.X.X.X <span class="se">\</span>
+    <span class="nv">CIRCLE_SECRET_PASSPHRASE</span><span class="o">=</span>xxxx <span class="se">\</span>
+    <span class="nv">CIRCLE_SHARED_DOCKER_ENGINE</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    <span class="nv">CIRCLE_CONTAINER_IMAGE_ID</span><span class="o">=</span>ubuntu-14.04-dot-com-XXL-927-41cd8fe <span class="se">\</span>
+    bash
+</code></pre></div></div>
+
+<p>There are also a couple small differences to use this daemon within builds:</p>
+
+<ol>
+  <li>Set <code class="highlighter-rouge">DOCKER_HOST="unix:///tmp/docker.sock"</code>
+</li>
+  <li>Don’t enter “docker” in the “services” section of circle.yml (no need to start the service as it’s already running on the host)</li>
+</ol>
+
+<p>You should then see improved performance between builds!</p>
+
+<h3 id="adjusting-builder-networking">Adjusting Builder Networking</h3>
+
+<p>You can adjust which subnets containers use by setting the following environment variables:</p>
+
+<ul>
+  <li>
+<code class="highlighter-rouge">CIRCLE_CONTAINERS_SUBNET</code> - the subnet all containers will share, in CIDR notation.</li>
+  <li>
+<code class="highlighter-rouge">CIRCLE_CONTAINERS_SUBNET_MASK_LENGTH</code> - the size of the netmask for
+each container’s individual subnet. Needs to be no more than 30, and needs to be a large
+enough to fit enough containers in the <code class="highlighter-rouge">CIRCLE_CONTAINERS_SUBNET</code>.</li>
+</ul>
+
+<p>Some examples:</p>
+
+<ul>
+  <li>The defaults:
+    <div class="highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>CIRCLE_CONTAINERS_SUBNET=172.16.1.0/16
+CIRCLE_CONTAINERS_SUBNET_NETMASK_LENGTH=24
+</code></pre></div>    </div>
+  </li>
+  <li>Use 10.0.3.x
+    <div class="highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>CIRCLE_CONTAINERS_SUBNET=10.0.3.1/24
+CIRCLE_CONTAINERS_SUBNET_NETMASK_LENGTH=30
+</code></pre></div>    </div>
+  </li>
+  <li>Use 192.168.x.x
+    <div class="highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>CIRCLE_CONTAINERS_SUBNET=192.168.1.0/16
+CIRCLE_CONTAINERS_SUBNET_NETMASK_LENGTH=24
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+
+				
+					<footer>
+	<br>
+<hr>
+<h3>Help make this document better</h3>
+<p>This guide, as well as the rest of our docs, are open-source and available on <a href="https://github.com/circleci/circleci-docs" target="_blank" rel="noopener noreferrer">GitHub</a>. We welcome your contributions.
+</p>
+<ul>
+	<li>
+<a href="https://github.com/circleci/circleci-docs/blob/master/jekyll/_ccie/config.md" target="_blank" rel="noopener noreferrer">Suggest an edit to this page</a> (please read the <a href="https://github.com/circleci/circleci-docs/blob/master/docs/CONTRIBUTING.md#contributing-to-circleci-docs" target="_blank" rel="noopener noreferrer">contributing guide</a> first).</li>
+	<li>
+        To report a problem in the documentation, or to submit feedback and comments, please
+        <a href="https://github.com/circleci/circleci-docs/issues/new/choose" target="_blank" rel="noopener noreferrer">open an issue on GitHub.</a>
+    </li>
+</ul>
+<hr>
+
+	<div class="license-notice">
+	<a rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png"></a><br><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">CircleCI Documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="../../index.html" property="cc:attributionName" rel="cc:attributionURL">CircleCI</a> is licensed under a <a rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+</div>
+
+</footer>
+
+				
+			</article>
+		</div>
+<!-- .article-container -->
+	</div>
+<!-- .main-body -->
+	<footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Product</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../product/index.html" data-analytics-child='{ "menu": "product" }'>Overview</a></li>
+            <li><a href="../../../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>Pricing</a></li>
+            <li><a href="../../../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>Integrations</a></li>
+            <li><a href="../../../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>Open Source</a></li>
+            <li><a href="../../../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>Enterprise</a></li>
+            <li><a href="../../../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noopener noreferrer">Training</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noopener noreferrer">Get Support</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noopener noreferrer">System Status</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+            <li><a href="../../../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>Premium Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../blog/index.html" data-analytics-child='{ "menu": "blog" }'>Blog</a></li>
+            <li><a href="../../../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>Case Studies</a></li>
+            <li><a href="../../../resources/index.html#white-papers" data-analytics-child='{ "menu": "white-papers" }'>White Papers</a></li>
+            <li><a href="../../../resources/events/index.html" data-analytics-child='{ "menu": "events" }'>Events</a></li>
+            <li><a href="../../../resources/index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>Webinars</a></li>
+            <li><a href="../../../resources/index.html#videos" data-analytics-child='{ "menu": "videos" }'>Videos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../about/index.html" data-analytics-child='{ "menu": "about-us" }'>About Us</a></li>
+            <li><a href="../../../careers/index.html" data-analytics-child='{ "menu": "careers" }'>Careers <span class="text-blue">(We're hiring!)</span></a></li>
+            <li><a href="../../../about/team/index.html" data-analytics-child='{ "menu": "team" }'>Team</a></li>
+            <li><a href="../../../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>Contact Us</a></li>
+            <li><a href="../../../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>Partner With Us</a></li>
+            <li><a href="../../../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Getting Started</h6>
+          <ul>
+            <li><a href="../../../continuous-integration/index.html" data-analytics-child='{ "menu": "what-is-ci" }'>What is CI?</a></li>
+            <li><a href="../../2.0/index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>How to get started on CircleCI</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <img src="../../assets/img/logos/logo-wordmark.svg" class="logo-small margin-top-small" alt="circleci">
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="text-center-small-float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../../../blog/feed.xml" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" target="_blank" class="social-btn-facebook" title="Facebook" rel="noopener noreferrer">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" target="_blank" class="social-btn-twitter" title="Twitter" rel="noopener noreferrer">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" target="_blank" class="social-btn-github" title="GitHub" rel="noopener noreferrer">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" target="_blank" class="social-btn-linkedin" title="LinkedIn" rel="noopener noreferrer">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../../../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>Terms of Service</a></li>
+              <li><a href="../../../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>Privacy Policy</a></li>
+              <li><a href="../../../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie Policy</a></li>
+              <li><a href="../../../security/index.html" data-analytics-child='{ "menu": "security" }'>Security</a></li>
+              <li class="language-select">
+                <div id="dropUp" class="dropup show">
+                  <a class="dropdown-toggle" role="button" id="footerLangSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../../assets/img/docs/ic-globe.svg" alt="globe" width="20"><span id="footerLangCurrentSelect"> English (US)</span><i class="fa fa-angle-up"></i></a>
+                  <div id="footerLangOptions" class="dropdown-menu hidden" aria-labelledby="footerLangSelect">
+                    <a class="dropdown-item active" href="../../../index.html">English (US)</a>
+                    <a class="dropdown-item" href="https://circleci.jp/" data-analytics-child='{ "menu": "japan" }' target="_blank" rel="noopener noreferrer">日本語</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>Copyright © 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+	<script type="text/javascript">
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "documentation"
+    },
+    page: {
+      lang: null
+    }
+  }
+</script>
+
+	<script src="../../assets/vendor.min-46c6ef6945f9a0cdfc67de4e703b0455bdce1dd542a20929856bc7780cec5eea.js" type="text/javascript" integrity="sha256-RsbvaUX5oM38Z95OcDsEVb3OHdVCogkphWvHeAzsXuo=" crossorigin="anonymous"></script>
+  <script>
+   var _rollbarConfig = {
+     accessToken: 'a22956bf457a40e5a9ae6fd842d97392',
+     captureUncaught: true,
+     captureUnhandledRejections: true,
+     payload: { environment: "production" }
+   };
+   // Rollbar Snippet
+   !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+   // End Rollbar Snippet
+  </script>
+	<script src="../../assets/app.bundle-39c4c8373f23380ce468959b35450ba78495190930364bdd1fb5cc8266c1c25c.js" type="text/javascript" integrity="sha256-OcTINz8jOAzkaJWbNUULp4SVGQkwNkvdH7XMgmbBwlw=" crossorigin="anonymous"></script>
+	<script src="../../assets/site.min-5dca5826d2887861d12454f756244af66e3929e7662ff356e2104f89ad1df744.js" type="text/javascript" integrity="sha256-XcpYJtKIeGHRJFT3ViRK9m45KedmL/NW4hBPia0d90Q=" crossorigin="anonymous"></script>
+	<script src="../../assets/jquery.cookie.min-3253943aafe4028f7cb10dc6c158ce36221a7cda383b2edd26ab0b0fbf1a3d0c.js" type="text/javascript" integrity="sha256-MlOUOq/kAo98sQ3GwVjONiIafNo4Oy7dJqsLD78aPQw=" crossorigin="anonymous"></script>
+	<script src="../../assets/main-bb96e0cbdf3fdb37536858886e31ada7c5b8fa23791db0263287c65816a3ca53.js" type="text/javascript" integrity="sha256-u5bgy98/2zdTaFiIbjGtp8W4+iN5HbAmMofGWBajylM=" crossorigin="anonymous"></script>
+	<script src="../../assets/nav-3f9f94d0fb345df7fb7e1e6c742cb13febe8ade5de6e915e3ef6a9c1101794f8.js" type="text/javascript" integrity="sha256-P5+U0Ps0Xff7fh5sdCyxP+voreXebpFePvapwRAXlPg=" crossorigin="anonymous"></script>
+	<script src="../../assets/shared/analytics-recursive-tracking-4d73c7a12ba7386ca1f5e9166378dcb9ccfd0733111c1e78c0d7b66874bab7c5.js" type="text/javascript" integrity="sha256-TXPHoSunOGyh9ekWY3jcucz9BzMRHB54wNe2aHS6t8U=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../../../cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+</div><!-- .outter -->
+</body>
+
+<!-- Mirrored from circleci.com/docs/enterprise/config/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:19:55 GMT -->
+</html>

@@ -1,0 +1,4861 @@
+<!DOCTYPE html>
+<html lang="ja">
+  
+<!-- Mirrored from circleci.com/ja/resources/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:54:24 GMT -->
+<head>
+    
+
+    <script id="Cookiebot" src="../../../consent.cookiebot.com/uc.js" data-cbid="a28b71f3-4d2e-4eac-93bc-34929948dd7d" type="text/javascript" async></script>
+    <script src="../../../cdn.optimizely.com/js/8188917468.js" data-cookieconsent="statistics" type="text/plain"></script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../../blog/feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../d3r49iyjzglexf.cloudfront.net/ja/apple-touch-icon-f1ef1fb6f37fe36fdacd2dfdc11fb2edf1720083a9aa8648eeac81f0a69e8da8.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../../d3r49iyjzglexf.cloudfront.net/ja/android-chrome-512x512-636549fcf54150d3184aa6e8395d79ca9bcdc9278210e947ce093372cc2004a4.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../d3r49iyjzglexf.cloudfront.net/ja/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="150x150" href="../../../d3r49iyjzglexf.cloudfront.net/ja/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../d3r49iyjzglexf.cloudfront.net/ja/favicon-32x32-86c07d561af62a6d412c5465d401ebf50a8f304d97c165e30feb71868b891c7c.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../d3r49iyjzglexf.cloudfront.net/ja/favicon-16x16-2f395f301d4ee767c0016c98f97561dc2ec4ddbae39cc895c9840a22467df08a.png">
+<link rel="manifest" href="https://d3r49iyjzglexf.cloudfront.net/ja/site-90f0e3ca8a56223e86328049af75ddd9e6e4a6fdac600d0773f54f95e531f0cd.webmanifest">
+<link rel="mask-icon" href="https://d3r49iyjzglexf.cloudfront.net/ja/safari-pinned-tab-251836a3ead2fbbebdd673dd680e8b01f1d8e5889cb3641a16893ad344f17d4a.svg" color="#04aa51">
+<link rel="shortcut icon" href="https://d3r49iyjzglexf.cloudfront.net/ja/favicon-7821a60418a7ee3a7570d938fb95e809903dbfca7514b9245f1beef5d00da2d8.ico">
+<meta name="apple-mobile-web-app-title" content="CircleCI">
+<meta name="application-name" content="CircleCI">
+<meta name="msapplication-TileColor" content="#161616">
+<meta name="msapplication-square150x150logo" content="https://d3r49iyjzglexf.cloudfront.net/ja/mstile-150x150-e0e68b19614d1b594800947225d05483564336ec629d74afb53cf3fe9d634d2a.png" />
+<meta name="theme-color" content="#ffffff">
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="alternate" hreflang="en" href="../../resources/index.html">
+
+  
+  
+  <link rel="alternate" hreflang="ja" href="index.html">
+
+
+
+    <!-- adding canonical links, if they are specified in front matter /-->
+    
+
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/ja/vendor-9130b6026c6317f2286994e037f189b0850a60286866eeb5039e622081496148.css">
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/ja/vendors/lity-b8b6faa63fb76d33ead3adfe0a9148e43ea51ca7c3a5faa008b88ab2ffe321ef.css">
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/ja/site-ef68796b9d5ee51b18504a38de8cbadc65de3a7bb274ac980510d0ce2018f9d1.css">
+    
+    
+    
+    
+
+<script type="text/javascript">
+  (function () {
+    var categoryOverride = null || null;
+    var nameOverride     = null;
+
+    var pageUrlParts = "/resources/".split('../../index.html').slice(1, -1);
+
+    // store as globals to read off of it later in analytics.js
+    window.analyticsPageProperties = {
+      categoryOverride: categoryOverride,
+      nameOverride: nameOverride,
+      pageUrlParts: pageUrlParts,
+    };
+  })();
+
+  window.thirdPartyIds = {
+    
+  };
+
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "blog"
+    },
+    page: {
+      lang: "ja"
+    },
+    env: "production"
+  };
+</script>
+
+    
+      <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";}}();
+</script>
+<script data-cookieconsent="statistics" type="text/plain">
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+</script>
+
+      <!-- Start of Async Drift Code -->
+<script>
+  "use strict";
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('4hpgak4w2mc8');
+  var events = [
+    {
+    driftEvent: 'sidebarOpen',
+    eventName: 'opened_chat'
+    },
+    {
+    driftEvent: 'sidebarClose',
+    eventName: 'closed_chat'
+    },
+    {
+    driftEvent: 'message:sent',
+    eventName: 'message_sent_visitor'
+    },
+    {
+    driftEvent: 'message',
+    eventName: 'message_sent_team'
+    },
+    {
+    driftEvent: 'emailCapture',
+    eventName: 'captured_email'
+    },
+    {
+    driftEvent: 'scheduling:requestMeeting',
+    eventName: 'scheduled_meeting'
+    },
+    {
+    driftEvent: 'scheduling:meetingBooked',
+    eventName: 'meeting_invite_sent'
+    },
+    {
+    driftEvent: 'conversation:playbookDismissed',
+    eventName: 'closed_greeting'
+    },
+    {
+    driftEvent: 'conversation:playbookClicked',
+    eventName: 'clicked_chatbot'
+    },
+    {
+    driftEvent: 'conversation:buttonClicked',
+    eventName: 'clicked_button'
+    },
+    {
+    driftEvent: 'conversation:firstInteraction',
+    eventName: 'first_interaction'
+    },
+  ];
+  events.map(event => {
+    drift.on(event.driftEvent, function(data) {
+      var driftAnalyticsProps = {
+        name: event.eventName,
+        category: 'drift'
+      }
+      var eventProps = Object.assign({}, analyticsTrackProps(), driftAnalyticsProps);
+      trackEvent('drift-interaction', eventProps);
+    });
+  });
+</script>
+<!-- End of Async Drift Code -->
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>各種資料 - CircleCI</title>
+
+
+
+  <meta property="og:title" content="各種資料" />
+
+
+
+  <meta name="description" content="CircleCI はエンジニアリングの生産性向上にどう役立つのでしょうか。CircleCI のメリットについて説明したブログ記事、ビデオ、ホワイト ペーパーをご紹介します。" />
+  <meta property="og:description" content="CircleCI はエンジニアリングの生産性向上にどう役立つのでしょうか。CircleCI のメリットについて説明したブログ記事、ビデオ、ホワイト ペーパーをご紹介します。" />
+
+
+
+  <link rel="canonical" href="index.html" />
+  <meta property="og:url" content="https://circleci.com/ja/resources/" />
+
+
+
+  <meta property="og:site_name" content="CircleCI" />
+
+
+
+<meta property="og:image" content="https://d3r49iyjzglexf.cloudfront.net/ja/circleci-logo-horizontal-twitter-4635639cabbe09cfb3127f4c71fd8276c081df46c1360fb11fee894f6d02be82.png" />
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+    <meta name="twitter:card" content="summary_large_image" />
+  
+
+  <meta name="twitter:site" content="@circleci" />
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+
+
+    "@type": "WebPage",
+
+
+
+
+
+    "headline": "各種資料",
+
+
+
+    "image": "https://d3r49iyjzglexf.cloudfront.net/ja/circleci-logo-horizontal-twitter-4635639cabbe09cfb3127f4c71fd8276c081df46c1360fb11fee894f6d02be82.png",
+
+
+
+
+
+    "description": "CircleCI はエンジニアリングの生産性向上にどう役立つのでしょうか。CircleCI のメリットについて説明したブログ記事、ビデオ、ホワイト ペーパーをご紹介します。",
+
+
+
+    "logo": "https://d3r49iyjzglexf.cloudfront.net/ja/circleci-logo-stacked-fb-657e221fda1646a7e652c09c9fbfb2b0feb5d710089bb4d8e8c759d37a832694.png",
+
+
+
+
+    "url": "https://circleci.com/ja/resources/"
+  }
+</script>
+
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body class=" ">
+    <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script data-cookieconsent="marketing" type="text/plain">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W9HDVK');
+</script>
+
+    <script id="modal-objects">
+var modals = {
+  'generic': {
+    header: "お問い合わせありがとうございます",
+    content: "お問い合わせの件についてはなるべく早急に対応させていただきます。"
+  },
+  'error': {
+    header: "エラーが発生しました。",
+    content: "お問い合わせの送信中に問題が発生しました。原因としてはスクリプト ブロック アドオンの使用や JavaScript の無効化などが考えられます。スクリプトをブロックしている場合には、解除していただきますようお願いいたします。<br><br>"
+  },
+  'selfProvision': {
+    header: "お申し込みありがとうございます",
+    content: "トライアルのお申し込みを受け付けました。トライアル キーをメールでお送りします。インストールの手順は<a href='https://circleci.com/ja/docs/enterprise/single-box/'>こちらのドキュメント</a>でご確認ください。",
+    execute: function () {
+      trackEvent("enterprise-install-submitted", analyticsTrackProps());
+    }
+  },
+  'unsubscribe': {
+    header: "登録解除が完了しました",
+    content: "配信登録を解除しました。今後、OS X のイメージや機能についての最新情報は配信されなくなります。"
+  },
+  // /contact-us
+  'enterpriseContactThankYou': {
+    header: "お問い合わせありがとうございます",
+    content: "1 営業日以内にご連絡を差し上げます。"
+  },
+  // /enterprise-trial-install (SPT form "other questions" option)
+  'enterpriseSPTOtherQuestionsThankYou': {
+    header: "お問い合わせありがとうございます",
+    content: "1 営業日以内にご連絡を差し上げます。"
+  },
+  'enterpriseSPTTrial': {
+    header: "トライアルへのお申し込みありがとうございます",
+    content: "CircleCI ソリューション チームの担当者が早急にご連絡し、トライアル開始のお手伝いをさせていただきます。<br><br>"
+  },
+  'subscribe': {
+    header: "ご登録ありがとうございます",
+    content: "ソフトウェア開発やエンジニアリングの生産性向上に関する最新ニュースをお届けします。"
+  },
+  'partnershipConfirm': {
+    header: "お問い合わせありがとうございます",
+    content: "CircleCI パートナー チームの担当者が早急にご連絡を差し上げます。"
+  },
+  'governmentConfirm': {
+    header: "お問い合わせありがとうございます",
+    content: "CircleCI ガバメント チームの担当者が早急にご連絡を差し上げます。"
+  },
+  'reportEmail': {
+    header: "ありがとうございます",
+    content: "ご指定のメール アドレスにレポートを送信しました。"
+  },
+  'usageEarlyAccess': {
+    header: "ありがとうございます",
+    content: "折り返しご連絡を差し上げます。"
+  },
+   'NewPlanAvailability': {
+    header: "ありがとうございます",
+    content: "新しいプランがリリースされましたらお知らせいたします。"
+  }
+};
+
+// This is a no-op change to bump the file hash; see CIRCLE-14243. You may remove 
+// this if you are making other changes to this file, but DO NOT remove it without
+// changing something else that will alter the file hash (comments are not
+// enough FYI).
+var __dummy = '12345';
+
+</script>
+
+    
+      
+
+<nav class="nav-toggle two ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <a href="#main" class="nav-skip-button">
+          Skip to content
+        </a>
+
+        <div class="widescreen">
+          <a href="../index.html" class="logo" data-analytics="top-nav-logo">
+            
+            
+            <img src="https://d3r49iyjzglexf.cloudfront.net/ja/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo" alt="CircleCI Home" />
+          </a>
+
+          
+          <ul class="left-links main-nav">
+            <li class="nav-item ">
+              <a href="../product/index.html" data-analytics="top-nav-product">
+                製品概要
+              </a>
+              <div class="submenu">
+                <ul class="subnav" data-analytics="topnav-product-clicked">
+                  <li class="subnav-item" data-analytics="top-nav-product-overview"><a href="../product/index.html">製品概要</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-how-it-works"><a href="../product/index.html#how-it-works">CircleCI のメリット</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-features"><a href="../product/index.html#features">機能</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-build-environments"><a href="../build-environments/index.html">ビルド環境</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-hosting-options"><a href="../product/index.html#hosting-options">ホスティング オプション</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-integrations"><a href="../integrations/index.html">インテグレーション</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-product-jenkins"><a href="../migrate-jenkins-to-circleci/index.html">Jenkins からの移行</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item " data-analytics="top-nav-pricing">
+              <a href="../pricing/index.html">
+                料金プラン
+              </a>
+            </li>
+
+            <li class="nav-item " data-analytics="top-nav-enterprise">
+              <a href="../enterprise/index.html">
+                エンタープライズ向け
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#">
+                開発者向け
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-developer-hello-world"><a href="../docs/2.0/hello-world/index.html">Hello World</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-documentation"><a href="../docs/index.html">ドキュメント</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-community-forum"><a href="https://discuss.circleci.com/" target="_blank" rel="noreferrer noopener">コミュニティ フォーラム</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-orbs"><a href="../orbs/index.html">Orbs</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-api"><a href="../docs/api/v2/index.html#circleci-api">API</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-developer-oss"><a href="../open-source/index.html">オープンソース</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="default-item nav-item ">
+              <a href="../about/index.html" data-analytics="top-nav-company">
+                会社概要
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-company-about"><a href="../about/index.html">CircleCI について</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-case-studies"><a href="../customers/index.html">ケース スタディー</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-blog"><a href="../blog/index.html">ブログ</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-company-jobs"><a href="../careers/index.html">採用情報</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-contact-us"><a href="../contact/index.html">お問い合わせ</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-partner-with-us"><a href="../partners/index.html">パートナー募集</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="right-links main-nav">
+            <li class="default-item nav-item">
+              <a href="../contact/index.html" data-analytics="top-nav-contact-us">
+                お問い合わせ
+              </a>
+            </li>
+            <li class="default-item nav-item">
+              <a href="#">
+                サポート
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item" data-analytics="top-nav-support-documentation"><a href="../docs/index.html" target="_blank" rel="noreferrer noopener">ドキュメント</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-training"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noreferrer noopener">トレーニング</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-get-support"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noreferrer noopener">サポート情報</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-system-status"><a href="https://status.circleci.com/" target="_blank" rel="noreferrer noopener">システム稼働状況</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-feature-requests"><a href="https://ideas.circleci.com/" target="_blank" rel="noreferrer noopener">改善要望</a></li>
+                  <li class="subnav-item" data-analytics="top-nav-support-premium-support"><a href="../support/premium-support/index.html">プレミアム サポート</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="divider-left nav-item visitor-item">
+              <a href="../vcs-authorize/index.html" data-hj-masked data-analytics="top-nav-login">
+                ログイン
+              </a>
+            </li>
+            <li class="nav-item visitor-item button-wrapper">
+              <a class="button-solid small nav-size" href="../signup/index.html" data-analytics-action="signup-clicked" data-analytics-location="nav" data-optimizely="signup_button_clicked" data-analytics="top-nav-signup">
+                登録
+              </a>
+            </li>
+            <li class="dashboard-link desktop-nav divider-left">
+              <a href="https://circleci.com/dashboard" data-analytics="top-nav-go-to-app">
+                アプリへ移動
+              </a>
+            </li>
+          </ul>
+          
+
+          
+        </div>
+
+        <div class="narrowscreen">
+          
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navigation" aria-expanded="false" aria-controls="#mobile-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+          
+          <a href="../index.html" data-analytics="top-nav-logo"><img class="logo" src="https://d3r49iyjzglexf.cloudfront.net/ja/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" alt="CircleCI Home" /></a>
+
+          
+          <span class="login">
+            <a href="../vcs-authorize/index.html" data-hj-masked class="mobile-nav signup visitor-item" data-analytics-location="nav" data-analytics="top-nav-login">ログイン</a>
+            <a href="https://circleci.com/dashboard" class="dashboard-link mobile-nav" data-analytics="top-nav-go-to-app">アプリへ移動</a>
+          </span>
+
+          <ul class="dropdown-menu2" id="mobile-navigation">
+            <li><a href="../signup/index.html" data-analytics-action="signup-clicked" data-optimizely="signup_button_clicked" class="button-solid nav-size full-width" data-analytics="top-nav-signup">Start Building for Free</a></li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading" data-analytics="top-nav-product">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                製品概要
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-product-overview"><a href="../product/index.html">製品概要</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-how-it-works"><a href="../product/index.html#how-it-works">CircleCI のメリット</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-features"><a href="../product/index.html#features">機能</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-build-environments"><a href="../build-environments/index.html">ビルド環境</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-hosting-options"><a href="../product/index.html#hosting-options">ホスティング オプション</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-integrations"><a href="../integrations/index.html">インテグレーション</a></li>
+                <li class="subnav-item" data-analytics="top-nav-product-jenkins"><a href="../migrate-jenkins-to-circleci/index.html">Jenkins からの移行</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item" data-analytics="top-nav-pricing"><a href="../pricing/index.html">料金プラン</a></li>
+            <li class="dropdown-menu--item" data-analytics="top-nav-enterprise"><a href="../enterprise/index.html">エンタープライズ向け</a></li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                開発者向け
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-developer-hello-world"><a href="../docs/2.0/hello-world/index.html">Hello World</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-documentation"><a href="../docs/index.html">ドキュメント</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-community-forum"><a href="https://discuss.circleci.com/" target="_blank" rel="noreferrer noopener">コミュニティ フォーラム</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-integrations"><a href="../orbs/index.html">Orbs</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-api"><a href="../docs/api/v2/index.html#circleci-api">API</a></li>
+                <li class="subnav-item" data-analytics="top-nav-developer-oss"><a href="../open-source/index.html">オープンソース</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item arrow collapsed">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                会社概要
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-company-about"><a href="../about/index.html">CircleCI について</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-case-studies"><a href="../customers/index.html">ケース スタディー</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-blog"><a href="../blog/index.html">ブログ</a></li>
+                <li class="subnav-item" data-analytics="top-nav-company-jobs"><a href="../careers/index.html">採用情報</a></li>
+                <li class="subnav-item" data-analytics="top-nav-contact-us"><a href="../contact/index.html">お問い合わせ</a></li>
+                <li class="subnav-item" data-analytics="top-nav-partner-with-us"><a href="../partners/index.html">パートナー募集</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-menu--item arrow collapsed"><i class="fa fa-angle-right" aria-hidden="true"></i>サポート
+              <ul class="subnav">
+                <li class="subnav-item" data-analytics="top-nav-support-documentation"><a href="../docs/index.html" target="_blank" rel="noreferrer noopener">ドキュメント</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-training"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noreferrer noopener">トレーニング</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-get-support"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noreferrer noopener">サポート情報</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-system-status"><a href="https://status.circleci.com/" target="_blank" rel="noreferrer noopener">システム稼働状況</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-feature-requests"><a href="https://ideas.circleci.com/" target="_blank" rel="noreferrer noopener">改善要望</a></li>
+                <li class="subnav-item" data-analytics="top-nav-support-premium-support"><a href="../support/premium-support/index.html">プレミアム サポート</a></li>
+              </ul>
+            </li>
+            
+              <li class="dropdown-menu--item arrow collapsed"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <img src="https://d3r49iyjzglexf.cloudfront.net/ja/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="globe" width="20">
+                日本語
+                <ul class="subnav">
+                  
+                    
+                    
+
+                    
+
+                    
+                      <li class="subnav-item">
+                        <a
+                          href="../../resources/index.html"
+                          hreflang="en"
+                        >
+                          English (US)
+                        </a>
+                      </li>
+                    
+                  
+                    
+                    
+
+                    
+
+                    
+                  
+                </ul>
+              </li>
+              
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+
+    <main id="main">
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component hero padding-vertical-medium light-weights">
+  <div class=" container  ">
+      <div class="row margin-top-medium text-center  margin-bottom-medium ">
+        <div class="col-md-10 col-md-offset-1">
+          
+          <h1>各種資料</h1>
+          
+            
+            <p class="large margin-top-small">
+              CircleCI はエンジニアリングの生産性向上にどう役立つのでしょうか。CircleCI のメリットについて説明したブログ記事、ビデオ、ホワイト ペーパーをご紹介します。
+            </p>
+          
+
+          
+        </div>
+      </div>
+      
+      
+
+      
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="component resources-most-popular">
+    <div class="container">
+      <div class="use-cases--text margin-bottom-300">
+        
+          <h2 class="use-cases--title light-weights">
+            人気コンテンツ
+          </h2>
+        
+        
+      </div>
+      <div class="card-slider">
+        
+  
+    
+    
+    <div class="card-slider--card">
+      
+
+
+<div class="card resource-tile-most-popular">
+  <a
+    class="resource-image "
+    href="../blog/how-my-distributed-team-communicates-so-no-context-is-left-behind/index.html"
+    
+    
+  >
+    
+      <div style="background-image: url('../blog/media/communication_distributed.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">チーム</span>
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">May 23, 2019</span>
+    
+    
+    
+    
+      <span class="post-read-time">8 分 READ</span>
+    
+  </span>
+</p>
+
+      <h3 class="resource-link">
+        <a
+          href="../blog/how-my-distributed-team-communicates-so-no-context-is-left-behind/index.html"
+          
+          
+        >
+          遠隔地に散らばるリモート チームでのコミュニケーションと情報共有のヒント
+        </a>
+      </h3>
+      
+    </div>
+
+    
+      <div class="card-footer">
+        
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/ja/people/marek-nowak-350c6ff1fd37eab17a153a1756e2aae28b6bcfe59d43e8c720e7ff4973f37543.jpg" alt="Marek Nowak" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Marek Nowak
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Engineering Team Lead
+      </span>
+    </p>
+  </div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+    </div>
+  
+  
+    <div class="card-slider--card">
+      
+
+
+<div class="card resource-tile-most-popular">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-Data-Driven-Case-for-CI-2019.html"
+    
+    
+  >
+    
+      <div style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-data-driven-ci-e15685ce111621f9ed0806db902fd842ee939c31a5cf71098562802399f1daa2.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h3 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-Data-Driven-Case-for-CI-2019.html"
+          
+          
+        >
+          DevOpsの実践に関する3000万のワークフローから得られた知見
+        </a>
+      </h3>
+      
+        <p>
+          データで見る CI(継続的インテグレーション)を活用しているチームの利点
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+    </div>
+  
+    <div class="card-slider--card">
+      
+
+
+<div class="card resource-tile-most-popular">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/UEqBf_z2N_o"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-build-high-performing-engineering-team-b1a14bb9431f0ff4979bb8b2e526ce464222f548220ce306876e62436bc92852.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">76 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h3 class="resource-link">
+        <a
+          href="https://youtu.be/UEqBf_z2N_o"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          最高のエンジニアチームをビルドするには
+        </a>
+      </h3>
+      
+        <p>
+          CircleCIのリーダーが、CircleCIを構成しているチームの作り方とサポートへの取り組み方についてお話します
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+    </div>
+  
+
+      </div>
+      <div class="prev-arrow hidden" aria-hidden="true">
+        <div class="prev-arrow">
+          <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.89189 24C1.32432 24 0.945946 23.8125 0.567568 23.4375C-0.189189 22.6875 -0.189189 21.5625 0.567568 20.8125L9.45946 12L0.567568 3.1875C-0.189189 2.4375 -0.189189 1.3125 0.567568 0.5625C1.32432 -0.1875 2.45946 -0.1875 3.21622 0.5625L13.4324 10.6875C13.8108 11.0625 14 11.4375 14 12C14 12.5625 13.8108 12.9375 13.4324 13.3125L3.21622 23.4375C2.83784 23.8125 2.27027 24 1.89189 24Z" fill="currentColor"/>
+</svg>
+
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="next-arrow hidden" aria-hidden="true">
+        <div class="next-arrow">
+          <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.89189 24C1.32432 24 0.945946 23.8125 0.567568 23.4375C-0.189189 22.6875 -0.189189 21.5625 0.567568 20.8125L9.45946 12L0.567568 3.1875C-0.189189 2.4375 -0.189189 1.3125 0.567568 0.5625C1.32432 -0.1875 2.45946 -0.1875 3.21622 0.5625L13.4324 10.6875C13.8108 11.0625 14 11.4375 14 12C14 12.5625 13.8108 12.9375 13.4324 13.3125L3.21622 23.4375C2.83784 23.8125 2.27027 24 1.89189 24Z" fill="currentColor"/>
+</svg>
+
+          <span class="sr-only"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="padding-vertical-large bg-gray-light-half">
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-sm-3 col-xs-12 toc-wrapper">
+        <p class="uppercase bold">
+          コンテンツの種類
+        </p>
+        <ol class="resource-filter-menu list-unstyled">
+          
+  
+    <li>
+      <a
+        href="#blogs"
+        class="link-unstyled active"
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="content type"
+      >
+        ブログ
+      </a>
+    </li>
+  
+
+          
+  
+    <li>
+      <a
+        href="#ebooks"
+        class="link-unstyled "
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="content type"
+      >
+        eBook
+      </a>
+    </li>
+  
+
+          
+  
+    
+  <li>
+    <a
+      href="#case-studies"
+      class="link-unstyled "
+      data-analytics-action="click-outer-cta"
+      data-analytics-location="content type"
+    >
+      ケース スタディー
+    </a>
+  </li>
+
+  
+
+          
+  
+    <li>
+      <a
+        href="#reports"
+        class="link-unstyled "
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="content type"
+      >
+        レポート
+      </a>
+    </li>
+  
+
+          
+  
+    <li>
+      <a
+        href="#videos"
+        class="link-unstyled "
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="content type"
+      >
+        ビデオ
+      </a>
+    </li>
+  
+
+          
+  
+    <li>
+      <a
+      href="#webinars"
+      class="link-unstyled "
+      data-analytics-action="click-outer-cta"
+      data-analytics-location="content type"
+    >
+        ウェビナー
+      </a>
+    </li>
+  
+
+        </ol>
+        <p class="uppercase bold margin-top-medium">
+          トピック
+        </p>
+        <ol class="resource-filter-menu list-unstyled">
+          
+  
+
+          
+  
+    <li>
+      <a
+        href="#people"
+        class="link-unstyled resource-filter-link"
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="topic"
+      >
+        チーム
+      </a>
+    </li>
+  
+
+          
+  
+    <li>
+      <a
+        href="#devops"
+        class="link-unstyled resource-filter-link"
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="topic"
+      >
+        DevOps
+      </a>
+    </li>
+  
+
+          
+  
+
+          
+  
+    <li>
+      <a
+        href="#news"
+        class="link-unstyled resource-filter-link"
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="topic"
+      >
+        ニュース
+      </a>
+    </li>
+  
+
+          
+  
+    <li>
+      <a
+        href="#customers"
+        class="link-unstyled resource-filter-link"
+        data-analytics-action="click-outer-cta"
+        data-analytics-location="topic"
+      >
+        お客様
+      </a>
+    </li>
+  
+
+        </ol>
+      </div>
+      <div class="col-xs-12 col-sm-9">
+        
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item "
+  id="blogs"
+  data-category="ブログ"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          ブログ
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+    
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../blog/why-circleci-is-a-leader-in-the-forrester-wave-cloud-native-continuous-integration-tools-q3-2019-speed-scale-security-and-compliance/index.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../blog/media/2019-09-19-ForresterWave-v8.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">ニュース</span>
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Sep 19, 2019</span>
+    
+    
+    
+    
+      <span class="post-read-time">7 分 READ</span>
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../blog/why-circleci-is-a-leader-in-the-forrester-wave-cloud-native-continuous-integration-tools-q3-2019-speed-scale-security-and-compliance/index.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          Forrester Waveが評価。CircleCIが継続的 インテグレーションツールのリーダーに
+        </a>
+      </h4>
+      
+    </div>
+
+    
+      <div class="card-footer">
+        
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/ja/people/erich-ziegler2-0ff57b50157aa710af224c68e24f4afa9edca8beb533747d9899ea659def3bdc.jpg" alt="Erich Ziegler" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Erich Ziegler
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        CMO
+      </span>
+    </p>
+  </div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+  
+    
+    
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../blog/devops-did-not-exist/index.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../blog/media/2019-09-06-devops-didnt-exist.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">運用</span>
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Sep 6, 2019</span>
+    
+    
+    
+    
+      <span class="post-read-time">11 分 READ</span>
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../blog/devops-did-not-exist/index.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          開発者としてのキャリアをスタートさせたときにまだ存在していなかった DevOps が、私のキャリアをどのように変化させたのか。
+        </a>
+      </h4>
+      
+    </div>
+
+    
+      <div class="card-footer">
+        
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/ja/people/angel-rivera-871295d1a93a85fdd2bdda32af743d00e2ef734346dca4af1f9df34e9e22d40e.jpg" alt="Angel Rivera" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  <a href="../blog/author/angel-rivera/index.html">
+    Angel Rivera
+  </a>
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        デベロッパー アドボケイト
+      </span>
+    </p>
+  </div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+  
+    
+    
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../blog/what-it-means-to-be-remote-first-vs-remote-friendly/index.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../blog/media/remote-watercooler1.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">チーム</span>
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jul 26, 2019</span>
+    
+    
+    
+    
+      <span class="post-read-time">6 分 READ</span>
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../blog/what-it-means-to-be-remote-first-vs-remote-friendly/index.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          単なる「リモートワーク」ではなく、「リモートファースト」の文化を育むためのヒント
+        </a>
+      </h4>
+      
+    </div>
+
+    
+      <div class="card-footer">
+        
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/ja/people/rose-jen-acc9b4d14499d22d7ec91ae08825c524d0ca04da811dcc12dfc3cfd31a2a9518.jpg" alt="Rose Jen" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Rose Jen
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        プロダクト マネージャー
+      </span>
+    </p>
+  </div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+        <div class="text-center">
+          <p class="view-link">
+            <a
+              href="../blog/index.html"
+              
+              data-analytics-action="click-outer-cta"
+            >
+              
+                すべてのブログ記事を表示
+              
+              
+            </a>
+          </p>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="ebooks"
+  data-category="eBook"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          eBook
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-cicd-article-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-CI-CD-1-ebc89cba6875ae6a60a456f7fdaa0c21a767e449e0e9979beb4f54e923b4a19d.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-cicd-article-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CI/CD再入門第 1 回
+        </a>
+      </h4>
+      
+        <p>
+          CIツールの管理コストを削減し、開発者にとっても快適な環境を実現
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-cicd-article2-2020.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-CI-CD-2-b9c2f777613f962308c37a1db454d4bc3b6ccdb5eb668c7785c7e035a60420d5.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-cicd-article2-2020.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CI/CD再入門第 2 回
+        </a>
+      </h4>
+      
+        <p>
+          CircleCIで始めるCI/CD導入の基本のキエンジニアのためのCI/CD再入門 第2回
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-cicd-article3-2020.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-CI-CD-3-2774231a4cf4b4e0f896144e884fcc3397feea04e3a825b5fd8535827e254824.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-cicd-article3-2020.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CI/CD再入門第 3 回
+        </a>
+      </h4>
+      
+        <p>
+          モダンなCI/CDでは欠かせないワークフローを使った高度なビルド管理
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-5-key-metrics-engineering-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-5metrics-hero_ja-0d4b88b143cda920e3a53257d163fd3fe897000e17486dbc9a1fca061baa0b67.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-5-key-metrics-engineering-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          エンジニアリングの効率化に欠かせない5つの測定指標
+        </a>
+      </h4>
+      
+        <p>
+          スピードアップと信頼性の向上につながる 重要な測定指標とは
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-devops-culture-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-devopsculture_ja-ced6dbc9f4190d964c972bbda26775eff8d0fd9cc4c0b2578aeacee85b870f83.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-devops-culture-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          効果的なDevOps 文化に欠かせないもの
+        </a>
+      </h4>
+      
+        <p>
+          DevOps が息づく文化を育むために必要なことについてご説明します
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-devops-maturity-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-devops-maturity-thumbnail_ja-a697f0690a2ea6daed6fe44f9486e08a3c1b4fb0197b44e4a63613935c6de75c.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-devops-maturity-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          チームを成熟したDevOps へと導く
+        </a>
+      </h4>
+      
+        <p>
+          チームを成熟したDevOpsへと導く方法
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="case-studies"
+  data-category="ケース スタディー"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          ケース スタディー
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_Kaizen-Platform%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_kaizen-platform-6bd080c0a02d8a1508c2b8f9f954455296ea6929593c0ec755fb5a00450cb2e0.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_Kaizen-Platform%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          高品質なソフトウェアのデリバリーを
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_LINE%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_line-48fb62a06957130d9961d956c4e3cd35d457d8ca9da50a8cd88bd09089365d93.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_LINE%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          CIツールの管理コストを削減し、開発者にとっても快適な環境を実現
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_Cybozu%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_cybozu-4afd943a85cc3bfcb7dc3f256323539281001d23dd26ca6c27d28ff2b42d40a5.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_Cybozu%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          CircleCI の Performance プランで毎日1時間以上のビルド待ち時間を削減
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_Cruise%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_cruise-automation-bb347d6dc0b618aba9ab8761c63210e9b4ec3339c099640e3ed48be83535abde.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_Cruise%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          Cruise Automation
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_PyTorch%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_pytorch-1ac32dea482de0b5e2bb83b21a0dd9f875ebe920cacbe4e61d944b9d2e9acbd5.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_PyTorch%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          オープンソースの機械学習 PyTorch の進化
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+  
+
+      </div>
+
+      
+        <div class="text-center">
+          <p class="view-link">
+            <a
+              href="../customers/index.html#case-studies"
+              
+              data-analytics-action="click-outer-cta"
+            >
+              
+                すべてのケース スタディーを表示
+              
+              
+            </a>
+          </p>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="reports"
+  data-category="レポート"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          レポート
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-Data-Driven-Case-for-CI-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-data-driven-ci-e15685ce111621f9ed0806db902fd842ee939c31a5cf71098562802399f1daa2.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-Data-Driven-Case-for-CI-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          DevOpsの実践に関する3000万のワークフローから得られた知見
+        </a>
+      </h4>
+      
+        <p>
+          データで見る CI(継続的インテグレーション)を活用しているチームの利点
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/forrester-wave-leader-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/whitepapers_forrester-e2680252c503357d732d9d985dedaa3d72f36309146f1512b5ccf5605b1f6427.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">News</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/forrester-wave-leader-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          Forrester、CircleCI を「リーダー」に認定
+        </a>
+      </h4>
+      
+        <p>
+          CircleCI が Forrester の調査レポートでクラウドネイティブな継続的インテグレーション ツールの「リーダー」に選ばれた理由をご確認ください。
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/2019-state-of-devops-report.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/whitepapers-puppet-report-75d547262402dde00a1f4d02f54bc2ecd9a380af443ff901f9c4a72405f40171.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/2019-state-of-devops-report.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          2019 年版 State of DevOps レポート
+        </a>
+      </h4>
+      
+        <p>
+          レポートを読み、セキュリティ対策を強化するうえで最も重要な DevOps のベスト プラクティスをご確認ください。
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="videos"
+  data-category="ビデオ"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          ビデオ
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/UEqBf_z2N_o"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-build-high-performing-engineering-team-b1a14bb9431f0ff4979bb8b2e526ce464222f548220ce306876e62436bc92852.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">76 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/UEqBf_z2N_o"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          最高のエンジニアチームをビルドするには
+        </a>
+      </h4>
+      
+        <p>
+          CircleCIのリーダーが、CircleCIを構成しているチームの作り方とサポートへの取り組み方についてお話します
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/aYGX3f-nRJU"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-what-is-devops-14105cd32eaf45253b6f311427267ae22ec795201e394ca9d322448ffb72ca6a.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">93 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/aYGX3f-nRJU"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCIの考えるDevOps
+        </a>
+      </h4>
+      
+        <p>
+          DevOpsを実装するための最良のヒントを見つけてください
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/zR5Kzp7TtVc"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-challenges-of-scaling-5f978b746b04de12cf1908b7d7f3900be531201099d8f289115a559c4337da10.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">52 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/zR5Kzp7TtVc"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          会社をスケールさせる秘訣
+        </a>
+      </h4>
+      
+        <p>
+          企業の規模を拡大するための秘訣
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/kEppW-kOr2U"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-what-is-circleci-01a6a3cfbd85137eadeb8566c129aa12e02e3c0f332d3b6b052af5e6709d4423.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">64 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/kEppW-kOr2U"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCIについて
+        </a>
+      </h4>
+      
+        <p>
+          インフラストラクチャとチームをサポートするためのリー ダーシップチームのヒントをご覧ください
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/uRopOYgYtK4"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-rollbar-505fddedfa0f51842bfc3197b3f3b45ba5aad6a3a7b40ddefddd0c2b936b3953.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">Customers</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">70 ビュー</span>
+    
+    
+      <span class="post-date">7 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/uRopOYgYtK4"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCI Rollbar事例
+        </a>
+      </h4>
+      
+        <p>
+          Rollbarがなぜチームが継続して価値を提供し、 サポートするためにCircleCIを選んだのか
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/9xIUqmWgR5o"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-procore-18931deaefef78f2e0ce442cc450c5aae2bb12d5d113d500a8d82f07eb13f3a3.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">Customers</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">93 ビュー</span>
+    
+    
+      <span class="post-date">7 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/9xIUqmWgR5o"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCI ProCore事例
+        </a>
+      </h4>
+      
+        <p>
+          Procoreがプッシュするすべての変更において、 コードの品質を確保するためにCircleCIに依存する理由.
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+        <div class="text-center">
+          <p class="view-link">
+            <a
+              href="https://www.youtube.com/channel/UC9_Pmtv-cUccKkusuapItMQ"
+              
+                target="_blank"
+                rel="noreferrer noopener"
+              
+              data-analytics-action="click-outer-cta"
+            >
+              
+                すべてのビデオを表示
+              
+              
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+              
+            </a>
+          </p>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="webinars"
+  data-category="ウェビナー"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          ウェビナー
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/XBqMIHmzzW0"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/blog/default-post-image-alt-e247ca73ebe92d6df173b24cb0600136ee47639666916869b740ae735d1170bc.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">Tutorials</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">485 ビュー</span>
+    
+    
+      <span class="post-date">1 month ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/XBqMIHmzzW0"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          3000 万件のワークフローから得られたDevOpsに関する知見
+        </a>
+      </h4>
+      
+        <p>
+          CircleCIが調査した3000万件のワークフローの分析結果から得られた実践的な知見
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+        <div class="text-center">
+          <p class="view-link">
+            <a
+              href="https://www.youtube.com/playlist?list=PL9GgS3TcDh8yzDPyWHcBzZg0KetWB1hMY"
+              
+                target="_blank"
+                rel="noreferrer noopener"
+              
+              data-analytics-action="click-outer-cta"
+            >
+              
+                すべてのウェビナーを表示
+              
+              
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+              
+            </a>
+          </p>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+
+        
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="people"
+  data-category="チーム"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          チーム
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-5-key-metrics-engineering-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-5metrics-hero_ja-0d4b88b143cda920e3a53257d163fd3fe897000e17486dbc9a1fca061baa0b67.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-5-key-metrics-engineering-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          エンジニアリングの効率化に欠かせない5つの測定指標
+        </a>
+      </h4>
+      
+        <p>
+          スピードアップと信頼性の向上につながる 重要な測定指標とは
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/UEqBf_z2N_o"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-build-high-performing-engineering-team-b1a14bb9431f0ff4979bb8b2e526ce464222f548220ce306876e62436bc92852.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">76 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/UEqBf_z2N_o"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          最高のエンジニアチームをビルドするには
+        </a>
+      </h4>
+      
+        <p>
+          CircleCIのリーダーが、CircleCIを構成しているチームの作り方とサポートへの取り組み方についてお話します
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/zR5Kzp7TtVc"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-challenges-of-scaling-5f978b746b04de12cf1908b7d7f3900be531201099d8f289115a559c4337da10.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">52 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/zR5Kzp7TtVc"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          会社をスケールさせる秘訣
+        </a>
+      </h4>
+      
+        <p>
+          企業の規模を拡大するための秘訣
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/kEppW-kOr2U"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-what-is-circleci-01a6a3cfbd85137eadeb8566c129aa12e02e3c0f332d3b6b052af5e6709d4423.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">People</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">64 ビュー</span>
+    
+    
+      <span class="post-date">3 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/kEppW-kOr2U"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCIについて
+        </a>
+      </h4>
+      
+        <p>
+          インフラストラクチャとチームをサポートするためのリー ダーシップチームのヒントをご覧ください
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+  
+    
+    
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../blog/what-it-means-to-be-remote-first-vs-remote-friendly/index.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../blog/media/remote-watercooler1.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">チーム</span>
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jul 26, 2019</span>
+    
+    
+    
+    
+      <span class="post-read-time">6 分 READ</span>
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../blog/what-it-means-to-be-remote-first-vs-remote-friendly/index.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          単なる「リモートワーク」ではなく、「リモートファースト」の文化を育むためのヒント
+        </a>
+      </h4>
+      
+    </div>
+
+    
+      <div class="card-footer">
+        
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/ja/people/rose-jen-acc9b4d14499d22d7ec91ae08825c524d0ca04da811dcc12dfc3cfd31a2a9518.jpg" alt="Rose Jen" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Rose Jen
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        プロダクト マネージャー
+      </span>
+    </p>
+  </div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="devops"
+  data-category="DevOps"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          DevOps
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-cicd-article-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-CI-CD-1-ebc89cba6875ae6a60a456f7fdaa0c21a767e449e0e9979beb4f54e923b4a19d.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-cicd-article-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CI/CD再入門第 1 回
+        </a>
+      </h4>
+      
+        <p>
+          CIツールの管理コストを削減し、開発者にとっても快適な環境を実現
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-cicd-article2-2020.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-CI-CD-2-b9c2f777613f962308c37a1db454d4bc3b6ccdb5eb668c7785c7e035a60420d5.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-cicd-article2-2020.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CI/CD再入門第 2 回
+        </a>
+      </h4>
+      
+        <p>
+          CircleCIで始めるCI/CD導入の基本のキエンジニアのためのCI/CD再入門 第2回
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-cicd-article3-2020.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-CI-CD-3-2774231a4cf4b4e0f896144e884fcc3397feea04e3a825b5fd8535827e254824.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-cicd-article3-2020.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CI/CD再入門第 3 回
+        </a>
+      </h4>
+      
+        <p>
+          モダンなCI/CDでは欠かせないワークフローを使った高度なビルド管理
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-devops-culture-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-devopsculture_ja-ced6dbc9f4190d964c972bbda26775eff8d0fd9cc4c0b2578aeacee85b870f83.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-devops-culture-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          効果的なDevOps 文化に欠かせないもの
+        </a>
+      </h4>
+      
+        <p>
+          DevOps が息づく文化を育むために必要なことについてご説明します
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-devops-maturity-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-devops-maturity-thumbnail_ja-a697f0690a2ea6daed6fe44f9486e08a3c1b4fb0197b44e4a63613935c6de75c.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-devops-maturity-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          チームを成熟したDevOps へと導く
+        </a>
+      </h4>
+      
+        <p>
+          チームを成熟したDevOpsへと導く方法
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/ja-Data-Driven-Case-for-CI-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/ebook-data-driven-ci-e15685ce111621f9ed0806db902fd842ee939c31a5cf71098562802399f1daa2.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/ja-Data-Driven-Case-for-CI-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          DevOpsの実践に関する3000万のワークフローから得られた知見
+        </a>
+      </h4>
+      
+        <p>
+          データで見る CI(継続的インテグレーション)を活用しているチームの利点
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/2019-state-of-devops-report.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/whitepapers-puppet-report-75d547262402dde00a1f4d02f54bc2ecd9a380af443ff901f9c4a72405f40171.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/2019-state-of-devops-report.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          2019 年版 State of DevOps レポート
+        </a>
+      </h4>
+      
+        <p>
+          レポートを読み、セキュリティ対策を強化するうえで最も重要な DevOps のベスト プラクティスをご確認ください。
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://youtu.be/aYGX3f-nRJU"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-what-is-devops-14105cd32eaf45253b6f311427267ae22ec795201e394ca9d322448ffb72ca6a.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">DevOps</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/aYGX3f-nRJU"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          CircleCIの考えるDevOps
+        </a>
+      </h4>
+      
+        <p>
+          DevOpsを実装するための最良のヒントを見つけてください
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+  
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+
+        
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="news"
+  data-category="ニュース"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          ニュース
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="https://www2.circleci.com/forrester-wave-leader-2019.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/whitepapers_forrester-e2680252c503357d732d9d985dedaa3d72f36309146f1512b5ccf5605b1f6427.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">News</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://www2.circleci.com/forrester-wave-leader-2019.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          Forrester、CircleCI を「リーダー」に認定
+        </a>
+      </h4>
+      
+        <p>
+          CircleCI が Forrester の調査レポートでクラウドネイティブな継続的インテグレーション ツールの「リーダー」に選ばれた理由をご確認ください。
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+  
+    
+    
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../blog/why-circleci-is-a-leader-in-the-forrester-wave-cloud-native-continuous-integration-tools-q3-2019-speed-scale-security-and-compliance/index.html"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    
+  >
+    
+      <div class="cover" style="background-image: url('../blog/media/2019-09-19-ForresterWave-v8.jpg')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">ニュース</span>
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Sep 19, 2019</span>
+    
+    
+    
+    
+      <span class="post-read-time">7 分 READ</span>
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../blog/why-circleci-is-a-leader-in-the-forrester-wave-cloud-native-continuous-integration-tools-q3-2019-speed-scale-security-and-compliance/index.html"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          
+        >
+          Forrester Waveが評価。CircleCIが継続的 インテグレーションツールのリーダーに
+        </a>
+      </h4>
+      
+    </div>
+
+    
+      <div class="card-footer">
+        
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/ja/people/erich-ziegler2-0ff57b50157aa710af224c68e24f4afa9edca8beb533747d9899ea659def3bdc.jpg" alt="Erich Ziegler" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Erich Ziegler
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        CMO
+      </span>
+    </p>
+  </div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+  
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+        
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="resource-filter-item removed"
+  id="customers"
+  data-category="お客様"
+>
+  <div class="component resources ">
+    
+      <div class="resources-header">
+        <h3>
+          お客様
+        </h3>
+      </div>
+    
+    <div class="row">
+      <div class="flex-container">
+        
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/uRopOYgYtK4"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-rollbar-505fddedfa0f51842bfc3197b3f3b45ba5aad6a3a7b40ddefddd0c2b936b3953.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">Customers</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">70 ビュー</span>
+    
+    
+      <span class="post-date">7 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/uRopOYgYtK4"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCI Rollbar事例
+        </a>
+      </h4>
+      
+        <p>
+          Rollbarがなぜチームが継続して価値を提供し、 サポートするためにCircleCIを選んだのか
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image video"
+    href="https://youtu.be/9xIUqmWgR5o"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    
+    target="_blank" rel="noreferrer noopener"
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/video-procore-18931deaefef78f2e0ce442cc450c5aae2bb12d5d113d500a8d82f07eb13f3a3.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">Customers</span>
+  
+  <span class="post-not-tag">
+    
+    
+      <span class="post-date">93 ビュー</span>
+    
+    
+      <span class="post-date">7 months ago</span>
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="https://youtu.be/9xIUqmWgR5o"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          
+          target="_blank" rel="noreferrer noopener"
+        >
+          CircleCI ProCore事例
+        </a>
+      </h4>
+      
+        <p>
+          Procoreがプッシュするすべての変更において、 コードの品質を確保するためにCircleCIに依存する理由.
+        </p>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+  
+  
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_Kaizen-Platform%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_kaizen-platform-6bd080c0a02d8a1508c2b8f9f954455296ea6929593c0ec755fb5a00450cb2e0.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_Kaizen-Platform%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          高品質なソフトウェアのデリバリーを
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_LINE%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_line-48fb62a06957130d9961d956c4e3cd35d457d8ca9da50a8cd88bd09089365d93.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_LINE%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          CIツールの管理コストを削減し、開発者にとっても快適な環境を実現
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_Cybozu%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_cybozu-4afd943a85cc3bfcb7dc3f256323539281001d23dd26ca6c27d28ff2b42d40a5.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_Cybozu%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          CircleCI の Performance プランで毎日1時間以上のビルド待ち時間を削減
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_Cruise%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_cruise-automation-bb347d6dc0b618aba9ab8761c63210e9b4ec3339c099640e3ed48be83535abde.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_Cruise%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          Cruise Automation
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+    
+
+
+<div class="card resource-tile ">
+  <a
+    class="resource-image "
+    href="../landing-pages/assets/CircleCI_PyTorch%e4%ba%8b%e4%be%8b.pdf"
+    data-analytics-action="click-outer-cta"
+    data-analytics-location="resource item"
+    download data-download-button
+    
+  >
+    
+      <div class="cover" style="background-image: url('../../../d3r49iyjzglexf.cloudfront.net/ja/resources/casestudy_pytorch-1ac32dea482de0b5e2bb83b21a0dd9f875ebe920cacbe4e61d944b9d2e9acbd5.png')"></div>
+    
+  </a>
+
+  <div class="resource-text">
+    <div class="card-body">
+      
+
+
+<p class="post-metadata">
+  
+    <span class="post-primary-tag">
+  お客様
+</span>
+  
+  <span class="post-not-tag">
+    
+    
+    
+    
+  </span>
+</p>
+
+      <h4 class="resource-link">
+        <a
+          href="../landing-pages/assets/CircleCI_PyTorch%e4%ba%8b%e4%be%8b.pdf"
+          data-analytics-action="click-outer-cta"
+          data-analytics-location="resource item"
+          download data-download-button
+          
+        >
+          オープンソースの機械学習 PyTorch の進化
+        </a>
+      </h4>
+      
+    </div>
+
+    
+  </div>
+</div>
+  
+  
+
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+  
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      <footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>製品概要</h6>
+          <ul class="list-unstyled">
+            <li><a href="../product/index.html" data-analytics-child='{ "menu": "product" }'>製品概要</a></li>
+            <li><a href="../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>料金プラン</a></li>
+            <li><a href="../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>インテグレーション</a></li>
+            <li><a href="../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>オープンソース</a></li>
+            <li><a href="../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>エンタープライズ向け</a></li>
+            <li><a href="../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>更新履歴</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>サポート</h6>
+          <ul class="list-unstyled">
+            <li><a href="../docs/index.html" data-analytics-child='{ "menu": "documentation" }'>ドキュメント</a></li>
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noreferrer noopener">トレーニング</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noreferrer noopener">サポート情報</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noreferrer noopener">コミュニティ フォーラム</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noreferrer noopener">システム稼働状況</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noreferrer noopener">改善要望</a></li>
+            <li><a href="../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>プレミアム サポート</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>関連資料</h6>
+          <ul class="list-unstyled">
+            <li><a href="../blog/index.html" data-analytics-child='{ "menu": "blog" }'>ブログ</a></li>
+            <li><a href="index.html#ebooks" data-analytics-child='{ "menu": "ebooks" }'>eBook</a></li>
+            <li><a href="../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>ケース スタディー</a></li>
+            <li><a href="index.html#reports" data-analytics-child='{ "menu": "reports" }'>レポート</a></li>
+            <li><a href="index.html#videos" data-analytics-child='{ "menu": "videos" }'>ビデオ</a></li>
+            <li><a href="index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>ウェビナー</a></li>
+            <li><a href="events/index.html" data-analytics-child='{ "menu": "events" }'>イベント</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>会社概要</h6>
+          <ul class="list-unstyled">
+            <li><a href="../about/index.html" data-analytics-child='{ "menu": "about-us" }'>CircleCI について</a></li>
+            <li><a href="../careers/index.html" data-analytics-child='{ "menu": "careers" }'>採用情報 <span class="text-blue">(メンバー募集中!)</span></a></li>
+            <li><a href="../about/team/index.html" data-analytics-child='{ "menu": "team" }'>チーム紹介</a></li>
+            <li><a href="../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>お問い合わせ</a></li>
+            <li><a href="../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>パートナー募集</a></li>
+            <li><a href="../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>メディア掲載</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>CircleCI 入門</h6>
+          <ul>
+            <li><a href="../continuous-integration/index.html" data-analytics-child='{ "menu": "what-is-ci" }'>CI とは?</a></li>
+            <li><a href="../docs/2.0/index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>CircleCI の導入手順</a></li>
+            <li><a href="../migrate-jenkins-to-circleci/index.html" data-analytics-child='{ "menu": "migrate-jenkins-to-circleci" }'>Jenkins から CircleCI への移行</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <a href="../index.html">
+          <img src="https://d3r49iyjzglexf.cloudfront.net/ja/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo-small margin-top-small" alt="CircleCI" />
+        </a>
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../../blog/feed.xml" data-analytics="property menu=blog-feed" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" data-analytics="property menu=facebook" target="_blank" rel="noreferrer noopener" class="social-btn-facebook" title="Facebook">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" data-analytics="property menu=twitter" target="_blank" rel="noreferrer noopener" class="social-btn-twitter" title="Twitter">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" data-analytics="property menu=github" target="_blank" rel="noreferrer noopener" class="social-btn-github" title="GitHub">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" data-analytics="property menu=linkedin" target="_blank" rel="noreferrer noopener" class="social-btn-linkedin" title="LinkedIn">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="dark no-margin">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>利用規約</a></li>
+              <li><a href="../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>プライバシー ポリシー</a></li>
+              <li><a href="../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie ポリシー</a></li>
+              <li><a href="../security/index.html" data-analytics-child='{ "menu": "security" }'>セキュリティ</a></li>
+              
+
+
+
+
+
+<li class="language-select">
+  <div class="dropup show">
+    <a class="dropdown-toggle-button" role="button" id="languageSelectDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+      <img src="https://d3r49iyjzglexf.cloudfront.net/ja/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="Globe Icon" width="20" />
+      日本語
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <div class="dropdown-menu"  aria-labelledby="languageSelectDropdown">
+      
+        
+        
+
+        
+        
+
+        
+          <a href="../../resources/index.html"
+            class="dropdown-item"
+            hreflang="en"
+            data-analytics-child='{ "menu": "english" }'>
+            English (US)
+          </a>
+        
+      
+        
+        
+
+        
+        
+
+        
+          <a href="#" class="dropdown-item active">
+            日本語
+          </a>
+        
+      
+    </div>
+  </div>
+</li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>© 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+    <div id="enterprise-form-thanks-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+        <p>You should receive an automated response notifying you that we received your info.
+          Someone from our Enterprise team will be reaching out to you shortly.</p>
+        <!--
+        <p>
+          For more information on the CircleCI Enterprise implementation, please visit our
+          documentation:
+          <a href="#">Getting started with CircleCI Enterpirse implementation</a>
+        </p>
+        -->
+        <img src="https://d3r49iyjzglexf.cloudfront.net/ja/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div id="modal-bg"></div>
+<div id="general-modal">
+  <div class="close"><img src="https://d3r49iyjzglexf.cloudfront.net/ja/icons/ic-closemodal-e5465eb844ab16c421cfedfc19b69bbebfc2990b205a5a8e325d38f7a7cd78d2.svg" alt="close" /></div>
+  <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+  <br>
+  <p>You should receive an automated response notifying you that we received your info. Someone from our Enterprise team will be reaching out to you shortly.</p><br>
+  <img src="https://d3r49iyjzglexf.cloudfront.net/ja/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+</div>
+
+    <script data-cookieconsent="statistics" type="text/plain">
+  var _rollbarConfig = {
+    accessToken: '8a5b4f362a9944b09353878fbbf882f5',
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+     payload: { environment: "production" }
+  };
+ 
+  // Rollbar Snippet
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  // End Rollbar Snippet
+</script>
+
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/vendor-a49dd70d950d55b6911baf7935064f4796e1638c4a3b6b348e6386167af435e1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/site-dca4c9937ce1eead459ba348f0282b29d812388970e9826d83e8321231c2b508.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/utils-f707b22267f4077c535e92f9ff89b6f592d17c8328cb78b34be05fe2b0f9306c.js" crossorigin="anonymous"></script>
+
+    
+    
+    
+      <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/components/resources-filter-menu-0758dd9a297e3cacd60a232e9e14822e39baa647f2efe521606199ef2caf66da.js" crossorigin="anonymous"></script>
+    
+    <script src="../../../d3r49iyjzglexf.cloudfront.net/ja/components/analytics-fa42612618fd7886484c95384d65c979f009952deb1ceda01cb0ac97d235897e.js" crossorigin="anonymous" data-cookieconsent="marketing" type="text/plain"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/components/nav-d2238d7c5bbc619e382ae1b2ed585b8a9ae2e1a52d6887a6c3b410541adc39f3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/components/customFormFields-996f687ca7bbdb0097b9b408cf479355b17162b1c817dda84b36f9149e91fb47.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ja/ab-testing-2e8aef55d96bc43fed9de1bb15e029660c9dfd25df20eaa423698c77afd3e97e.js" crossorigin="anonymous"></script>
+  </body>
+
+<!-- Mirrored from circleci.com/ja/resources/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:55:17 GMT -->
+</html>

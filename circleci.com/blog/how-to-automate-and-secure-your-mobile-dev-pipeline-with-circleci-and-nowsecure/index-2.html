@@ -1,0 +1,4696 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 09:35:38 GMT -->
+<head>
+    
+      <title>Automate and secure your mobile dev pipeline | CircleCI</title>
+    
+
+    <script id="Cookiebot" src="../../../consent.cookiebot.com/uc.js" data-cbid="a28b71f3-4d2e-4eac-93bc-34929948dd7d" type="text/javascript" async></script>
+    <script src="../../../cdn.optimizely.com/js/8188917468.js" data-cookieconsent="statistics" type="text/plain"></script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="../feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../d3r49iyjzglexf.cloudfront.net/apple-touch-icon-f1ef1fb6f37fe36fdacd2dfdc11fb2edf1720083a9aa8648eeac81f0a69e8da8.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../../../d3r49iyjzglexf.cloudfront.net/android-chrome-512x512-636549fcf54150d3184aa6e8395d79ca9bcdc9278210e947ce093372cc2004a4.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../../d3r49iyjzglexf.cloudfront.net/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="150x150" href="../../../d3r49iyjzglexf.cloudfront.net/android-chrome-192x192-daa316a62fc466bc7bbff9118d8bd8a358c4b1d934629eedc0e5b87c9bf6a6f0.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../d3r49iyjzglexf.cloudfront.net/favicon-32x32-86c07d561af62a6d412c5465d401ebf50a8f304d97c165e30feb71868b891c7c.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../d3r49iyjzglexf.cloudfront.net/favicon-16x16-2f395f301d4ee767c0016c98f97561dc2ec4ddbae39cc895c9840a22467df08a.png">
+<link rel="manifest" href="https://d3r49iyjzglexf.cloudfront.net/site-90f0e3ca8a56223e86328049af75ddd9e6e4a6fdac600d0773f54f95e531f0cd.webmanifest">
+<link rel="mask-icon" href="https://d3r49iyjzglexf.cloudfront.net/safari-pinned-tab-251836a3ead2fbbebdd673dd680e8b01f1d8e5889cb3641a16893ad344f17d4a.svg" color="#04aa51">
+<link rel="shortcut icon" href="https://d3r49iyjzglexf.cloudfront.net/favicon-7821a60418a7ee3a7570d938fb95e809903dbfca7514b9245f1beef5d00da2d8.ico">
+<meta name="apple-mobile-web-app-title" content="CircleCI">
+<meta name="application-name" content="CircleCI">
+<meta name="msapplication-TileColor" content="#161616">
+<meta name="msapplication-square150x150logo" content="https://d3r49iyjzglexf.cloudfront.net/mstile-150x150-e0e68b19614d1b594800947225d05483564336ec629d74afb53cf3fe9d634d2a.png" />
+<meta name="theme-color" content="#ffffff">
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="alternate" hreflang="en" href="index.html">
+
+
+
+    <!-- adding canonical links, if they are specified in front matter /-->
+    
+
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/vendor-9130b6026c6317f2286994e037f189b0850a60286866eeb5039e622081496148.css">
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/vendors/lity-b8b6faa63fb76d33ead3adfe0a9148e43ea51ca7c3a5faa008b88ab2ffe321ef.css">
+    <link type="text/css" rel="stylesheet" href="../../../d3r49iyjzglexf.cloudfront.net/site-ef68796b9d5ee51b18504a38de8cbadc65de3a7bb274ac980510d0ce2018f9d1.css">
+    
+    
+    
+    
+
+<script type="text/javascript">
+  (function () {
+    var categoryOverride = null || null;
+    var nameOverride     = null;
+
+    var pageUrlParts = "/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/".split('../../index.html').slice(1, -1);
+
+    // store as globals to read off of it later in analytics.js
+    window.analyticsPageProperties = {
+      categoryOverride: categoryOverride,
+      nameOverride: nameOverride,
+      pageUrlParts: pageUrlParts,
+    };
+  })();
+
+  window.thirdPartyIds = {
+    
+  };
+
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "blog"
+    },
+    page: {
+      lang: "en"
+    },
+    env: "production"
+  };
+</script>
+
+    
+      <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";}}();
+</script>
+<script data-cookieconsent="statistics" type="text/plain">
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+</script>
+
+      <!-- Start of Async Drift Code -->
+<script>
+  "use strict";
+  !function() {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+      t.factory = function(e) {
+        return function() {
+          var n = Array.prototype.slice.call(arguments);
+          return n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+        var i = document.getElementsByTagName("script")[0];
+        i.parentNode.insertBefore(o, i);
+      };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('4hpgak4w2mc8');
+  var events = [
+    {
+    driftEvent: 'sidebarOpen',
+    eventName: 'opened_chat'
+    },
+    {
+    driftEvent: 'sidebarClose',
+    eventName: 'closed_chat'
+    },
+    {
+    driftEvent: 'message:sent',
+    eventName: 'message_sent_visitor'
+    },
+    {
+    driftEvent: 'message',
+    eventName: 'message_sent_team'
+    },
+    {
+    driftEvent: 'emailCapture',
+    eventName: 'captured_email'
+    },
+    {
+    driftEvent: 'scheduling:requestMeeting',
+    eventName: 'scheduled_meeting'
+    },
+    {
+    driftEvent: 'scheduling:meetingBooked',
+    eventName: 'meeting_invite_sent'
+    },
+    {
+    driftEvent: 'conversation:playbookDismissed',
+    eventName: 'closed_greeting'
+    },
+    {
+    driftEvent: 'conversation:playbookClicked',
+    eventName: 'clicked_chatbot'
+    },
+    {
+    driftEvent: 'conversation:buttonClicked',
+    eventName: 'clicked_button'
+    },
+    {
+    driftEvent: 'conversation:firstInteraction',
+    eventName: 'first_interaction'
+    },
+  ];
+  events.map(event => {
+    drift.on(event.driftEvent, function(data) {
+      var driftAnalyticsProps = {
+        name: event.eventName,
+        category: 'drift'
+      }
+      var eventProps = Object.assign({}, analyticsTrackProps(), driftAnalyticsProps);
+      trackEvent('drift-interaction', eventProps);
+    });
+  });
+</script>
+<!-- End of Async Drift Code -->
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>How to automate and secure your mobile dev pipeline with CircleCI and NowSecure - CircleCI</title>
+
+
+
+  <meta property="og:title" content="How to automate and secure your mobile dev pipeline with CircleCI and NowSecure" />
+
+
+
+  <meta name="description" content="Learn how to use the NowSecure AUTO orb for CircleCI to help deliver fast, closed-loop dev cycles for building and deploying secure mobile apps." />
+  <meta property="og:description" content="Learn how to use the NowSecure AUTO orb for CircleCI to help deliver fast, closed-loop dev cycles for building and deploying secure mobile apps." />
+
+
+
+  <link rel="canonical" href="index.html" />
+  <meta property="og:url" content="https://circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/" />
+
+
+
+  <meta property="og:site_name" content="CircleCI" />
+
+
+
+<meta property="og:image" content="https://circleci.com/blog/media/NowSecure-Green-withTM.jpg" />
+  
+  
+
+
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2018-11-27T04:34:00-08:00" />
+
+
+
+
+
+
+  
+    <meta name="twitter:card" content="summary_large_image" />
+  
+
+  <meta name="twitter:site" content="@circleci" />
+
+  
+    <meta name="twitter:creator" content="@brian-reed" />
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+
+
+    "@type": "BlogPosting",
+
+
+
+
+
+    "headline": "How to automate and secure your mobile dev pipeline with CircleCI and NowSecure",
+
+
+
+    "image": "https://circleci.com/blog/media/NowSecure-Green-withTM.jpg",
+
+
+
+    "datePublished": "2018-11-27T04:34:00-08:00",
+
+
+
+    "description": "Learn how to use the NowSecure AUTO orb for CircleCI to help deliver fast, closed-loop dev cycles for building and deploying secure mobile apps.",
+
+
+
+    "logo": "https://d3r49iyjzglexf.cloudfront.net/circleci-logo-stacked-fb-657e221fda1646a7e652c09c9fbfb2b0feb5d710089bb4d8e8c759d37a832694.png",
+
+
+
+
+    "url": "https://circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/"
+  }
+</script>
+
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body class="page-blog post ">
+    <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script data-cookieconsent="marketing" type="text/plain">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W9HDVK');
+</script>
+
+    <script id="modal-objects">
+var modals = {
+  'generic': {
+    header: "Thank You",
+    content: "We will process your request as soon as possible."
+  },
+  'error': {
+    header: "There's been an error.",
+    content: "It looks like there was a problem in processing your request. This may be due to a script blocker add-on, or other setting that blocks JavaScript from functioning. If you have a script blocker or something similar, please turn it off to ensure an optimal experience.<br><br>"
+  },
+  'selfProvision': {
+    header: "Thank You",
+    content: "We are processing your trial request and will email you your trial key. In the meantime, check out our <a href='https://circleci.com/docs/enterprise/single-box/'>installation documentation</a>.",
+    execute: function () {
+      trackEvent("enterprise-install-submitted", analyticsTrackProps());
+    }
+  },
+  'unsubscribe': {
+    header: "Thank You",
+    content: "You have successfully unsubscribed from our list, and will no longer receive OS X image and feature updates."
+  },
+  // /contact-us
+  'enterpriseContactThankYou': {
+    header: "Thank you!",
+    content: "We'll be in touch within one business day."
+  },
+  // /enterprise-trial-install (SPT form "other questions" option)
+  'enterpriseSPTOtherQuestionsThankYou': {
+    header: "Thank you!",
+    content: "We'll be in touch within one business day."
+  },
+  'enterpriseSPTTrial': {
+    header: "Thank you for signing up for a trial!",
+    content: "A member of our solutions team will get back to you shortly to get your trial kicked off.<br><br>"
+  },
+  'subscribe': {
+    header: "Thank you",
+    content: "The latest news in software development and engineering productivity coming your way."
+  },
+  'partnershipConfirm': {
+    header: "Thank you for your interest",
+    content: "A member of our partnerships team will be in touch with you shortly."
+  },
+  'governmentConfirm': {
+    header: "Thank you for your interest",
+    content: "A member of our Government team will be in touch with you shortly."
+  },
+  'reportEmail': {
+    header: "Thank You",
+    content: "The report has been sent to the email address provided."
+  },
+  'usageEarlyAccess': {
+    header: "Thank You",
+    content: "We'll be in touch."
+  },
+   'NewPlanAvailability': {
+    header: "Thank you for your interest",
+    content: "We will be in touch when the new plan is available."
+  }
+};
+
+// This is a no-op change to bump the file hash; see CIRCLE-14243. You may remove 
+// this if you are making other changes to this file, but DO NOT remove it without
+// changing something else that will alter the file hash (comments are not
+// enough FYI).
+var __dummy = '12345';
+
+</script>
+
+    
+      
+
+
+
+
+
+
+
+<nav class="blog-nav navbar navbar-fixed-top navbar-default" data-analytics="clicked-blog-top-nav" data-analytics-parent>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#blog-subnav" aria-expanded="false" aria-controls="blog-subnav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="navbar-brand">
+        
+        
+          <div class="blog-nav-title">
+  <a href="../index.html"
+    data-analytics-child='{ "menu": "blog-nav", "cta_text": "circleci_logo" }'>
+    <img src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-black-7fec8eb34f3f7d8a2d75b22e789bca438ae7f6174a7949784054e726c5acdccb.svg" class="logo" alt="CircleCI" />
+  </a>
+  Blog
+</div>
+        
+      </div>
+    </div>
+
+    <div class="nav-extra-links hidden-xs">
+      
+  <a href="../../docs/index.html" data-analytics-child='{ "menu": "blog-nav", "cta_text": "documentation" }'>
+    Documentation&nbsp;&nbsp;
+
+
+
+
+
+
+
+<i class="fa fa-external-link " aria-hidden="true" title="External Link" >
+  <span class="sr-only">External Link</span>
+</i>
+
+  </a>
+
+      
+  <a href="../../index.html" data-analytics-child='{ "menu": "blog-nav", "cta_text": "circleci.com" }'>
+    circleci.com&nbsp;&nbsp;
+
+
+
+
+
+
+
+<i class="fa fa-external-link " aria-hidden="true" title="External Link" >
+  <span class="sr-only">External Link</span>
+</i>
+
+  </a>
+
+    </div>
+
+    <div class="collapse navbar-collapse blog-subnav" id="blog-subnav">
+      <div class="flex">
+        <ul class="tag-bar nav navbar-nav">
+          <li class="search-button-wrapper">
+            <a role="button" href="#search-form" aria-expanded="false" aria-controls="search-form">
+              
+
+
+
+
+
+
+
+<i class="fa fa-search " aria-hidden="true" title="Search" >
+  <span class="sr-only">Search</span>
+</i>
+
+              <span class="hint-text">
+                Search CircleCI blog
+              </span>
+            </a>
+          </li>
+          
+          
+            
+            <li >
+              <a href="../tag/tutorials/index.html"
+                data-analytics-child='{ "menu": "blog-category", "cta_text": "tutorials" }'>
+                Tutorials
+              </a>
+            </li>
+          
+            
+            <li >
+              <a href="../tag/testing/index.html"
+                data-analytics-child='{ "menu": "blog-category", "cta_text": "testing" }'>
+                Testing
+              </a>
+            </li>
+          
+            
+            <li >
+              <a href="../tag/integrations/index.html"
+                data-analytics-child='{ "menu": "blog-category", "cta_text": "integrations" }'>
+                Integrations
+              </a>
+            </li>
+          
+            
+            <li >
+              <a href="../tag/operations/index.html"
+                data-analytics-child='{ "menu": "blog-category", "cta_text": "operations" }'>
+                Operations
+              </a>
+            </li>
+          
+            
+            <li >
+              <a href="../tag/open-source/index.html"
+                data-analytics-child='{ "menu": "blog-category", "cta_text": "open-source" }'>
+                Open Source
+              </a>
+            </li>
+          
+            
+            <li >
+              <a href="../tag/people/index.html"
+                data-analytics-child='{ "menu": "blog-category", "cta_text": "people" }'>
+                People
+              </a>
+            </li>
+          
+        </ul>
+        <div class="hidden-xs button-wrapper">
+          
+  <a
+    href="../../signup/index.html"
+    class="button-solid nav-size initial"
+    data-analytics-child='{ "menu": "blog-nav", "cta_text": "signup_button" }'
+  >
+    Start Building for Free
+  </a>
+
+        </div>
+      </div>
+      <div class="visible-xs">
+        <ul class="nav-extra-links nav navbar-nav">
+          <li>
+  <a href="../../docs/index.html" data-analytics-child='{ "menu": "blog-nav", "cta_text": "documentation" }'>
+    Documentation&nbsp;&nbsp;
+
+
+
+
+
+
+
+<i class="fa fa-external-link " aria-hidden="true" title="External Link" >
+  <span class="sr-only">External Link</span>
+</i>
+
+  </a>
+</li>
+          <li>
+  <a href="../../index.html" data-analytics-child='{ "menu": "blog-nav", "cta_text": "circleci.com" }'>
+    circleci.com&nbsp;&nbsp;
+
+
+
+
+
+
+
+<i class="fa fa-external-link " aria-hidden="true" title="External Link" >
+  <span class="sr-only">External Link</span>
+</i>
+
+  </a>
+</li>
+        </ul>
+        <div class="nav-footer">
+          
+  <a
+    href="../../signup/index.html"
+    class="button-solid nav-size initial"
+    data-analytics-child='{ "menu": "blog-nav", "cta_text": "signup_button" }'
+  >
+    Start Building for Free
+  </a>
+
+        </div>
+      </div>
+      <form action="https://circleci.com/blog/" method="get" class="search-form collapse" id="search-form">
+        <label for="search-query" class="sr-only">
+          
+
+
+
+
+
+
+
+<i class="fa fa-search " aria-hidden="true" title="Search" >
+  <span class="sr-only">Search</span>
+</i>
+
+        </label>
+        <input type="text" name="query" class="search-query" placeholder="Search blog post titles, headings, and content...">
+        <input type="submit" class="sr-only" value="Search">
+        <a href="#" role="button" class="search-cancel-btn">
+          
+
+
+
+
+
+
+
+<i class="fa fa-times " aria-hidden="true" title="Cancel" >
+  <span class="sr-only">Cancel</span>
+</i>
+
+        </a>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    
+
+    <main id="main">
+      
+      <div id="search-results-container" class="container" style="display: none;">
+  <div class="search-results-metadata">
+    <span class="search-results-for">
+      Showing
+      <span class="search-results-count"></span>
+      results for:
+    </span>
+    <input type="text" class="search-query" tabindex="-1"></input>
+  </div>
+
+  <div class="search-results"></div>
+
+  <div id="search-result-template" style="display: none;">
+    <div class="search-result">
+      <a href="#" class="post-link">
+        <h2 class="post-title"></h2>
+      </a>
+
+      <p class="post-author-info">
+        By
+        <span class="post-author-byline"></span>
+      </p>
+
+      <p>
+        <span class="post-date"></span>
+        &mdash;
+        <span class="post-summary"></span>
+      </p>
+
+      <ul class="post-tags">
+      </ul>
+    </div>
+  </div>
+
+  <ul id="search-result-tag-template" style="display: none;">
+    <li>
+      <a class="tag" href="#" data-link-prefix="/blog/tag/"></a>
+    </li>
+  </ul>
+</div>
+
+<article class="blog-post">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="readable-width">
+          
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Nov 27, 2018</span>
+    
+    
+      <span class="post-read-time">6 min read</span>
+    
+  </span>
+</p>
+
+          <h1>How to automate and secure your mobile dev pipeline with CircleCI and NowSecure</h1>
+          
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/brian-reed1-677e4a063e9f437e3af2b087b875f71455eeb4b47ef6966f1a14975f5051d8ac.jpg" alt="Brian Reed" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Brian Reed
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        
+      </span>
+    </p>
+  </div>
+</div>
+
+          <div class="post-hero">
+            
+
+
+
+
+
+<img src="../media/NowSecure-Green-withTM.jpg" alt="" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="post-share-buttons">
+        
+
+
+
+
+
+<div class="social-btns share-buttons">
+  <a href="https://twitter.com/intent/tweet?text=How%20to%20automate%20and%20secure%20your%20mobile%20dev%20pipeline%20with%20CircleCI%20and%20NowSecure&amp;url=https://circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/&amp;via=circleci&amp;related=circleci"
+    class="popout"
+    rel="nofollow"
+    target="_blank" rel="noreferrer noopener"
+    title="Share on Twitter">
+    <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Share on Twitter</span>
+  </a>
+  <a href="https://facebook.com/sharer.php?u=https://circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/"
+    class="popout"
+    rel="nofollow"
+    target="_blank" rel="noreferrer noopener"
+    title="Share on Facebook">
+    <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span>
+  </a>
+  <a href="http://www.reddit.com/submit?title=How%20to%20automate%20and%20secure%20your%20mobile%20dev%20pipeline%20with%20CircleCI%20and%20NowSecure&amp;url=https://circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/"
+    rel="nofollow"
+    target="_blank" rel="noreferrer noopener"
+    title="Share on Reddit">
+    <i class="fa fa-reddit" aria-hidden="true"></i><span class="sr-only">Share on Reddit</span>
+  </a>
+  <a href="http://news.ycombinator.com/submitlink?t=How%20to%20automate%20and%20secure%20your%20mobile%20dev%20pipeline%20with%20CircleCI%20and%20NowSecure&amp;u=https://circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/"
+    rel="nofollow"
+    target="_blank" rel="noreferrer noopener"
+    title="Share on Hacker News">
+    <i class="fa fa-hacker-news" aria-hidden="true"></i><span class="sr-only">Share on Hacker News</span>
+  </a>
+</div>
+
+      </div>
+      <div class="post-content">
+        <p>Mobile apps are different than web apps and require tooling specifically designed to meet the needs of development, security and DevOps teams. Organizations can speed mobile appdev by optimizing flow and baking in security, which can be achieved by using CircleCI and NowSecure. A long-term collaborator with CircleCI, NowSecure is pleased to be a <a href="../announcing-orbs-technology-partner-program/index.html">CircleCI</a> Technology Partner with our own <a href="../../orbs/registry/orb/nowsecure/ci-auto-orb.html">orb in the registry</a>.</p>
+
+<!-- more -->
+
+<p>CircleCI provides many key mobile-specific features for the mobile app DevOps team starting with cross-platform build environment support to run multiple platforms under the same configuration and commit (for building desktop, Android, and/or iOS apps). For iOS mobile app developers, CircleCI includes code signing via Fastlane Match, iOS certificates and provisioning profiles management, iOS dependency management with Homebrew and iTunes Connect deployment and management along with services integrations with Hockey App, Beta by Crashlytics and TestFairy.</p>
+
+<p><a href="https://www.nowsecure.com/solutions/accelerate-secure-mobile-devops/">NowSecure AUTO</a> is purpose-built for mobile app security testing starting with cross-platform security testing of iOS and Android app binaries written in any language or development environment. NowSecure tests the compiled mobile app binary for data at rest, data in motion, and code functionality to ensure complete app coverage with highly accurate results. For fast flow in your pipeline, NowSecure delivers fast automated post-build test runs that complete in 7-15 minutes and automatically feed issues into ticketing systems such as Jira. Comprehensive security test results with CVSS-scored findings, developer remediation instructions, detailed artifacts and more, including break-the-build thresholds. And NowSecure now offers direct integration with CircleCI via our NowSecure AUTO CircleCI Orb.</p>
+
+<p>Let’s examine how the new NowSecure AUTO Orb for CircleCI integrates directly into CircleCI software and ticketing systems such as Jira to deliver fast, closed-loop dev cycles for building and deploying secure mobile apps.</p>
+
+<h2>Inside the CircleCI and NowSecure integration</h2>
+
+<p>Because mobile apps are fundamentally different than web apps, they require targeted tools that can accurately and thoroughly test the behavior of a mobile app under attack. The NowSecure  automated mobile appsec testing engine can fully exercise an app during the build process and auto-generate results downstream.</p>
+
+<p><img src="../media/2018-11-21-booth-nowsecure_106x87-print-circleci-01.png" alt="" /></p>
+
+<p>As shown in the graphic above, The NowSecure AUTO CircleCI Orb plugs into the CircleCI platform post-build and runs rapid security tests in parallel or serially with unit testing, functional testing and UX testing solutions.</p>
+
+<p>NowSecure AUTO can automatically test every CircleCI build and feed tickets into the cycle for developers to resolve. Unlike other security testing approaches, this NowSecure + CircleCI integration has zero impact on the dev workflow because there is no new IDE plug-in to learn, no static source code testing false positives to chase down, and no release delays caused by security bugs found too late in the testing cycle.</p>
+
+<p>Connecting the NowSecure AUTO CircleCI Orb to your project is simple with step by step details outlined here in the Github repo <a href="https://github.com/nowsecure/auto-circleci-plugin/blob/master/README.md">README.md</a>. Note that you also need a license of the NowSecure AUTO mobile app security test engine software. To summarize the process:</p>
+
+<ol>
+  <li>Generate a NowSecure AUTO token via your NowSecure Admin screen <a href="https://lab.nowsecure.com/account/settings">here</a>.</li>
+  <li>Create a CircleCI project by visiting <a href="../../index.html">https://circleci.com</a> and selecting “ADD PROJECTS” from left tab.</li>
+  <li>Create a context in CircleCI by selecting “SETTINGS” from left tab, and then selecting “Context” from left navigation.</li>
+  <li>Configure environment variables. Here are most commonly configured items:
+    <ul>
+      <li><code class="highlighter-rouge">auto_token</code>: mandatory parameter for the API token. We recommend using environment variable <code class="highlighter-rouge">AUTO_TOKEN</code> to define this parameter instead of using a job parameter. The value of this token is equal to the output from step 1.</li>
+      <li><code class="highlighter-rouge">auto_url</code>: optional parameter for NowSecure AUTO API URL with default value of <a href="https://lab-api.nowsecure.com/">https://lab-api.nowsecure.com</a>.</li>
+      <li><code class="highlighter-rouge">auto_group</code>: if you are using NowSecure Group access control, then configure the optional parameter for group-id. You can also use environment variable <code class="highlighter-rouge">AUTO_GROUP</code> to specify this.</li>
+    </ul>
+  </li>
+  <li>Add the orb to the <code class="highlighter-rouge">.circleci/config.yml</code>.</li>
+</ol>
+
+<p>Sample usage:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s">2.1</span>
+<span class="na">orbs</span><span class="pi">:</span>
+  <span class="na">auto_ci</span><span class="pi">:</span> <span class="s">nowsecure/ci-auto-orb@1.0.5</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">circleci/openjdk:8-jdk</span>
+    <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">attach_workspace</span><span class="pi">:</span>
+        <span class="na">at</span><span class="pi">:</span> <span class="s">/tmp/myworkspace</span>
+    <span class="pi">-</span> <span class="s">checkout</span>
+    <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">cp apkpure_app_887.apk /tmp/myworkspace/test.apk</span>
+    <span class="pi">-</span> <span class="s">auto_ci/mobile_security_test</span><span class="pi">:</span>
+        <span class="na">auto_file</span><span class="pi">:</span> <span class="s">/tmp/myworkspace/test.apk</span>
+        <span class="na">auto_wait</span><span class="pi">:</span> <span class="s2">"</span><span class="s">30"</span>
+        <span class="na">auto_score</span><span class="pi">:</span> <span class="s2">"</span><span class="s">50"</span>
+        <span class="na">auto_show_status_messages</span><span class="pi">:</span> <span class="s2">"</span><span class="s">true"</span>
+</code></pre></div></div>
+
+<p>After checking in changes, the CircleCI build should kick off and you can see the output as it’s running as shown in the screenshot below.</p>
+
+<p><img src="../media/2018-11-21-nowsecure6.png" alt="2018-11-21-nowsecure6.png" /></p>
+
+<p>Once the build completes, as shown in the second screenshot below, CircleCI automatically launches the NowSecure AUTO mobile app security test of the app binary. In this example, the full test run was completed in just under 13 minutes.</p>
+
+<p><img src="../media/2018-11-21-nowsecure2.png" alt="" /></p>
+
+<p>In this third screenshot below, we can see the JSON test results and artifacts that were generated. Individual tickets for each security finding are auto-fed into issue tracking systems like Jira.</p>
+
+<p><img src="../media/2018-11-21-nowsecure3.png" alt="" /></p>
+
+<p>Throughout this process, no human intervention is required. In fact, numerous customers run NowSecure “headless” in a fully automated integration mode at all times and never need to log into the NowSecure platform itself.</p>
+
+<h2>NowSecure Delivers Full Security Testing Coverage</h2>
+
+<p>Under the hood, NowSecure AUTO delivers automated dynamic appsec testing with an integrated behavioral attack tool. This works to ensure full security testing coverage with a high degree of accuracy for near zero false positives. NowSecure automatically pinpoints the security issues developers and security analysts want to prevent, such as:</p>
+
+<ul>
+  <li>Sensitive data leakage over the air, in log files or system files</li>
+  <li>Improper/inconsistent input validation</li>
+  <li>Weak/improper encryption</li>
+  <li>Vulnerabilities to man-in-the-middle attacks or remote code execution</li>
+  <li>Certificate validation issues</li>
+</ul>
+
+<p>NowSecure automatically delivers accurate, validated test results with straightforward issue descriptions, detailed remediation instructions and all relevant artifacts to speed resolution (for devs) and industry-standard CVSS scores, risk and compliance info (for security analysts).</p>
+
+<p>Often, devs don’t even need to look at the security reports because they consume automatically-fed Jira tickets. The screenshot below shows the report interface that provides dev and security teams with deeper understanding.</p>
+
+<p><img src="../media/2018-11-21-nowsecure7.png" alt="" /></p>
+
+<p>NowSecure AUTO provides a rich dashboard for a comprehensive view of all metrics, trendlines and critical areas of concern. As shown in the orange/red heatmap in the screenshot below, the highest impact security issues to focus on include unencrypted data over HTTP, keysize, a slew of sensitive data issues, “allow data backups” issues, plus one app runs as root.</p>
+
+<p><img src="../media/NowSecure%20AUTO%20Dashboard.png" alt="NowSecure AUTO Dashboard" /></p>
+
+<h2>Powering Secure DevOps with CircleCI and NowSecure</h2>
+
+<p>Like CircleCI, NowSecure AUTO is available in cloud or on-premises. Based on your team’s use cases, NowSecure AUTO can run on-demand with devs and security teams uploading binaries or fully automated plugged into CircleCI and other tools.</p>
+
+<p>CircleCI delivers a comprehensive CI/CD environment tuned specifically for the mobile app development lifecycle. Integrate NowSecure directly with your dev toolchain to free up time to focus on building and delivering the secure, innovative mobile app experience that your users demand.</p>
+
+<p>Learn more about CircleCI and NowSecure by watching our webinar, <a href="https://www.youtube.com/watch?v=6aa7AbkXWUo">CircleCI and NowSecure: Automating and Securing Your Mobile Dev Pipeline</a>.</p>
+
+<hr />
+
+<p><i>Brian Reed, Chief Mobility Officer at NowSecure, brings brings over 15 years experience in mobile apps, security and operations including NowSecure, Good Technology, BlackBerry, ZeroFOX, BoxTone and MicroFocus/INTERSOLV securely mobilizing Fortune 2000 global customers and government agencies.<i></i></i></p>
+
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="readable-width">
+          
+
+<ul class="post-tags">
+  
+    
+    
+    <li>
+      <a class="tag" href="../tag/integrations/index.html">
+        Integrations
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class="tag" href="../tag/engineering/index.html">
+        Engineering
+      </a>
+    </li>
+  
+    
+    
+    <li>
+      <a class="tag" href="../tag/orbs/index.html">
+        Orbs
+      </a>
+    </li>
+  
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+</article>
+
+
+
+<div class="recommended-posts">
+  <div class="recommended-posts-header container">
+    
+      <div class="row">
+        <div class="readable-width">
+          <h2 class="title">Similar posts you may enjoy</h2>
+        </div>
+      </div>
+      <div class="card-deck">
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../circleci-for-google-cloud-platform-scalable-flexible-and-efficient/index.html">
+      
+
+
+
+
+
+<img src="../media/3-27-2020-GCP-v8.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Mar 30, 2020</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../circleci-for-google-cloud-platform-scalable-flexible-and-efficient/index.html">
+        CircleCI for Google Cloud Platform: scalable, flexible, and efficient
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/morgan-hennessy-57920e3de245e183cf5ab991288ce21a99e5b11c3183bac604217cc8f64f4d2a.jpg" alt="Morgan Hennessy" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Morgan Hennessy
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Product Marketing Manager, Partners & Channels
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../continuous-deployment-with-circleci-orbs-automate-deploys-to-aws-gcp-k8s-and-more/index.html">
+      
+
+
+
+
+
+<img src="../media/1-21-2020-DeployOrbs-v8-white.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jan 22, 2020</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../continuous-deployment-with-circleci-orbs-automate-deploys-to-aws-gcp-k8s-and-more/index.html">
+        Continuous deployment with CircleCI orbs: automate deploys to AWS, GCP, K8s, and more
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/rosalind-lutsky-d26522d7f44fb909ad76cb4bd19bc3a5c4364aad68f50d9678a17aa226ad0b84.jpg" alt="Rosalind Lutsky" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Rosalind Lutsky
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Copywriter
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../circleci-for-aws-deep-integration-security-and-flexibility/index.html">
+      
+
+
+
+
+
+<img src="../media/AWS-Announce.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Dec 2, 2019</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../circleci-for-aws-deep-integration-security-and-flexibility/index.html">
+        CircleCI for AWS: Deep integration, security, and flexibility
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/rosalind-lutsky-d26522d7f44fb909ad76cb4bd19bc3a5c4364aad68f50d9678a17aa226ad0b84.jpg" alt="Rosalind Lutsky" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Rosalind Lutsky
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Copywriter
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../get-started-with-google-binary-authorization/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-09-18-banner-for-google-bin-auth-post.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Sep 18, 2019</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../get-started-with-google-binary-authorization/index.html">
+        Get started with Google Binary Authorization
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/rose%402x-069ca15a9ac24e26709b1641cc3fa18871afe859afadc976266d653664028b16.jpg" alt="Rose Kaplan-Bomberg" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  <a href="../author/rose-kaplan-bomberg/index.html">
+    Rose Kaplan-Bomberg
+  </a>
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Community & Partner Engineer
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../update-how-circleci-processes-over-30-million-builds-per-month/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-19-RubeGoldberg-v1.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 22, 2019</span>
+    
+    
+      <span class="post-read-time">12 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../update-how-circleci-processes-over-30-million-builds-per-month/index.html">
+        Update: How CircleCI processes over 30 million builds per month
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/rob%402x-dbf8eb0d2a526f0243df2af7d20132e741fdf9b8151575c3d53958b348bd056d.jpg" alt="Rob Zuber" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Rob Zuber
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        CTO
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../ci-cd-meet-cas-continuous-application-security/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-19-Contrast.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 22, 2019</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../ci-cd-meet-cas-continuous-application-security/index.html">
+        CI/CD, meet CAS: Continuous Application Security
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/nikesh-shah-3d98cd1d5c04defb93feae5383d5c9f4882bc21a1af0ec13ac5f3023c853fbf9.jpg" alt="Nikesh Shah" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Nikesh Shah
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Director of Business Development and Strategic Alliances at Contrast Security
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../dynamically-pull-in-your-stored-sensitive-data-with-the-cryptomove-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-17-CryptoMove.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 21, 2019</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../dynamically-pull-in-your-stored-sensitive-data-with-the-cryptomove-orb/index.html">
+        Pull in your stored sensitive data with the CryptoMove orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/nicholas-shook-f259b97572cdf48f336104b831de9ac495d1b9801b123fe78f12e63571a85bfe.jpg" alt="Nicholas Shook" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Nicholas Shook
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Solutions Engineer at CryptoMove
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../three-rules-for-turning-devops-into-devsecops/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-17-Probely.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 20, 2019</span>
+    
+    
+      <span class="post-read-time">9 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../three-rules-for-turning-devops-into-devsecops/index.html">
+        Three rules for turning DevOps into DevSecOps
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/davor-petreski-33fc700b55531e871b6519228bf81fd37ae5ef502c76e3e3bfdddcc5051a13e6.jpg" alt="Davor Petreski" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Davor Petreski
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Content Marketing at Probely
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../build-with-circleci-configure-securely-with-alcide/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-18-Alcide.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 19, 2019</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../build-with-circleci-configure-securely-with-alcide/index.html">
+        Build with CircleCI, configure securely with Alcide
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/karine-regev-252408d2c0c7eec3d437b78ae05367dbbb2f04def4d21b4a439e3018790d9fd4.jpg" alt="Karine Regev" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Karine Regev
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        VP of Marketing at Alcide
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../security-with-snyk-in-the-circleci-workflow/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-15-Snyk.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 15, 2019</span>
+    
+    
+      <span class="post-read-time">6 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../security-with-snyk-in-the-circleci-workflow/index.html">
+        Security with Snyk in the CircleCI workflow
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/hayley-denbraver-b3c84ee3bf00c5e70468dd683dc1f543ce3f4ccccbe48001c4db1f36c98990e0.jpg" alt="Hayley Denbraver" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Hayley Denbraver
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Developer Advocate at Snyk
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../whitesource-launches-free-open-source-vulnerability-checker-orb-for-all-circleci-users/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-14-WhiteSource.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 14, 2019</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../whitesource-launches-free-open-source-vulnerability-checker-orb-for-all-circleci-users/index.html">
+        WhiteSource launches free open source vulnerability checker orb for all CircleCI users
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/shiri-ivtsan-48d91d3d8ce62815c9f5cb3282196d1717a7f3439729c81c54af3eb2c3d04d18.jpg" alt="Shiri Ivtsan" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Shiri Ivtsan
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Product Manager at WhiteSource
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../devsecops-and-circleci-orbs-security-focused-ci-cd-best-practices/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-08-12-DevSecOpsAnnounce-v2.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Aug 13, 2019</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../devsecops-and-circleci-orbs-security-focused-ci-cd-best-practices/index.html">
+        DevSecOps and CircleCI orbs: secure your CI/CD pipeline
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/ron-powell-adefb5d5f7ee7582721f0720c499d478f90a8e26f33e382b3d721c75462bd524.jpg" alt="Ron Powell" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  <a href="../author/ron-powell/index.html">
+    Ron Powell
+  </a>
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Technical Content Marketing Manager
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../get-an-out-of-the-box-solution-for-the-most-important-services-in-your-pipeline/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-05-17-k8s.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jul 30, 2019</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../get-an-out-of-the-box-solution-for-the-most-important-services-in-your-pipeline/index.html">
+        Get an out-of-the-box solution for the most important services in your pipeline
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/ron-powell-adefb5d5f7ee7582721f0720c499d478f90a8e26f33e382b3d721c75462bd524.jpg" alt="Ron Powell" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  <a href="../author/ron-powell/index.html">
+    Ron Powell
+  </a>
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Technical Content Marketing Manager
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../kubernetes-and-circleci-orbs-develop-your-project-not-your-deployment-pipeline/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-05-17-k8s.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">May 20, 2019</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../kubernetes-and-circleci-orbs-develop-your-project-not-your-deployment-pipeline/index.html">
+        Kubernetes and CircleCI orbs: develop your project, not your deployment pipeline
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/ron-powell-adefb5d5f7ee7582721f0720c499d478f90a8e26f33e382b3d721c75462bd524.jpg" alt="Ron Powell" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  <a href="../author/ron-powell/index.html">
+    Ron Powell
+  </a>
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Technical Content Marketing Manager
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../set-up-a-circleci-pipeline-to-run-a-postman-collection-using-the-newman-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bPostman.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">May 13, 2019</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../set-up-a-circleci-pipeline-to-run-a-postman-collection-using-the-newman-orb/index.html">
+        Set up a CircleCI pipeline to run a Postman collection using the Newman orb 
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/kaustav-das-modak-f54e741e6cae4cc9cef7ac2b2202ca9b9f63aec340121b292cb8186073d12e71.jpg" alt="Kaustav Das Modak" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Kaustav Das Modak
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Developer Advocate at Postman
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../contributing-the-elixir-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-03-26-Default-Baroque.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Apr 3, 2019</span>
+    
+    
+      <span class="post-read-time">6 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../contributing-the-elixir-orb/index.html">
+        Contributing the Elixir orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/david-magalhaes-c2b76d4e572aeb37e3c7ff87a83a839a3ba74a3ecca3b9d769b3c67d985a0ed0.jpg" alt="David Magalhães" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  David Magalhães
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Software Engineer at Coletiv
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../start-deploying-using-the-circleci-deployment-orb-with-deployhub/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bDeployHub.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Mar 15, 2019</span>
+    
+    
+      <span class="post-read-time">6 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../start-deploying-using-the-circleci-deployment-orb-with-deployhub/index.html">
+        Start deploying using the CircleCI deployment orb with DeployHub
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/tracy-ragan-b420c16acc95250aaf1fe5309ccdd4058dd9f4b3524c98f4a7386cbebc02694e.jpg" alt="Tracy Ragan" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Tracy Ragan
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        CEO at DeployHub
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../launchdarkly-feature-flags-in-your-circleci-builds/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bLaunchDarkly.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Mar 13, 2019</span>
+    
+    
+      <span class="post-read-time">2 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../launchdarkly-feature-flags-in-your-circleci-builds/index.html">
+        LaunchDarkly feature flags in your CircleCI builds
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/sachin-agarwal-d72b3414fbcb485813dc80ecdfadae33ec77d4ca4ef7a105d67281cc84c06d51.jpg" alt="Sachin Agarwal" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Sachin Agarwal
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Principal Product Manager at LaunchDarkly
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../automate-open-source-security-tracking-with-the-whitesource-circleci-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-02-12-Whitesource.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Feb 15, 2019</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../automate-open-source-security-tracking-with-the-whitesource-circleci-orb/index.html">
+        Automate open source security tracking with the WhiteSource CircleCI orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/shiri-ivtsan-48d91d3d8ce62815c9f5cb3282196d1717a7f3439729c81c54af3eb2c3d04d18.jpg" alt="Shiri Ivtsan" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Shiri Ivtsan
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Product Manager at WhiteSource
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../debug-your-circleci-environments-using-the-rookout-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/2019-02-06-Rookout.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Feb 11, 2019</span>
+    
+    
+      <span class="post-read-time">2 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../debug-your-circleci-environments-using-the-rookout-orb/index.html">
+        Debug your CircleCI environments using the Rookout orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/liran-haimovitch-1dcd02c1b0a3fe528c6822834b0cf6ec9ed2995d458e753cce591577f6bc5296.jpg" alt="Liran Haimovitch" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Liran Haimovitch
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        CTO and Co-Founder at Rookout
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../cross-browser-screenshot-testing-with-the-circleci-happo-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bHappo.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Feb 1, 2019</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../cross-browser-screenshot-testing-with-the-circleci-happo-orb/index.html">
+        Cross-browser screenshot testing with the CircleCI Happo orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/henric-trotzig-6f0ef84d18fddb369697a277e056e6f70c952c5b65b3ec4c33e8a92fd9033822.jpg" alt="Henric Trotzig" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Henric Trotzig
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Software Engineer at Happo
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../integrating-container-image-scanning-into-circleci-builds-with-the-twistlock-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bTwistlock.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jan 30, 2019</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../integrating-container-image-scanning-into-circleci-builds-with-the-twistlock-orb/index.html">
+        Integrating container image scanning into CircleCI builds with the Twistlock orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/jeremy-adams-98b260cb543c1cf1d040badcb086061d3c573f8966a6cf62ff08a1125dac9e58.jpg" alt="Jeremy Adams" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Jeremy Adams
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Principal Solutions Architect at Twistlock
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../reusable-ci-cd-components-with-circleci-orbs-and-pulumi/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bPulumi.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jan 22, 2019</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../reusable-ci-cd-components-with-circleci-orbs-and-pulumi/index.html">
+        Reusable CI/CD components with CircleCI orbs and Pulumi
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/chris-smith-f2bf9c079bfc5e40a9dbed57a45b181105abb91976645ceb0096ff0582cd6f52.jpg" alt="Chris Smith" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Chris Smith
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Staff Engineer at Pulumi
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../making-code-coverage-easy-to-see-with-the-codecov-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bCodeCov.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jan 10, 2019</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../making-code-coverage-easy-to-see-with-the-codecov-orb/index.html">
+        Making code coverage easy to see with the Codecov CircleCI orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/tom-hu-5477879bf2f5537223a7f0d7134b030ffbf0cd4e796686053d160a0f3d394d4b.jpg" alt="Tom Hu" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Tom Hu
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Developer Relations Lead at Codecov
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../end-to-end-browser-testing-with-the-ghost-inspector-circleci-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI%2bGhostInspector.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Jan 8, 2019</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../end-to-end-browser-testing-with-the-ghost-inspector-circleci-orb/index.html">
+        End­-to-­end browser testing with the Ghost Inspector CircleCI orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/justin-klemm-cbb94071d22b6be4d710ef98fc8eb9a0a0c23decd13528c3c3d012e8b3e5537f.jpg" alt="Justin Klemm" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Justin Klemm
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Founder and Tech Lead at Ghost Inspector
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../orbs-aws-ecr/index.html">
+      
+
+
+
+
+
+<img src="../media/Tutorial-Beginner-A.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Tutorials</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Dec 20, 2018</span>
+    
+    
+      <span class="post-read-time">7 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../orbs-aws-ecr/index.html">
+        Building CI/CD pipelines using the CircleCI AWS ECR Orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/angel-rivera-871295d1a93a85fdd2bdda32af743d00e2ef734346dca4af1f9df34e9e22d40e.jpg" alt="Angel Rivera" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  <a href="../author/angel-rivera/index.html">
+    Angel Rivera
+  </a>
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Developer Advocate
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../seamless-parallelized-visual-testing-with-the-percy-circleci-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/CircleCI-Percy.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Dec 6, 2018</span>
+    
+    
+      <span class="post-read-time">3 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../seamless-parallelized-visual-testing-with-the-percy-circleci-orb/index.html">
+        Seamless, parallelized, visual testing with the Percy CircleCI Orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/david-jones-2d82f586a97ec5a9a907c6b2c32b909e267def2aa04b409e5d3f043b67666c26.jpg" alt="David Jones" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  David Jones
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Director of Engineering at Percy
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../streamlined-web-application-testing-with-the-cypress-circleci-orb/index.html">
+      
+
+
+
+
+
+<img src="../media/Cypress-Blue.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Nov 16, 2018</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../streamlined-web-application-testing-with-the-cypress-circleci-orb/index.html">
+        Streamlined web application testing with the Cypress CircleCI Orb
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/gleb-bahmutov3-caeca2d796788219543c0434f80259ef855b7428e72189ae2890d79883bdf274.jpg" alt="Gleb Bahmutov" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Gleb Bahmutov
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../how-to-build-immutable-infrastructure-with-packer-and-circleci-workflows/index.html">
+      
+
+
+
+
+
+<img src="../../../d3r49iyjzglexf.cloudfront.net/blog/default-post-image-f5d3add2f876a8ef8b34d5c79b4b1b0966c6b712badaf7ff7a9ae0683e1bb704.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Operations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Dec 12, 2017</span>
+    
+    
+      <span class="post-read-time">5 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../how-to-build-immutable-infrastructure-with-packer-and-circleci-workflows/index.html">
+        How to Build Immutable Infrastructure with Packer and CircleCI Workflows
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/bear%402x-c7dea5d0728bd51d268a261db802e0f78b9d706784116e44674bcd854ac6e54a.jpg" alt="Bear" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Bear
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        SRE Manager
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../slack-integration/index.html">
+      
+
+
+
+
+
+<img src="../../../d3r49iyjzglexf.cloudfront.net/blog/default-post-image-f5d3add2f876a8ef8b34d5c79b4b1b0966c6b712badaf7ff7a9ae0683e1bb704.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Integrations</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">May 1, 2014</span>
+    
+    
+      <span class="post-read-time">2 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../slack-integration/index.html">
+        Slack Integration
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/logo-circleci-blog-8171e226b8c65a50b53684c12f7ba2491d6656b1b7f136dd9f5042d5ec329428.png" alt="David Jarvis" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  David Jarvis
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../persisting-data-in-workflows-when-to-use-caching-artifacts-and-workspaces/index.html">
+      
+
+
+
+
+
+<img src="../media/Diagram-v3-Artifact.png" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Sep 25, 2017</span>
+    
+    
+      <span class="post-read-time">4 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../persisting-data-in-workflows-when-to-use-caching-artifacts-and-workspaces/index.html">
+        Persisting Data in Workflows: When to Use Caching, Artifacts, and Workspaces
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/gordon%402x-8f212145881c761b25b8c781a760e0f5676b18a8f6e741d1f2169009fe65a3d2.jpg" alt="Gordon Syme" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Gordon Syme
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Developer
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../setting-up-continuous-integration-with-github/index.html">
+      
+
+
+
+
+
+<img src="../media/Tutorial-Beginner-D.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Tutorials</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">Sep 17, 2018</span>
+    
+    
+      <span class="post-read-time">7 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../setting-up-continuous-integration-with-github/index.html">
+        Setting up continuous integration with GitHub
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/stanley-ndagi2-c400e98dad1b98a06b9e95a5db985662ac04c88ae77da9c02f2b89d84214603f.jpg" alt="Stanley Ndagi" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Stanley Ndagi
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        Platform and ML Engineer
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+    <div class="card blog-post-tile">
+  <div class="card-img-top">
+    <a href="../triggering-trusted-ci-jobs-on-untrusted-forks/index.html">
+      
+
+
+
+
+
+<img src="../media/Tutorial-Intermediate-B.jpg" alt="" />
+
+    </a>
+  </div>
+
+  <div class="card-body">
+    
+
+<p class="post-metadata">
+  
+    
+    
+      <span class="post-primary-tag">Tutorials</span>
+    
+  
+  <span class="post-not-tag">
+    
+      <span class="post-date">May 21, 2019</span>
+    
+    
+      <span class="post-read-time">11 min read</span>
+    
+  </span>
+</p>
+
+    <h2 class="post-link">
+      <a href="../triggering-trusted-ci-jobs-on-untrusted-forks/index.html">
+        Triggering trusted CI jobs on untrusted forks
+      </a>
+    </h2>
+  </div>
+
+  <div class="card-footer">
+    
+
+
+
+
+
+
+
+
+
+<div class="post-author-info">
+  <div class="media">
+    <div class="media-left">
+      
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+
+<img class="cci-avatar" src="../../../d3r49iyjzglexf.cloudfront.net/people/jeff-klukas-833759e416f8e90fdef8c826d52bc5252ab83f7b408abb0081c47c628f661360.jpg" alt="Jeff Klukas" />
+
+    </div>
+    <p class="media-body media-middle">
+      <span class="post-author-name">
+        
+
+
+  Jeff Klukas
+
+
+      </span>
+      <br>
+      <span class="post-author-role">
+        
+      </span>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  
+</div>
+
+    
+  </div>
+</div>
+
+<div class="interstitial-signup signup-en container" style="display: none;">
+  <div class="row">
+    <div class="readable-width">
+      <div class="card">
+        <div class="card-body">
+          <div class="blog-post-signup-form">
+  <h2>Subscribe to our blog</h2>
+  <p>Get the latest posts in your inbox</p>
+  <form action="https://cb4a24d2-9149-40cc-b03f-7704f01a36f8.trayapp.io/"
+    class="html5-form box"
+    data-modal="subscribe"
+    data-submit-event="subscribe-blog-newsletter"
+    data-analytics-cta-text="Subscribe Now"
+    data-analytics-location="Blog newsletter subscription"
+  >
+    <input class="white mailcheck" type="email" placeholder="Email Address" name="email" required>
+    <div class="molecule country-dropdown">
+  <select required class="form-control" name="country" >
+    <option disabled selected value="">Country</option>
+    <option value="United States">United States</option>
+    <option value="Canada">Canada</option>
+    <option disabled>----</option>
+    
+    
+        <option value="Afghanistan">Afghanistan</option>
+    
+        <option value="Aland Islands">Aland Islands</option>
+    
+        <option value="Albania">Albania</option>
+    
+        <option value="Algeria">Algeria</option>
+    
+        <option value="Andorra">Andorra</option>
+    
+        <option value="Angola">Angola</option>
+    
+        <option value="Anguilla">Anguilla</option>
+    
+        <option value="Antarctica">Antarctica</option>
+    
+        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+    
+        <option value="Argentina">Argentina</option>
+    
+        <option value="Armenia">Armenia</option>
+    
+        <option value="Aruba">Aruba</option>
+    
+        <option value="Australia">Australia</option>
+    
+        <option value="Austria">Austria</option>
+    
+        <option value="Azerbaijan">Azerbaijan</option>
+    
+        <option value="Bahamas">Bahamas</option>
+    
+        <option value="Bahrain">Bahrain</option>
+    
+        <option value="Bangladesh">Bangladesh</option>
+    
+        <option value="Barbados">Barbados</option>
+    
+        <option value="Belarus">Belarus</option>
+    
+        <option value="Belgium">Belgium</option>
+    
+        <option value="Belize">Belize</option>
+    
+        <option value="Benin">Benin</option>
+    
+        <option value="Bermuda">Bermuda</option>
+    
+        <option value="Bhutan">Bhutan</option>
+    
+        <option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+    
+        <option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+    
+        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+    
+        <option value="Botswana">Botswana</option>
+    
+        <option value="Bouvet Island">Bouvet Island</option>
+    
+        <option value="Brazil">Brazil</option>
+    
+        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+    
+        <option value="Brunei Darussalam">Brunei Darussalam</option>
+    
+        <option value="Bulgaria">Bulgaria</option>
+    
+        <option value="Burkina Faso">Burkina Faso</option>
+    
+        <option value="Burundi">Burundi</option>
+    
+        <option value="Cambodia">Cambodia</option>
+    
+        <option value="Cameroon">Cameroon</option>
+    
+        <option value="Cape Verde">Cape Verde</option>
+    
+        <option value="Cayman Islands">Cayman Islands</option>
+    
+        <option value="Central African Republic">Central African Republic</option>
+    
+        <option value="Chad">Chad</option>
+    
+        <option value="Chile">Chile</option>
+    
+        <option value="China">China</option>
+    
+        <option value="Christmas Island">Christmas Island</option>
+    
+        <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+    
+        <option value="Colombia">Colombia</option>
+    
+        <option value="Comoros">Comoros</option>
+    
+        <option value="Congo">Congo</option>
+    
+        <option value="Congo, the Democratic Republic of the">Congo, the Democratic Republic of the</option>
+    
+        <option value="Cook Islands">Cook Islands</option>
+    
+        <option value="Costa Rica">Costa Rica</option>
+    
+        <option value="Cote d’Ivoire">Cote d’Ivoire</option>
+    
+        <option value="Croatia">Croatia</option>
+    
+        <option value="Cuba">Cuba</option>
+    
+        <option value="Curaçao">Curaçao</option>
+    
+        <option value="Cyprus">Cyprus</option>
+    
+        <option value="Czech Republic">Czech Republic</option>
+    
+        <option value="Denmark">Denmark</option>
+    
+        <option value="Djibouti">Djibouti</option>
+    
+        <option value="Dominica">Dominica</option>
+    
+        <option value="Dominican Republic">Dominican Republic</option>
+    
+        <option value="Ecuador">Ecuador</option>
+    
+        <option value="Egypt">Egypt</option>
+    
+        <option value="El Salvador">El Salvador</option>
+    
+        <option value="Equatorial Guinea">Equatorial Guinea</option>
+    
+        <option value="Eritrea">Eritrea</option>
+    
+        <option value="Estonia">Estonia</option>
+    
+        <option value="Ethiopia">Ethiopia</option>
+    
+        <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+    
+        <option value="Faroe Islands">Faroe Islands</option>
+    
+        <option value="Fiji">Fiji</option>
+    
+        <option value="Finland">Finland</option>
+    
+        <option value="France">France</option>
+    
+        <option value="French Guiana">French Guiana</option>
+    
+        <option value="French Polynesia">French Polynesia</option>
+    
+        <option value="French Southern Territories">French Southern Territories</option>
+    
+        <option value="Gabon">Gabon</option>
+    
+        <option value="Gambia">Gambia</option>
+    
+        <option value="Georgia">Georgia</option>
+    
+        <option value="Germany">Germany</option>
+    
+        <option value="Ghana">Ghana</option>
+    
+        <option value="Gibraltar">Gibraltar</option>
+    
+        <option value="Greece">Greece</option>
+    
+        <option value="Greenland">Greenland</option>
+    
+        <option value="Grenada">Grenada</option>
+    
+        <option value="Guadeloupe">Guadeloupe</option>
+    
+        <option value="Guatemala">Guatemala</option>
+    
+        <option value="Guernsey">Guernsey</option>
+    
+        <option value="Guinea">Guinea</option>
+    
+        <option value="Guinea-Bissau">Guinea-Bissau</option>
+    
+        <option value="Guyana">Guyana</option>
+    
+        <option value="Haiti">Haiti</option>
+    
+        <option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+    
+        <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+    
+        <option value="Honduras">Honduras</option>
+    
+        <option value="Hungary">Hungary</option>
+    
+        <option value="Iceland">Iceland</option>
+    
+        <option value="India">India</option>
+    
+        <option value="Indonesia">Indonesia</option>
+    
+        <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+    
+        <option value="Iraq">Iraq</option>
+    
+        <option value="Ireland">Ireland</option>
+    
+        <option value="Isle of Man">Isle of Man</option>
+    
+        <option value="Israel">Israel</option>
+    
+        <option value="Italy">Italy</option>
+    
+        <option value="Jamaica">Jamaica</option>
+    
+        <option value="Japan">Japan</option>
+    
+        <option value="Jersey">Jersey</option>
+    
+        <option value="Jordan">Jordan</option>
+    
+        <option value="Kazakhstan">Kazakhstan</option>
+    
+        <option value="Kenya">Kenya</option>
+    
+        <option value="Kiribati">Kiribati</option>
+    
+        <option value="Korea, Democratic People’s Republic of">Korea, Democratic People’s Republic of</option>
+    
+        <option value="Korea, Republic of">Korea, Republic of</option>
+    
+        <option value="Kuwait">Kuwait</option>
+    
+        <option value="Kyrgyzstan">Kyrgyzstan</option>
+    
+        <option value="Lao People’s Democratic Republic">Lao People’s Democratic Republic</option>
+    
+        <option value="Latvia">Latvia</option>
+    
+        <option value="Lebanon">Lebanon</option>
+    
+        <option value="Lesotho">Lesotho</option>
+    
+        <option value="Liberia">Liberia</option>
+    
+        <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+    
+        <option value="Liechtenstein">Liechtenstein</option>
+    
+        <option value="Lithuania">Lithuania</option>
+    
+        <option value="Luxembourg">Luxembourg</option>
+    
+        <option value="Macao">Macao</option>
+    
+        <option value="Macedonia, the former Yugoslav Republic of">Macedonia, the former Yugoslav Republic of</option>
+    
+        <option value="Madagascar">Madagascar</option>
+    
+        <option value="Malawi">Malawi</option>
+    
+        <option value="Malaysia">Malaysia</option>
+    
+        <option value="Maldives">Maldives</option>
+    
+        <option value="Mali">Mali</option>
+    
+        <option value="Malta">Malta</option>
+    
+        <option value="Martinique">Martinique</option>
+    
+        <option value="Mauritania">Mauritania</option>
+    
+        <option value="Mauritius">Mauritius</option>
+    
+        <option value="Mayotte">Mayotte</option>
+    
+        <option value="Mexico">Mexico</option>
+    
+        <option value="Moldova, Republic of">Moldova, Republic of</option>
+    
+        <option value="Monaco">Monaco</option>
+    
+        <option value="Mongolia">Mongolia</option>
+    
+        <option value="Montenegro">Montenegro</option>
+    
+        <option value="Montserrat">Montserrat</option>
+    
+        <option value="Morocco">Morocco</option>
+    
+        <option value="Mozambique">Mozambique</option>
+    
+        <option value="Myanmar">Myanmar</option>
+    
+        <option value="Namibia">Namibia</option>
+    
+        <option value="Nauru">Nauru</option>
+    
+        <option value="Nepal">Nepal</option>
+    
+        <option value="Netherlands">Netherlands</option>
+    
+        <option value="New Caledonia">New Caledonia</option>
+    
+        <option value="New Zealand">New Zealand</option>
+    
+        <option value="Nicaragua">Nicaragua</option>
+    
+        <option value="Niger">Niger</option>
+    
+        <option value="Nigeria">Nigeria</option>
+    
+        <option value="Niue">Niue</option>
+    
+        <option value="Norfolk Island">Norfolk Island</option>
+    
+        <option value="Norway">Norway</option>
+    
+        <option value="Oman">Oman</option>
+    
+        <option value="Pakistan">Pakistan</option>
+    
+        <option value="Palestine">Palestine</option>
+    
+        <option value="Panama">Panama</option>
+    
+        <option value="Papua New Guinea">Papua New Guinea</option>
+    
+        <option value="Paraguay">Paraguay</option>
+    
+        <option value="Peru">Peru</option>
+    
+        <option value="Philippines">Philippines</option>
+    
+        <option value="Pitcairn">Pitcairn</option>
+    
+        <option value="Poland">Poland</option>
+    
+        <option value="Portugal">Portugal</option>
+    
+        <option value="Qatar">Qatar</option>
+    
+        <option value="Reunion">Reunion</option>
+    
+        <option value="Romania">Romania</option>
+    
+        <option value="Russian Federation">Russian Federation</option>
+    
+        <option value="Rwanda">Rwanda</option>
+    
+        <option value="Saint Barthélemy">Saint Barthélemy</option>
+    
+        <option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+    
+        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+    
+        <option value="Saint Lucia">Saint Lucia</option>
+    
+        <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+    
+        <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+    
+        <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+    
+        <option value="Samoa">Samoa</option>
+    
+        <option value="San Marino">San Marino</option>
+    
+        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+    
+        <option value="Saudi Arabia">Saudi Arabia</option>
+    
+        <option value="Senegal">Senegal</option>
+    
+        <option value="Serbia">Serbia</option>
+    
+        <option value="Seychelles">Seychelles</option>
+    
+        <option value="Sierra Leone">Sierra Leone</option>
+    
+        <option value="Singapore">Singapore</option>
+    
+        <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+    
+        <option value="Slovakia">Slovakia</option>
+    
+        <option value="Slovenia">Slovenia</option>
+    
+        <option value="Solomon Islands">Solomon Islands</option>
+    
+        <option value="Somalia">Somalia</option>
+    
+        <option value="South Africa">South Africa</option>
+    
+        <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+    
+        <option value="South Sudan">South Sudan</option>
+    
+        <option value="Spain">Spain</option>
+    
+        <option value="Sri Lanka">Sri Lanka</option>
+    
+        <option value="Sudan">Sudan</option>
+    
+        <option value="Suriname">Suriname</option>
+    
+        <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+    
+        <option value="Swaziland">Swaziland</option>
+    
+        <option value="Sweden">Sweden</option>
+    
+        <option value="Switzerland">Switzerland</option>
+    
+        <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+    
+        <option value="Taiwan">Taiwan</option>
+    
+        <option value="Tajikistan">Tajikistan</option>
+    
+        <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+    
+        <option value="Thailand">Thailand</option>
+    
+        <option value="Timor-Leste">Timor-Leste</option>
+    
+        <option value="Togo">Togo</option>
+    
+        <option value="Tokelau">Tokelau</option>
+    
+        <option value="Tonga">Tonga</option>
+    
+        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+    
+        <option value="Tunisia">Tunisia</option>
+    
+        <option value="Turkey">Turkey</option>
+    
+        <option value="Turkmenistan">Turkmenistan</option>
+    
+        <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+    
+        <option value="Tuvalu">Tuvalu</option>
+    
+        <option value="Uganda">Uganda</option>
+    
+        <option value="Ukraine">Ukraine</option>
+    
+        <option value="United Arab Emirates">United Arab Emirates</option>
+    
+        <option value="United Kingdom">United Kingdom</option>
+    
+        <option value="Uruguay">Uruguay</option>
+    
+        <option value="Uzbekistan">Uzbekistan</option>
+    
+        <option value="Vanuatu">Vanuatu</option>
+    
+        <option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+    
+        <option value="Vietnam">Vietnam</option>
+    
+        <option value="Virgin Islands, British">Virgin Islands, British</option>
+    
+        <option value="Wallis and Futuna">Wallis and Futuna</option>
+    
+        <option value="Western Sahara">Western Sahara</option>
+    
+        <option value="Yemen">Yemen</option>
+    
+        <option value="Zambia">Zambia</option>
+    
+        <option value="Zimbabwe">Zimbabwe</option>
+    
+  </select>
+</div>
+    <button type="submit" class="button-solid full-width">Subscribe Now</button>
+    <div class="form-group">
+      <p class="small">
+        By submitting this form, you are agreeing to our
+<a href="../../legal/enterprise-license-agreement/index.html">Terms of Service</a> and
+<a href="../../privacy/index.html">Privacy Policy</a>.
+      </p>
+    </div>
+  </form>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="../../../cdnjs.cloudflare.com/ajax/libs/instantsearch.js/2.10.2/instantsearch.min.js"></script>
+
+      <footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Product</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../product/index.html" data-analytics-child='{ "menu": "product" }'>Overview</a></li>
+            <li><a href="../../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>Pricing</a></li>
+            <li><a href="../../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>Integrations</a></li>
+            <li><a href="../../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>Open Source</a></li>
+            <li><a href="../../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>Enterprise</a></li>
+            <li><a href="../../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../docs/index.html" data-analytics-child='{ "menu": "documentation" }'>Documentation</a></li>
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noreferrer noopener">Training</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noreferrer noopener">Get Support</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noreferrer noopener">Community Forum</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noreferrer noopener">System Status</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noreferrer noopener">Feature Requests</a></li>
+            <li><a href="../../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>Premium Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="../index.html" data-analytics-child='{ "menu": "blog" }'>Blog</a></li>
+            <li><a href="../../resources/index.html#ebooks" data-analytics-child='{ "menu": "ebooks" }'>Ebooks</a></li>
+            <li><a href="../../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>Case Studies</a></li>
+            <li><a href="../../resources/index.html#reports" data-analytics-child='{ "menu": "reports" }'>Reports</a></li>
+            <li><a href="../../resources/index.html#videos" data-analytics-child='{ "menu": "videos" }'>Videos</a></li>
+            <li><a href="../../resources/index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>Webinars</a></li>
+            <li><a href="../../resources/events/index.html" data-analytics-child='{ "menu": "events" }'>Events</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../about/index.html" data-analytics-child='{ "menu": "about-us" }'>About Us</a></li>
+            <li><a href="../../careers/index.html" data-analytics-child='{ "menu": "careers" }'>Careers <span class="text-blue">(We’re Hiring!)</span></a></li>
+            <li><a href="../../about/team/index.html" data-analytics-child='{ "menu": "team" }'>Team</a></li>
+            <li><a href="../../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>Contact Us</a></li>
+            <li><a href="../../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>Partner With Us</a></li>
+            <li><a href="../../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Getting Started</h6>
+          <ul>
+            <li><a href="../../continuous-integration/index.html" data-analytics-child='{ "menu": "what-is-ci" }'>What is CI?</a></li>
+            <li><a href="../../docs/2.0/index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>How to Get Started on CircleCI</a></li>
+            <li><a href="../../migrate-jenkins-to-circleci/index.html" data-analytics-child='{ "menu": "migrate-jenkins-to-circleci" }'>Migrate from Jenkins to CircleCI</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <a href="../../index.html">
+          <img src="https://d3r49iyjzglexf.cloudfront.net/logo-wordmark-26f8eaea9b0f6e13b90d3f4a8fd8fda31490f5af41daab98bbede45037682576.svg" class="logo-small margin-top-small" alt="CircleCI" />
+        </a>
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../feed.xml" data-analytics="property menu=blog-feed" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" data-analytics="property menu=facebook" target="_blank" rel="noreferrer noopener" class="social-btn-facebook" title="Facebook">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" data-analytics="property menu=twitter" target="_blank" rel="noreferrer noopener" class="social-btn-twitter" title="Twitter">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" data-analytics="property menu=github" target="_blank" rel="noreferrer noopener" class="social-btn-github" title="GitHub">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" data-analytics="property menu=linkedin" target="_blank" rel="noreferrer noopener" class="social-btn-linkedin" title="LinkedIn">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="dark no-margin">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>Terms of Service</a></li>
+              <li><a href="../../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>Privacy Policy</a></li>
+              <li><a href="../../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie Policy</a></li>
+              <li><a href="../../security/index.html" data-analytics-child='{ "menu": "security" }'>Security</a></li>
+              
+
+
+
+
+
+<li class="language-select">
+  <div class="dropup show">
+    <a class="dropdown-toggle-button" role="button" id="languageSelectDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+      <img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-globe-9b9d0a726c1f0701f8219b4fc07a0d78aa9c31a79a8fa3d96e4fe4a84bc6cdbc.svg" alt="Globe Icon" width="20" />
+      English (US)
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <div class="dropdown-menu"  aria-labelledby="languageSelectDropdown">
+      
+        
+        
+
+        
+        
+
+        
+          <a href="#" class="dropdown-item active">
+            English (US)
+          </a>
+        
+      
+        
+        
+
+        
+        
+
+        
+          <a href="../../ja/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/index.html"
+            class="dropdown-item"
+            hreflang="ja"
+            data-analytics-child='{ "menu": "japan" }'>
+            日本語
+          </a>
+        
+      
+    </div>
+  </div>
+</li>
+
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>© 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+    <div id="enterprise-form-thanks-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+        <p>You should receive an automated response notifying you that we received your info.
+          Someone from our Enterprise team will be reaching out to you shortly.</p>
+        <!--
+        <p>
+          For more information on the CircleCI Enterprise implementation, please visit our
+          documentation:
+          <a href="#">Getting started with CircleCI Enterpirse implementation</a>
+        </p>
+        -->
+        <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div id="modal-bg"></div>
+<div id="general-modal">
+  <div class="close"><img src="https://d3r49iyjzglexf.cloudfront.net/icons/ic-closemodal-e5465eb844ab16c421cfedfc19b69bbebfc2990b205a5a8e325d38f7a7cd78d2.svg" alt="close" /></div>
+  <h2><strong>Thank You</strong> for Submitting Your Info</h2>
+  <br>
+  <p>You should receive an automated response notifying you that we received your info. Someone from our Enterprise team will be reaching out to you shortly.</p><br>
+  <img src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg" alt="CircleCI Success Logo" />
+</div>
+
+    <script data-cookieconsent="statistics" type="text/plain">
+  var _rollbarConfig = {
+    accessToken: '8a5b4f362a9944b09353878fbbf882f5',
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+     payload: { environment: "production" }
+  };
+ 
+  // Rollbar Snippet
+  !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  // End Rollbar Snippet
+</script>
+
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/vendor-a49dd70d950d55b6911baf7935064f4796e1638c4a3b6b348e6386167af435e1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/site-dca4c9937ce1eead459ba348f0282b29d812388970e9826d83e8321231c2b508.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/utils-f707b22267f4077c535e92f9ff89b6f592d17c8328cb78b34be05fe2b0f9306c.js" crossorigin="anonymous"></script>
+
+    
+    
+      <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/blog-8d1795cf3979e34e301e632dcc78cde908caa4e9e6f5dc0e7c3bca597f093b31.js" crossorigin="anonymous"></script>
+    
+    
+    <script src="../../../d3r49iyjzglexf.cloudfront.net/components/analytics-fa42612618fd7886484c95384d65c979f009952deb1ceda01cb0ac97d235897e.js" crossorigin="anonymous" data-cookieconsent="marketing" type="text/plain"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/components/nav-d2238d7c5bbc619e382ae1b2ed585b8a9ae2e1a52d6887a6c3b410541adc39f3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/components/customFormFields-996f687ca7bbdb0097b9b408cf479355b17162b1c817dda84b36f9149e91fb47.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../../d3r49iyjzglexf.cloudfront.net/ab-testing-2e8aef55d96bc43fed9de1bb15e029660c9dfd25df20eaa423698c77afd3e97e.js" crossorigin="anonymous"></script>
+  </body>
+
+<!-- Mirrored from circleci.com/blog/how-to-automate-and-secure-your-mobile-dev-pipeline-with-circleci-and-nowsecure/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 09:35:39 GMT -->
+</html>

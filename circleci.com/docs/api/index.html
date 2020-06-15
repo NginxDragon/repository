@@ -1,0 +1,1432 @@
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from circleci.com/docs/api/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:08:01 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>CircleCI API Reference</title>
+    <link href="images/favicon.ico.png" rel="icon" type="image/png" />
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+
+    <!-- Analytics Snippet: -->
+    <noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W9HDVK');</script>
+
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="../index.html">
+        <img src="images/logo.png" class="logo" alt="Logo" />
+      </a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#api-overview" class="toc-h1 toc-link" data-title="API Overview">API Overview</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-syntax" class="toc-h2 toc-link" data-title="API Syntax">API Syntax</a>
+                  </li>
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#add-an-api-token" class="toc-h2 toc-link" data-title="Add an API Token">Add an API Token</a>
+                  </li>
+                  <li>
+                    <a href="#get-authenticated" class="toc-h2 toc-link" data-title="Get Authenticated">Get Authenticated</a>
+                  </li>
+                  <li>
+                    <a href="#version-control-systems-vcs-type" class="toc-h2 toc-link" data-title="Version Control Systems (:vcs-type)">Version Control Systems (:vcs-type)</a>
+                  </li>
+                  <li>
+                    <a href="#f-oss" class="toc-h2 toc-link" data-title="F/OSS">F/OSS</a>
+                  </li>
+                  <li>
+                    <a href="#list-ordering" class="toc-h2 toc-link" data-title="List Ordering">List Ordering</a>
+                  </li>
+                  <li>
+                    <a href="#accept-header" class="toc-h2 toc-link" data-title="Accept Header">Accept Header</a>
+                  </li>
+                  <li>
+                    <a href="#getting-started" class="toc-h2 toc-link" data-title="Getting Started">Getting Started</a>
+                  </li>
+                  <li>
+                    <a href="#summary-of-api-endpoints" class="toc-h2 toc-link" data-title="Summary of API Endpoints">Summary of API Endpoints</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+          </li>
+          <li>
+            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-followed-projects" class="toc-h2 toc-link" data-title="Get All Followed Projects">Get All Followed Projects</a>
+                  </li>
+                  <li>
+                    <a href="#follow-a-new-project-on-circleci" class="toc-h2 toc-link" data-title="Follow a New Project on CircleCI">Follow a New Project on CircleCI</a>
+                  </li>
+                  <li>
+                    <a href="#recent-builds-across-all-projects" class="toc-h2 toc-link" data-title="Recent Builds Across All Projects">Recent Builds Across All Projects</a>
+                  </li>
+                  <li>
+                    <a href="#recent-builds-for-a-single-project" class="toc-h2 toc-link" data-title="Recent Builds For A Single Project">Recent Builds For A Single Project</a>
+                  </li>
+                  <li>
+                    <a href="#clear-project-cache" class="toc-h2 toc-link" data-title="Clear Project Cache">Clear Project Cache</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#builds-and-jobs" class="toc-h1 toc-link" data-title="Builds and Jobs">Builds and Jobs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#single-job" class="toc-h2 toc-link" data-title="Single Job">Single Job</a>
+                  </li>
+                  <li>
+                    <a href="#retry-a-build" class="toc-h2 toc-link" data-title="Retry a Build">Retry a Build</a>
+                  </li>
+                  <li>
+                    <a href="#add-user-to-build" class="toc-h2 toc-link" data-title="Add User to Build">Add User to Build</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-a-build" class="toc-h2 toc-link" data-title="Cancel a Build">Cancel a Build</a>
+                  </li>
+                  <li>
+                    <a href="#trigger-a-new-job" class="toc-h2 toc-link" data-title="Trigger a new Job">Trigger a new Job</a>
+                  </li>
+                  <li>
+                    <a href="#trigger-a-new-job-with-a-branch" class="toc-h2 toc-link" data-title="Trigger a new Job with a Branch">Trigger a new Job with a Branch</a>
+                  </li>
+                  <li>
+                    <a href="#trigger-a-new-build-by-project-preview" class="toc-h2 toc-link" data-title="Trigger a new Build by Project (preview)">Trigger a new Build by Project (preview)</a>
+                  </li>
+                  <li>
+                    <a href="#get-build-test-metadata" class="toc-h2 toc-link" data-title="Get Build Test Metadata">Get Build Test Metadata</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#keys" class="toc-h1 toc-link" data-title="Keys">Keys</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-checkout-keys" class="toc-h2 toc-link" data-title="List Checkout Keys">List Checkout Keys</a>
+                  </li>
+                  <li>
+                    <a href="#new-checkout-key" class="toc-h2 toc-link" data-title="New Checkout Key">New Checkout Key</a>
+                  </li>
+                  <li>
+                    <a href="#get-checkout-key" class="toc-h2 toc-link" data-title="Get Checkout Key">Get Checkout Key</a>
+                  </li>
+                  <li>
+                    <a href="#delete-checkout-key" class="toc-h2 toc-link" data-title="Delete Checkout Key">Delete Checkout Key</a>
+                  </li>
+                  <li>
+                    <a href="#create-ssh-keys" class="toc-h2 toc-link" data-title="Create SSH Keys">Create SSH Keys</a>
+                  </li>
+                  <li>
+                    <a href="#delete-ssh-key" class="toc-h2 toc-link" data-title="Delete SSH Key">Delete SSH Key</a>
+                  </li>
+                  <li>
+                    <a href="#heroku-keys" class="toc-h2 toc-link" data-title="Heroku Keys">Heroku Keys</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#artifacts" class="toc-h1 toc-link" data-title="Artifacts">Artifacts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#artifacts-of-a-build" class="toc-h2 toc-link" data-title="Artifacts Of A Build">Artifacts Of A Build</a>
+                  </li>
+                  <li>
+                    <a href="#download-an-artifact-file" class="toc-h2 toc-link" data-title="Download an artifact file">Download an artifact file</a>
+                  </li>
+                  <li>
+                    <a href="#artifacts-of-the-latest-build" class="toc-h2 toc-link" data-title="Artifacts of the latest Build">Artifacts of the latest Build</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#environment-variables" class="toc-h1 toc-link" data-title="Environment Variables">Environment Variables</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-environment-variables" class="toc-h2 toc-link" data-title="List Environment Variables">List Environment Variables</a>
+                  </li>
+                  <li>
+                    <a href="#add-environment-variables" class="toc-h2 toc-link" data-title="Add Environment Variables">Add Environment Variables</a>
+                  </li>
+                  <li>
+                    <a href="#get-single-environment-variable" class="toc-h2 toc-link" data-title="Get Single Environment Variable">Get Single Environment Variable</a>
+                  </li>
+                  <li>
+                    <a href="#delete-environment-variables" class="toc-h2 toc-link" data-title="Delete Environment Variables">Delete Environment Variables</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='api-overview'>API Overview</h1>
+<p>The CircleCI API is a full-featured RESTful API that allows you to access all information and trigger all actions in CircleCI. RESTful APIs enable you to call individual API endpoints to perform the following actions:</p>
+
+<ul>
+<li>GET - retrieve specific information, which may include arrays and sets of data and information.</li>
+<li>POST - create/add a new API element.</li>
+<li>PUT - update an existing API element in the API server.</li>
+<li>DELETE - remove/delete an API element in the API server.</li>
+</ul>
+
+<aside class="notice">
+Although RESTful APIs include these 4 HTTP verbs, the CircleCI API does not currently use the PUT verb.
+</aside>
+
+<aside class="notice">
+Access to billing functions is only available from the CircleCI application.
+</aside>
+<h2 id='api-syntax'>API Syntax</h2>
+<p>When making an API request, make sure you follow standard REST API syntax and formatting. Adhering to proper REST API syntax ensures that the API server can properly process your request and return a JSON response. To make a request to the CircleCI API, use the format shown in the pane to the right:</p>
+<pre class="highlight sh tab-shell"><code><span class="s2">"https://circleci.com/api/v1.1"</span>
+</code></pre>
+<p>Where:</p>
+
+<ul>
+<li>https://circleci.com - the resource URL for the API being called.</li>
+<li>api - the class being called.</li>
+<li>v1.1 - the API version.</li>
+</ul>
+<h2 id='authentication'>Authentication</h2>
+<p>The CircleCI API utilizes token-based authentication to manage access to the API server and validate that a user has permission to make API requests. Before you can make an API request, you must first add an API token and then verify that you are authenticated by the API server to make requests. The process to add an API token and have the API server authenticate you is described in the sections below.</p>
+
+<p><strong>Note</strong> You may use the API token as the username for HTTP Basic Authentication, by passing the <code>-u</code> flag to the <code>curl</code> command.</p>
+<h2 id='add-an-api-token'>Add an API Token</h2><pre class="highlight sh tab-shell"><code><span class="gp">$ </span>curl https://circleci.com/api/v1.1/me?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"user_key_fingerprint"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"days_left_in_trial"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">-238</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"plan"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"p16"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"trial_end"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-12-28T22:02:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"basic_email_prefs"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"admin"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"login"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pbiggar"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To add an API token, perform the steps listed below.</p>
+
+<ol>
+<li> Add an API token from your <a href="../../account/api.html">account dashboard</a>.</li>
+<li> To test it, <a href="../../api/v1.1/me">View it in your browser</a> or call the API using</li>
+<li> You should see a response similar to the example shown in the right pane.</li>
+</ol>
+
+<aside class="notice">
+All API calls are made in the same way, by making standard HTTP calls, using JSON, a content-type, and your API token.
+</aside>
+<h2 id='get-authenticated'>Get Authenticated</h2><pre class="highlight sh tab-shell"><code>curl <span class="s2">"https://circleci.com/api/v1.1/me?circle-token=:token"</span>
+</code></pre><pre class="highlight sh tab-shell"><code>curl -u &lt;circle-token&gt;: <span class="s2">"https://circleci.com/api/..."</span>
+</code></pre>
+<p>To be authenticated by the API server, add an API token using your <a href="../../account/api.html">account dashboard</a>. To use the API token, add it to the <code>circle-token</code> query param:</p>
+
+<p>Alternatively, you can use the API token as the username for HTTP Basic Authentication, by passing the <code>-u</code> flag to the <code>curl</code> command:</p>
+
+<aside class="notice">
+the colon ":" tells curl that there's no password.
+</aside>
+<h2 id='version-control-systems-vcs-type'>Version Control Systems (:vcs-type)</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/tree/:branch
+</code></pre>
+<p>New with v1.1 of the API, for endpoints under /project you will now need to tell CircleCI what version control system type your project uses. You may currently select either ‘github’ or ‘bitbucket’. The command for recent builds for a project would be formatted like the example shown in the right pane.</p>
+<h2 id='f-oss'>F/OSS</h2>
+<p>If you have a <a href="https://www.gnu.org/philosophy/free-sw.html">Free / Open Source Software (F/OSS) project</a>, and have the setting turned on in Advanced Settings in your project dashboard, some read-only /project endpoints will return the requested data without the need for a token. People will also be able to view the build results dashboard for the project as well.</p>
+<h2 id='list-ordering'>List Ordering</h2><pre class="highlight plaintext"><code>(https://circleci.com/docs/api/v1-reference/#recent-builds)
+(https://circleci.com/docs/api/v1-reference/#recent-builds-project)
+</code></pre>
+<p>There are two API endpoints where the list order is significant:</p>
+
+<ul>
+<li>Recent Builds Across All Projects</li>
+<li>Recent Builds For a Single Project</li>
+</ul>
+
+<p>In both cases, builds are returned in the order that they were created. For all other endpoints, the order has no special significance.</p>
+<h2 id='accept-header'>Accept Header</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/me?circle-token<span class="o">=</span>:token -H <span class="s2">"Accept: application/json"</span>
+</code></pre>
+<p>If no accept header is specified (or it is empty), CircleCI will return the data in a Clojure EDN format. To recieve the data as nicely formatted JSON, include any value for the <code>Accept</code> header (e.g <code>text/plain</code>). If you prefer to receive compact JSON with no whitespace or comments, use <code>application/json</code> as the <code>Accept</code> header.</p>
+<h2 id='getting-started'>Getting Started</h2>
+<p>CircleCI 1.0 and 2.0 are supported by API version 1.1 as documented in the following sections:</p>
+
+<ul>
+<li>Summary of API Endpoints</li>
+<li>User</li>
+<li>Projects</li>
+<li>Test Metadata</li>
+<li>SSH Keys</li>
+<li>Heroku Keys</li>
+</ul>
+<h2 id='summary-of-api-endpoints'>Summary of API Endpoints</h2>
+<p>All CircleCI API endpoints begin with <code>https://circleci.com/api/v1.1/</code></p>
+<h3 id='get-requests'>GET Requests</h3>
+<table><thead>
+<tr>
+<th><strong>API</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/me</td>
+<td>Provides information about the signed in user.</td>
+</tr>
+<tr>
+<td>/projects</td>
+<td>Lists all projects you are following on CircleCI, with build information organized by branch.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project</td>
+<td>Returns a build summary for each of the last 30 builds for a single git repo.</td>
+</tr>
+<tr>
+<td>/recent-builds</td>
+<td>Returns a build summary for each of the last 30 recent builds, ordered by build_num.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/:build_num</td>
+<td>Returns full details for a single build. The response includes all of the fields from the build summary. This is also the payload for the <a href="../2.0/configuration-reference/index.html#notify">notification webhooks</a>, in which case this object is the value to a key named ‘payload’.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/:build_num/artifacts</td>
+<td>Lists the artifacts produced by a given build.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/checkout-key/:fingerprint</td>
+<td>Retrieves a checkout key.</td>
+</tr>
+</tbody></table>
+<h3 id='post-requests'>POST Requests</h3>
+<table><thead>
+<tr>
+<th><strong>API</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/project/:vcs-type/:username/:project/follow</td>
+<td>Follow a new project on CircleCI.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/:build_num/retry</td>
+<td>Retries the build, returns a summary of the new build.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/:build_num/cancel</td>
+<td>Cancels the build, returns a summary of the build.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/:build_num/ssh-users</td>
+<td>Adds a user to the build&#39;s SSH permissions.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/tree/:branch</td>
+<td>Triggers a new build, returns a summary of the build. Optional 1.0 <a href="../2.0/parallelism-faster-jobs/index.html">build parameters</a> can be set as well and Optional 2.0 <a href="../2.0/env-vars/index.html#injecting-environment-variables-with-api-v1">build parameters</a>.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/ssh-key</td>
+<td>Creates an ssh key used to access external systems that require SSH key-based authentication.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/checkout-key</td>
+<td>Creates a new checkout key.</td>
+</tr>
+</tbody></table>
+<h3 id='delete-requests'>DELETE Requests</h3>
+<table><thead>
+<tr>
+<th><strong>API</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/project/:vcs-type/:username/:project/checkout-key/:fingerprint</td>
+<td>Deletes a checkout key.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/build-cache</td>
+<td>Clears the cache for a project.</td>
+</tr>
+<tr>
+<td>/project/:vcs-type/:username/:project/ssh-key</td>
+<td>Delete the SSH key from a project.</td>
+</tr>
+</tbody></table>
+<h1 id='user'>User</h1><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/me?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"basic_email_prefs"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="s2">"smart"</span><span class="p">,</span><span class="w"> </span><span class="s2">"none"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"all"</span><span class="w">
+  </span><span class="s2">"login"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pbiggar"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">github</span><span class="w"> </span><span class="err">username</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request</strong>: Provides information about the user that is currently signed in.</p>
+<h1 id='projects'>Projects</h1>
+<p>If you would like to retrieve detailed information about projects, CircleCI provides several different endpoints that you may call to return this information, including the ability to return detailed information for all projects. To ensure you do not encounter any performance-related lags or issues when making an API request, you may wish to limit your search for a single project instead of an array of projects.</p>
+
+<p>The sections below describe the endpoints you may call to return Project information.</p>
+<h2 id='get-all-followed-projects'>Get All Followed Projects</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/projects?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"followed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">follow</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">project</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">CircleCI</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branches"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"master"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"pusher_logins"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"pbiggar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"arohner"</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">users</span><span class="w"> </span><span class="err">who</span><span class="w"> </span><span class="err">have</span><span class="w"> </span><span class="err">pushed</span><span class="w">
+      </span><span class="s2">"last_non_success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">last</span><span class="w"> </span><span class="err">failed</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">branch</span><span class="w">
+        </span><span class="s2">"pushed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:14Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1d231626ba1d2838e599c5c598d28e2306ad4e48"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"last_success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">last</span><span class="w"> </span><span class="err">successful</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">branch</span><span class="w">
+        </span><span class="s2">"pushed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-08-09T03:59:53Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"384211bbe72b2a22997116a78788117b3922d570"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"recent_builds"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">last</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="err">builds</span><span class="p">,</span><span class="w"> </span><span class="err">ordered</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">pushed_at</span><span class="w"> </span><span class="err">(decreasing)</span><span class="w">
+        </span><span class="s2">"pushed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:14Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1d231626ba1d2838e599c5c598d28e2306ad4e48"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pushed_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-11T03:09:54Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0553ba86b35a97e22ead78b0d568f6a7c79b838d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"running_builds"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">currently</span><span class="w"> </span><span class="err">running</span><span class="w"> </span><span class="err">builds</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p><code>GET</code> request.</p>
+
+<p>Returns an array of all projects you are currently following on CircleCI, with build information organized by branch.</p>
+<h2 id='follow-a-new-project-on-circleci'>Follow a New Project on CircleCI</h2><pre class="highlight sh tab-shell"><code>curl -X POST https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/follow?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"followed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"compare"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"previous_successful_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_parameters"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"oss"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"committer_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usage_queued_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-07T13:48:10.825Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fail_reason"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"retry_of"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reponame"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"testing-circleci"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ssh_users"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"build_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parallel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"failed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"branch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author_date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"why"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"first-build"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"is_user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"login"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"avatar_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://avatars.githubusercontent.com/u/6017470?v=3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CircleCI"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vcs_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10101010</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"b2b5def65bf54091dde02ebb39ef3c54de3ff049"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vcs_tag"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"infrastructure_fail"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"committer_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"previous"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"not_running"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"committer_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"retries"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vcs_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timedout"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dont_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifecycle"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"not_running"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"no_dependency_cache"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ssh_disabled"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"circle_yml"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"messages"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"is_first_green_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"canceler"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vcs_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"node"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"canceled"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Request Type: <code>POST</code></p>
+
+<p>Follows a new project. CircleCI will then monitor the project for automatic building of commits.</p>
+<h2 id='recent-builds-across-all-projects'>Recent Builds Across All Projects</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/recent-builds?limit<span class="o">=</span>1&amp;shallow<span class="o">=</span><span class="nb">true</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/22"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1d231626ba1d2838e599c5c598d28e2306ad4e48"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Don't explode when the system clock shifts backwards"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">commit</span><span class="w"> </span><span class="err">message</span><span class="w"> </span><span class="err">body</span><span class="w">
+  </span><span class="s2">"why"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">explaining</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">built</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">why</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="p">,</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="w">
+  </span><span class="s2">"queued_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:30Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">queued</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:38Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">started</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:34:01Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">finished</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23505</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"finished"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">finished</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">canceled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">infrastructure_fail</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">timedout</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">failed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">no_tests</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">success</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">retried</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">canceled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">infrastructure_fail</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">timedout</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">failed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">no_tests</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">fixed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">success</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">build_num</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">of</span><span class="w">
+  </span><span class="s2">"previous"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">previous</span><span class="w"> </span><span class="err">build</span><span class="w">
+    </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Request Type: <code>GET</code></p>
+
+<p>Returns a build summary for each of the last 30 recent builds, ordered by <code>build_num</code>.</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>The number of builds to return. Maximum 100, defaults to 30.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>The API returns builds starting from this offset, defaults to 0.</td>
+</tr>
+<tr>
+<td>shallow</td>
+<td>An optional boolean parameter that may be sent to improve performance if set to &#39;true&#39;.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong>: When making an API request for Project information, you may experience performance lag and a decrease in overall performance while the request is being processed by the server. To improve performance, CircleCI recommends you pass the <code>shallow</code> parameter in your request.</p>
+<h2 id='recent-builds-for-a-single-project'>Recent Builds For A Single Project</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project?circle-token<span class="o">=</span>:token&amp;limit<span class="o">=</span>20&amp;offset<span class="o">=</span>5&amp;filter<span class="o">=</span>completed
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> You can narrow the builds to a single branch by appending /tree/:branch to the url. Note that the branch name should be url-encoded.</p>
+
+<p>Example: </p>
+</blockquote>
+<pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/recent-builds?limit<span class="o">=</span>1&amp;shallow<span class="o">=</span><span class="nb">true</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/22"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1d231626ba1d2838e599c5c598d28e2306ad4e48"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Don't explode when the system clock shifts backwards"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">commit</span><span class="w"> </span><span class="err">message</span><span class="w"> </span><span class="err">body</span><span class="w">
+  </span><span class="s2">"why"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">explaining</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">built</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">why</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="p">,</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="w">
+  </span><span class="s2">"queued_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:30Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">queued</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:38Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">started</span><span class="w"> </span><span class="err">running</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:34:01Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">finished</span><span class="w"> </span><span class="err">running</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23505</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"finished"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">finished</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">canceled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">infrastructure_fail</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">timedout</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">failed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">no_tests</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">success</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">retried</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">canceled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">infrastructure_fail</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">timedout</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">failed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">no_tests</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">fixed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">success</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">build_num</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">of</span><span class="w">
+  </span><span class="s2">"previous"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">previous</span><span class="w"> </span><span class="err">build</span><span class="w">
+    </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request:</strong> Returns a build summary for each of the last 30 builds for a single git repo, ordered by build_num.</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>The number of builds to return. Maximum 100, defaults to 30.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>The API returns builds starting from this offset, defaults to 0.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Restricts which builds are returned. Set to &quot;completed&quot;, &quot;successful&quot;, &quot;failed&quot;, &quot;running&quot;, or defaults to no filter.</td>
+</tr>
+<tr>
+<td>shallow</td>
+<td>An optional boolean value that may be sent to improve overall performance if set to &#39;true.&#39;</td>
+</tr>
+</tbody></table>
+<h3 id='improving-performance-in-recent-build-requests-using-the-shallow-parameter'>Improving Performance In Recent Build Requests Using the <code>Shallow</code> Parameter</h3>
+<p>When making API requests for information about recent builds, you may experience performance lag and a decrease in overall performance while the request is being processed by the server. To improve performance, CircleCI recommends you pass the <code>shallow</code> parameter in your request.</p>
+
+<p>The example to the right shows a user request for recent build information. Notice that when the user passes the <code>shallow</code> parameter, a limited set of information is returned, thereby improving response time and minimizing performance lag. </p>
+<h4 id='sample-request-using-the-shallow-parameter'>Sample Request Using the <code>Shallow</code> Parameter</h4><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"committer_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T10:44:51-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"usage_queued_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T17:46:11.229Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reponame"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/circleci.com/16315"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parallel"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"branch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ja-homepage"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T10:44:51-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"why"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"is_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trevor-circleci"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://avatars1.githubusercontent.com/u/22457684?v=4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vcs_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22457684</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"vcs_revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8139060f4d1f6ff617ac49f8afb2273c4fee2343"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"workflows"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"job_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"build-preview"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"981f2bfa-3c50-4505-865d-5266670217eb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"workflow_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a063aeae-5b89-458b-8aa1-cca4c565b07d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"workspace_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a063aeae-5b89-458b-8aa1-cca4c565b07d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upstream_job_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"7e92fbf5-8111-430b-8e2a-54b169ba745d"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"upstream_concurrency_map"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"workflow_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"build-website"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"vcs_tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pull_requests"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"head_sha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8139060f4d1f6ff617ac49f8afb2273c4fee2343"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/circleci.com/pull/2347"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">16315</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"committer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trevor@circleci.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"committer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trevor Sorel"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adding japanese translations for main nav"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dont_build"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"finished"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fleet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"picard"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T17:47:42.298Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="mi">89366</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T17:46:12.932Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"outcome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vcs_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/circleci.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trevor Sorel"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"queued_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-12T17:46:11.289Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trevor@circleci.com"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre><h2 id='clear-project-cache'>Clear Project Cache</h2>
+<p><strong><code>DELETE</code> Request:</strong> Clears the cache for a project.</p>
+<pre class="highlight sh tab-shell"><code>curl -X DELETE https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/build-cache?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"build caches deleted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='builds-and-jobs'>Builds and Jobs</h1><h2 id='single-job'>Single Job</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/22"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1d231626ba1d2838e599c5c598d28e2306ad4e48"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Don't explode when the system clock shifts backwards"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">commit</span><span class="w"> </span><span class="err">message</span><span class="w"> </span><span class="err">body</span><span class="w">
+  </span><span class="s2">"why"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"github"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">explaining</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">ran</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">why</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="p">,</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="w">
+  </span><span class="s2">"queued_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:30Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">queued</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:38Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">started</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:34:01Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">finished</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23505</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"finished"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">finished</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">canceled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">infrastructure_fail</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">timedout</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">failed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">no_tests</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">success</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">retried</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">canceled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">infrastructure_fail</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">timedout</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">failed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">no_tests</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">fixed</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">success</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">build_num</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">of</span><span class="w">
+  </span><span class="s2">"steps"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"configure the build"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"bash_command"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"run_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1646</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:38Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"end_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:39Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"configure the build"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"exit_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"infrastructure"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"lein2 deps"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"bash_command"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"lein2 deps"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"run_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">7555</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:47Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"messages"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"step"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"exit_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"end_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:54Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dependencies"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"inference"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"failed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"lein2 trampoline midje"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"actions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"bash_command"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"lein2 trampoline midje"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"run_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2310</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"continue"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parallel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:33:59Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"lein2 trampoline midje"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"messages"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"step"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"exit_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"end_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-02-12T21:34:01Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timedout"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"infrastructure_fail"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"inference"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"failed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+This is also the payload for the notification webhooks, in which case this object is the value to a key named ‘payload’
+</aside>
+
+<p><strong><code>GET</code> Request:</strong> Returns the full details for a single job. The response includes all of the fields from the job summary.</p>
+<h2 id='retry-a-build'>Retry a Build</h2><pre class="highlight sh tab-shell"><code>curl -X POST https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/retry?circle-token<span class="o">=</span>:token
+
+</code></pre>
+<blockquote>
+<p>You can retry a build with ssh by swapping “retry” with “ssh”.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/23"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1d231626ba1d2838e599c5c598d28e2306ad4e48"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Don't explode when the system clock shifts backwards"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">commit</span><span class="w"> </span><span class="err">message</span><span class="w"> </span><span class="err">body</span><span class="w">
+  </span><span class="s2">"why"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"retry"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">explaining</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">built</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">why</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="p">,</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="w">
+  </span><span class="s2">"queued_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-04-12T21:33:30Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">queued</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-04-12T21:33:38Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">started</span><span class="w"> </span><span class="err">running</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-04-12T21:34:01Z"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">finished</span><span class="w"> </span><span class="err">running</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23505</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"queued"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"queued"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">build_num</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">of</span><span class="w">
+  </span><span class="s2">"previous"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">previous</span><span class="w"> </span><span class="err">build</span><span class="w">
+    </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"failed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>POST</code> Request:</strong> Retries the build and then returns a summary of the new build.</p>
+<h2 id='add-user-to-build'>Add User to Build</h2><pre class="highlight sh tab-shell"><code>curl -X POST https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/ssh-users?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight plaintext"><code># ...Build Data
+
+</code></pre>
+<p><strong><code>POST</code> Request:</strong> This API call is only available when using a user API token. If the current user has permission to build the project, this API adds the current user&#39;s SSH public key to the authorized keys on each container running a build. This allows them to SSH to the build containers.</p>
+<h2 id='cancel-a-build'>Cancel a Build</h2><pre class="highlight sh tab-shell"><code>curl -X POST https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/cancel?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/26"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"59c9c5ea3e289f2f3b0c94e128267cc0ce2d65c6"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Merge pull request #6 from dlowe/master"</span><span class="w">
+  </span><span class="s2">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"le bump"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">commit</span><span class="w"> </span><span class="err">message</span><span class="w"> </span><span class="err">body</span><span class="w">
+  </span><span class="s2">"why"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"retry"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">short</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">explaining</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">built</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="w"> </span><span class="err">why</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="p">,</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">didn't</span><span class="w"> </span><span class="err">build</span><span class="w">
+  </span><span class="s2">"queued_at"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-05-24T19:37:59.095Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">queued</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">started</span><span class="w"> </span><span class="err">running</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">finished</span><span class="w"> </span><span class="err">running</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"queued"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"canceled"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">build_num</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">retry</span><span class="w"> </span><span class="err">of</span><span class="w">
+  </span><span class="s2">"previous"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">previous</span><span class="w"> </span><span class="err">build</span><span class="w">
+    </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>POST</code> Request:</strong> Cancels the build and then returns a summary of the build.</p>
+<h2 id='trigger-a-new-job'>Trigger a new Job</h2><pre class="highlight sh tab-shell"><code>curl -X POST --header <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{
+  "tag": "v0.1", // optional
+  "parallel": 2, //optional, default null
+  "build_parameters": { // optional
+    "RUN_EXTRA_TESTS": "true"
+  }
+}
+
+https://circleci.com/api/v1.1/project/:vcs-type/:username/:project?circle-token=:token
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"author_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/54"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"failed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"infrastructure_fail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"all_commit_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"author_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"commit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f1baeb913288519dd9a942499cef2873f5b1c2bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"author_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minor version bump"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"author_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"commit_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil/commit/f1baeb913288519dd9a942499cef2873f5b1c2bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"author_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merge pull request #15 from circleci/minor-version-bump"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+  </span><span class="s2">"previous"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="mi">55413</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"ssh_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"author_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"why"</span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parallel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retries"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"compare"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"usage_queued_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-29T12:56:55.338Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minor version bump"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"author_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_running"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merge pull request #15 from circleci/minor-version-bump"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"job_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"previous_successful_build"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="mi">55413</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_running"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f1baeb913288519dd9a942499cef2873f5b1c2bf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timedout"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='see-also'>See Also</h3>
+<p><a href="../2.0/api-job-trigger/index.html#section=jobs">Triggering Jobs with the API</a></p>
+
+<p><strong><code>POST</code> Request:</strong> Triggers a new build and then returns a summary of the build.</p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>revision</td>
+<td>The specific revision to build. Default is null and the head of the branch is used. Cannot be used with tag parameter.</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>The tag to build. Default is null. Cannot be used with revision parameter.</td>
+</tr>
+<tr>
+<td>parallel</td>
+<td>The number of containers to use to run the build. Default is null and the project default is used. This parameter is ignored for builds running on our 2.0 infrastructure.</td>
+</tr>
+<tr>
+<td>build_parameters</td>
+<td>Additional environment variables to inject into the build environment. A map of names to values.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong> Triggering a new job is not currently supported with configurations that specify <code>version: 2.1</code>.</p>
+<h2 id='trigger-a-new-job-with-a-branch'>Trigger a new Job with a Branch</h2><pre class="highlight sh tab-shell"><code>curl -X POST --header <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{
+  "parallel": 2, //optional, default null
+  "revision": "f1baeb913288519dd9a942499cef2873f5b1c2bf" // optional
+  "build_parameters": { // optional
+    "RUN_EXTRA_TESTS": "true"
+  }
+}
+
+https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/tree/:branch?circle-token=:token
+</span></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"author_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://circleci.com/gh/circleci/mongofinil/54"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reponame"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"failed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"infrastructure_fail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"all_commit_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"author_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"commit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f1baeb913288519dd9a942499cef2873f5b1c2bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"author_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minor version bump"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"author_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"commit_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil/commit/f1baeb913288519dd9a942499cef2873f5b1c2bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"committer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"author_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merge pull request #15 from circleci/minor-version-bump"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"previous"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="mi">55413</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"ssh_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"author_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"why"</span><span class="p">:</span><span class="w"> </span><span class="s2">"edit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parallel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retries"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"compare"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dont_build"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"usage_queued_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-29T12:56:55.338Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"branch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"master"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minor version bump"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"author_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"committer_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-17T08:41:40Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stop_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_running"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="p">:</span><span class="err">queued</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">scheduled</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_run</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">not_running</span><span class="p">,</span><span class="w"> </span><span class="p">:</span><span class="err">running</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="p">:</span><span class="err">finished</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allen Rohner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arohner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merge pull request #15 from circleci/minor-version-bump"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"job_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"retry_of"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"previous_successful_build"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build_time_millis"</span><span class="p">:</span><span class="w"> </span><span class="mi">55413</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"outcome"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"not_running"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f1baeb913288519dd9a942499cef2873f5b1c2bf"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"build_num"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"circleci"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vcs_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/circleci/mongofinil"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timedout"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>POST</code> Request:</strong> Triggers a new build and then returns a summary of the build.</p>
+
+<aside class="notice">
+For more about build parameters, see 2.0 build parameters <a href="../2.0/env-vars/index.html#injecting-environment-variables-with-api-v1">for environment variables</a>. The response for “failed” should be a boolean `true` or `null`.
+</aside>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>revision</td>
+<td>The specific revision to build. Default is null and the head of the branch is used. Cannot be used with tag parameter.</td>
+</tr>
+<tr>
+<td>parallel</td>
+<td>The number of containers to use to run the build. Default is null and the project default is used. This parameter is ignored for builds running on our 2.0 infrastructure.</td>
+</tr>
+<tr>
+<td>build_parameters</td>
+<td>Additional environment variables to inject into the build environment. A map of names to values.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong> Triggering a new job with a branch is not currently supported with configurations that specify <code>version: 2.1</code>.</p>
+<h2 id='trigger-a-new-build-by-project-preview'>Trigger a new Build by Project (preview)</h2><pre class="highlight sh tab-shell"><code>curl -X POST https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/build?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Build created"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>POST</code> Request:</strong> Triggers a build of the specified project, by branch, revision, or tag. Workflows will be run or scheduled in the same way as when a webhook from source control is received.</p>
+
+<aside class="notice">
+Prerequisite: You must go to your Project Settings in the CircleCI app and enable pipelines. This endpoint does not yet support the <code>build_parameters</code> options that the job-triggering endpoint supports.
+</aside>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>revision</td>
+<td>The specific revision to build. If not specified, the HEAD of the branch is used. Cannot be used with tag parameter</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>The branch to build. Cannot be used with tag parameter.</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>The git tag to build. Cannot be used with branch and revision parameters.</td>
+</tr>
+</tbody></table>
+<h2 id='get-build-test-metadata'>Get Build Test Metadata</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/tests?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"tests"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"features/desktop/invitations.feature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cucumber"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"run_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2.957513661</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepting an invitation"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"classname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Invitations"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"spec/lib/webfinger_spec.rb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"rspec"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"run_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.011366</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Webfinger#intialize sets account "</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"classname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"spec.lib.webfinger_spec"</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request</strong> Provides test metadata for a build.</p>
+
+<aside class="notice">
+Learn how to set up your 2.0 builds to <a href="../2.0/collect-test-data/index.html">Collect Test Metadata</a>.
+</aside>
+<h1 id='keys'>Keys</h1><h2 id='list-checkout-keys'>List Checkout Keys</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/checkout-key?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssh-rsa..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deploy-key"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="s2">"deploy-key"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"github-user-key"</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c9:0b:1c:4f:d5:65:56:b9:ad:88:f9:81:2b:37:74:2f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preferred"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-21T17:29:21.042Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">key</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">issued</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request</strong>: Returns an array of checkout keys for <code>:project.</code></p>
+<h2 id='new-checkout-key'>New Checkout Key</h2><pre class="highlight sh tab-shell"><code>curl -X POST --header <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"type":"github-user-key"}'</span> https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/checkout-key?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssh-rsa..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deploy-key"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="s2">"deploy-key"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"user-key"</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c9:0b:1c:4f:d5:65:56:b9:ad:88:f9:81:2b:37:74:2f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preferred"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-21T17:29:21.042Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">key</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">issued</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>POST</code> Request</strong>: Creates a new checkout key. This API request is only usable with a user API token.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>The type of key to create. Can be &#39;deploy-key&#39; or &#39;github-user-key&#39;.</td>
+</tr>
+</tbody></table>
+<h2 id='get-checkout-key'>Get Checkout Key</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/checkout-key/:fingerprint?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"public_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ssh-rsa..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deploy-key"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="s2">"deploy-key"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"user-key"</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c9:0b:1c:4f:d5:65:56:b9:ad:88:f9:81:2b:37:74:2f"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preferred"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-21T17:29:21.042Z"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">key</span><span class="w"> </span><span class="err">was</span><span class="w"> </span><span class="err">issued</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request</strong>: Returns an individual checkout key.</p>
+<h2 id='delete-checkout-key'>Delete Checkout Key</h2>
+<p><strong><code>DELETE</code> Request:</strong> Deletes the checkout key.</p>
+<pre class="highlight sh tab-shell"><code>curl -X DELETE https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/checkout-key/:fingerprint?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='create-ssh-keys'>Create SSH Keys</h2>
+<p><strong><code>POST</code> Request:</strong> Creates an SSH key that will be used to access the external system identified by the hostname parameter for SSH key-based authentication.</p>
+<pre class="highlight sh tab-shell"><code>curl -X POST --header <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"hostname":"hostname","private_key":"RSA private key"}'</span> https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/ssh-key?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight plaintext"><code># no response expected
+</code></pre><h2 id='delete-ssh-key'>Delete SSH Key</h2><pre class="highlight sh tab-shell"><code>curl -X DELETE --header <span class="s2">"Content-Type: application/json"</span> -d <span class="o">{</span><span class="s2">"fingerprint"</span>:<span class="s2">"Fingerprint"</span>, <span class="s2">"hostname"</span>:<span class="s2">"Hostname"</span><span class="o">}</span> https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/ssh-key?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight plaintext"><code># no response expected
+</code></pre>
+<p><strong><code>DELETE</code> Request:</strong> Deletes an SSH key from the system.</p>
+<h2 id='heroku-keys'>Heroku Keys</h2>
+<p><strong><code>POST</code> Request:</strong> Adds your Heroku API key to CircleCI and then takes <code>apikey</code> as form param name.</p>
+<pre class="highlight sh tab-shell"><code>curl -X POST --header <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"apikey":"Heroku key"}'</span> https://circleci.com/user/heroku-key?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight plaintext"><code># no response expected
+</code></pre><h1 id='artifacts'>Artifacts</h1><h2 id='artifacts-of-a-build'>Artifacts Of A Build</h2><pre class="highlight sh tab-shell"><code>curl -H<span class="s1">'Circle-Token: :token'</span> https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/artifacts
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test-report.xml"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pretty_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test-report.xml"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://24-88881093-gh.circle-artifacts.com/0/raw-test-output/go-test-report.xml"</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test.out"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pretty_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test.out"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://24-88881093-gh.circle-artifacts.com/0/raw-test-output/go-test.out"</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns an array of artifacts produced by a given build.
+Request Type: <code>GET</code></p>
+<h3 id='notes'>Notes</h3>
+<ul>
+<li>the value of path is relative to the project root (the working_directory)</li>
+<li>pretty_path returns the same value as path. It is included in the response for backwards compatibility</li>
+</ul>
+<h2 id='download-an-artifact-file'>Download an artifact file</h2>
+<p>You can download an individual artifact file via the API with an API-token authenticated HTTP request.</p>
+<pre class="highlight sh tab-shell"><code>curl -L -H<span class="s1">'Circle-Token: :token'</span> https://132-55688803-gh.circle-artifacts.com/0//tmp/circle-artifacts.7wgAaIU/file.txt
+</code></pre><h3 id='notes-2'>Notes</h3>
+<ul>
+<li>Make sure your HTTP client is configured to follow redirects as the artifact URLs can respond with
+an HTTP <code>3xx</code> status code (the <code>-L</code> switch in <code>curl</code> will achieve this).</li>
+<li><code>:token</code> is an API token with &#39;view-builds&#39; scope.</li>
+</ul>
+<h2 id='artifacts-of-the-latest-build'>Artifacts of the latest Build</h2><pre class="highlight sh tab-shell"><code>curl -H<span class="s1">'Circle-Token: :token'</span> https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/latest/artifacts?branch<span class="o">=</span>:branch&amp;filter<span class="o">=</span>:filter
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test-report.xml"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pretty_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test-report.xml"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://24-88881093-gh.circle-artifacts.com/0/raw-test-output/go-test-report.xml"</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test.out"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pretty_path"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"raw-test-output/go-test.out"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"node_index"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://24-88881093-gh.circle-artifacts.com/0/raw-test-output/go-test.out"</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns an array of artifacts produced by the latest build on a given branch.</p>
+
+<p>Request Type: <code>GET</code></p>
+
+<table><thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>branch</td>
+<td>The branch you would like to look in for the latest build. Returns artifacts for latest build in entire project if omitted.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Restricts which builds are returned. Set to &quot;completed&quot;, &quot;successful&quot;, &quot;failed&quot;, &quot;running&quot;, or defaults to no filter.</td>
+</tr>
+</tbody></table>
+<h3 id='notes-3'>Notes</h3>
+<ul>
+<li>the value of path is relative to the project root (the working_directory)</li>
+<li>pretty_path returns the same value as path. It is included in the response for backwards compatibility</li>
+</ul>
+<h1 id='environment-variables'>Environment Variables</h1><h2 id='list-environment-variables'>List Environment Variables</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/envvar?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"foo"</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"xxxx1234"</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request</strong>: Returns four &#39;x&#39; characters plus the last four ASCII characters of the value, consistent with the display of environment variable values in the CircleCI website.</p>
+<h2 id='add-environment-variables'>Add Environment Variables</h2><pre class="highlight sh tab-shell"><code>curl -X POST --header <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"name":"foo", "value":"bar"}'</span> https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/envvar?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"foo"</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"xxxx"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>POST</code> Request</strong> Creates a new environment variable.</p>
+<h2 id='get-single-environment-variable'>Get Single Environment Variable</h2><pre class="highlight sh tab-shell"><code>curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/envvar/:name?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"foo"</span><span class="p">,</span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"xxxx"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>GET</code> Request:</strong> Returns the hidden value of environment variable <code>:name</code>.</p>
+<h2 id='delete-environment-variables'>Delete Environment Variables</h2><pre class="highlight sh tab-shell"><code>curl -X DELETE https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/envvar/:name?circle-token<span class="o">=</span>:token
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong><code>DELETE</code> Request</strong> Deletes the environment variable named :name.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+
+<!-- Mirrored from circleci.com/docs/api/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:08:04 GMT -->
+</html>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>circleci-discourse</BucketName><RequestId>855D5546F7AFB98B</RequestId><HostId>SkYFvFu8HpGKaS+GlchDXKhfYYy4f6M2b4NSgkkIflcAWmghh8WH5WtruvK3hhsfdrKcpyb+jJU=</HostId></Error>

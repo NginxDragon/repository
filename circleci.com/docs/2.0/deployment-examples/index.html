@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html lang="">
+
+<!-- Mirrored from circleci.com/docs/2.0/deployment-examples/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:07:58 GMT -->
+<head>
+	<script src="../../../../cdn.optimizely.com/js/8188917468.js"></script>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="description" content="The documentation site for CircleCI, the fastest testing platform on the Internet.
+">
+	
+	<link rel="canonical" href="index.html">
+
+	<link href="https://d3r49iyjzglexf.cloudfront.net/favicon-066b37ff00f0f968b903c13ae88b5573b62665aea8fbe91bb61c55dfa9446523.ico" rel="icon" type="image/png" />
+  <link rel="stylesheet" href="../../assets/css/fonts.css" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+	<link rel="stylesheet" href="../../assets/css/spacing.css" />
+	<link rel="stylesheet" href="../../assets/css/buttons.css" />
+	<link rel="stylesheet" href="../../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../../assets/css/syntax.css" />
+	<link rel="stylesheet" href="../../assets/css/jquery.navgoco.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<!-- End  -->
+	<link rel="stylesheet" href="../../assets/css/main.css" />
+	<link rel='stylesheet' href="../../assets/css/mobile.css" media="screen and (max-width: 800px)" />
+	<link rel="stylesheet" href="../../assets/css/footer.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../../../cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+	<link rel="stylesheet" href="../../assets/css/asciidoc.css">
+	<!--link rel="stylesheet" href="/docs/assets/css/asciidoc-pygments.css"-->
+	<!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script-->
+	<title>Deployment Examples - CircleCI</title>
+	<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+
+  analytics.load("AbgkrgN4cbRhAVEwlzMkHbwvrXnxHh35");
+
+  var pageCategory = "docs";
+  // slice off the slashes on either end
+  var pageName     = "/2.0/deployment-examples/".slice(1, -1) || "default";
+
+  var properties = {
+    "title"      : "Deployment Examples",
+    "short-title": "Deployment Examples",
+    "categories" : [],
+    "description": null,
+    "collection": "cci2"
+  };
+
+  analytics.page(pageCategory, pageName, properties);
+  }}();
+</script>
+
+
+	<!-- Instant Search CDN links /-->
+	<link rel="stylesheet" type="text/css" href="../../../../cdn.jsdelivr.net/npm/instantsearch.js%402.10.2/dist/instantsearch.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2"></script>
+	<link rel="stylesheet" type="text/css" href="../../../../cdn.jsdelivr.net/npm/instantsearch.js%402.10.2/dist/instantsearch-theme-algolia.min.css">
+	<script src="../../../../cdn.jsdelivr.net/npm/js-cookie%402.2.0/src/js.cookie.min.js"></script>
+</head>
+
+<body class="">
+
+	<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-W9HDVK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9HDVK');</script>
+
+
+
+<!-- instant hit template container /-->
+<div style="display:none;">
+	<div id="hits-template">
+		<h2>Search Results for "<span id="search-term-display"></span>"</h2>
+		<div id="instant-hits"></div>
+	</div>
+</div>
+<div class="outer">
+	<nav class="nav-toggle two">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="#main" class="nav-skip-button">
+          Skip to content
+        </a>
+
+        <div class="widescreen">
+          <a href="../../../index.html" class="logo"><img src="../../assets/img/logos/logo-wordmark.svg" class="logo" alt="CircleCI Home"></a>
+
+
+          <ul class="left-links main-nav">
+            <li class="nav-item">
+<a href="../../../product/index.html">Product</a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../../product/index.html">Overview</a></li>
+                  <li class="subnav-item"><a href="../../../product/index.html#how-it-works">How It Works</a></li>
+                  <li class="subnav-item"><a href="../../../product/index.html#features">Features</a></li>
+                  <li class="subnav-item"><a href="../../../build-environments/index.html">Build Environments</a></li>
+                  <li class="subnav-item"><a href="../../../product/index.html#hosting-options">Hosting Options</a></li>
+                  <li class="subnav-item"><a href="../../../integrations/index.html">Integrations</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item"><a href="../../../pricing/index.html">Pricing</a></li>
+            <li class="nav-item"><a href="../../../enterprise/index.html">Enterprise</a></li>
+            <li class="nav-item">
+              <a href="#">
+                Developers
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../hello-world/index.html">Hello World</a></li>
+                  <li class="subnav-item"><a href="../../index.html">Documentation</a></li>
+                  <li class="subnav-item"><a href="https://discuss.circleci.com/" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+                  <li class="subnav-item"><a href="../../../orbs/index.html">Orbs</a></li>
+                  <li class="subnav-item"><a href="../../api/v2/index.html#circleci-api">API</a></li>
+                  <li class="subnav-item"><a href="../../../open-source/index.html">Open Source</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="default-item nav-item">
+<a href="../../../about/index.html">Company</a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="../../../about/index.html">About Us</a></li>
+                  <li class="subnav-item"><a href="../../../customers/index.html">Case Studies</a></li>
+                  <li class="subnav-item"><a href="../../../blog/index.html">Blog</a></li>
+                  <li class="subnav-item"><a href="../../../careers/index.html">Careers</a></li>
+                  <li class="subnav-item"><a href="../../../contact/index.html">Contact Us</a></li>
+                  <li class="subnav-item"><a href="../../../partners/index.html">Partner With Us</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="right-links main-nav">
+            <li class="default-item nav-item">
+              <a href="../../../contact/index.html" data-analytics="top-nav-contact-us">
+                Contact Us
+              </a>
+            </li>
+            <li class="default-item nav-item">
+              <a href="#">
+                Support
+              </a>
+              <div class="submenu">
+                <ul class="subnav">
+                  <li class="subnav-item"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noopener noreferrer">Training</a></li>
+                  <li class="subnav-item"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noopener noreferrer">Get Support</a></li>
+                  <li class="subnav-item"><a href="https://status.circleci.com/" target="_blank" rel="noopener noreferrer">System Status</a></li>
+                  <li class="subnav-item"><a href="https://ideas.circleci.com/" target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+                  <li class="subnav-item"><a href="../../../support/premium-support/index.html">Premium Support</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="divider-left nav-item visitor-item"><a href="https://circleci.com/vcs-authorize/" data-hj-masked>Log In</a></li>
+            <li class="nav-item visitor-item"><a class="btn-primary small" href="../../../signup/index.html" data-analytics-action="signup-clicked" data-analytics-location="nav" data-optimizely="signup_button_clicked">Sign Up</a></li>
+            <li class="dashboard-link desktop-nav divider-left"><a href="https://circleci.com/dashboard">Go to app</a></li>
+          </ul>
+
+        </div>
+
+        <div class="narrowscreen">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-navigation" aria-expanded="false" aria-controls="#mobile-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <a href="../../../index.html"><img class="logo" src="../../assets/img/logos/logo-wordmark.svg" alt="CircleCI Home"></a>
+
+
+          <span class="login">
+            <a href="https://circleci.com/vcs-authorize/" data-hj-masked class="mobile-nav signup visitor-item" data-analytics-location="nav">Log In</a>
+            <a href="https://circleci.com/dashboard" class="dashboard-link mobile-nav">Go to app</a>
+          </span>
+
+          <ul class="dropdown-menu2" id="mobile-navigation">
+            <li><a href="../../../signup/index.html" data-analytics-action="signup-clicked" data-optimizely="signup_button_clicked" class="btn-primary">Sign Up for Free</a></li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Product
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../../product/index.html">Overview</a></li>
+                <li class="subnav-item"><a href="../../../product/index.html#how-it-works">How It Works</a></li>
+                <li class="subnav-item"><a href="../../../product/index.html#features">Features</a></li>
+                <li class="subnav-item"><a href="../../../build-environments/index.html">Build Environments</a></li>
+                <li class="subnav-item"><a href="../../../product/index.html#hosting-options">Hosting Options</a></li>
+                <li class="subnav-item"><a href="../../../integrations/index.html">Integrations</a></li>
+              </ul>
+            </li>
+            <li class="border-bottom"><a href="../../../pricing/index.html">Pricing</a></li>
+            <li class="border-bottom"><a href="../../../enterprise/index.html">Enterprise</a></li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Developers
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../hello-world/index.html">Getting Started</a></li>
+                <li class="subnav-item"><a href="../../index.html">Documentation</a></li>
+                <li class="subnav-item"><a href="https://discuss.circleci.com/" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+                <li class="subnav-item"><a href="../../../orbs/index.html">Orbs</a></li>
+                <li class="subnav-item"><a href="../../api/v2/index.html#circleci-api">API</a></li>
+                <li class="subnav-item"><a href="../../../open-source/index.html">Open Source</a></li>
+              </ul>
+            </li>
+            <li class="arrow collapsed border-bottom">
+              <span class="heading">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Company
+              </span>
+              <ul class="subnav">
+                <li class="subnav-item"><a href="../../../about/index.html">About Us</a></li>
+                <li class="subnav-item"><a href="../../../customers/index.html">Case Studies</a></li>
+                <li class="subnav-item"><a href="../../../blog/index.html">Blog</a></li>
+                <li class="subnav-item"><a href="../../../careers/index.html">Careers</a></li>
+                <li class="subnav-item"><a href="../../../contact/index.html">Contact Us</a></li>
+                <li class="subnav-item"><a href="../../../partners/index.html">Partner With Us</a></li>
+              </ul>
+            </li>
+            <li class="arrow collapsed border-bottom">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              Support
+              <ul class="subnav">
+                <li class="subnav-item"><a href="https://academy.circleci.com/?access_code=public-2020" target="_blank" rel="noopener noreferrer">Training</a></li>
+                <li class="subnav-item"><a href="https://support.circleci.com/hc/en-us" target="_blank" rel="noopener noreferrer">Get Support</a></li>
+                <li class="subnav-item"><a href="https://status.circleci.com/" target="_blank" rel="noopener noreferrer">System Status</a></li>
+                <li class="subnav-item"><a href="https://ideas.circleci.com/" target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+                <li class="subnav-item"><a href="../../../support/premium-support/index.html">Premium Support</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+	<div class="main-searchbar">
+  <form>
+    <div id="search-box">
+      <!-- SearchBox widget will appear here -->
+    </div>
+  </form>
+</div>
+	<!-- MOBILE SUBNAV /-->
+<div class="sidebar-mobile-wrapper">
+  <!-- DISPLAY ITEM /-->
+  <div class="current-item">
+    
+    
+    
+      <div class="mobile-sidebar-item " data-id="welcome">
+        
+          <img class="icon" src="../../assets/docs/welcome-f7457826e96dddba0bfad601a1ed3736a5d867782abc501dd6a0eb69a1da7443.svg" integrity="sha256-90V4Jult3boL+tYBoe03NqXYZ3gqvFAd1qDraaHadEM=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Welcome</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="getting-started">
+        
+          <img class="icon" src="../../assets/docs/start-26069d6eae162cde390e2333e1817966e90ab1cb2f2688620384328a98160057.svg" integrity="sha256-Jgadbq4WLN45DiMz4YF5ZukKscsvJohiA4QyipgWAFc=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Getting Started</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="configuration">
+        
+          <img class="icon" src="../../assets/docs/config-16429d8b407e1b8b926594a981f06fb62cae6415313a94bf0c174d3227e38548.svg" integrity="sha256-FkKdi0B+G4uSZZSpgfBvtiyuZBUxOpS/DBdNMifjhUg=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Configuration</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="projects">
+        
+          <img class="icon" src="../../assets/docs/project-c4d267d466adbd1ad6eb3b0da8954c433a075ff2a773cc93eb4f789b20da6444.svg" integrity="sha256-xNJn1GatvRrW6zsNqJVMQzoHX/Knc8yT6094myDaZEQ=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Projects</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="pipelines">
+        
+          <img class="icon" src="../../assets/docs/builds-6c2268e22c2dc3588ebbd7f471e8545a8d22cc79c03737df0ee02c3074bf0e60.svg" integrity="sha256-bCJo4iwtw1iOu9f0cehUWo0izHnANzffDuAsMHS/DmA=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Pipelines</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="deployment">
+        
+          <img class="icon" src="../../assets/docs/deploy-49456c50980896bf09bb80c1eb4e1ee9234fc0bc7193d8c17154a905424aeb0b.svg" integrity="sha256-SUVsUJgIlr8Ju4DB604e6SNPwLxxk9jBcVSpBUJK6ws=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Deployment</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="reference">
+        
+          <img class="icon" src="../../assets/docs/reference-caddd7b03de64e941b60cfba247b91f4d2e040f234876ed242c7764878c60412.svg" integrity="sha256-yt3XsD3mTpQbYM+6JHuR9NLgQPI0h27SQsd2SHjGBBI=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Reference</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+      <div class="mobile-sidebar-item  hidden " data-id="server-administration">
+        
+          <img class="icon" src="../../assets/docs/admin-7d94f9ffd9f2c7ca50406002a5d607f40fd5da0e6164d533b26424e6ff962606.svg" integrity="sha256-fZT5/9nyx8pQQGACpdYH9A/V2g5hZNUzsmQk5v+WJgY=" crossorigin="anonymous">
+        
+
+        
+
+        <span class="nav-span"><strong>Server Administration</strong></span>
+
+        <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+      </div>
+    
+  </div>
+
+  <!-- DROPDOWN /-->
+  <div class="sidebar-mobile-dropdown">
+    <nav class="mobile-sidebar hidden">
+      
+
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="welcome">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/welcome-f7457826e96dddba0bfad601a1ed3736a5d867782abc501dd6a0eb69a1da7443.svg" integrity="sha256-90V4Jult3boL+tYBoe03NqXYZ3gqvFAd1qDraaHadEM=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Welcome</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../index.html#section=welcome" data-proofer-ignore>Introduction</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../about-circleci/index.html#section=welcome" data-proofer-ignore>CI/CD Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../demo-apps/index.html#section=welcome" data-proofer-ignore>Supported Languages</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../features/index.html#section=welcome" data-proofer-ignore>Core Features</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="getting-started">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/start-26069d6eae162cde390e2333e1817966e90ab1cb2f2688620384328a98160057.svg" integrity="sha256-Jgadbq4WLN45DiMz4YF5ZukKscsvJohiA4QyipgWAFc=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Getting Started</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../getting-started/index.html#section=getting-started" data-proofer-ignore>Introduction</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../getting-started/index.html#section=getting-started" data-proofer-ignore>Getting Started</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../about-circleci/index.html#section=getting-started" data-proofer-ignore>What is CircleCI?</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../first-steps/index.html#section=getting-started" data-proofer-ignore>Sign Up &amp; Try CircleCI</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../hello-world/index.html#section=getting-started" data-proofer-ignore>Hello World</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../hello-world-macos/index.html#section=getting-started" data-proofer-ignore>Hello World MacOS</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../hello-world-windows/index.html#section=getting-started" data-proofer-ignore>Hello World Windows</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../local-cli-getting-started/index.html#section=getting-started" data-proofer-ignore>Get Started with the CLI</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../faq/index.html#section=getting-started" data-proofer-ignore>FAQ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../config-builder/index.html#section=getting-started" data-proofer-ignore>Config Builder</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../concepts/index.html#section=getting-started" data-proofer-ignore>Concepts</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../concepts/index.html#section=getting-started" data-proofer-ignore>Getting Started Concepts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../project-build/index.html#section=getting-started" data-proofer-ignore>Projects and Pipelines</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../jobs-steps/index.html#section=getting-started" data-proofer-ignore>Orbs, Jobs, Steps, and Workflows</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-jenkins/index.html#section=getting-started" data-proofer-ignore>Differences from Jenkins</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../security/index.html#section=getting-started" data-proofer-ignore>Security</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../migration-intro/index.html#section=getting-started" data-proofer-ignore>Migration</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migration-intro/index.html#section=getting-started" data-proofer-ignore>Migration Introduction</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-aws/index.html#section=getting-started" data-proofer-ignore>Migrating from AWS</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-azuredevops/index.html#section=getting-started" data-proofer-ignore>Migrating from Azure</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-buildkite/index.html#section=getting-started" data-proofer-ignore>Migrating from Buildkite</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-github/index.html#section=getting-started" data-proofer-ignore>Migrating from GitHub</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-gitlab/index.html#section=getting-started" data-proofer-ignore>Migrating from GitLab</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-jenkins/index.html#section=getting-started" data-proofer-ignore>Migrating from Jenkins</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-teamcity/index.html#section=getting-started" data-proofer-ignore>Migrating from TeamCity</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../migrating-from-travis/index.html#section=getting-started" data-proofer-ignore>Migrating from TravisCI</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="configuration">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/config-16429d8b407e1b8b926594a981f06fb62cae6415313a94bf0c174d3227e38548.svg" integrity="sha256-FkKdi0B+G4uSZZSpgfBvtiyuZBUxOpS/DBdNMifjhUg=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Configuration</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../config-intro/index.html#section=configuration" data-proofer-ignore>Introduction</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../config-intro/index.html#section=configuration" data-proofer-ignore>Configuration Introduction</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=configuration" data-proofer-ignore>Config Reference Full</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../reference-2-1/index.html#section=configuration" data-proofer-ignore>Config Reference 2.1</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../reusing-config/index.html#section=configuration" data-proofer-ignore>Reusable Config Reference</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../config-builder/index.html#section=configuration" data-proofer-ignore>Config Builder</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../writing-yaml/index.html#section=configuration" data-proofer-ignore>Writing YAML</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../local-cli/index.html#section=configuration" data-proofer-ignore>Using the CircleCI CLI</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../orb-intro/index.html#section=configuration" data-proofer-ignore>Orbs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orb-intro/index.html#section=configuration" data-proofer-ignore>Orb Introduction</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orbs-faq/index.html#section=configuration" data-proofer-ignore>Orbs FAQ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../using-orbs/index.html#section=configuration" data-proofer-ignore>Orbs Concepts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../reusing-config/index.html#section=configuration" data-proofer-ignore>Reusable Config Reference</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../testing-orbs/index.html#section=configuration" data-proofer-ignore>Orb Testing Methodologies</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../creating-orbs/index.html#section=configuration" data-proofer-ignore>Orb Publishing Process</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../orb-author-intro/index.html#section=configuration" data-proofer-ignore>Authoring Orbs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orb-author-intro/index.html#section=configuration" data-proofer-ignore>Intro to Authoring an Orb</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orb-author-cli/index.html#section=configuration" data-proofer-ignore>Set up the CircleCI CLI</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orb-author/index.html#section=configuration" data-proofer-ignore>Author an Orb</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orb-author-validate-publish/index.html#section=configuration" data-proofer-ignore>Test and Publish Your Orb</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orb-author-faq/index.html#section=configuration" data-proofer-ignore>Orb Author FAQ</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orbs-best-practices/index.html#section=configuration" data-proofer-ignore>Orbs Best Practices</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../orbs-user-config/index.html#section=configuration" data-proofer-ignore>Using Orbs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orbs-user-config/index.html#section=configuration" data-proofer-ignore>Get Set Up For Orbs</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../orbs-user-select-orb/index.html#section=configuration" data-proofer-ignore>Selecting and Using an Orb</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../examples-intro/index.html#section=configuration" data-proofer-ignore>Examples</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../examples-intro/index.html#section=configuration" data-proofer-ignore>Examples Introduction</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../sample-config/index.html#section=configuration" data-proofer-ignore>Sample config.yml Files</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../tutorials/index.html#section=configuration" data-proofer-ignore>Tutorials</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../configuration-cookbook/index.html#section=configuration" data-proofer-ignore>Configuration Cookbook</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../postgres-config/index.html#section=configuration" data-proofer-ignore>Database Config Examples</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../example-configs/index.html#section=configuration" data-proofer-ignore>Example Public Repos</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../testing-ios/index.html#section=configuration" data-proofer-ignore>Testing iOS Applications</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../executor-intro/index.html#section=configuration" data-proofer-ignore>EXECUTORS &amp; IMAGES</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../executor-intro/index.html#section=configuration" data-proofer-ignore>Executor &amp; Image Intro</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../executor-types/index.html#section=configuration" data-proofer-ignore>Choosing an Executor Type</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../circleci-images/index.html#section=configuration" data-proofer-ignore>CircleCI Docker Images</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../custom-images/index.html#section=configuration" data-proofer-ignore>Using Custom Images</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../private-images/index.html#section=configuration" data-proofer-ignore>Using Private Images</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../adv-config/index.html#section=configuration" data-proofer-ignore>ADVANCED CONFIG</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../adv-config/index.html#section=configuration" data-proofer-ignore>Advanced Config Intro</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../pipeline-variables/index.html#section=configuration" data-proofer-ignore>Pipeline Variables</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../using-shell-scripts/index.html#section=configuration" data-proofer-ignore>Using Shell Scripts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../browser-testing/index.html#section=configuration" data-proofer-ignore>Setting up Browser Testing</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../databases/index.html#section=configuration" data-proofer-ignore>Configuring Databases</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../building-docker-images/index.html#section=configuration" data-proofer-ignore>Run Docker Commands</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../docker-compose/index.html#section=configuration" data-proofer-ignore>Using Docker Compose</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="projects">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/project-c4d267d466adbd1ad6eb3b0da8954c433a075ff2a773cc93eb4f789b20da6444.svg" integrity="sha256-xNJn1GatvRrW6zsNqJVMQzoHX/Knc8yT6094myDaZEQ=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Projects</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../settings/index.html#section=projects" data-proofer-ignore>settings</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../settings/index.html#section=projects" data-proofer-ignore>Settings Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../gh-bb-integration/index.html#section=projects" data-proofer-ignore>GitHub and Bitbucket</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../enable-checks/index.html#section=projects" data-proofer-ignore>Enabling GitHub Checks</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../oss/index.html#section=projects" data-proofer-ignore>Open Source Projects</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../notifications/index.html#section=projects" data-proofer-ignore>Using Notifications</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../jira-plugin/index.html#section=projects" data-proofer-ignore>Connect with JIRA</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../managing-api-tokens/index.html#section=projects" data-proofer-ignore>Managing API tokens</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../env-vars/index.html#section=projects" data-proofer-ignore>Environment Variables</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../contexts/index.html#section=projects" data-proofer-ignore>Using Contexts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../build-processing/index.html#section=projects" data-proofer-ignore>Enabling Pipelines</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ios-codesigning/index.html#section=projects" data-proofer-ignore>iOS Code Signing</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../optimizations/index.html#section=projects" data-proofer-ignore>Optimizations</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../optimizations/index.html#section=projects" data-proofer-ignore>Optimization Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../caching/index.html#section=projects" data-proofer-ignore>Caching Dependencies</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../parallelism-faster-jobs/index.html#section=projects" data-proofer-ignore>Running Tests in Parallel</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../docker-layer-caching/index.html#section=projects" data-proofer-ignore>Docker Layer Caching</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../optimization-cookbook/index.html#section=projects" data-proofer-ignore>Optimizations Cookbook</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="pipelines">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/builds-6c2268e22c2dc3588ebbd7f471e8545a8d22cc79c03737df0ee02c3074bf0e60.svg" integrity="sha256-bCJo4iwtw1iOu9f0cehUWo0izHnANzffDuAsMHS/DmA=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Pipelines</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../status/index.html#section=pipelines" data-proofer-ignore>Status</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../status/index.html#section=pipelines" data-proofer-ignore>Status Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../pipelines/index.html#section=pipelines" data-proofer-ignore>Viewing Pipelines</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../credits/index.html#section=pipelines" data-proofer-ignore>Using Credits</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../containers/index.html#section=pipelines" data-proofer-ignore>Using Containers</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../status-badges/index.html#section=pipelines" data-proofer-ignore>Adding Status Badges</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../artifacts/index.html#section=pipelines" data-proofer-ignore>Storing Build Artifacts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ssh-access-jobs/index.html#section=pipelines" data-proofer-ignore>Debugging with SSH</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../java-oom/index.html#section=pipelines" data-proofer-ignore>Debug Java Memory Errors</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../collect-test-data/index.html#section=pipelines" data-proofer-ignore>Collecting Test Metadata</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../code-coverage/index.html#section=pipelines" data-proofer-ignore>Code Coverage Metrics</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../insights/index.html#section=pipelines" data-proofer-ignore>Using Insights</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../triggers/index.html#section=pipelines" data-proofer-ignore>Triggers</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../triggers/index.html#section=pipelines" data-proofer-ignore>Introduction to Triggers</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../skip-build/index.html#section=pipelines" data-proofer-ignore>Skip and Cancel Builds</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../api-job-trigger/index.html#section=pipelines" data-proofer-ignore>Trigger Jobs with the API</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../workflows/index.html#section=pipelines" data-proofer-ignore>Workflows</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="deployment">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/deploy-49456c50980896bf09bb80c1eb4e1ee9234fc0bc7193d8c17154a905424aeb0b.svg" integrity="sha256-SUVsUJgIlr8Ju4DB604e6SNPwLxxk9jBcVSpBUJK6ws=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Deployment</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../deployment-integrations/index.html#section=deployment" data-proofer-ignore>Configuring Deploys</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../deployment-integrations/index.html#section=deployment" data-proofer-ignore>Deployment Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="index.html#section=deployment" data-proofer-ignore>Deployment Examples</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../deploying-ios/index.html#section=deployment" data-proofer-ignore>Deploying iOS Apps</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../build-publish-snap-packages/index.html#section=deployment" data-proofer-ignore>Publishing Snap Packages</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../artifactory/index.html#section=deployment" data-proofer-ignore>Using Artifactory</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../packagecloud/index.html#section=deployment" data-proofer-ignore>Publishing to packagecloud</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="reference">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/reference-caddd7b03de64e941b60cfba247b91f4d2e040f234876ed242c7764878c60412.svg" integrity="sha256-yt3XsD3mTpQbYM+6JHuR9NLgQPI0h27SQsd2SHjGBBI=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Reference</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=reference" data-proofer-ignore>Config Reference Full</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../reference-2-1/index.html#section=reference" data-proofer-ignore>Config Reference 2.1</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../api/v2/index.html#section=reference" data-proofer-ignore>API v2 Reference</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../api-intro/index.html#section=reference" data-proofer-ignore>API v2 Introduction</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../api-developers-guide/index.html#section=reference" data-proofer-ignore>API v2 Developer's Guide</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../../api/index.html#section=reference" data-proofer-ignore>API v1.1 Reference</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../circleci-images/index.html#section=reference" data-proofer-ignore>Prebuilt Images</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../glossary/index.html#section=reference" data-proofer-ignore>Glossary</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../help-and-support/index.html#section=reference" data-proofer-ignore>Help and Support</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../archive/index.html#section=reference" data-proofer-ignore>Archive of 1.0 Docs</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+        <ul>
+          <li class="main-nav-item closed" data-section="server-administration">
+            <div class="list-wrap">
+              
+                <img class="icon" src="../../assets/docs/admin-7d94f9ffd9f2c7ca50406002a5d607f40fd5da0e6164d533b26424e6ff962606.svg" integrity="sha256-fZT5/9nyx8pQQGACpdYH9A/V2g5hZNUzsmQk5v+WJgY=" crossorigin="anonymous">
+              
+
+              
+
+              
+                <span class="nav-span">Server Administration</span>
+              
+
+              
+                <img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+              
+            </div>
+
+            
+            <ul class="subnav">
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../install-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.19.x Install</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../install-overview/index.html#section=server-administration" data-proofer-ignore>Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../v.2.19-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.19.x</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../updating-server/index.html#section=server-administration" data-proofer-ignore>Upgrade to v2.19.x</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../server-ports/index.html#section=server-administration" data-proofer-ignore>System Requirements</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../aws-prereq/index.html#section=server-administration" data-proofer-ignore>Prerequisites and Planning</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../aws/index.html#section=server-administration" data-proofer-ignore>Installation</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../aws-teardown/index.html#section=server-administration" data-proofer-ignore>Teardown</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../upgrading/index.html#section=server-administration" data-proofer-ignore>Upgrades from 1.0 to 2.0</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../single-box/index.html#section=server-administration" data-proofer-ignore>Trial Single-box Install</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../overview/index.html#section=server-administration" data-proofer-ignore>Server v2.19.x Operations</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../overview/index.html#section=server-administration" data-proofer-ignore>Overview</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../nomad/index.html#section=server-administration" data-proofer-ignore>Nomad</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../monitoring/index.html#section=server-administration" data-proofer-ignore>Monitoring</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../nomad-metrics/index.html#section=server-administration" data-proofer-ignore>Nomad Metrics</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../proxy/index.html#section=server-administration" data-proofer-ignore>Proxies</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../authentication/index.html#section=server-administration" data-proofer-ignore>Authentication</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../vm-service/index.html#section=server-administration" data-proofer-ignore>VM Service</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../gpu/index.html#section=server-administration" data-proofer-ignore>GPU Builders</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../certificates/index.html#section=server-administration" data-proofer-ignore>Certificates</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../user-accounts/index.html#section=server-administration" data-proofer-ignore>User Accounts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../build-artifacts/index.html#section=server-administration" data-proofer-ignore>Build Artifacts</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../usage-stats/index.html#section=server-administration" data-proofer-ignore>Usage statistics</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../jvm-heap-size-configuration/index.html#section=server-administration" data-proofer-ignore>JVM Heap Size</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../ops/index.html#section=server-administration" data-proofer-ignore>Maintenance</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../backup/index.html#section=server-administration" data-proofer-ignore>Backup and Recovery</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../security-server/index.html#section=server-administration" data-proofer-ignore>Security</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../troubleshooting/index.html#section=server-administration" data-proofer-ignore>Troubleshooting</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../admin-faq/index.html#section=server-administration" data-proofer-ignore>Faq</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../customizations/index.html#section=server-administration" data-proofer-ignore>Customization &amp; Config</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../architecture/index.html#section=server-administration" data-proofer-ignore>Architecture</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../open-source/index.html#section=server-administration" data-proofer-ignore>Acknowledgments</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../v.2.19-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.19 PDFs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../v.2.19-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.19</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../CircleCI-Server-AWS-Installation-Guide.pdf#section=server-administration" data-proofer-ignore>v2.19 Installation Guide</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../CircleCI-Server-Operations-Guide.pdf#section=server-administration" data-proofer-ignore>v2.19 Operations Guide</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../v.2.18-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.18 PDFs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../v.2.18-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.18</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../CircleCI-Server-AWS-Installation-Guide-v2-18-3.pdf#section=server-administration" data-proofer-ignore>v2.18.3 Installation Guide</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../CircleCI-Server-Operations-Guide-v2-18-3.pdf#section=server-administration" data-proofer-ignore>v2.18.3 Operations Guide</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../v.2.17-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.17.3 PDFs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../v.2.17-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.17</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../CircleCI-Server-AWS-Installation-Guide-v2-17.pdf#section=server-administration" data-proofer-ignore>v2.17.3 Installation Guide</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../CircleCI-Server-Operations-Guide-v2-17.pdf#section=server-administration" data-proofer-ignore>v2.17.3 Operations Guide</a></li>
+                    
+                  </ul>
+                
+              
+                
+                  
+                <li class="nav-item"><a class="" href="../v.2.16-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.16 PDFs</a></li>
+                
+
+                
+                  <ul>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../v.2.16-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.16</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../circleci-install-doc.pdf#section=server-administration" data-proofer-ignore>v2.16 Installation Guide</a></li>
+                    
+                      
+                      <li class="subnav-item"><a class="" href="../circleci-ops-guide.pdf#section=server-administration" data-proofer-ignore>v2.16 Operations Guide</a></li>
+                    
+                  </ul>
+                
+              
+            </ul>
+            
+          </li>
+        </ul>
+      
+    </nav>
+  </div>
+</div>
+
+  <div class="hits-target"></div>
+	<div class="main-body">
+		<!-- FULL SCREEN /-->
+<div class="sidebar-wrapper">
+		<nav class="sidebar fixed">
+				
+				
+				
+
+    <div class="sidebar-item-group">
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="welcome">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/welcome-f7457826e96dddba0bfad601a1ed3736a5d867782abc501dd6a0eb69a1da7443.svg" integrity="sha256-90V4Jult3boL+tYBoe03NqXYZ3gqvFAd1qDraaHadEM=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Welcome</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../index.html#section=welcome" data-proofer-ignore>Introduction</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../about-circleci/index.html#section=welcome" data-proofer-ignore>CI/CD Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../demo-apps/index.html#section=welcome" data-proofer-ignore>Supported Languages</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../features/index.html#section=welcome" data-proofer-ignore>Core Features</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="getting-started">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/start-26069d6eae162cde390e2333e1817966e90ab1cb2f2688620384328a98160057.svg" integrity="sha256-Jgadbq4WLN45DiMz4YF5ZukKscsvJohiA4QyipgWAFc=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Getting Started</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../getting-started/index.html#section=getting-started" data-proofer-ignore>Introduction</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../getting-started/index.html#section=getting-started" data-proofer-ignore>Getting Started</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../about-circleci/index.html#section=getting-started" data-proofer-ignore>What is CircleCI?</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../first-steps/index.html#section=getting-started" data-proofer-ignore>Sign Up &amp; Try CircleCI</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../hello-world/index.html#section=getting-started" data-proofer-ignore>Hello World</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../hello-world-macos/index.html#section=getting-started" data-proofer-ignore>Hello World MacOS</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../hello-world-windows/index.html#section=getting-started" data-proofer-ignore>Hello World Windows</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../local-cli-getting-started/index.html#section=getting-started" data-proofer-ignore>Get Started with the CLI</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../faq/index.html#section=getting-started" data-proofer-ignore>FAQ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../config-builder/index.html#section=getting-started" data-proofer-ignore>Config Builder</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../concepts/index.html#section=getting-started" data-proofer-ignore>Concepts</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../concepts/index.html#section=getting-started" data-proofer-ignore>Getting Started Concepts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../project-build/index.html#section=getting-started" data-proofer-ignore>Projects and Pipelines</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../jobs-steps/index.html#section=getting-started" data-proofer-ignore>Orbs, Jobs, Steps, and Workflows</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-jenkins/index.html#section=getting-started" data-proofer-ignore>Differences from Jenkins</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../security/index.html#section=getting-started" data-proofer-ignore>Security</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../migration-intro/index.html#section=getting-started" data-proofer-ignore>Migration</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../migration-intro/index.html#section=getting-started" data-proofer-ignore>Migration Introduction</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-aws/index.html#section=getting-started" data-proofer-ignore>Migrating from AWS</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-azuredevops/index.html#section=getting-started" data-proofer-ignore>Migrating from Azure</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-buildkite/index.html#section=getting-started" data-proofer-ignore>Migrating from Buildkite</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-github/index.html#section=getting-started" data-proofer-ignore>Migrating from GitHub</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-gitlab/index.html#section=getting-started" data-proofer-ignore>Migrating from GitLab</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-jenkins/index.html#section=getting-started" data-proofer-ignore>Migrating from Jenkins</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-teamcity/index.html#section=getting-started" data-proofer-ignore>Migrating from TeamCity</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../migrating-from-travis/index.html#section=getting-started" data-proofer-ignore>Migrating from TravisCI</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="configuration">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/config-16429d8b407e1b8b926594a981f06fb62cae6415313a94bf0c174d3227e38548.svg" integrity="sha256-FkKdi0B+G4uSZZSpgfBvtiyuZBUxOpS/DBdNMifjhUg=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Configuration</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../config-intro/index.html#section=configuration" data-proofer-ignore>Introduction</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../config-intro/index.html#section=configuration" data-proofer-ignore>Configuration Introduction</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=configuration" data-proofer-ignore>Config Reference Full</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../reference-2-1/index.html#section=configuration" data-proofer-ignore>Config Reference 2.1</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../reusing-config/index.html#section=configuration" data-proofer-ignore>Reusable Config Reference</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../config-builder/index.html#section=configuration" data-proofer-ignore>Config Builder</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../writing-yaml/index.html#section=configuration" data-proofer-ignore>Writing YAML</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../local-cli/index.html#section=configuration" data-proofer-ignore>Using the CircleCI CLI</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../orb-intro/index.html#section=configuration" data-proofer-ignore>Orbs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../orb-intro/index.html#section=configuration" data-proofer-ignore>Orb Introduction</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orbs-faq/index.html#section=configuration" data-proofer-ignore>Orbs FAQ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../using-orbs/index.html#section=configuration" data-proofer-ignore>Orbs Concepts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../reusing-config/index.html#section=configuration" data-proofer-ignore>Reusable Config Reference</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../testing-orbs/index.html#section=configuration" data-proofer-ignore>Orb Testing Methodologies</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../creating-orbs/index.html#section=configuration" data-proofer-ignore>Orb Publishing Process</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../orb-author-intro/index.html#section=configuration" data-proofer-ignore>Authoring Orbs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../orb-author-intro/index.html#section=configuration" data-proofer-ignore>Intro to Authoring an Orb</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orb-author-cli/index.html#section=configuration" data-proofer-ignore>Set up the CircleCI CLI</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orb-author/index.html#section=configuration" data-proofer-ignore>Author an Orb</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orb-author-validate-publish/index.html#section=configuration" data-proofer-ignore>Test and Publish Your Orb</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orb-author-faq/index.html#section=configuration" data-proofer-ignore>Orb Author FAQ</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orbs-best-practices/index.html#section=configuration" data-proofer-ignore>Orbs Best Practices</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../orbs-user-config/index.html#section=configuration" data-proofer-ignore>Using Orbs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../orbs-user-config/index.html#section=configuration" data-proofer-ignore>Get Set Up For Orbs</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../orbs-user-select-orb/index.html#section=configuration" data-proofer-ignore>Selecting and Using an Orb</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../examples-intro/index.html#section=configuration" data-proofer-ignore>Examples</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../examples-intro/index.html#section=configuration" data-proofer-ignore>Examples Introduction</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../sample-config/index.html#section=configuration" data-proofer-ignore>Sample config.yml Files</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../tutorials/index.html#section=configuration" data-proofer-ignore>Tutorials</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../configuration-cookbook/index.html#section=configuration" data-proofer-ignore>Configuration Cookbook</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../postgres-config/index.html#section=configuration" data-proofer-ignore>Database Config Examples</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../example-configs/index.html#section=configuration" data-proofer-ignore>Example Public Repos</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../testing-ios/index.html#section=configuration" data-proofer-ignore>Testing iOS Applications</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../executor-intro/index.html#section=configuration" data-proofer-ignore>EXECUTORS &amp; IMAGES</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../executor-intro/index.html#section=configuration" data-proofer-ignore>Executor &amp; Image Intro</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../executor-types/index.html#section=configuration" data-proofer-ignore>Choosing an Executor Type</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../circleci-images/index.html#section=configuration" data-proofer-ignore>CircleCI Docker Images</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../custom-images/index.html#section=configuration" data-proofer-ignore>Using Custom Images</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../private-images/index.html#section=configuration" data-proofer-ignore>Using Private Images</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../adv-config/index.html#section=configuration" data-proofer-ignore>ADVANCED CONFIG</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../adv-config/index.html#section=configuration" data-proofer-ignore>Advanced Config Intro</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../pipeline-variables/index.html#section=configuration" data-proofer-ignore>Pipeline Variables</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../using-shell-scripts/index.html#section=configuration" data-proofer-ignore>Using Shell Scripts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../browser-testing/index.html#section=configuration" data-proofer-ignore>Setting up Browser Testing</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../databases/index.html#section=configuration" data-proofer-ignore>Configuring Databases</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../building-docker-images/index.html#section=configuration" data-proofer-ignore>Run Docker Commands</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../docker-compose/index.html#section=configuration" data-proofer-ignore>Using Docker Compose</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="projects">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/project-c4d267d466adbd1ad6eb3b0da8954c433a075ff2a773cc93eb4f789b20da6444.svg" integrity="sha256-xNJn1GatvRrW6zsNqJVMQzoHX/Knc8yT6094myDaZEQ=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Projects</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../settings/index.html#section=projects" data-proofer-ignore>settings</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../settings/index.html#section=projects" data-proofer-ignore>Settings Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../gh-bb-integration/index.html#section=projects" data-proofer-ignore>GitHub and Bitbucket</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../enable-checks/index.html#section=projects" data-proofer-ignore>Enabling GitHub Checks</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../oss/index.html#section=projects" data-proofer-ignore>Open Source Projects</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../notifications/index.html#section=projects" data-proofer-ignore>Using Notifications</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../jira-plugin/index.html#section=projects" data-proofer-ignore>Connect with JIRA</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../managing-api-tokens/index.html#section=projects" data-proofer-ignore>Managing API tokens</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../env-vars/index.html#section=projects" data-proofer-ignore>Environment Variables</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../contexts/index.html#section=projects" data-proofer-ignore>Using Contexts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../build-processing/index.html#section=projects" data-proofer-ignore>Enabling Pipelines</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../ios-codesigning/index.html#section=projects" data-proofer-ignore>iOS Code Signing</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../optimizations/index.html#section=projects" data-proofer-ignore>Optimizations</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../optimizations/index.html#section=projects" data-proofer-ignore>Optimization Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../caching/index.html#section=projects" data-proofer-ignore>Caching Dependencies</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../parallelism-faster-jobs/index.html#section=projects" data-proofer-ignore>Running Tests in Parallel</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../docker-layer-caching/index.html#section=projects" data-proofer-ignore>Docker Layer Caching</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../optimization-cookbook/index.html#section=projects" data-proofer-ignore>Optimizations Cookbook</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="pipelines">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/builds-6c2268e22c2dc3588ebbd7f471e8545a8d22cc79c03737df0ee02c3074bf0e60.svg" integrity="sha256-bCJo4iwtw1iOu9f0cehUWo0izHnANzffDuAsMHS/DmA=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Pipelines</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../status/index.html#section=pipelines" data-proofer-ignore>Status</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../status/index.html#section=pipelines" data-proofer-ignore>Status Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../pipelines/index.html#section=pipelines" data-proofer-ignore>Viewing Pipelines</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../credits/index.html#section=pipelines" data-proofer-ignore>Using Credits</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../containers/index.html#section=pipelines" data-proofer-ignore>Using Containers</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../status-badges/index.html#section=pipelines" data-proofer-ignore>Adding Status Badges</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../artifacts/index.html#section=pipelines" data-proofer-ignore>Storing Build Artifacts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../ssh-access-jobs/index.html#section=pipelines" data-proofer-ignore>Debugging with SSH</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../java-oom/index.html#section=pipelines" data-proofer-ignore>Debug Java Memory Errors</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../collect-test-data/index.html#section=pipelines" data-proofer-ignore>Collecting Test Metadata</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../code-coverage/index.html#section=pipelines" data-proofer-ignore>Code Coverage Metrics</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../insights/index.html#section=pipelines" data-proofer-ignore>Using Insights</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../triggers/index.html#section=pipelines" data-proofer-ignore>Triggers</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../triggers/index.html#section=pipelines" data-proofer-ignore>Introduction to Triggers</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../skip-build/index.html#section=pipelines" data-proofer-ignore>Skip and Cancel Builds</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../api-job-trigger/index.html#section=pipelines" data-proofer-ignore>Trigger Jobs with the API</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../workflows/index.html#section=pipelines" data-proofer-ignore>Workflows</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="deployment">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/deploy-49456c50980896bf09bb80c1eb4e1ee9234fc0bc7193d8c17154a905424aeb0b.svg" integrity="sha256-SUVsUJgIlr8Ju4DB604e6SNPwLxxk9jBcVSpBUJK6ws=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Deployment</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../deployment-integrations/index.html#section=deployment" data-proofer-ignore>Configuring Deploys</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../deployment-integrations/index.html#section=deployment" data-proofer-ignore>Deployment Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class=" active " href="index.html#section=deployment" data-proofer-ignore>Deployment Examples</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../deploying-ios/index.html#section=deployment" data-proofer-ignore>Deploying iOS Apps</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../build-publish-snap-packages/index.html#section=deployment" data-proofer-ignore>Publishing Snap Packages</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../artifactory/index.html#section=deployment" data-proofer-ignore>Using Artifactory</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../packagecloud/index.html#section=deployment" data-proofer-ignore>Publishing to packagecloud</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="reference">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/reference-caddd7b03de64e941b60cfba247b91f4d2e040f234876ed242c7764878c60412.svg" integrity="sha256-yt3XsD3mTpQbYM+6JHuR9NLgQPI0h27SQsd2SHjGBBI=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Reference</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../configuration-reference/index.html#section=reference" data-proofer-ignore>Config Reference Full</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../reference-2-1/index.html#section=reference" data-proofer-ignore>Config Reference 2.1</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../api/v2/index.html#section=reference" data-proofer-ignore>API v2 Reference</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../api-intro/index.html#section=reference" data-proofer-ignore>API v2 Introduction</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../api-developers-guide/index.html#section=reference" data-proofer-ignore>API v2 Developer's Guide</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../../api/index.html#section=reference" data-proofer-ignore>API v1.1 Reference</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../circleci-images/index.html#section=reference" data-proofer-ignore>Prebuilt Images</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../glossary/index.html#section=reference" data-proofer-ignore>Glossary</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../help-and-support/index.html#section=reference" data-proofer-ignore>Help and Support</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../archive/index.html#section=reference" data-proofer-ignore>Archive of 1.0 Docs</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+						<ul>
+								<li class="main-nav-item closed" data-section="server-administration">
+										<div class="list-wrap">
+												
+												<img class="icon" src="../../assets/docs/admin-7d94f9ffd9f2c7ca50406002a5d607f40fd5da0e6164d533b26424e6ff962606.svg" integrity="sha256-fZT5/9nyx8pQQGACpdYH9A/V2g5hZNUzsmQk5v+WJgY=" crossorigin="anonymous">
+												
+
+            
+
+												
+												<span class="nav-span">Server Administration</span>
+												
+
+												
+												<img class="arrow" src="../../assets/docs/arrow-right-c48b1d1202a629fc0c39f8a044c029175a91c43fc4ba376e271c9dfa31e8fa6d.svg" integrity="sha256-xIsdEgKmKfwMOfigRMApF1qRxD/EujduJxyd+jHo+m0=" crossorigin="anonymous">
+												
+										</div>
+
+										
+										<ul class="subnav">
+												
+												
+            
+												<li class="nav-item"><a class="" href="../install-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.19.x Install</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../install-overview/index.html#section=server-administration" data-proofer-ignore>Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../v.2.19-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.19.x</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../updating-server/index.html#section=server-administration" data-proofer-ignore>Upgrade to v2.19.x</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../server-ports/index.html#section=server-administration" data-proofer-ignore>System Requirements</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../aws-prereq/index.html#section=server-administration" data-proofer-ignore>Prerequisites and Planning</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../aws/index.html#section=server-administration" data-proofer-ignore>Installation</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../aws-teardown/index.html#section=server-administration" data-proofer-ignore>Teardown</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../upgrading/index.html#section=server-administration" data-proofer-ignore>Upgrades from 1.0 to 2.0</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../single-box/index.html#section=server-administration" data-proofer-ignore>Trial Single-box Install</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../overview/index.html#section=server-administration" data-proofer-ignore>Server v2.19.x Operations</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../overview/index.html#section=server-administration" data-proofer-ignore>Overview</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../nomad/index.html#section=server-administration" data-proofer-ignore>Nomad</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../monitoring/index.html#section=server-administration" data-proofer-ignore>Monitoring</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../nomad-metrics/index.html#section=server-administration" data-proofer-ignore>Nomad Metrics</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../proxy/index.html#section=server-administration" data-proofer-ignore>Proxies</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../authentication/index.html#section=server-administration" data-proofer-ignore>Authentication</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../vm-service/index.html#section=server-administration" data-proofer-ignore>VM Service</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../gpu/index.html#section=server-administration" data-proofer-ignore>GPU Builders</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../certificates/index.html#section=server-administration" data-proofer-ignore>Certificates</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../user-accounts/index.html#section=server-administration" data-proofer-ignore>User Accounts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../build-artifacts/index.html#section=server-administration" data-proofer-ignore>Build Artifacts</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../usage-stats/index.html#section=server-administration" data-proofer-ignore>Usage statistics</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../jvm-heap-size-configuration/index.html#section=server-administration" data-proofer-ignore>JVM Heap Size</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../ops/index.html#section=server-administration" data-proofer-ignore>Maintenance</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../backup/index.html#section=server-administration" data-proofer-ignore>Backup and Recovery</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../security-server/index.html#section=server-administration" data-proofer-ignore>Security</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../troubleshooting/index.html#section=server-administration" data-proofer-ignore>Troubleshooting</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../admin-faq/index.html#section=server-administration" data-proofer-ignore>Faq</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../customizations/index.html#section=server-administration" data-proofer-ignore>Customization &amp; Config</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../architecture/index.html#section=server-administration" data-proofer-ignore>Architecture</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../open-source/index.html#section=server-administration" data-proofer-ignore>Acknowledgments</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../v.2.19-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.19 PDFs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../v.2.19-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.19</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../CircleCI-Server-AWS-Installation-Guide.pdf#section=server-administration" data-proofer-ignore>v2.19 Installation Guide</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../CircleCI-Server-Operations-Guide.pdf#section=server-administration" data-proofer-ignore>v2.19 Operations Guide</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../v.2.18-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.18 PDFs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../v.2.18-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.18</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../CircleCI-Server-AWS-Installation-Guide-v2-18-3.pdf#section=server-administration" data-proofer-ignore>v2.18.3 Installation Guide</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../CircleCI-Server-Operations-Guide-v2-18-3.pdf#section=server-administration" data-proofer-ignore>v2.18.3 Operations Guide</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../v.2.17-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.17.3 PDFs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../v.2.17-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.17</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../CircleCI-Server-AWS-Installation-Guide-v2-17.pdf#section=server-administration" data-proofer-ignore>v2.17.3 Installation Guide</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../CircleCI-Server-Operations-Guide-v2-17.pdf#section=server-administration" data-proofer-ignore>v2.17.3 Operations Guide</a></li>
+														
+												</ul>
+												
+												
+												
+            
+												<li class="nav-item"><a class="" href="../v.2.16-overview/index.html#section=server-administration" data-proofer-ignore>Server v2.16 PDFs</a></li>
+												
+
+												
+												<ul>
+														
+              
+														<li class="subnav-item"><a class="" href="../v.2.16-overview/index.html#section=server-administration" data-proofer-ignore>What's New in v2.16</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../circleci-install-doc.pdf#section=server-administration" data-proofer-ignore>v2.16 Installation Guide</a></li>
+														
+              
+														<li class="subnav-item"><a class="" href="../circleci-ops-guide.pdf#section=server-administration" data-proofer-ignore>v2.16 Operations Guide</a></li>
+														
+												</ul>
+												
+												
+										</ul>
+										
+								</li>
+						</ul>
+						
+    </div>
+    <div class="lang-picker">
+      <select id="sidebarLangSelect">
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+		</nav>
+
+  <script>
+    // Add the current language to the window for auto setting the dropdown to current language.
+    window.currentLang = "en"
+  </script>
+</div>
+
+		<div class="article-container docs" id="main">
+			
+			
+			
+			<article>
+				<h1 id="deployment-examples">Deployment Examples</h1>
+        
+				<p>This document presents example config for a variately of popular deployment targets. Many of the examples use orbs. CircleCI and partners have developed a catalogue of orbs that enable you to quickly deploy applications with minimal config. Details of all orbs can be found in the <a href="../../../orbs/registry/index.html">CircleCI Orbs Registry</a>.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#aws" id="markdown-toc-aws">AWS</a></li>
+  <li><a href="#azure-container-registry" id="markdown-toc-azure-container-registry">Azure Container Registry</a></li>
+  <li><a href="#capistrano" id="markdown-toc-capistrano">Capistrano</a></li>
+  <li><a href="#cloud-foundry" id="markdown-toc-cloud-foundry">Cloud Foundry</a></li>
+  <li><a href="#firebase" id="markdown-toc-firebase">Firebase</a></li>
+  <li><a href="#google-cloud-platform" id="markdown-toc-google-cloud-platform">Google Cloud Platform</a></li>
+  <li><a href="#heroku" id="markdown-toc-heroku">Heroku</a></li>
+  <li><a href="#npm" id="markdown-toc-npm">NPM</a></li>
+  <li><a href="#ssh" id="markdown-toc-ssh">SSH</a></li>
+</ul>
+
+<h4 class="no_toc" id="notes-on-examples">Notes on Examples</h4>
+
+<ul>
+  <li>In order to use orbs you must use <code class="highlighter-rouge">version 2.1</code> config, and enable pipelines for your project.</li>
+  <li>We have indicated where you need to specify a <a href="../optimizations/index.html#docker-image-choice">docker image for your job</a> with <code class="highlighter-rouge">&lt;docker-image-name-tag&gt;</code>.</li>
+  <li>If you wish to remain using <code class="highlighter-rouge">version 2.0</code> config, or are using a self-hosted installation of CircleCI Server, the examples shown here are still relevant because you can view the expanded orb source within the <a href="../../../orbs/registry/index.html">Orbs Registry</a> to see how the jobs are built.</li>
+  <li>In the examples on this page that use orbs, you will notice that the orbs are versioned with tags, for example, <code class="highlighter-rouge">aws-s3: circleci/aws-s3@x.y.z</code>. If you copy paste any examples you will need to edit <code class="highlighter-rouge">x.y.z</code> to specify a version. You can find the available versions listed on the individual orb pages in the <a href="../../../orbs/registry/index.html">CircleCI Orbs Registry</a>.</li>
+  <li>Any items in these examples that appear within <code class="highlighter-rouge">&lt; &gt;</code> should be replaced with your own parameters.</li>
+</ul>
+
+<h2 id="aws">AWS</h2>
+
+<p>This section covers deployment to S3, ECR/ECS (Elastic Container Registry/Elastic Container Service), as well as application deployment using AWS Code Deploy.</p>
+
+<p>For more detailed information about the AWS S3, ECS, ECR, and CodeDeploy orbs, refer to the following Orb registry pages:</p>
+<ul>
+  <li><a href="../../../orbs/registry/orb/circleci/aws-s3.html">AWS S3</a></li>
+  <li><a href="../../../orbs/registry/orb/circleci/aws-ecr.html">AWS ECR</a></li>
+  <li><a href="../../../orbs/registry/orb/circleci/aws-ecs.html">AWS ECS</a></li>
+  <li><a href="../../../orbs/registry/orb/circleci/aws-code-deploy.html">AWS CodeDeploy</a></li>
+</ul>
+
+<h3 class="no_toc" id="deploy-to-s3">Deploy to S3</h3>
+<h4 class="no_toc" id="using-the-aws-s3-orb">Using the AWS S3 Orb</h4>
+
+<p>For detailed information about the AWS S3 orb, refer to the <a href="../../../orbs/registry/orb/circleci/aws-s3.html">CircleCI AWS S3 Orb Reference</a> page. This section details the use of the AWS S3 orb and <code class="highlighter-rouge">version: 2.1</code> config for simple deployment, below we will look at the same example without orbs and using using <code class="highlighter-rouge">version: 2</code> config.</p>
+
+<ol>
+  <li>
+    <p>For security best practice, create a new <a href="https://aws.amazon.com/iam/details/manage-users/" target="_blank" rel="noopener noreferrer">IAM user</a> specifically for CircleCI.</p>
+  </li>
+  <li>
+    <p>Add your <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys" target="_blank" rel="noopener noreferrer">AWS access keys</a> to CircleCI – store your Access Key ID in a variable called <code class="highlighter-rouge">AWS_ACCESS_KEY_ID</code> and your Secret Access Key in a variable called <code class="highlighter-rouge">AWS_SECRET_ACCESS_KEY</code>. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+  </li>
+  <li>
+    <p>Use the orb’s <code class="highlighter-rouge">sync</code> command to deploy. Note the use of workflows to deploy only if the <code class="highlighter-rouge">build</code> job passes and the current branch is <code class="highlighter-rouge">master</code>.</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="na">version</span><span class="pi">:</span> <span class="s">2.1</span> 
+
+ <span class="na">orbs</span><span class="pi">:</span>
+   <span class="na">aws-s3</span><span class="pi">:</span> <span class="s">circleci/aws-s3@x.y.z</span> <span class="c1"># use the AWS S3 orb in your config</span>
+
+ <span class="na">workflows</span><span class="pi">:</span> <span class="c1"># Define a Workflow running the build job, then the deploy job</span>
+   <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+   <span class="na">build-deploy</span><span class="pi">:</span> <span class="c1"># Make a workflow to build and deploy your project</span>
+     <span class="na">jobs</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">build</span>
+       <span class="pi">-</span> <span class="na">deploy</span><span class="pi">:</span>
+           <span class="na">requires</span><span class="pi">:</span>
+             <span class="pi">-</span> <span class="s">build</span> <span class="c1"># Only run deploy job once the build job has completed</span>
+           <span class="na">filters</span><span class="pi">:</span>
+             <span class="na">branches</span><span class="pi">:</span>
+               <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># Only deploy when the commit is on the Master branch</span>
+
+ <span class="na">jobs</span><span class="pi">:</span> <span class="c1"># Define the build and deploy jobs</span>
+   <span class="na">build</span><span class="pi">:</span>
+     <span class="na">docker</span><span class="pi">:</span> <span class="c1"># Use the Docker executor for the build job</span>
+       <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;image-name-and-tag&gt;</span> <span class="c1"># Specify the Docker image to use for the build job</span>
+   <span class="s">...</span> <span class="c1"># build job steps omitted for brevity</span>
+   <span class="na">deploy</span><span class="pi">:</span>
+     <span class="na">docker</span><span class="pi">:</span> <span class="c1"># Use the Docker executor for the deploy job</span>
+       <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;image-name-and-tag&gt;</span>  <span class="c1"># Specify the Docker image to use for the deploy job</span>
+   <span class="na">steps</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">checkout</span>
+       <span class="pi">-</span> <span class="s">aws-s3/sync</span><span class="pi">:</span>
+           <span class="na">from</span><span class="pi">:</span> <span class="s">bucket</span>
+           <span class="na">to</span><span class="pi">:</span> <span class="s1">'</span><span class="s">s3://my-s3-bucket-name/prefix'</span>
+           <span class="na">arguments</span><span class="pi">:</span> <span class="pi">|</span> <span class="c1"># Optional arguments</span>
+             <span class="s">--acl public-read \</span>
+             <span class="s">--cache-control "max-age=86400"</span>
+           <span class="na">overwrite</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># default is false</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 class="no_toc" id="deploy-to-aws-s3-with-20-config">Deploy to AWS S3 with 2.0 Config</h4>
+
+<ol>
+  <li>
+    <p>For security best practice, create a new <a href="https://aws.amazon.com/iam/details/manage-users/" target="_blank" rel="noopener noreferrer">IAM user</a> specifically for CircleCI.</p>
+  </li>
+  <li>
+    <p>Add your <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys" target="_blank" rel="noopener noreferrer">AWS access keys</a> to CircleCI – store your Access Key ID in a variable called <code class="highlighter-rouge">AWS_ACCESS_KEY_ID</code> and your Secret Access Key in a variable called <code class="highlighter-rouge">AWS_SECRET_ACCESS_KEY</code>. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+  </li>
+  <li>
+    <p>In your <code class="highlighter-rouge">.circleci/config.yml</code> file, create a new <code class="highlighter-rouge">deploy</code> job. In the <code class="highlighter-rouge">deploy</code> job, add a step to install <code class="highlighter-rouge">awscli</code> in your primary container.</p>
+  </li>
+  <li>
+    <p>Install <code class="highlighter-rouge">awscli</code> in your primary container by following the <a href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html" target="_blank" rel="noopener noreferrer">AWS CLI documentation</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html" target="_blank" rel="noopener noreferrer">Use the AWS CLI</a> to deploy your application to S3 or perform other AWS operations. Note the use of workflows to deploy only if the build job passes and the current branch is <code class="highlighter-rouge">master</code>.</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+
+ <span class="na">workflows</span><span class="pi">:</span> <span class="c1"># Define a Workflow running the build job, then the deploy job</span>
+   <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+   <span class="na">build-deploy</span><span class="pi">:</span>
+     <span class="na">jobs</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">build</span>
+       <span class="pi">-</span> <span class="na">deploy</span><span class="pi">:</span>
+           <span class="na">requires</span><span class="pi">:</span>
+             <span class="pi">-</span> <span class="s">build</span>
+           <span class="na">filters</span><span class="pi">:</span>
+             <span class="na">branches</span><span class="pi">:</span>
+               <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># Only deploys when the commit is on the Master branch</span>
+
+ <span class="na">jobs</span><span class="pi">:</span>
+   <span class="na">build</span><span class="pi">:</span>
+     <span class="na">docker</span><span class="pi">:</span> <span class="c1"># Specify executor for running build job - this example uses a Docker container</span>
+       <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;docker-image-name-tag&gt;</span> <span class="c1"># Specify docker image to use</span>
+   <span class="s">...</span> <span class="c1"># build job steps omitted for brevity</span>
+   <span class="na">deploy</span><span class="pi">:</span>
+     <span class="na">docker</span><span class="pi">:</span> <span class="c1"># Specify executor for running deploy job</span>
+       <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;docker-image-name-tag&gt;</span> <span class="c1"># Specify docker image to use</span>
+     <span class="na">steps</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="c1"># Install the AWS CLI if it is not already included in the docker image</span>
+           <span class="na">name</span><span class="pi">:</span> <span class="s">Install awscli</span> 
+           <span class="na">command</span><span class="pi">:</span> <span class="s">sudo pip install awscli</span>
+       <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="c1"># Deploy to S3 using the sync command</span>
+           <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to S3</span>
+           <span class="na">command</span><span class="pi">:</span> <span class="s">aws s3 sync &lt;path/to/bucket&gt; &lt;s3://location/in/S3-to-deploy-to&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>For a complete list of AWS CLI commands and options, see the <a href="https://docs.aws.amazon.com/cli/latest/reference/" target="_blank" rel="noopener noreferrer">AWS CLI Command Reference</a>.</p>
+
+<h3 class="no_toc" id="deploy-docker-image-to-aws-ecr">Deploy Docker Image to AWS ECR</h3>
+<p>The AWS ECR orb enables you to log into AWS, build, and then push a Docker image to AWS Elastic Container Registry with minimal config. See the <a href="../../../orbs/registry/orb/circleci/aws-ecr.html">orb registry page</a> for a full list of parameters, jobs, commands and options.</p>
+
+<p>Using the <code class="highlighter-rouge">build-and-push-image</code> job, as shown below requires the following env vars to be set: <code class="highlighter-rouge">AWS_ECR_ACCOUNT_URL</code>, <code class="highlighter-rouge">ACCESS_KEY_ID</code>, <code class="highlighter-rouge">SECRET_ACCESS_KEY</code>, <code class="highlighter-rouge">AWS_REGION</code>. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2.1</span>
+
+<span class="na">orbs</span><span class="pi">:</span>
+  <span class="na">aws-ecr</span><span class="pi">:</span> <span class="s">circleci/aws-ecr@x.y.z</span> <span class="c1"># Use the AWS ECR orb in your config</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">build_and_push_image</span><span class="pi">:</span> 
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">aws-ecr/build-and-push-image</span><span class="pi">:</span> <span class="c1"># Use the pre-defined `build-and-push-image` job</span>
+          <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">&lt;my-Docker-file&gt;</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">&lt;path-to-my-Docker-file&gt;</span>
+          <span class="na">profile-name</span><span class="pi">:</span> <span class="s">&lt;my-profile-name&gt;</span>
+          <span class="na">repo</span><span class="pi">:</span> <span class="s">&lt;my-ECR-repo&gt;</span>
+          <span class="na">tag</span><span class="pi">:</span> <span class="s">&lt;my-ECR-repo-tag&gt;</span> <span class="c1"># default - latest</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="update-an-aws-ecs-instance">Update an AWS ECS Instance</h3>
+
+<p>Use the <a href="../../../orbs/registry/orb/circleci/aws-ecr.html">AWS ECR</a> and <a href="../../../orbs/registry/orb/circleci/aws-ecs.html">ECS</a> orbs to easily update an existing AWS ECS instance.</p>
+
+<p>Using the <code class="highlighter-rouge">build-and-push-image</code> job, as shown below requires the following env vars to be set: <code class="highlighter-rouge">AWS_ECR_ACCOUNT_URL</code>, <code class="highlighter-rouge">ACCESS_KEY_ID</code>, <code class="highlighter-rouge">SECRET_ACCESS_KEY</code>, <code class="highlighter-rouge">AWS_REGION</code>. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s">2.1</span> 
+
+<span class="na">orbs</span><span class="pi">:</span>
+  <span class="na">aws-ecr</span><span class="pi">:</span> <span class="s">circleci/aws-ecr@x.y.z</span> <span class="c1"># Use the AWS ECR orb in your config</span>
+  <span class="na">aws-ecs</span><span class="pi">:</span> <span class="s">circleci/aws-ecs@x.y.z</span> <span class="c1"># Use the AWS ECS orb in your config</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">build-and-deploy</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">aws-ecr/build-and-push-image</span><span class="pi">:</span>
+          <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">&lt;my-Docker-file&gt;</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s">&lt;path-to-my-Docker-file&gt;</span>
+          <span class="na">profile-name</span><span class="pi">:</span> <span class="s">&lt;my-profile-name&gt;</span>
+          <span class="na">repo</span><span class="pi">:</span> <span class="s">${MY_APP_PREFIX}</span>
+          <span class="na">tag</span><span class="pi">:</span> <span class="s1">'</span><span class="s">${CIRCLE_SHA1}'</span> 
+      <span class="pi">-</span> <span class="s">aws-ecs/deploy-service-update</span><span class="pi">:</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">aws-ecr/build-and-push-image</span> <span class="c1"># only run the deployment job once the build and push image job has completed</span>
+          <span class="na">family</span><span class="pi">:</span> <span class="s1">'</span><span class="s">${MY_APP_PREFIX}-service'</span>
+          <span class="na">cluster-name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">${MY_APP_PREFIX}-cluster'</span>
+          <span class="na">container-image-name-updates</span><span class="pi">:</span> <span class="s1">'</span><span class="s">container=${MY_APP_PREFIX}-service,tag=${CIRCLE_SHA1}'</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="aws-codedeploy">AWS CodeDeploy</h3>
+
+<p>The <a href="../../../orbs/registry/orb/circleci/aws-code-deploy.html">AWS CodeDeploy</a> orb enables you to run deployments through AWS CodeDeploy.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2.1</span> <span class="c1"># use 2.1 to make use of orbs and pipelines</span>
+
+<span class="na">orbs</span><span class="pi">:</span>
+  <span class="na">aws-code-deploy</span><span class="pi">:</span> <span class="s">circleci/aws-code-deploy@x.y.z</span> <span class="c1"># Use the AWS CodeDeploy orb in your config</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">deploy_application</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">aws-code-deploy/deploy</span><span class="pi">:</span>
+          <span class="na">application-name</span><span class="pi">:</span> <span class="s">&lt;my-application&gt;</span> <span class="c1"># The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</span>
+          <span class="na">deployment-group</span><span class="pi">:</span> <span class="s">&lt;my-deployment-group&gt;</span> <span class="c1"># The name of a new deployment group for the specified application.</span>
+          <span class="na">service-role-arn</span><span class="pi">:</span> <span class="s">&lt;my-deployment-group-role-ARN&gt;</span> <span class="c1"># The service role for a deployment group.</span>
+          <span class="na">bundle-bucket</span><span class="pi">:</span> <span class="s">&lt;my-application-S3-bucket&gt;</span> <span class="c1"># The s3 bucket where an application revision will be stored.</span>
+          <span class="na">bundle-key</span><span class="pi">:</span> <span class="s">&lt;my-S3-bucket-key&gt;</span> <span class="c1"># A key under the s3 bucket where an application revision will be stored.</span>
+</code></pre></div></div>
+
+<h2 id="azure-container-registry">Azure Container Registry</h2>
+
+<p>This section describes a simple deployment to the Azure container registry (ACR) using the CircleCI ACR orb and <code class="highlighter-rouge">version 2.1</code> configuration.</p>
+
+<p>For detailed information about the Azure ACR orb, including all options, refer to the <a href="../../../orbs/registry/orb/circleci/azure-acr.html">CircleCI ACR Orb Reference</a> page.</p>
+
+<ol>
+  <li>
+    <p>Whether your require a user or service principal login, you will need to provide environment variables for username, password and tennent to CircleCI. For user logins use env var names as follows: <code class="highlighter-rouge">AZURE_USERNAME</code>, <code class="highlighter-rouge">AZURE_PASSWORD</code> and <code class="highlighter-rouge">AZURE_TENANT</code>. For service principal logins use: <code class="highlighter-rouge">AZURE_SP</code>, <code class="highlighter-rouge">AZURE_SP_PASSWORD</code> and <code class="highlighter-rouge">AZURE_SP_TENANT</code>. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+  </li>
+  <li>
+    <p>Use the orb’s <code class="highlighter-rouge">build-and-push-image</code> job to build your image and deploy it to ACR. Note the use of workflows to deploy only if the current branch is <code class="highlighter-rouge">master</code>.</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="na">version</span><span class="pi">:</span> <span class="m">2.1</span> <span class="c1"># Use version 2.1 config to get access to orbs, pipelines</span>
+
+ <span class="na">orbs</span><span class="pi">:</span>
+   <span class="na">azure-acr</span><span class="pi">:</span> <span class="s">circleci/azure-acr@x.y.z</span> <span class="c1"># Use the Azure ACR orb in your config</span>
+
+ <span class="na">workflows</span><span class="pi">:</span> 
+   <span class="na">build-deploy</span><span class="pi">:</span>
+     <span class="na">jobs</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">azure/build-and-push-image</span><span class="pi">:</span>
+           <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">&lt;name-of-your-dockerfile&gt;</span> <span class="c1"># defaults to `Dockerfile`</span>
+           <span class="na">path</span><span class="pi">:</span> <span class="s">&lt;path-to-your-dockerfile&gt;</span> <span class="c1"># Defaults to working directory</span>
+           <span class="na">login-server-name</span><span class="pi">:</span> <span class="s">&lt;your-login-server-name&gt;</span> <span class="c1"># e.g. {yourregistryname}.azure.io</span>
+           <span class="na">registry-name</span><span class="pi">:</span> <span class="s">&lt;your-ACR-registry-name&gt;</span>
+           <span class="na">repo</span><span class="pi">:</span> <span class="s">&lt;URI-to-your-login-server-name&gt;</span>
+           <span class="na">filters</span><span class="pi">:</span>
+             <span class="na">branches</span><span class="pi">:</span>
+               <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># Only deploys when the commit is on the Master branch</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>If pushing to your repo is required, see the <a href="../gh-bb-integration/index.html">Adding Read/Write Deployment Keys to GitHub or Bitbucket</a> section of the GitHub and Bitbucket Integration document for instructions. Then, configure the Azure Web App to use your production branch.</p>
+
+<h2 id="capistrano">Capistrano</h2>
+
+<p>Once your project is set up to use Capistrano, you can run <a href="https://github.com/capistrano/capistrano/blob/master/README.md#command-line-usage" target="_blank" rel="noopener noreferrer">deployment commands</a> within your CircleCI job steps as required.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">build-deploy</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">build-job</span>
+      <span class="pi">-</span> <span class="na">deploy-job</span><span class="pi">:</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">build-job</span> <span class="c1"># Only run deploy job once build job has completed</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">branches</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># Only run deploy job when commit is on the master branch</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="c1">#  build and test jobs go here - not included for brevity</span>
+  <span class="na">deploy-job</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;docker-image-name-tag&gt;</span>
+    <span class="na">working_directory</span><span class="pi">:</span> <span class="s">~/repo</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">checkout</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Bundle Install</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">bundle check || bundle install</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy if tests pass and branch is Master</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">bundle exec cap production deploy</span>
+</code></pre></div></div>
+
+<h2 id="cloud-foundry">Cloud Foundry</h2>
+
+<p>CircleCI has developed a CloudFoundry Orb that you can use to simplify your configuration workflows. The Cloud Foundry page in the <a href="../../../orbs/registry/orb/circleci/cloudfoundry.html">Orbs Registry</a> contains several different examples of how you can perform tasks with CloudFoundry, including the example below that shows how you can build and run blue green deployment in a single job - in this example <code class="highlighter-rouge">domain</code> will automatically be prefixed with <code class="highlighter-rouge">dark</code> and <code class="highlighter-rouge">live</code> for two subdomains to be specified. Validation steps would also need to be provided to allow the live deployment to go ahead.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2.1</span>
+
+<span class="na">orbs</span><span class="pi">:</span>
+  <span class="na">cloudfoundry</span><span class="pi">:</span> <span class="s">circleci/cloudfoundry@x.y.z</span> <span class="c1"># Use the Cloud Foundry orb in your config</span>
+  
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">build_deploy</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">cloudfoundry/blue_green</span><span class="pi">:</span>
+          <span class="na">appname</span><span class="pi">:</span> <span class="s">&lt;your-app-name&gt;</span>
+          <span class="na">build_steps</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo 'your build steps'</span>
+            <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo 'you can have more, too'</span>
+            <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo 'or provide a workspace'</span>
+          <span class="na">context</span><span class="pi">:</span> <span class="s">your-context</span>
+          <span class="na">domain</span><span class="pi">:</span> <span class="s">your-domain</span>
+          <span class="na">manifest</span><span class="pi">:</span> <span class="no">null</span>
+          <span class="na">org</span><span class="pi">:</span> <span class="s">your-org</span>
+          <span class="na">package</span><span class="pi">:</span> <span class="no">null</span>
+          <span class="na">space</span><span class="pi">:</span> <span class="s">your-space</span>
+          <span class="na">validate_steps</span><span class="pi">:</span> 
+            <span class="c1"># Call any orbs or custom commands that validate the health of deployed application before letting Green deploy/reroute proceed.</span>
+            <span class="c1"># For example,  hitting a /health endpoint with curl and making sure the dark URL returns a 200.</span>
+</code></pre></div></div>
+
+<p>If you would like more detailed information about various CloudFoundry orb elements that you can use in your configuration workflows, refer to the <a href="../../../orbs/registry/orb/circleci/cloudfoundry.html">CloudFoundry Orb</a> page in the <a href="../../../orbs/registry/index.html">CircleCI Orbs Registry</a>.</p>
+
+<h3 class="no_toc" id="deploy-to-cloud-foundry-with-20-config">Deploy to Cloud Foundry with 2.0 Config</h3>
+
+<p>Cloud Foundry deployments require the Cloud Foundry CLI. Be sure to match the architecture to your Docker image (the commands below assume you are using a Debian-based image). This example pattern implements “Blue-Green” deployments using Cloud Foundry’s map-route/unmap-route commands, which is an optional feature above and beyond a basic <code class="highlighter-rouge">cf push</code>.</p>
+
+<h4 class="no_toc" id="install-the-cli">Install the CLI</h4>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Setup CF CLI</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s">curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&amp;source=github'</span>
+            <span class="s">sudo dpkg -i cf-cli_amd64.deb</span>
+            <span class="s">cf -v</span>
+            <span class="s">cf api https://api.run.pivotal.io  # alternately target your private Cloud Foundry deployment</span>
+            <span class="s">cf auth "$CF_USER" "$CF_PASSWORD"</span>
+            <span class="s">cf target -o "$CF_ORG" -s "$CF_SPACE"</span>
+</code></pre></div></div>
+
+<h4 class="no_toc" id="dark-deployment">Dark Deployment</h4>
+
+<p>This is the first step in a <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html" target="_blank" rel="noopener noreferrer">Blue-Green</a> deployment, pushing the application to non-production routes.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">CF Deploy</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s"># push artifacts on "dark" subdomain, and set environment variables before running `cf start`.</span>
+            <span class="s">cf push --no-start &lt;app-name-dark&gt; -f manifest.yml -p application.jar -n dark -d &lt;example.com&gt;</span>
+            <span class="s"># Pass CircleCI variables to Cloud Foundry (optional)</span>
+            <span class="s">cf set-env &lt;app-name-dark&gt; circle_build_num ${CIRCLE_BUILD_NUM}</span>
+            <span class="s">cf set-env &lt;app-name-dark&gt; circle_commit ${CIRCLE_SHA1}</span>
+            <span class="s">cf set-env &lt;app-name-dark&gt; circle_workflow_guid ${CIRCLE_WORKFLOW_ID}</span>
+            <span class="s">cf set-env &lt;app-name-dark&gt; circle_user ${CIRCLE_PROJECT_USERNAME}</span>
+            <span class="s">cf set-env &lt;app-name-dark&gt; circle_repo ${CIRCLE_PROJECT_REPONAME}</span>
+            <span class="s"># Start the application</span>
+            <span class="s">cf start &lt;app-name-dark&gt;</span>
+            <span class="s"># Ensure dark route is exclusive to dark app</span>
+            <span class="s">cf unmap-route &lt;app-name&gt; &lt;example.com&gt; -n dark || echo "Dark Route Already exclusive"</span>
+</code></pre></div></div>
+
+<h4 class="no_toc" id="live-deployment">Live Deployment</h4>
+
+<p>Until now, the previously pushed “app-name” has not changed.  The final step is to route the production URL to our dark application, stop traffic to the previous version, and rename the applications.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Re-route live Domain to latest</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+            <span class="s"># Send "real" url to new version</span>
+            <span class="s">cf map-route app-name-dark example.com -n www</span>
+            <span class="s"># Stop sending traffic to previous version</span>
+            <span class="s">cf unmap-route app-name example.com -n www</span>
+            <span class="s"># stop previous version</span>
+            <span class="s">cf stop app-name</span>
+            <span class="s"># delete previous version</span>
+            <span class="s">cf delete app-name -f</span>
+            <span class="s"># Switch name of "dark" version to claim correct name</span>
+            <span class="s">cf rename app-name-dark app-name</span>
+</code></pre></div></div>
+
+<h4 class="no_toc" id="manual-approval">Manual Approval</h4>
+
+<p>For additional control or validation, you can add a manual “hold” step between the dark and live steps as shown in the sample workflow below.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># only required if using `version: 2` config.</span>
+
+  <span class="na">build-deploy</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">test</span>
+      <span class="pi">-</span> <span class="na">dark-deploy</span><span class="pi">:</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">test</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">branches</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">master</span>
+      <span class="pi">-</span> <span class="na">hold</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">approval</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">dark-deploy</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">branches</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">master</span>
+      <span class="pi">-</span> <span class="na">live-deploy</span><span class="pi">:</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">hold</span> <span class="c1"># manual approval required via the CircleCI UI to run the live-deploy job</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">branches</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">master</span>
+</code></pre></div></div>
+
+<h2 id="firebase">Firebase</h2>
+
+<p>In order to deploy to Firebase you will need to add <code class="highlighter-rouge">firebase-tools</code> to your project’s devDependencies since attempting to install firebase-tools globally in CircleCI will not work.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save-dev firebase-tools
+</code></pre></div></div>
+
+<p>Generate a Firebase CLI token using the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebase login:ci
+</code></pre></div></div>
+
+<p>Add the generated token to the CircleCI project’s environment variables as <code class="highlighter-rouge">$FIREBASE_DEPLOY_TOKEN</code>. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+
+<p>The following example shows how you can add a deploy to Firebase job to your project’s <code class="highlighter-rouge">config.yml</code> file. This snippet assumes you already have a job to build your application, called <code class="highlighter-rouge">build-job</code>, and introduces a deployment workflow that only runs the deployment job once the build job has completed <strong>and</strong> you’re on the master branch.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="na">deploy-job</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;docker-image-name-tag&gt;</span>
+    <span class="na">working_directory</span><span class="pi">:</span> <span class="s">/tmp/my-project</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy Master to Firebase</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="s">./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">build-job</span>
+      <span class="pi">-</span> <span class="na">deploy-job</span><span class="pi">:</span>
+          <span class="na">requires</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">build-job</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">branches</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">master</span>
+
+</code></pre></div></div>
+
+<p>If using Google Cloud Functions with Firebase, instruct CircleCI to navigate to the folder where the Google Cloud Functions are held (in this case ‘functions’) and run <code class="highlighter-rouge">npm install</code> by adding the below to <code class="highlighter-rouge">config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">cd functions &amp;&amp; npm install</span>
+</code></pre></div></div>
+
+<h2 id="google-cloud-platform">Google Cloud Platform</h2>
+
+<p>Before deploying to Google Cloud Platform, you will need to authorize the Google Cloud SDK and set default configuration settings. Refer to the <a href="../google-auth/index.html">Authorizing the Google Cloud SDK</a> document for full details.</p>
+
+<h3 class="no_toc" id="using-google-cloud-orbs">Using Google Cloud Orbs</h3>
+
+<p>There are several Google Cloud orbs available in the <a href="../../../orbs/registry/index.html">CircleCI Orbs Registry</a> that you can use to simplify your deployments. For example, the <a href="../../../orbs/registry/orb/circleci/gcp-gke.html#usage-publish-and-rollout-image">Google Kubernetes Engine (GKE) orb</a> has a pre-built job to build and publish a Docker image, and roll the image out to a GKE cluster, as follows:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2.1</span>
+
+<span class="na">orbs</span><span class="pi">:</span>
+  <span class="na">gke</span><span class="pi">:</span> <span class="s">circleci/gcp-gke@x.y.z</span> <span class="c1"># Use the GCP GKE orb in your config</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">main</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">gke/publish-and-rollout-image</span><span class="pi">:</span>
+          <span class="na">cluster</span><span class="pi">:</span> <span class="s">&lt;your-GKE-cluster&gt;</span> <span class="c1"># name of GKE cluster to be created</span>
+          <span class="na">container</span><span class="pi">:</span> <span class="s">&lt;your-K8-container-name&gt;</span> <span class="c1"># name of your Kubernetes container</span>
+          <span class="na">deployment</span><span class="pi">:</span> <span class="s">&lt;your-K8-deployment-name&gt;</span> <span class="c1"># name of your Kubernetes deployment</span>
+          <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;your-image&gt;</span> <span class="c1"># name of your Docker image</span>
+          <span class="na">tag</span><span class="pi">:</span> <span class="s">$CIRCLE_SHA1</span> <span class="c1"># Docker image tag - optional</span>
+</code></pre></div></div>
+
+<h3 class="no_toc" id="deployment-to-gke-with-20-config">Deployment to GKE with 2.0 Config</h3>
+
+<p>In the following example, if the <code class="highlighter-rouge">build-job</code> passes and the current branch is <code class="highlighter-rouge">master</code>, CircleCI runs the deployment job.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: 2
+
+jobs:
+  # build job ommitted for brevity
+  deploy-job:
+    docker:
+      - image: &lt;docker-image-name-tag&gt;
+    working_directory: /tmp/my-project  
+    steps:
+      - run:
+          name: Deploy Master to GKE
+          command: |
+          # Push Docker image to registry, update K8s deployment to use new image - `gcloud` command handles authentication and push all at once
+          sudo /opt/google-cloud-sdk/bin/gcloud docker push us.gcr.io/${PROJECT_NAME}/hello 
+          # The new image is now available in GCR for the GCP infrastructure to access, next, change permissions:
+          sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
+          # Use `kubectl` to find the line that specifies the image to use for our container, replace with image tag of the new image. 
+          # The K8s deployment intelligently upgrades the cluster by shutting down old containers and starting up-to-date ones.
+          kubectl patch deployment docker-hello-google -p '{"spec":{"template":{"spec":{"containers":[{"name":"docker-hello-google","image":"us.gcr.io/circle-ctl-test/hello:'"$CIRCLE_SHA1"'"}]}}}}'
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-job 
+      - deploy-job:
+          requires:
+            - build-job # Only deploy once the build job has completed
+          filters:
+            branches:
+              only: master # Only deploy on the master branch
+
+</code></pre></div></div>
+
+<p>For another example, see our <a href="https://github.com/CircleCI-Public/circleci-demo-k8s-gcp-hello-app" target="_blank" rel="noopener noreferrer">CircleCI Google Cloud deployment example project</a>.</p>
+
+<h2 id="heroku">Heroku</h2>
+
+<p><a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku</a> is a popular platform for hosting applications in the cloud. To configure CircleCI
+to deploy your application to Heroku, follow the steps below.</p>
+
+<h3 class="no_toc" id="deploy-with-the-heroku-orb">Deploy with the Heroku Orb</h3>
+<ol>
+  <li>
+    <p>Create a Heroku account and follow the <a href="https://devcenter.heroku.com/start" target="_blank" rel="noopener noreferrer">Getting Started on Heroku</a> documentation
+to set up a project in your chosen language.</p>
+  </li>
+  <li>
+    <p>Add the name of your Heroku application and your Heroku API key as environment variables as <code class="highlighter-rouge">HEROKU_APP_NAME</code> and <code class="highlighter-rouge">HEROKU_API_KEY</code>, respectively. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+  </li>
+  <li>
+    <p>Use the <a href="../../../orbs/registry/orb/circleci/heroku.html">Heroku orb</a> to keep your config simple. The <code class="highlighter-rouge">deploy-via-git</code> installs the Heroku CLI in the primary container, runs any pre deployment steps you define, deploys your application, then runs any post-deployment steps you define. See the Heroku orb page in the <a href="../../../orbs/registry/orb/circleci/heroku.html">orbs registry</a> for full details of parameters and options:</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="na">version</span><span class="pi">:</span> <span class="m">2.1</span>
+
+ <span class="na">orbs</span><span class="pi">:</span>
+   <span class="na">heroku</span><span class="pi">:</span> <span class="s">circleci/heroku@x.y</span> <span class="c1"># Use the Heroku orb in your config</span>
+
+ <span class="na">workflows</span><span class="pi">:</span>
+   <span class="na">heroku_deploy</span><span class="pi">:</span>
+     <span class="na">jobs</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">build</span>
+       <span class="pi">-</span> <span class="s">heroku/deploy-via-git</span><span class="pi">:</span>
+           <span class="na">requires</span><span class="pi">:</span>
+             <span class="pi">-</span> <span class="s">build</span> <span class="c1"># only run deploy-via-git job if the build job has completed</span>
+           <span class="na">filters</span><span class="pi">:</span>
+             <span class="na">branches</span><span class="pi">:</span>
+               <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># only run deploy-via-git job on master branch</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>For more detailed information about these Heroku orbs, refer to the <a href="../../../orbs/registry/orb/circleci/heroku.html">CircleCI Heroku Orb</a>.</p>
+
+<h3 class="no_toc" id="heroku-deployment-with-20-config">Heroku Deployment with 2.0 Config</h3>
+
+<ol>
+  <li>
+    <p>Create a Heroku account and follow the <a href="https://devcenter.heroku.com/start" target="_blank" rel="noopener noreferrer">Getting Started on Heroku</a> documentation
+to set up a project in your chosen language.</p>
+  </li>
+  <li>
+    <p>Add the name of your Heroku application and your Heroku API key as environment variables as <code class="highlighter-rouge">HEROKU_APP_NAME</code> and <code class="highlighter-rouge">HEROKU_API_KEY</code>, respectively. To take advantage of <a href="../contexts/index.html#secrets-masking">secrets masking</a>, it is best practice to set environment variables at the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">project level</a> or within a <a href="../env-vars/index.html#setting-an-environment-variable-in-a-context">context</a>.</p>
+  </li>
+  <li>
+    <p>In your <code class="highlighter-rouge">.circleci/config.yml</code>, create a deployment job and add an <a href="../executor-types/index.html">executor type</a>.</p>
+  </li>
+  <li>
+    <p>Add steps to your deployment job to checkout and deploy your code. You can specify which branch you would like to deploy, in this example we specify the master branch and deploy using a <code class="highlighter-rouge">git push</code> command.</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+
+ <span class="na">jobs</span><span class="pi">:</span>
+   <span class="na">build</span><span class="pi">:</span>
+     <span class="s">...</span>
+   <span class="na">deploy</span><span class="pi">:</span>
+     <span class="na">docker</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;docker-image-name-tag&gt;</span>
+     <span class="na">steps</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">checkout</span>
+       <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+           <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy Master to Heroku</span>
+           <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+             <span class="s">git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master</span>
+
+ <span class="na">workflows</span><span class="pi">:</span>
+   <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+   <span class="na">build-deploy</span><span class="pi">:</span>
+     <span class="na">jobs</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">build</span>
+       <span class="pi">-</span> <span class="na">deploy</span><span class="pi">:</span>
+           <span class="na">requires</span><span class="pi">:</span>
+             <span class="pi">-</span> <span class="s">build</span> <span class="c1"># only run deploy-via-git job if the build job has completed</span>
+           <span class="na">filters</span><span class="pi">:</span>
+             <span class="na">branches</span><span class="pi">:</span>
+               <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># only run deploy-via-git job on master branch</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> Heroku provides the option “Wait for CI to pass before deploy” under deploy / automatic deploys. See the <a href="https://devcenter.heroku.com/articles/github-integration#automatic-deploys" target="_blank" rel="noopener noreferrer">Heroku documentation</a> for details.</p>
+
+<h2 id="npm">NPM</h2>
+
+<p>Setting up CircleCI to publish packages to the npm registry makes it easy for project collaborators to release new package versions in a consistent and predictable way.</p>
+
+<ol>
+  <li>
+    <p>Obtain the npm authToken for the account that you wish to use to publish the package.</p>
+
+    <p>You can do that by logging in to npm (<code class="highlighter-rouge">npm login</code>). This will save the authToken to the <code class="highlighter-rouge">~/.npmrc</code> file. Look for the following line:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>//registry.npmjs.org/:_authToken<span class="o">=</span>00000000-0000-0000-0000-000000000000
+</code></pre></div>    </div>
+
+    <p>In this case, the authToken is <code class="highlighter-rouge">00000000-0000-0000-0000-000000000000</code>.</p>
+  </li>
+  <li>
+    <p>Go to your <a href="../../1.0/environment-variables/index.html#setting-environment-variables-for-all-commands-without-adding-them-to-git">project settings</a>, and set the <code class="highlighter-rouge">NPM_TOKEN</code> variable to the obtained authToken.</p>
+  </li>
+  <li>
+    <p>Configure CircleCI to add the authToken to <code class="highlighter-rouge">~/.npmrc</code>, run <code class="highlighter-rouge">npm publish</code> and only for versioned tags:</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">publish</span><span class="pi">:</span>
+    <span class="na">docker</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">image</span><span class="pi">:</span> <span class="s">&lt;docker-image-name-tag&gt;</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">checkout</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">Publish to NPM</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span> 
+            <span class="s">npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN</span>
+            <span class="s">npm publish</span>
+
+<span class="na">workflows</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">tagged-build</span><span class="pi">:</span>
+    <span class="na">jobs</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">publish</span><span class="pi">:</span>
+          <span class="na">filters</span><span class="pi">:</span>
+            <span class="na">tags</span><span class="pi">:</span>
+              <span class="na">only</span><span class="pi">:</span> <span class="s">/v[0-9]+(\.[0-9]+)*/</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>When you want to publish a new version to npm, run <code class="highlighter-rouge">npm version</code> to create a new version:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>npm version 10.0.1
+</code></pre></div>    </div>
+
+    <p>This will update the <code class="highlighter-rouge">package.json</code> file and creates a tagged Git commit. Next, push the commit with tags:</p>
+
+    <div class="language-sh highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>git push <span class="nt">--follow-tags</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If tests passed, CircleCI will publish the package to npm automatically.</p>
+  </li>
+</ol>
+
+<h2 id="ssh">SSH</h2>
+
+<p>To configure CircleCI to deploy your application over SSH, follow the steps below.</p>
+
+<ol>
+  <li>
+    <p>Add the SSH key for the server to which you’re deploying. For instructions, see the <a href="../add-ssh-key/index.html">Adding an SSH Key to CircleCI</a> document.</p>
+  </li>
+  <li>
+    <p>Add the SSH username and SSH hostname of your build VM as environment variables. For instructions, see the <a href="../env-vars/index.html#setting-an-environment-variable-in-a-project">Adding Project Environment Variables</a> document. In this example, these variables are defined as <code class="highlighter-rouge">SSH_USER</code> and <code class="highlighter-rouge">SSH_HOST</code>, respectively.</p>
+  </li>
+  <li>
+    <p>In your <code class="highlighter-rouge">.circleci/config.yml</code>, create a <code class="highlighter-rouge">deploy</code> job and add a command to deploy the master branch.</p>
+
+    <div class="language-yaml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+
+ <span class="na">jobs</span><span class="pi">:</span>
+   <span class="na">build</span><span class="pi">:</span>
+     <span class="c1">#...</span>
+   <span class="na">deploy</span><span class="pi">:</span>
+     <span class="na">machine</span><span class="pi">:</span>
+       <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+     <span class="na">steps</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+           <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy Over SSH</span>
+           <span class="na">command</span><span class="pi">:</span> <span class="pi">|</span>
+             <span class="s">ssh $SSH_USER@$SSH_HOST "&lt;remote deploy command&gt;"</span>
+
+ <span class="na">workflows</span><span class="pi">:</span>
+   <span class="na">version</span><span class="pi">:</span> <span class="m">2</span>
+   <span class="na">build-and-deploy</span><span class="pi">:</span>
+     <span class="na">jobs</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="s">build</span>
+       <span class="pi">-</span> <span class="na">deploy</span><span class="pi">:</span>
+           <span class="na">requires</span><span class="pi">:</span>
+             <span class="pi">-</span> <span class="s">build</span> <span class="c1"># only deploy once build job has completed</span>
+           <span class="na">filters</span><span class="pi">:</span>
+             <span class="na">branches</span><span class="pi">:</span>
+               <span class="na">only</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># only deploy on the master branch</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+				
+					<footer>
+	<br>
+<hr>
+<h3>Help make this document better</h3>
+<p>This guide, as well as the rest of our docs, are open-source and available on <a href="https://github.com/circleci/circleci-docs" target="_blank" rel="noopener noreferrer">GitHub</a>. We welcome your contributions.
+</p>
+<ul>
+	<li>
+<a href="https://github.com/circleci/circleci-docs/blob/master/jekyll/_cci2/deployment-examples.md" target="_blank" rel="noopener noreferrer">Suggest an edit to this page</a> (please read the <a href="https://github.com/circleci/circleci-docs/blob/master/docs/CONTRIBUTING.md#contributing-to-circleci-docs" target="_blank" rel="noopener noreferrer">contributing guide</a> first).</li>
+	<li>
+        To report a problem in the documentation, or to submit feedback and comments, please
+        <a href="https://github.com/circleci/circleci-docs/issues/new/choose" target="_blank" rel="noopener noreferrer">open an issue on GitHub.</a>
+    </li>
+</ul>
+<hr>
+
+	<div class="license-notice">
+	<a rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="../../../../licensebuttons.net/l/by-nc-sa/4.0/80x15.png"></a><br><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">CircleCI Documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="../../index.html" property="cc:attributionName" rel="cc:attributionURL">CircleCI</a> is licensed under a <a rel="noopener noreferrer" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+</div>
+
+</footer>
+
+				
+			</article>
+		</div>
+<!-- .article-container -->
+	</div>
+<!-- .main-body -->
+	<footer class="footer" data-analytics="clicked-footer" data-analytics-parent>
+  <div class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Product</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../product/index.html" data-analytics-child='{ "menu": "product" }'>Overview</a></li>
+            <li><a href="../../../pricing/index.html" data-analytics-child='{ "menu": "pricing" }'>Pricing</a></li>
+            <li><a href="../../../integrations/index.html" data-analytics-child='{ "menu": "integrations" }'>Integrations</a></li>
+            <li><a href="../../../open-source/index.html" data-analytics-child='{ "menu": "open-source" }'>Open Source</a></li>
+            <li><a href="../../../enterprise/index.html" data-analytics-child='{ "menu": "enterprise" }'>Enterprise</a></li>
+            <li><a href="../../../changelog/index.html" data-analytics-child='{ "menu": "changelog" }'>Changelog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="https://academy.circleci.com/?access_code=public-2020" data-analytics-child='{ "menu": "training" }' target="_blank" rel="noopener noreferrer">Training</a></li>
+            <li><a href="https://support.circleci.com/hc/en-us" data-analytics-child='{ "menu": "get-support" }' target="_blank" rel="noopener noreferrer">Get Support</a></li>
+            <li><a href="https://discuss.circleci.com/" data-analytics-child='{ "menu": "community-forum" }' target="_blank" rel="noopener noreferrer">Community Forum</a></li>
+            <li><a href="https://status.circleci.com/" data-analytics-child='{ "menu": "system-status" }' target="_blank" rel="noopener noreferrer">System Status</a></li>
+            <li><a href="https://ideas.circleci.com/" data-analytics-child='{ "menu": "feature-requests" }' target="_blank" rel="noopener noreferrer">Feature Requests</a></li>
+            <li><a href="../../../support/premium-support/index.html" data-analytics-child='{ "menu": "premium-support" }'>Premium Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../blog/index.html" data-analytics-child='{ "menu": "blog" }'>Blog</a></li>
+            <li><a href="../../../customers/index.html" data-analytics-child='{ "menu": "case-studies" }'>Case Studies</a></li>
+            <li><a href="../../../resources/index.html#white-papers" data-analytics-child='{ "menu": "white-papers" }'>White Papers</a></li>
+            <li><a href="../../../resources/events/index.html" data-analytics-child='{ "menu": "events" }'>Events</a></li>
+            <li><a href="../../../resources/index.html#webinars" data-analytics-child='{ "menu": "webinars" }'>Webinars</a></li>
+            <li><a href="../../../resources/index.html#videos" data-analytics-child='{ "menu": "videos" }'>Videos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Company</h6>
+          <ul class="list-unstyled">
+            <li><a href="../../../about/index.html" data-analytics-child='{ "menu": "about-us" }'>About Us</a></li>
+            <li><a href="../../../careers/index.html" data-analytics-child='{ "menu": "careers" }'>Careers <span class="text-blue">(We're hiring!)</span></a></li>
+            <li><a href="../../../about/team/index.html" data-analytics-child='{ "menu": "team" }'>Team</a></li>
+            <li><a href="../../../contact/index.html" data-analytics-child='{ "menu": "contact-us" }'>Contact Us</a></li>
+            <li><a href="../../../partners/index.html" data-analytics-child='{ "menu": "partner-with-us" }'>Partner With Us</a></li>
+            <li><a href="../../../newsroom/index.html" data-analytics-child='{ "menu": "newsroom" }'>Newsroom</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <h6>Getting Started</h6>
+          <ul>
+            <li><a href="../../../continuous-integration/index.html" data-analytics-child='{ "menu": "what-is-ci" }'>What is CI?</a></li>
+            <li><a href="../index.html" data-analytics-child='{ "menu": "how-to-get-started" }'>How to get started on CircleCI</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row margin-top-medium">
+      <div class="col-md-2 col-xs-4">
+        <img src="../../assets/img/logos/logo-wordmark.svg" class="logo-small margin-top-small" alt="circleci">
+      </div>
+      <div class="col-md-4 col-md-offset-6 col-xs-offset-0 col-xs-8">
+        <div class="text-center-small-float-right">
+          <div class="social-container row">
+  <div class="social-btns col-xs-12">
+    <a href="../../../blog/feed.xml" class="social-btn-rss" title="RSS">
+      <i class="fa fa-rss" aria-hidden="true"></i><span class="sr-only">RSS</span>
+    </a>
+    <a href="https://www.facebook.com/circleci" target="_blank" class="social-btn-facebook" title="Facebook" rel="noopener noreferrer">
+      <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+    </a>
+    <a href="https://twitter.com/circleci" target="_blank" class="social-btn-twitter" title="Twitter" rel="noopener noreferrer">
+      <i class="fa fa-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span>
+    </a>
+    <a href="https://github.com/circleci" target="_blank" class="social-btn-github" title="GitHub" rel="noopener noreferrer">
+      <i class="fa fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/company/circleci" target="_blank" class="social-btn-linkedin" title="LinkedIn" rel="noopener noreferrer">
+      <i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+    </a>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="margin-top-small text-center-small-float-left">
+          <nav>
+            <ul class="horizontal blue">
+              <li><a href="../../../terms-of-service/index.html" data-analytics-child='{ "menu": "terms-of-service" }'>Terms of Service</a></li>
+              <li><a href="../../../privacy/index.html" data-analytics-child='{ "menu": "privacy-policy" }'>Privacy Policy</a></li>
+              <li><a href="../../../legal/cookie-policy/index.html" data-analytics-child='{ "menu": "cookie-policy" }'>Cookie Policy</a></li>
+              <li><a href="../../../security/index.html" data-analytics-child='{ "menu": "security" }'>Security</a></li>
+              <li class="language-select">
+                <div id="dropUp" class="dropup show">
+                  <a class="dropdown-toggle" role="button" id="footerLangSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../../assets/img/docs/ic-globe.svg" alt="globe" width="20"><span id="footerLangCurrentSelect"> English (US)</span><i class="fa fa-angle-up"></i></a>
+                  <div id="footerLangOptions" class="dropdown-menu hidden" aria-labelledby="footerLangSelect">
+                    <a class="dropdown-item active" href="../../../index.html">English (US)</a>
+                    <a class="dropdown-item" href="https://circleci.jp/" data-analytics-child='{ "menu": "japan" }' target="_blank" rel="noopener noreferrer">日本語</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="margin-top-small text-center-small-float-right">
+          <span>Copyright © 2020 Circle Internet Services, Inc., All Rights Reserved.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+	<script type="text/javascript">
+  window.circleJsConfig = {
+    algolia: {
+      appId:     "U0RXNGRK45",
+      apiKey:    "dd49f5b81d238d474b49645a4daed322",
+      indexName: "documentation"
+    },
+    page: {
+      lang: "en"
+    }
+  }
+</script>
+
+	<script src="../../assets/vendor.min-46c6ef6945f9a0cdfc67de4e703b0455bdce1dd542a20929856bc7780cec5eea.js" type="text/javascript" integrity="sha256-RsbvaUX5oM38Z95OcDsEVb3OHdVCogkphWvHeAzsXuo=" crossorigin="anonymous"></script>
+  <script>
+   var _rollbarConfig = {
+     accessToken: 'a22956bf457a40e5a9ae6fd842d97392',
+     captureUncaught: true,
+     captureUnhandledRejections: true,
+     payload: { environment: "production" }
+   };
+   // Rollbar Snippet
+   !function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.4.6/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,e){this.options=r,this._rollbarOldOnError=null;var o=s++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}function a(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(e);return n(function(){e.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),e.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=e.autoInstrument;return e.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[o]=t,t})()}}function l(r){return n(function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=o(2),s=0,d=o(3),c=function(r,e){return new t(r,e)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,e,o,t,a){var l=function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(e);break}}"function"==typeof a&&a(e)},i=!1,s=e.createElement("script"),d=e.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,o||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,e){"use strict";function o(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),e.handleUncaughtException.apply(e,n),o&&o.apply(r,n)}function t(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){t="[unhandledrejection] error getting `detail` from event"}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,e,o){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(e,r[t].prototype,o)}}function l(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:o,captureUnhandledRejections:t,wrapGlobals:a}},function(r,e){"use strict";function o(r,e){this.impl=r(e,this),this.options=e,n(o.prototype)}function n(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}o.prototype._swapAndProcessMessages=function(r,e){this.impl=r(this.options);for(var o,n,t;o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){r=r||{};for(var o,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+   // End Rollbar Snippet
+  </script>
+	<script src="../../assets/app.bundle-39c4c8373f23380ce468959b35450ba78495190930364bdd1fb5cc8266c1c25c.js" type="text/javascript" integrity="sha256-OcTINz8jOAzkaJWbNUULp4SVGQkwNkvdH7XMgmbBwlw=" crossorigin="anonymous"></script>
+	<script src="../../assets/site.min-5dca5826d2887861d12454f756244af66e3929e7662ff356e2104f89ad1df744.js" type="text/javascript" integrity="sha256-XcpYJtKIeGHRJFT3ViRK9m45KedmL/NW4hBPia0d90Q=" crossorigin="anonymous"></script>
+	<script src="../../assets/jquery.cookie.min-3253943aafe4028f7cb10dc6c158ce36221a7cda383b2edd26ab0b0fbf1a3d0c.js" type="text/javascript" integrity="sha256-MlOUOq/kAo98sQ3GwVjONiIafNo4Oy7dJqsLD78aPQw=" crossorigin="anonymous"></script>
+	<script src="../../assets/main-bb96e0cbdf3fdb37536858886e31ada7c5b8fa23791db0263287c65816a3ca53.js" type="text/javascript" integrity="sha256-u5bgy98/2zdTaFiIbjGtp8W4+iN5HbAmMofGWBajylM=" crossorigin="anonymous"></script>
+	<script src="../../assets/nav-3f9f94d0fb345df7fb7e1e6c742cb13febe8ade5de6e915e3ef6a9c1101794f8.js" type="text/javascript" integrity="sha256-P5+U0Ps0Xff7fh5sdCyxP+voreXebpFePvapwRAXlPg=" crossorigin="anonymous"></script>
+	<script src="../../assets/shared/analytics-recursive-tracking-4d73c7a12ba7386ca1f5e9166378dcb9ccfd0733111c1e78c0d7b66874bab7c5.js" type="text/javascript" integrity="sha256-TXPHoSunOGyh9ekWY3jcucz9BzMRHB54wNe2aHS6t8U=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../../../../cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+</div><!-- .outter -->
+</body>
+
+<!-- Mirrored from circleci.com/docs/2.0/deployment-examples/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 08:07:58 GMT -->
+</html>
