@@ -1,1 +1,0 @@
-self.__BUILD_MANIFEST = (function(a,b){return {"/_error":[a,b],"/orbs/registry":[a,b],"/orbs/registry/orb":["static\u002Fchunks\u002F9f96d65d.1337245caf768c94bbd9.js",a,b]}}("static\u002Fcss\u002Fstyles.e5716bd6.chunk.css","static\u002Fchunks\u002Fstyles.44f31c7f093eedc87e5e.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
