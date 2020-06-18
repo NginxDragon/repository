@@ -581,8 +581,8 @@
                         class="subnav-item"
                         data-analytics="top-nav-product-build-environments"
                       >
-                        <a href="build-environments/index.html"
-                          >Build Environments</a
+                        <a href="#"
+                          >Promo Cashback</a
                         >
                       </li>
                       <li
@@ -619,7 +619,7 @@
 
                 <li class="nav-item">
                   <a href="#">
-                    Developers
+                    Document
                   </a>
                   <div class="submenu">
                     <ul class="subnav">
@@ -627,8 +627,8 @@
                         class="subnav-item"
                         data-analytics="top-nav-developer-hello-world"
                       >
-                        <a href="docs/2.0/hello-world/index.html"
-                          >Hello World</a
+                        <a href="http://172.24.59.48/support/docs/pdf/musicool/"
+                          >Promo Musicool</a
                         >
                       </li>
                       <li
