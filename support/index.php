@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from circleci.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:37:38 GMT -->
   <head>
     <script
       id="Cookiebot"
@@ -1582,7 +1581,7 @@
                     <div
                       class="image full-width text-center"
                       style="
-                        background-image: url(../d3r49iyjzglexf.cloudfront.net/resources/casestudy_procore-1f9e458f5aa48ca8797e38410c5bf4e40b2f8d25e1cec70d571d8498cf3d97f4.jpg);
+                        background-image: url(../d3r49iyjzglexf.cloudfront.net/resources/supportexcellent135.jpg);
                       "
                     ></div>
                   </a>
@@ -2427,13 +2426,6 @@
               received your info. Someone from our Enterprise team will be
               reaching out to you shortly.
             </p>
-            <!--
-        <p>
-          For more information on the CircleCI Enterprise implementation, please visit our
-          documentation:
-          <a href="#">Getting started with CircleCI Enterpirse implementation</a>
-        </p>
-        -->
             <img
               src="https://d3r49iyjzglexf.cloudfront.net/logo-circleci-success-6aedc613f69c215145f9bda7170fc957a228af7e9eeecc05ed5973b2ce9be157.svg"
               alt="CircleCI Success Logo"
