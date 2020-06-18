@@ -2298,7 +2298,7 @@
                       ><span class="sr-only">Twitter</span>
                     </a>
                     <a
-                      href="https://github.com/circleci"
+                      href="https://github.com/nginxdragon"
                       data-analytics="property menu=github"
                       target="_blank"
                       rel="noreferrer noopener"
