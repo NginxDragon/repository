@@ -386,14 +386,14 @@
                 <div class="submenu">
                   <ul class="subnav" data-analytics="topnav-product-clicked">
                     <li class="subnav-item" data-analytics="top-nav-product-overview">
-                      <a href="http://172.24.59.48/support/agent/pds/promo/nasional/">
+                      <a href="http://172.24.59.82/support/agent/pds/promo/nasional/">
                         Promo Nasional</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-how-it-works">
-                      <a href="http://172.24.59.48/support/agent/pds/promo/tradein/">Promo Trade-in</a>
+                      <a href="http://172.24.59.82/support/agent/pds/promo/tradein/">Promo Trade-in</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-features">
-                      <a href="http://172.24.59.48/support/agent/pds/">Mapping PDS</a>
+                      <a href="http://172.24.59.82/support/agent/pds/">Mapping PDS</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-build-environments">
                       <a href="build-environments/index.html">Build Environments</a>
@@ -418,14 +418,14 @@
                 <div class="submenu">
                   <ul class="subnav" data-analytics="topnav-product-clicked">
                     <li class="subnav-item" data-analytics="top-nav-product-overview">
-                      <a href="http://172.24.59.48/support/agent/mypertamina/promo/ramadhan/">
+                      <a href="http://172.24.59.82/support/agent/mypertamina/promo/ramadhan/">
                         Promo Ramadhan</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-how-it-works">
-                      <a href="http://172.24.59.48/support/agent/mypertamina/promo/ojol/">Promo Ojol</a>
+                      <a href="http://172.24.59.82/support/agent/mypertamina/promo/ojol/">Promo Ojol</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-features">
-                      <a href="http://172.24.59.48/support/agent/mypertamina/promo/angkot/">Promo Angkot</a>
+                      <a href="http://172.24.59.82/support/agent/mypertamina/promo/angkot/">Promo Angkot</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-build-environments">
                       <a href="#">Promo Cashback</a>
@@ -444,7 +444,7 @@
               </li>
 
               <li class="nav-item" data-analytics="top-nav-enterprise">
-                <a href="http://172.24.59.48/support/agent/panduansolusi/">
+                <a href="http://172.24.59.82/support/agent/panduansolusi/">
                   Pansol
                 </a>
               </li>
@@ -456,13 +456,13 @@
                 <div class="submenu">
                   <ul class="subnav">
                     <li class="subnav-item" data-analytics="top-nav-developer-hello-world">
-                      <a href="http://172.24.59.48/support/docs/pdf/musicool/">Promo Musicool</a>
+                      <a href="http://172.24.59.82/support/docs/pdf/musicool/">Promo Musicool</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-developer-documentation">
-                      <a href="http://172.24.59.48/support/docs/excel/pds/">Pelayanan PDS</a>
+                      <a href="http://172.24.59.82/support/docs/excel/pds/">Pelayanan PDS</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-developer-community-forum">
-                      <a href="http://172.24.59.48/support/docs/excel/ptpl/" target="_blank" rel="noreferrer noopener">Harga Retail PTPL</a>
+                      <a href="http://172.24.59.82/support/docs/excel/ptpl/" target="_blank" rel="noreferrer noopener">Harga Retail PTPL</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-developer-orbs">
                       <a href="orbs/index.html">Orbs</a>
@@ -508,7 +508,7 @@
 
             <ul class="right-links main-nav">
               <li class="default-item nav-item">
-                <a href="http://172.24.59.48/pulau135" data-analytics="top-nav-contact-us">
+                <a href="http://172.24.59.82/pulau135" data-analytics="top-nav-contact-us">
                   Pulau 135
                 </a>
               </li>
@@ -519,31 +519,31 @@
                 <div class="submenu">
                   <ul class="subnav">
                     <li class="subnav-item" data-analytics="top-nav-support-documentation">
-                      <a href="http://172.24.59.48/support/agent/" target="_blank" rel="noreferrer noopener">Agent</a>
+                      <a href="http://172.24.59.82/support/agent/" target="_blank" rel="noreferrer noopener">Agent</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-support-training">
-                      <a href="http://172.24.59.48/support/kasir/" target="_blank" rel="noreferrer noopener">Kasir</a>
+                      <a href="http://172.24.59.82/support/kasir/" target="_blank" rel="noreferrer noopener">Kasir</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-support-training">
-                      <a href="http://172.24.59.48/support/bs/" target="_blank" rel="noreferrer noopener">BackSales</a>
+                      <a href="http://172.24.59.82/support/bs/" target="_blank" rel="noreferrer noopener">BackSales</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-support-get-support">
-                      <a href="http://172.24.59.48/support/spv/" target="_blank" rel="noreferrer noopener">SPV</a>
+                      <a href="http://172.24.59.82/support/spv/" target="_blank" rel="noreferrer noopener">SPV</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-support-system-status">
-                      <a href="http://172.24.59.48/support/bes/" target="_blank" rel="noreferrer noopener">BES</a>
+                      <a href="http://172.24.59.82/support/bes/" target="_blank" rel="noreferrer noopener">BES</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-support-feature-requests">
-                      <a href="http://172.24.59.48/support/leader/" target="_blank" rel="noreferrer noopener">Leader</a>
+                      <a href="http://172.24.59.82/support/leader/" target="_blank" rel="noreferrer noopener">Leader</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-support-premium-support">
-                      <a href="http://172.24.59.48/support/admin/">Admin</a>
+                      <a href="http://172.24.59.82/support/admin/">Admin</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li class="divider-left nav-item visitor-item">
-                <a href="http://172.24.59.48/support/user/login.php" data-hj-masked data-analytics="top-nav-login">
+                <a href="http://172.24.59.82/support/user/login.php" data-hj-masked data-analytics="top-nav-login">
                   Log In
                 </a>
               </li>
@@ -758,11 +758,11 @@
                 <div class="col-md-10">
                   <p class="large hero-txt">
                     <ul>
-                      <li><a href="http://172.24.59.48/support/docs/pdf/musicool/">Promo Musicool</a></li>
-                      <li><a href="http://172.24.59.48/support/agent/pds/promo/nasional/">Promo Nasional</a></li>
-                      <li><a href="http://172.24.59.48/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
-                      <li><a href="http://172.24.59.48/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
-                      <li><a href="http://172.24.59.48/support/bs/pds/industry/customer/">Form Data Customer</a></li>
+                      <li><a href="http://172.24.59.82/support/docs/pdf/musicool/">Promo Musicool</a></li>
+                      <li><a href="http://172.24.59.82/support/agent/pds/promo/nasional/">Promo Nasional</a></li>
+                      <li><a href="http://172.24.59.82/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
+                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
+                      <li><a href="http://172.24.59.82/support/bs/pds/industry/customer/">Form Data Customer</a></li>
                     </ul>
                   </p>
                 </div>
