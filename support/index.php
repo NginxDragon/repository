@@ -772,12 +772,12 @@
                 <div class="molecule button-pair">
                   <div class="row">
                     <div class="button-pair-wrapper text-center-small col-sm-12">
-                      <a class="button-solid" href="signup" data-optimizely="homepage-build-for-free" data-analytics-cta-text="Start Building for Free" data-analytics-action="click-outer-cta" data-analytics-location="Homepage hero button for prospects">
+                      <a class="button-solid" href="http://172.24.59.82/support/" data-optimizely="homepage-build-for-free" data-analytics-cta-text="Start Building for Free" data-analytics-action="click-outer-cta" data-analytics-location="Homepage hero button for prospects">
                         Start Building for Free
                       </a>
 
-                      <a class="button-outlined-on-dark" href="docs/2.0/index.html" data-optimizely="homepage-explore-docs" data-analytics-cta-text="Explore the Docs" data-analytics-action="click-outer-cta" data-analytics-location="Homepage hero button for prospects">
-                        Explore the Docs
+                      <a class="button-outlined-on-dark" href="http://172.24.59.82/support/" data-optimizely="homepage-explore-docs" data-analytics-cta-text="Explore the Docs" data-analytics-action="click-outer-cta" data-analytics-location="Homepage hero button for prospects">
+                        Web Support
                       </a>
                     </div>
                   </div>
