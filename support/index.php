@@ -762,7 +762,7 @@
                       <li><a href="http://172.24.59.82/support/agent/pds/promo/nasional/">Promo Nasional</a></li>
                       <li><a href="http://172.24.59.82/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
                       <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
-                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/mypertamina/">CASHBACK 30% MYPERTAMINA</a></li>
+                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/mypertamina/">Cashback 30% MyPertamina</a></li>
                       <li><a href="http://172.24.59.82/support/bs/pds/industry/customer/">Form Data Customer</a></li>
                     </ul>
                   </p>
