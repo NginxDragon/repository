@@ -386,14 +386,14 @@
                 <div class="submenu">
                   <ul class="subnav" data-analytics="topnav-product-clicked">
                     <li class="subnav-item" data-analytics="top-nav-product-overview">
-                      <a href="http://172.24.59.82/support/agent/pds/promo/nasional/">
+                      <a href="/support/agent/pds/promo/nasional/">
                         Promo Nasional</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-how-it-works">
-                      <a href="http://172.24.59.82/support/agent/pds/promo/tradein/">Promo Trade-in</a>
+                      <a href="/support/agent/pds/promo/tradein/">Promo Trade-in</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-features">
-                      <a href="http://172.24.59.82/support/agent/pds/">Mapping PDS</a>
+                      <a href="/support/agent/pds/">Mapping PDS</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-build-environments">
                       <a href="build-environments/index.html">Build Environments</a>
@@ -418,17 +418,17 @@
                 <div class="submenu">
                   <ul class="subnav" data-analytics="topnav-product-clicked">
                     <li class="subnav-item" data-analytics="top-nav-product-overview">
-                      <a href="http://172.24.59.82/support/agent/mypertamina/promo/ramadhan/">
+                      <a href="/support/agent/mypertamina/promo/ramadhan/">
                         Promo Ramadhan</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-how-it-works">
-                      <a href="http://172.24.59.82/support/agent/mypertamina/promo/ojol/">Promo Ojol</a>
+                      <a href="/support/agent/mypertamina/promo/ojol/">Promo Ojol</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-features">
-                      <a href="http://172.24.59.82/support/agent/mypertamina/promo/angkot/">Promo Angkot</a>
+                      <a href="/support/agent/mypertamina/promo/angkot/">Promo Angkot</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-build-environments">
-                      <a href="#">Promo Cashback</a>
+                      <a href="/support/agent/mypertamina/promo/mypertamina/">Cashback 30% MyPertamina</a>
                     </li>
                     <li class="subnav-item" data-analytics="top-nav-product-hosting-options">
                       <a href="product/index.html#hosting-options">Hosting Options</a>
