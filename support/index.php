@@ -758,13 +758,14 @@
                 <div class="col-md-10">
                   <p class="large hero-txt">
                     <ul>
-                      <li><a href="http://172.24.59.82/support/docs/pdf/musicool/">Promo Musicool</a></li>
-                      <li><a href="http://172.24.59.82/support/agent/pds/promo/nasional/">Promo Nasional</a></li>
-                      <li><a href="http://172.24.59.82/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
-                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
-                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/mypertamina/">Cashback 30% MyPertamina</a></li>
-                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/angkot/">Angkutan Kota Cashback MyPertamina</a></li>
-                      <li><a href="http://172.24.59.82/support/bs/pds/industry/customer/">Form Data Customer</a></li>
+                      <li><a href="/support/docs/pdf/musicool/">Promo Musicool</a></li>
+                      <li><a href="/support/agent/pds/promo/nasional/">Promo Nasional</a></li>
+                      <li><a href="/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
+                      <li><a href="/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
+                      <li><a href="/support/agent/mypertamina/promo/mypertamina/">Cashback 30% MyPertamina</a></li>
+                      <li><a href="/support/agent/mypertamina/promo/angkot/">Angkutan Kota Cashback MyPertamina</a></li>
+                      <li><a href="/support/agent/mypertamina/promo/ojol/">Cashback Ojol</a></li>
+                      <li><a href="/support/bs/pds/industry/customer/">Form Data Customer</a></li>
                     </ul>
                   </p>
                 </div>
