@@ -719,10 +719,10 @@
             <div class="col-md-10 col-md-offset-1">
               <div class="small-banner-wrap">
                 <p class="no-pad no-margin">
-                  <strong>We raised a $100M Series E.</strong>
+                  <strong>More</strong>
 
                   <a href="blog/infobaru/index.html" class="arrow" data-analytics-action="click-outer-cta" data-analytics-location="Home banner for Series E">
-                    Read about what we plan to build next
+                    Info
                     <i class="fa fa-arrow-right" aria-hidden="true"></i>
                   </a>
                 </p>
@@ -763,6 +763,7 @@
                       <li><a href="http://172.24.59.82/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
                       <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
                       <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/mypertamina/">Cashback 30% MyPertamina</a></li>
+                      <li><a href="http://172.24.59.82/support/agent/mypertamina/promo/angkot/">Angkutan Kota Cashback MyPertamina</a></li>
                       <li><a href="http://172.24.59.82/support/bs/pds/industry/customer/">Form Data Customer</a></li>
                     </ul>
                   </p>
