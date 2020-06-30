@@ -385,13 +385,7 @@
                 </a>
                 <div class="submenu">
                   <ul class="subnav" data-analytics="topnav-product-clicked">
-                    <li class="subnav-item" data-analytics="top-nav-product-overview">
-                      <a href="/support/agent/pds/promo/nasional/">
-                        Promo Nasional</a>
-                    </li>
-                    <li class="subnav-item" data-analytics="top-nav-product-how-it-works">
-                      <a href="/support/agent/pds/promo/tradein/">Promo Trade-in</a>
-                    </li>
+
                     <li class="subnav-item" data-analytics="top-nav-product-features">
                       <a href="/support/agent/pds/">Mapping PDS</a>
                     </li>
@@ -759,8 +753,7 @@
                   <p class="large hero-txt">
                     <ul>
                       <li><a href="/support/docs/pdf/musicool/">Promo Musicool</a></li>
-                      <li><a href="/support/agent/pds/promo/nasional/">Promo Nasional</a></li>
-                      <li><a href="/support/agent/pds/promo/tradein/">Promo Tradein</a></li>
+
                       <li><a href="/support/agent/mypertamina/promo/ramadhan/">Promo Ramadhan</a></li>
                       <li><a href="/support/agent/mypertamina/promo/mypertamina/">Cashback 30% MyPertamina</a></li>
                       <li><a href="/support/agent/mypertamina/promo/angkot/">Angkutan Kota Cashback MyPertamina</a></li>
