@@ -1,1 +1,0 @@
-!function(){var e=document.querySelector("form.email"),m=document.querySelector("#collapsed-mobile-form");e.addEventListener("submit",function(){m.className+="removed"})}();var __dummy="12345";
