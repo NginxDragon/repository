@@ -1,1 +1,0 @@
-$(document).ready(function(){$('[data-toggle="tooltip"]').tooltip({html:!0}).click(function(t){t.preventDefault()})});

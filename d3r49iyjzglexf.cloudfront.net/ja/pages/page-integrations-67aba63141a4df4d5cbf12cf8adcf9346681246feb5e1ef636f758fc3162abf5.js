@@ -1,1 +1,0 @@
-var showIntegrationModal=function(){var n=window.location.hash;if(n){var o=document.querySelector(n);if(o){var a=null,t=o.innerHTML,e={htmlContent:!0};popModal(a,t,e)}}};window.addEventListener("load",showIntegrationModal),window.addEventListener("hashchange",showIntegrationModal);
